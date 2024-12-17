@@ -22,12 +22,12 @@ By default, all requirements are displayed with their applicable labels in the t
     <h5>Architecture Components</h5>
     <li class="badge rounded-pill btn btn-secondary" data-value="Identity Management System">Identity Management System</li>
     <li class="badge rounded-pill btn btn-secondary" data-value="Wallet">Wallet</li>
-    <li class="badge rounded-pill btn btn-secondary" data-value="Financial Institution Mobile Application">Financial Institution Mobile Application</li>
+    <li class="badge rounded-pill btn btn-secondary" data-value="Demonstration Financial Institution Mobile Application">Demonstration Financial Institution Mobile Application</li>
     <li class="badge rounded-pill btn btn-secondary" data-value="Issuing Authority">Issuing Authority</li>
     <li class="badge rounded-pill btn btn-secondary" data-value="Trust Service Provide">Trust Service Provider</li>
     <li class="badge rounded-pill btn btn-secondary" data-value="Verifier">Verifier</li>
     <h5>Requirement Sources</h5>
-    <li class="badge rounded-pill btn btn-secondary" data-value="Financial Institution">Financial Institution</li>
+    <li class="badge rounded-pill btn btn-secondary" data-value="Demonstration Financial Institution">Demonstration Financial Institution</li>
 
     <li class="badge rounded-pill btn btn-secondary" data-value="Banking Secrecy Act">Banking Secrecy Act</li>
     <li class="badge rounded-pill btn btn-secondary" data-value="Office Comptroller Currency">Office Comptroller Currency</li>
