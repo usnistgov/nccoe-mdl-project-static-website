@@ -5,30 +5,22 @@ $(document).ready(function () {
     order: [[0, 'asc']],
     searching: true,
     responsive: true,
-    autoWidth: false
+    autoWidth: false,
+    columns: [{ width: '5%' }, { width: '55%' }, { width: '40%' }]
   });
 
-  // Tag filter event handler
-  $('#tag-filter').on('change', function () {
-    var selectedTag = $(this).val();
-    if (selectedTag) {
-      table.column(2).search(selectedTag).draw();
+
+  // Reset the select element to its default value on page load
+  $('#label-list').val('');
+
+  $('#label-list').on('change', function () {
+    var selectedValue = $(this).val();
+    if (selectedValue) {
+      table.column(2).search(selectedValue).draw();
     } else {
       table.column(2).search('').draw();
     }
   });
 
-  // Tag filter event handler
-  $('#tag-list li').on('click', function () {
-    var selectedTag = $(this).data('value');
-    if (selectedTag) {
-      table.column(2).search(selectedTag).draw();
-    } else {
-      table.column(2).search('').draw();
-    }
-
-    // Optionally, highlight the selected item
-    $('#tag-list li').removeClass('selected');
-    $(this).addClass('selected');
-  });
 });
+
