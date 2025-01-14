@@ -1,0 +1,192 @@
+ID, Description, Labels
+85,"Usability evaluations of wallets with target populations should be conducted to identify user burdens and pain points associated with using the Wallets for identity proofing and to ensure that users can accomplish their tasks with effectiveness, efficiency, and satisfaction.","- Wallet
+- Internal Requirement
+- Usability"
+84,"Provide users with clear and usable ways (such as prominent visual cues and information) to understand and determine the authenticity of the transactions between the Wallets and the demonstration financial institution.","- Demonstration Financial Institution
+- Wallet
+- Internal Requirement
+- Usability"
+83,"Wallets should provide an easy and clear way for users to add, update, and delete their mobile drivers’ licenses.","- Wallet
+- Internal Requirement
+- Usability"
+82,"If users encounter exceptions, such as rejecting the requested attributes or being notified of unsuccessful transactions, the Wallets and/or FIs shall provide clear instructions on resolving the exceptions. ","- Wallet
+- Internal Requirement
+- Usability"
+81,"The consent process and notice should be optimized by minimizing the number of times a user is required to consent to attribute sharing. The consent notice should be presented in concise, easy-to-understand wordings using plain language without legal and technical jargon. ","- Demonstration Financial Institution
+- Wallet
+- Internal Requirement
+- Usability"
+80,"Wallets shall present communications, such as on-screen instructions for setting up the wallet, labels for identifying different functions, system feedback for successful or unsuccessful transactions (and how to recover), and notifications for important information that are clear, meaningful, and concise. ","- Wallet
+- Internal Requirement
+- Usability"
+79,"Wallets shall provide usable and easy-to-understand user interfaces so that end users can make informed decisions about approving or rejecting the requested attributes to be transferred to the demonstration financial institution. Minimize user steps and navigation. ","- Wallet
+- Usability"
+77,"Wallets shall use only NIST approved cryptograhy for protecting communications between the wallet and the verifier. ","
+- Wallet
+- NIST SP 800-63-4b
+- NIST SP 800-63C-4"
+76,"The demonstration financial institution verifier shall use only NIST approved cryptography to protection communications between the wallet and the verifier. ","
+- Demonstration Financial Institution
+- Demonstration Financial Institution Mobile Application
+- NIST SP 800-63C-4
+- Verifier"
+75,"The demonstration financial institution verifier shall only use published public key information provided by the TSP and shall not request verification directly from the issuing source (i.e., shall not phone home).","
+- Demonstration Financial Institution
+- Demonstration Financial Institution Mobile Application
+- Internal Requirement
+- Verifier"
+74,"The issuing source shall generate, provision, and sign mdoc and mdoc MSOs consistent with 18013-5 and AAMVA guidance. Only NIST approved algorithms shall be used. ","
+- Issuing Authority
+- AAMVA Implementation Guidelines"
+73,"The financial mobile applications shall support all requirements of the demonstration financial institution except where requirements are specific to cross device flows. ","
+- Demonstration Financial Institution Mobile Application
+- Internal Requirement"
+72,"The demonstration financial institution shall notify the user of all the attributes they intend to request from the user prior to initiating the request to the wallet. The demonstration financial institution shall gain consent/approval before passing the credential request to the user's wallet. ","
+- Demonstration Financial Institution
+- Demonstration Financial Institution Mobile Application
+- NIST SP 800-63C-4"
+71,"Wallets shall collect, store, and convey user consent after notice and authentication of the end users and before presentation of the requested attributes to the demonstration financial institution. ","
+- Wallet
+- NIST SP 800-63C-4"
+70,"Wallets shall present users with a plain language notice of the information being requested by the Financial Institution as well as a plain language description of the reason for its collection. ","
+- Wallet
+- NIST SP 800-63C-4"
+47,"The TSP signing public key shall be provided to the use case verifier components. ","
+- Trust Service Provider
+- Internal Requirement"
+46,"The TSP shall provide a documented API to programmatically retrieve the trust list.","
+- Trust Service Provider
+- Internal Requirement"
+45,"The TSP shall provide a machine-readable, documented format list of public keys that correspond to the Issuers participating in the use case.","
+- Trust Service Provider
+- Internal Requirement"
+44,"The Issuing Authority shall support provisioning credentials to OEM or 3rd Party Wallets.","
+- Issuing Authority
+- Internal Requirement"
+43,"The Issuing Authority shall provide test identities that can be provisioned to and removed from compatible wallets to facilitate use case development.","
+- Issuing Authority
+- Internal Requirement"
+42,"The Issuing Authority shall provide a public key to validate issued digital credentials to the Trust Service Provider. ","
+- Issuing Authority
+- Internal Requirement"
+41,"The demonstration financial institution mobile application shall support an on-device presentment as described in OpenID4VP to support verification events.","
+- Demonstration Financial Institution Mobile Application
+- Internal Requirement"
+40,"The demonstration financial institution mobile application shall support iOS and Android platforms.","
+- Demonstration Financial Institution Mobile Application
+- Internal Requirement"
+39,"Wallets shall support a transaction history capability, wherein the record the time of the transaction, claims requested and presented, verifier details, success status are captured. These are only available to the holder, on device and can be deleted by the holder at will. This information shall have a defined retention period and the holder shall be notified of said retention period.","
+- Wallet
+- Internal Requirement
+- Open Wallet Foundation Safe Wallet Guide"
+38,"Cryptographic keys that support the generation of proofs shall be securely stored (i.e., mechanisms provided by the operating system ).","
+- Wallet
+- Internal Requirement
+- Open Wallet Foundation Safe Wallet Guide"
+37,"Wallets shall strongly bind the holder to the credential using an authenticator such as a biometric or PIN. Prior to presentation of any attributes the wallet shall authenticate the user using this mechanism.  ","
+- Wallet
+- NIST SP 800-63-4b
+- Digital ID & Authentication Council of Canada Recommendations
+- NIST SP 800-63C-4"
+36,"Wallets shall support ISO/IEC 18013-7 (Annex B) OpenID for Verifiable Presentations (OpenID4VP) profile or OpenID4VP over the Digital Credentials API to support tamper evidence presentations of the requested claims (proof) to the Financial Institution","
+- Wallet
+- Digital ID & Authentication Council of Canada Recommendations"
+35,"Wallets shall support privacy preserving capabilities to include selective disclosure of credential data elements and holder consent mechanisms.","
+- Wallet
+- Digital ID & Authentication Council of Canada Recommendations"
+34,"Wallets that support 18013-7 shall support OpenID4VP 2nd Implementer’s Draft as specified in Annex B or OpenID4VP over the Digital Credentials API to retrieve the holder’s mdoc.    ","
+- Wallet
+- Internal Requirement"
+33,"Wallets shall support presentation of the credential in a cross device and on-device scenario as defined by OpenID4VP.","
+- Wallet
+- Internal Requirement"
+32,"Wallets shall support the mDoc (ISO 18013-5) standardized credential format to support the FI use case. Other formats may also be supported.","
+- Wallet
+- Internal Requirement"
+31,"3rd party wallets shall support iOS and Android platforms. ","
+- Wallet
+- Internal Requirement"
+30,"The new account creation process shall notify the customer that the bank is requesting information to verify their identities.","
+- Demonstration Financial Institution
+- Federal Financial Institutions Examination Council Compliance Requirements"
+29,"The IDMS shall support binding of an AAL2 equivalent (WebauthN) authenticator during initial customer account enrollment. ","
+- Demonstration Financial Institution
+- NIST SP 800-63-4b
+- Identity Management System"
+28,"The IDMS shall support a risk or threshold based reauthentication event (i.e., exceeding transaction threshold of 15K) in which the credential holder is prompted to confirm their presence using previously registered or newly registered mDL. ","
+- Demonstration Financial Institution
+- Financial Action Task Force Recommendations
+- Identity Management System"
+27,"The IDMS shall support a post-enrollment binding of a phishing resistant AAL-2 or better authenticator, acceptable to the FI, to the customer account.  ","
+- Demonstration Financial Institution
+- NIST SP 800-63-4b
+- Identity Management System"
+26,"The IDMS shall support the binding of an 18013-5 mDoc or W3C Verifiable Credential to the subscriber (test) account during the banking account identity verification process.","
+- Demonstration Financial Institution
+- NIST SP 800-63-4b
+- Identity Management System"
+25,"The demonstration financial institution shall cryptographically verify presented holder credentials against a trusted list of public keys that are published by credential issuers.","
+- Demonstration Financial Institution
+- AAMVA Implementation Guidelines
+- Verifier"
+24,"The demonstration financial institution shall support a general capability to reauthenticate the customer with an mDL or other authenticator where policy dictates (i.e. high-value transactions).","
+- Demonstration Financial Institution
+- Office Comptroller Currency
+- Federal Financial Institutions Examination Council Authentication Guidance"
+23,"The demonstration financial institution shall use a cloud-based or on-premises Identity Management System (IDMS) to manage customer (test) lifecycle activities.","
+- Demonstration Financial Institution
+- Internal Requirement
+- Identity Management System"
+22,"The demonstration financial institution shall support a capability to retain a description of the document (mDL) the was relied on to verify the customers identity, noting the type of document (mDL), any identification number contained in the document, the place of issuance, and, if any, the date of issuance and expiration date for five years after the record was made. ","
+- Demonstration Financial Institution
+- Banking Secrecy Act
+- Federal Deposit Insurance Corporation Customer Identification Program Requirements
+- Federal Financial Institutions Examination Council Compliance Requirements"
+21,"The demonstration financial institution shall store digital documents and associated data elements in a discrete repository in alignment with CIP retention requirements (five years after the account has closed). For the purposes of demonstration, a database compliant with CSF 2.0 ID.AM-08.03 and ID.AM-08.05.","
+- Demonstration Financial Institution
+- Banking Secrecy Act
+- Federal Deposit Insurance Corporation Customer Identification Program Requirements
+- Federal Financial Institutions Examination Council Compliance Requirements
+- NCCoE - Cyber Risk Institute Profile
+- Financial Action Task Force Recommendations"
+10,"After a positive determination of the customer’s identity proofing, the demonstration financial institution shall store the identifying documents used to derive the customers identity to satisfy CIP retention requirements. For the purposes of this demonstration, the demonstration financial institution shall collect the cryptographically protected proof generated by the mobile device that holds the digital credential as the “document” and the associated data elements. ","
+- Demonstration Financial Institution
+- Banking Secrecy Act
+- Federal Deposit Insurance Corporation Customer Identification Program Requirements
+- Federal Financial Institutions Examination Council Compliance Requirements"
+9,"The demonstration financial institution shall determine whether the customer appears on any list of known or suspected terrorists or terrorist organizations. For the purposes of this demonstration this will be a demonstration API call to a stubbed service or recorded as a step that is not actively demonstrated.    ","
+- Demonstration Financial Institution
+- Banking Secrecy Act
+- Federal Deposit Insurance Corporation Customer Identification Program Requirements
+- Federal Financial Institutions Examination Council Compliance Requirements"
+8,"The demonstration financial institution shall support a fraud service to ensure that the bank has a reasonable belief in the customer’s identity. The customer’s identification number and identity proofed attributes shall be submitted, and a risk score is returned.  ","
+- Demonstration Financial Institution
+- Fincen Customer Identification Program Guidance"
+7,"The new account creation identity proofing process shall collect an identification number[1] in alignment with Customer Identification Program (CIP). For the purposes of this demonstration, the identification number shall be in the format of an unused Social Security Number.","
+- Demonstration Financial Institution
+- Banking Secrecy Act
+- Federal Deposit Insurance Corporation Customer Identification Program Requirements
+- Federal Financial Institutions Examination Council Compliance Requirements"
+6,"The new account creation process shall have a mechanism to determine the integrity of the mobile device that holds the digital credential.    ","
+- Demonstration Financial Institution
+- Internal Requirement"
+5,"The new account creation identity proofing process shall collect the identification number, place of issuance, date of issuance, and expiration date from the customer’s mobile device that holds the digital identity credential, if available.","
+- Demonstration Financial Institution
+- Banking Secrecy Act
+- Federal Deposit Insurance Corporation Customer Identification Program Requirements
+- Federal Financial Institutions Examination Council Compliance Requirements"
+4,"The new account creation identity proofing process shall collect Name, Date of birth, and Address from the customer’s mobile device that holds the digital identity credential using a standards-based method in alignment with Customer Identification Program (CIP).","
+- Demonstration Financial Institution
+- Banking Secrecy Act
+- Federal Deposit Insurance Corporation Customer Identification Program Requirements
+- Federal Financial Institutions Examination Council Compliance Requirements"
+3,"The demonstration financial institution shall support an account creation process to support remote identity validation that cryptographically verifies a standards-based digital credential. The verification may occur locally or offloaded to a remote, cloud service.","
+- Demonstration Financial Institution
+- Internal Requirement
+- Verifier"
+2,"The banking services will be accessible by a REST API to support native iOS and Android mobile device applications. The API will also support access from web browsers.","
+- Demonstration Financial Institution
+- Internal Requirement"
+1,"The demonstration financial institution shall support customer new account creation, account balance viewing, and funds transfer between accounts to support online use cases (mobile apps and web).","
+- Demonstration Financial Institution
+- Internal Requirement"

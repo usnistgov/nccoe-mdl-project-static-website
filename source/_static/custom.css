@@ -1,0 +1,13 @@
+#tag-list li {
+  cursor: pointer;
+}
+
+#tag-list li.selected {
+  background-color: #007bff;
+  color: white;
+}
+
+a:hover {
+  color: inherit !important;
+  text-decoration: underline;
+}

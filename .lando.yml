@@ -1,0 +1,22 @@
+name: nccoe-mdl-project
+config:
+  python: "3.7"
+services:
+  appserver:
+    type: python
+    build_as_root:
+      - apt-get update -y
+      - apt-get install -y python3-pip make
+    build:
+      - pip install -U sphinx sphinx_book_theme myst_parser sphinxcontrib.jquery sphinx_copybutton sphinx_design sphinx_togglebutton
+
+tooling:
+  make:
+    service: appserver
+    cmd: make
+  build:
+    service: appserver
+    cmd: make html
+  clean-build:
+    service: appserver
+    cmd: make clean && make html

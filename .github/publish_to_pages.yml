@@ -1,0 +1,59 @@
+name: Sphinx documentation
+
+on:
+  push:
+    branches:
+      - "**"
+    tags:
+      - "*.*.*"
+
+jobs:
+  docs:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: setup python 3.9
+        uses: actions/setup-python@v5.1.0
+        with:
+          python-version: "3.9"
+
+      - name: upgrade pip
+        run: |
+          # install pip=>20.1 to use "pip cache dir"
+          python3 -m pip install --upgrade pip
+
+      - name: get pip cache dir
+        id: pip-cache
+        run: echo "dir=$(pip cache dir)" >> $GITHUB_OUTPUT
+
+      - name: cache dependencies
+        uses: actions/cache@v4.0.2
+        with:
+          path: ${{ steps.pip-cache.outputs.dir }}
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/pyproject.toml', '**/tox.ini') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: install dependencies
+        run: python3 -m pip install -U sphinx sphinx_book_theme myst_parser sphinxcontrib.jquery sp$ry sphinx_copybutton sphinx_design sphinx_togglebutton make
+
+      - name: build the site
+        run: make html
+
+      - name: archive the site
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-build
+          path: public
+
+      - name: deploy site to github pages
+        uses: peaceiris/actions-gh-pages@v4
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: public
+          publish_branch: nist-pages
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_message: ${{ github.event.head_commit.message }}

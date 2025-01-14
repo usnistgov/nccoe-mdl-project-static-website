@@ -1,0 +1,9 @@
+image: python:latest
+
+pages:
+  script:
+  - pip install -U sphinx sphinx_book_theme myst_parser sphinxcontrib.jquery sp$ry sphinx_copybutton sphinx_design sphinx_togglebutton make
+  - make html
+  artifacts:
+    paths:
+    - public
