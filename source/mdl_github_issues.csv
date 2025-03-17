@@ -1,23 +1,23 @@
 ID, Description, Labels
 85,"Usability evaluations of wallets with target populations should be conducted to identify user burdens and pain points associated with using the Wallets for identity proofing and to ensure that users can accomplish their tasks with effectiveness, efficiency, and satisfaction.","- Wallet
-- Internal Requirement
+- Internal Criteria
 - Usability"
 84,"Provide users with clear and usable ways (such as prominent visual cues and information) to understand and determine the authenticity of the transactions between the Wallets and the demonstration financial institution.","- Demonstration Financial Institution
 - Wallet
-- Internal Requirement
+- Internal Criteria
 - Usability"
 83,"Wallets should provide an easy and clear way for users to add, update, and delete their mobile drivers’ licenses.","- Wallet
-- Internal Requirement
+- Internal Criteria
 - Usability"
 82,"If users encounter exceptions, such as rejecting the requested attributes or being notified of unsuccessful transactions, the Wallets and/or FIs shall provide clear instructions on resolving the exceptions. ","- Wallet
-- Internal Requirement
+- Internal Criteria
 - Usability"
 81,"The consent process and notice should be optimized by minimizing the number of times a user is required to consent to attribute sharing. The consent notice should be presented in concise, easy-to-understand wordings using plain language without legal and technical jargon. ","- Demonstration Financial Institution
 - Wallet
-- Internal Requirement
+- Internal Criteria
 - Usability"
 80,"Wallets shall present communications, such as on-screen instructions for setting up the wallet, labels for identifying different functions, system feedback for successful or unsuccessful transactions (and how to recover), and notifications for important information that are clear, meaningful, and concise. ","- Wallet
-- Internal Requirement
+- Internal Criteria
 - Usability"
 79,"Wallets shall provide usable and easy-to-understand user interfaces so that end users can make informed decisions about approving or rejecting the requested attributes to be transferred to the demonstration financial institution. Minimize user steps and navigation. ","- Wallet
 - Usability"
@@ -33,14 +33,14 @@ ID, Description, Labels
 75,"The demonstration financial institution verifier shall only use published public key information provided by the TSP and shall not request verification directly from the issuing source (i.e., shall not phone home).","
 - Demonstration Financial Institution
 - Demonstration Financial Institution Mobile Application
-- Internal Requirement
+- Internal Criteria
 - Verifier"
 74,"The issuing source shall generate, provision, and sign mdoc and mdoc MSOs consistent with 18013-5 and AAMVA guidance. Only NIST approved algorithms shall be used. ","
 - Issuing Authority
 - AAMVA Implementation Guidelines"
 73,"The financial mobile applications shall support all requirements of the demonstration financial institution except where requirements are specific to cross device flows. ","
 - Demonstration Financial Institution Mobile Application
-- Internal Requirement"
+- Internal Criteria"
 72,"The demonstration financial institution shall notify the user of all the attributes they intend to request from the user prior to initiating the request to the wallet. The demonstration financial institution shall gain consent/approval before passing the credential request to the user's wallet. ","
 - Demonstration Financial Institution
 - Demonstration Financial Institution Mobile Application
@@ -53,35 +53,35 @@ ID, Description, Labels
 - NIST SP 800-63C-4"
 47,"The TSP signing public key shall be provided to the use case verifier components. ","
 - Trust Service Provider
-- Internal Requirement"
+- Internal Criteria"
 46,"The TSP shall provide a documented API to programmatically retrieve the trust list.","
 - Trust Service Provider
-- Internal Requirement"
+- Internal Criteria"
 45,"The TSP shall provide a machine-readable, documented format list of public keys that correspond to the Issuers participating in the use case.","
 - Trust Service Provider
-- Internal Requirement"
+- Internal Criteria"
 44,"The Issuing Authority shall support provisioning credentials to OEM or 3rd Party Wallets.","
 - Issuing Authority
-- Internal Requirement"
+- Internal Criteria"
 43,"The Issuing Authority shall provide test identities that can be provisioned to and removed from compatible wallets to facilitate use case development.","
 - Issuing Authority
-- Internal Requirement"
+- Internal Criteria"
 42,"The Issuing Authority shall provide a public key to validate issued digital credentials to the Trust Service Provider. ","
 - Issuing Authority
-- Internal Requirement"
+- Internal Criteria"
 41,"The demonstration financial institution mobile application shall support an on-device presentment as described in OpenID4VP to support verification events.","
 - Demonstration Financial Institution Mobile Application
-- Internal Requirement"
+- Internal Criteria"
 40,"The demonstration financial institution mobile application shall support iOS and Android platforms.","
 - Demonstration Financial Institution Mobile Application
-- Internal Requirement"
+- Internal Criteria"
 39,"Wallets shall support a transaction history capability, wherein the record the time of the transaction, claims requested and presented, verifier details, success status are captured. These are only available to the holder, on device and can be deleted by the holder at will. This information shall have a defined retention period and the holder shall be notified of said retention period.","
 - Wallet
-- Internal Requirement
+- Internal Criteria
 - Open Wallet Foundation Safe Wallet Guide"
 38,"Cryptographic keys that support the generation of proofs shall be securely stored (i.e., mechanisms provided by the operating system ).","
 - Wallet
-- Internal Requirement
+- Internal Criteria
 - Open Wallet Foundation Safe Wallet Guide"
 37,"Wallets shall strongly bind the holder to the credential using an authenticator such as a biometric or PIN. Prior to presentation of any attributes the wallet shall authenticate the user using this mechanism.  ","
 - Wallet
@@ -96,16 +96,16 @@ ID, Description, Labels
 - Digital ID & Authentication Council of Canada Recommendations"
 34,"Wallets that support 18013-7 shall support OpenID4VP 2nd Implementer’s Draft as specified in Annex B or OpenID4VP over the Digital Credentials API to retrieve the holder’s mdoc.    ","
 - Wallet
-- Internal Requirement"
+- Internal Criteria"
 33,"Wallets shall support presentation of the credential in a cross device and on-device scenario as defined by OpenID4VP.","
 - Wallet
-- Internal Requirement"
+- Internal Criteria"
 32,"Wallets shall support the mDoc (ISO 18013-5) standardized credential format to support the FI use case. Other formats may also be supported.","
 - Wallet
-- Internal Requirement"
+- Internal Criteria"
 31,"3rd party wallets shall support iOS and Android platforms. ","
 - Wallet
-- Internal Requirement"
+- Internal Criteria"
 30,"The new account creation process shall notify the customer that the bank is requesting information to verify their identities.","
 - Demonstration Financial Institution
 - Federal Financial Institutions Examination Council Compliance Requirements"
@@ -135,7 +135,7 @@ ID, Description, Labels
 - Federal Financial Institutions Examination Council Authentication Guidance"
 23,"The demonstration financial institution shall use a cloud-based or on-premises Identity Management System (IDMS) to manage customer (test) lifecycle activities.","
 - Demonstration Financial Institution
-- Internal Requirement
+- Internal Criteria
 - Identity Management System"
 22,"The demonstration financial institution shall support a capability to retain a description of the document (mDL) the was relied on to verify the customers identity, noting the type of document (mDL), any identification number contained in the document, the place of issuance, and, if any, the date of issuance and expiration date for five years after the record was made. ","
 - Demonstration Financial Institution
@@ -169,7 +169,7 @@ ID, Description, Labels
 - Federal Financial Institutions Examination Council Compliance Requirements"
 6,"The new account creation process shall have a mechanism to determine the integrity of the mobile device that holds the digital credential.    ","
 - Demonstration Financial Institution
-- Internal Requirement"
+- Internal Criteria"
 5,"The new account creation identity proofing process shall collect the identification number, place of issuance, date of issuance, and expiration date from the customer’s mobile device that holds the digital identity credential, if available.","
 - Demonstration Financial Institution
 - Banking Secrecy Act
@@ -182,11 +182,11 @@ ID, Description, Labels
 - Federal Financial Institutions Examination Council Compliance Requirements"
 3,"The demonstration financial institution shall support an account creation process to support remote identity validation that cryptographically verifies a standards-based digital credential. The verification may occur locally or offloaded to a remote, cloud service.","
 - Demonstration Financial Institution
-- Internal Requirement
+- Internal Criteria
 - Verifier"
 2,"The banking services will be accessible by a REST API to support native iOS and Android mobile device applications. The API will also support access from web browsers.","
 - Demonstration Financial Institution
-- Internal Requirement"
+- Internal Criteria"
 1,"The demonstration financial institution shall support customer new account creation, account balance viewing, and funds transfer between accounts to support online use cases (mobile apps and web).","
 - Demonstration Financial Institution
-- Internal Requirement"
+- Internal Criteria"

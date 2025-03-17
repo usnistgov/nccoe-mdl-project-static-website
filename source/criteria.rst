@@ -1,16 +1,16 @@
-Draft CIP/KYC Use Case Requirements
+Draft CIP/KYC Use Case Criteria
 ====================================
 
-Through discussion with our project collaborators, the project team has developed a set of functional and non-functional technical requirements as the basis for our demonstration. These requirements have been gathered from sources including
-best practices, banking regulatory requirements, and other guidance. We are publishing these requirements for early feedback from our community of interest.
+Through discussion with our project collaborators, the project team has developed a set of functional and non-functional technical criteria as the basis for our demonstration. These criteria have been gathered from sources including
+best practices, banking regulatory requirements, and other guidance. We are publishing these criteria for early feedback from our community of interest.
 
-The demonstration requirements in the table below can be filtered in a few ways:
+The demonstration criteria in the table below can be filtered in a few ways:
 
-1.	Grouped by the notional architecture component the requirement applies to,
-2.	Grouped by the requirements source where the requirement was derived from, or
-3.	Grouped by usability requirements, which is a focus area for the demonstration that spans web and mobile interfaces.
+1.	Grouped by the notional architecture component the criteria applies to,
+2.	Grouped by the criteria source where the criteria was derived from, or
+3.	Grouped by usability criteria, which is a focus area for the demonstration that spans web and mobile interfaces.
 
-By default, all requirements are displayed with their applicable labels in the third column.
+By default, all criteria are displayed with their applicable labels in the third column.
 
 
 .. raw:: html
@@ -27,7 +27,7 @@ By default, all requirements are displayed with their applicable labels in the t
         <option value="Trust Service Provide">Trust Service Provider</option>
         <option value="Verifier">Verifier</option>
       </optgroup>
-      <optgroup label="Requirement Sources">
+      <optgroup label="Criteria Sources">
         <option value="Demonstration Financial Institution">Demonstration Financial Institution</option>
         <option value="Banking Secrecy Act">Banking Secrecy Act</option>
         <option value="Office Comptroller Currency">Office Comptroller Currency</option>
@@ -40,7 +40,7 @@ By default, all requirements are displayed with their applicable labels in the t
         <option value="Federal Financial Institutions Examination Council Authentication Guidance">Federal Financial Institutions Examination Council Authentication Guidance</option>
         <option value="Banking Secrecy Act Definitions">Banking Secrecy Act Definitions</option>
         <option value="Financial Action Task Force Recommendations">Financial Action Task Force Recommendations</option>
-        <option value="Internal Requirement">Internal Requirement</option>
+        <option value="Internal Criteria">Internal Criteria</option>
         <option value="Digital ID & Authentication Council of Canada Recommendations">Digital ID & Authentication Council of Canada Recommendations</option>
         <option value="NIST SP 800-63C-4">NIST SP 800-63C-4</option>
         <option value="Open Wallet Foundation Safe Wallet Guide">Open Wallet Foundation Safe Wallet Guide</option>

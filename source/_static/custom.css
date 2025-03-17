@@ -11,3 +11,16 @@ a:hover {
   color: inherit !important;
   text-decoration: underline;
 }
+
+#main-content {
+  width: 100%;
+}
+
+#faq h1,
+#wireframes h1{
+  display: none;
+}
+
+.bd-main .bd-content div.bd-article-container {
+  max-width: unset;
+}
