@@ -9,6 +9,22 @@ services:
       - apt-get install -y python3-pip make
     build:
       - pip install -U sphinx sphinx_book_theme myst_parser sphinxcontrib.jquery sphinx_copybutton sphinx_design sphinx_togglebutton
+    webroot: public  # Set the webroot to the public directory
+
+  nginx:
+    type: nginx
+    webroot: public
+    config:
+      nginx: |
+        server {
+          listen 80;
+          server_name localhost;
+          root /app/public;
+
+          location / {
+            try_files $uri $uri/ /index.html;
+          }
+        }
 
 tooling:
   make:

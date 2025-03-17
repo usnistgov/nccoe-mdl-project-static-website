@@ -11,8 +11,8 @@ body:
   - type: input
     id: requirement
     attributes:
-      label: Requirement ID
-      description: "The ID number of the requirement you are commenting on. If your comment is not specific to a requirement, please identify the specific section of the site that you are addressing instead."
+      label: Criteria ID
+      description: "The ID number of the criteria you are commenting on. If your comment is not specific to a criteria, please identify the specific section of the site that you are addressing instead."
     validations:
       required: false
   - type: textarea

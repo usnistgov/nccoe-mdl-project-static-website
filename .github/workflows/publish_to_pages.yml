@@ -39,7 +39,7 @@ jobs:
         run: python3 -m pip install -U sphinx sphinx_book_theme myst_parser sphinxcontrib.jquery sp$ry sphinx_copybutton sphinx_design sphinx_togglebutton make
 
       - name: build the site
-        run: make html
+        run: make html && cp -r source/nccoe-bank public/
 
       - name: archive the site
         uses: actions/upload-artifact@v4
