@@ -16,35 +16,32 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/content.css?v=59cd0ab0" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.min.css" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=7b4a448d" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=c8bd2305" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/jquery.js?v=5d32c60e"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
@@ -71,11 +68,10 @@
     <script src="_static/main.js?v=74083827"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Draft CIP/KYC Use Case Requirements" href="requirements.html" />
+    <link rel="next" title="Draft CIP/KYC Use Case Criteria" href="criteria.html" />
     
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
 
     <!-- Google tag (gtag.js) -->
     <script async
@@ -109,8 +105,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -118,6 +125,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -125,8 +133,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -144,8 +152,7 @@
       
         
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -175,11 +182,15 @@
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -191,7 +202,9 @@
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="requirements.html">Draft CIP/KYC Use Case Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="criteria.html">Draft CIP/KYC Use Case Criteria</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nccoe-bank-faq.html">Sample Bank mDL Information Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wireframes.html">Wireframes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="comments.html">Submit Comments</a></li>
 </ul>
 
@@ -201,14 +214,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -305,16 +313,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 
 </div></div>
       
@@ -342,23 +358,79 @@
                   
   <section id="digital-identities-mobile-driver-s-license-mdl">
 <h1>Digital Identities - Mobile Driver’s License (mDL)<a class="headerlink" href="#digital-identities-mobile-driver-s-license-mdl" title="Link to this heading">#</a></h1>
-<p>The National Cybersecurity Center of Excellence (NCCoE) is helping to accelerate the adoption of mobile driver’s license (mDL) standards and best practices. In
-collaboration with technology vendors, government agencies, regulators, standards bodies, and organizations seeking to adopt mDLs, the NCCoE is building a
-reference architecture demonstrating real world use cases:</p>
+<p>The National Cybersecurity Center of Excellence (NCCoE) is helping to
+accelerate the adoption of mobile driver’s license (mDL) standards and
+best practices. In collaboration with technology vendors, government
+agencies, regulators, standards bodies, and organizations seeking to
+adopt mDLs, the NCCoE is building a reference architecture demonstrating
+real world use cases:</p>
 <ol class="arabic simple">
-<li><p><strong>Customer Identification Program/Know Your Customer (CIP/KYC) Onboarding and Access</strong> which will demonstrate the use of an mDL and/or Verifiable Credentials
-(VC) for establishing and accessing an online financial account.</p></li>
-<li><p><strong>U.S. Federal Government Credential Service Provider (CSP) and Federation</strong> which will demonstrate the use of an mDL and/or VC for establishing a CSP
-account to access federated agency systems.</p></li>
-<li><p><strong>Healthcare and Electronic Prescribe</strong> which will demonstrate the use of an mDL and/or VC for provider access and prescription uses.</p></li>
+<li><p><strong>Customer Identification Program/Know Your Customer (CIP/KYC)
+Onboarding and Access</strong> which will demonstrate the use of an mDL
+and/or Verifiable Credentials (VC) for establishing and accessing an
+online financial account.</p></li>
+<li><p><strong>U.S. Federal Government Credential Service Provider (CSP) and
+Federation</strong> which will demonstrate the use of an mDL and/or VC for
+establishing a CSP account to access federated agency systems.</p></li>
+<li><p><strong>Healthcare and Electronic Prescribe</strong> which will demonstrate the
+use of an mDL and/or VC for provider access and prescription uses.</p></li>
 </ol>
-<p>NCCoE is currently implementing our first use case to demonstrate how mDLs can be deployed to meet CIP/KYC requirements of financial institutions. To learn more
-about this project and the industry collaborators who have partnered with NIST to solve this challenge, please visit our <a class="reference external" href="https://www.nccoe.nist.gov/projects/digital-identities-mdl">project web
-page</a>. To gain a better understanding of the technology and standards the NCCoE will be
-implementing as part of this project, please consider reading <a class="reference external" href="https://www.nist.gov/blogs/cybersecurity-insights/digital-identities-getting-know-verifiable-digital-credential-ecosystem">our blog
-series</a>. <em>The page you are
-currently on</em> will be used to publish additional content for the NCCoE mDL Project to include project requirements, architectures, and FAQs. Currently we have
-published our <a class="reference external" href="requirements.html">Draft CIP/KYC use case requirements here</a>. If you wish to comment on these requirements, you can do so <a class="reference external" href="comments.html">here</a>.</p>
+<p>NCCoE is currently implementing our first use case to demonstrate how
+mDLs can be deployed to meet CIP/KYC requirements of financial
+institutions. To learn more about this project and the industry
+collaborators who have partnered with NIST to solve this challenge,
+please visit our <a class="reference external" href="https://www.nccoe.nist.gov/projects/digital-identities-mdl">project web
+page</a>. To
+gain a better understanding of the technology and standards the NCCoE
+will be implementing as part of this project, please consider
+reading <a class="reference external" href="https://www.nist.gov/blogs/cybersecurity-insights/digital-identities-getting-know-verifiable-digital-credential-ecosystem">our blog
+series</a>. <em>The
+page you are currently on</em> will be used to publish additional content
+for the NCCoE mDL Project to include project criteria and a sample bank mDL information page.</p>
+<p><em>As part of this project, the NCCoE will be deploying the “NCCoE Bank”,
+a fictitious bank that will demonstrate how mDLs might be implemented at
+a real financial institution. Currently we have published our</em> <a class="reference external" href="criteria.html">Draft CIP/KYC use case criteria</a> <em>that
+will be used when deploying our architecture for the NCCoE Bank.
+We have also published a</em> <a class="reference external" href="nccoe-bank-faq.html">SAMPLE Bank mDL Information Page</a> <em>that mimics information pages
+currently in use by financial institutions and highlights the benefits that mDLs
+might provide customers of those institutions.</em></p>
+<p><em>If you wish to provide comments on any of the content on our NIST pages
+site, please do so here:</em> <a class="reference external" href="comments.html">Submit comments</a></p>
+<p><strong>Project Participants:</strong></p>
+<p>Organizations participating in this project submitted their capabilities
+in response to an open call in the Federal Register for all sources of
+relevant security capabilities from academia and industry (vendors and
+integrators). The following respondents with relevant capabilities or
+product components (identified as “Technology Partners/Collaborators”
+herein) signed a Cooperative Research and Development Agreement to
+collaborate with NIST in a consortium to build this example solution.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://1password.com/">1Password</a></p></li>
+<li><p><a class="reference external" href="https://www.aamva.org/">American Association of Motor Vehicle Administrators
+(AAMVA)</a></p></li>
+<li><p><a class="reference external" href="https://www.dmv.ca.gov/portal/">California Department of Motor
+Vehicles</a></p></li>
+<li><p><a class="reference external" href="https://www.capitalone.com/">Capital One</a></p></li>
+<li><p><a class="reference external" href="https://www.dhs.gov/science-and-technology">Department of Homeland Security (DHS), Science and Technology
+Directorate</a></p></li>
+<li><p><a class="reference external" href="https://www.google.com/">Google</a></p></li>
+<li><p><a class="reference external" href="https://www.idemia.com/">Idemia</a></p></li>
+<li><p><a class="reference external" href="https://www.ilabs.ai/">iLabs</a></p></li>
+<li><p><a class="reference external" href="https://www.jpmorganchase.com/">JP Morgan Chase</a></p></li>
+<li><p><a class="reference external" href="https://mdot.maryland.gov/pages/home.aspx">Maryland Department of
+Transportation</a></p></li>
+<li><p><a class="reference external" href="https://mattr.global/">MATTR Limited</a></p></li>
+<li><p><a class="reference external" href="https://www.microsoft.com/en-us">Microsoft Corporation</a></p></li>
+<li><p><a class="reference external" href="https://dmv.ny.gov/">New York State Department of Motor Vehicle</a></p></li>
+<li><p><a class="reference external" href="https://openid.net/foundation/">OpenID Foundation</a></p></li>
+<li><p><a class="reference external" href="https://www.pnc.com/">PNC Bank</a></p></li>
+<li><p><a class="reference external" href="https://www.raymondjames.com/">Raymond James</a></p></li>
+<li><p><a class="reference external" href="https://spruceid.com/">SpruceID</a></p></li>
+<li><p><a class="reference external" href="https://www.synchrony.com/">Synchrony</a></p></li>
+<li><p><a class="reference external" href="https://www.usbank.com/index.html">US Bank</a></p></li>
+<li><p><a class="reference external" href="https://www.wellsfargo.com/">Wells Fargo</a></p></li>
+<li><p><a class="reference external" href="https://www.yubico.com/">Yubico</a></p></li>
+</ul>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -375,11 +447,11 @@ published our <a class="reference external" href="requirements.html">Draft CIP/K
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="requirements.html"
+       href="criteria.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Draft CIP/KYC Use Case Requirements</p>
+        <p class="prev-next-title">Draft CIP/KYC Use Case Criteria</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -408,8 +480,8 @@ published our <a class="reference external" href="requirements.html">Draft CIP/K
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 <footer class="footer mt-5 mt-md-0">
     <div class="container">
       <p>

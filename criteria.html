@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Draft CIP/KYC Use Case Requirements &#8212; NCCoE Mobile Driver&#39;s License Project</title>
+    <title>Draft CIP/KYC Use Case Criteria &#8212; NCCoE Mobile Driver&#39;s License Project</title>
   
   
   
@@ -16,35 +16,32 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/content.css?v=59cd0ab0" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.min.css" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=7b4a448d" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=c8bd2305" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/jquery.js?v=5d32c60e"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
@@ -61,7 +58,7 @@
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'requirements';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'criteria';</script>
     <script src="_static/jquery.visible.js?v=5b129ffc"></script>
     <script src="_static/jquery.leaveNotice-nist.js?v=7cf1efa2"></script>
     <script src="_static/applyLeaveNotice.js?v=e4171245"></script>
@@ -71,12 +68,11 @@
     <script src="_static/main.js?v=74083827"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Submit Comments" href="comments.html" />
+    <link rel="next" title="Sample Bank mDL Information Page" href="nccoe-bank-faq.html" />
     <link rel="prev" title="Digital Identities - Mobile Driver’s License (mDL)" href="index.html" />
     
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
 
     <!-- Google tag (gtag.js) -->
     <script async
@@ -110,8 +106,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -119,6 +126,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -126,8 +134,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -143,8 +151,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -174,11 +181,15 @@
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -190,7 +201,9 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Draft CIP/KYC Use Case Requirements</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Draft CIP/KYC Use Case Criteria</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nccoe-bank-faq.html">Sample Bank mDL Information Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wireframes.html">Wireframes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="comments.html">Submit Comments</a></li>
 </ul>
 
@@ -200,14 +213,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -251,7 +259,7 @@
       
       
       
-      <li><a href="_sources/requirements.rst" target="_blank"
+      <li><a href="_sources/criteria.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -304,16 +312,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 
 </div></div>
       
@@ -325,7 +341,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Draft CIP/KYC Use Case Requirements</h1>
+    <h1>Draft CIP/KYC Use Case Criteria</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -339,17 +355,17 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="draft-cip-kyc-use-case-requirements">
-<h1>Draft CIP/KYC Use Case Requirements<a class="headerlink" href="#draft-cip-kyc-use-case-requirements" title="Link to this heading">#</a></h1>
-<p>Through discussion with our project collaborators, the project team has developed a set of functional and non-functional technical requirements as the basis for our demonstration. These requirements have been gathered from sources including
-best practices, banking regulatory requirements, and other guidance. We are publishing these requirements for early feedback from our community of interest.</p>
-<p>The demonstration requirements in the table below can be filtered in a few ways:</p>
+  <section id="draft-cip-kyc-use-case-criteria">
+<h1>Draft CIP/KYC Use Case Criteria<a class="headerlink" href="#draft-cip-kyc-use-case-criteria" title="Link to this heading">#</a></h1>
+<p>Through discussion with our project collaborators, the project team has developed a set of functional and non-functional technical criteria as the basis for our demonstration. These criteria have been gathered from sources including
+best practices, banking regulatory requirements, and other guidance. We are publishing these criteria for early feedback from our community of interest.</p>
+<p>The demonstration criteria in the table below can be filtered in a few ways:</p>
 <ol class="arabic simple">
-<li><p>Grouped by the notional architecture component the requirement applies to,</p></li>
-<li><p>Grouped by the requirements source where the requirement was derived from, or</p></li>
-<li><p>Grouped by usability requirements, which is a focus area for the demonstration that spans web and mobile interfaces.</p></li>
+<li><p>Grouped by the notional architecture component the criteria applies to,</p></li>
+<li><p>Grouped by the criteria source where the criteria was derived from, or</p></li>
+<li><p>Grouped by usability criteria, which is a focus area for the demonstration that spans web and mobile interfaces.</p></li>
 </ol>
-<p>By default, all requirements are displayed with their applicable labels in the third column.</p>
+<p>By default, all criteria are displayed with their applicable labels in the third column.</p>
 <label for="label-list"><h4>Filter by Label:</h4></label>
   <select id="label-list">
     <option value="">All Labels</option>
@@ -362,7 +378,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
       <option value="Trust Service Provide">Trust Service Provider</option>
       <option value="Verifier">Verifier</option>
     </optgroup>
-    <optgroup label="Requirement Sources">
+    <optgroup label="Criteria Sources">
       <option value="Demonstration Financial Institution">Demonstration Financial Institution</option>
       <option value="Banking Secrecy Act">Banking Secrecy Act</option>
       <option value="Office Comptroller Currency">Office Comptroller Currency</option>
@@ -375,7 +391,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
       <option value="Federal Financial Institutions Examination Council Authentication Guidance">Federal Financial Institutions Examination Council Authentication Guidance</option>
       <option value="Banking Secrecy Act Definitions">Banking Secrecy Act Definitions</option>
       <option value="Financial Action Task Force Recommendations">Financial Action Task Force Recommendations</option>
-      <option value="Internal Requirement">Internal Requirement</option>
+      <option value="Internal Criteria">Internal Criteria</option>
       <option value="Digital ID & Authentication Council of Canada Recommendations">Digital ID & Authentication Council of Canada Recommendations</option>
       <option value="NIST SP 800-63C-4">NIST SP 800-63C-4</option>
       <option value="Open Wallet Foundation Safe Wallet Guide">Open Wallet Foundation Safe Wallet Guide</option>
@@ -392,7 +408,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><p>Usability evaluations of wallets with target populations should be conducted to identify user burdens and pain points associated with using the Wallets for identity proofing and to ensure that users can accomplish their tasks with effectiveness, efficiency, and satisfaction.</p></td>
 <td><ul class="simple">
 <li><p>Wallet</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 <li><p>Usability</p></li>
 </ul>
 </td>
@@ -402,7 +418,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><ul class="simple">
 <li><p>Demonstration Financial Institution</p></li>
 <li><p>Wallet</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 <li><p>Usability</p></li>
 </ul>
 </td>
@@ -411,7 +427,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><p>Wallets should provide an easy and clear way for users to add, update, and delete their mobile drivers’ licenses.</p></td>
 <td><ul class="simple">
 <li><p>Wallet</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 <li><p>Usability</p></li>
 </ul>
 </td>
@@ -420,7 +436,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><p>If users encounter exceptions, such as rejecting the requested attributes or being notified of unsuccessful transactions, the Wallets and/or FIs shall provide clear instructions on resolving the exceptions.</p></td>
 <td><ul class="simple">
 <li><p>Wallet</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 <li><p>Usability</p></li>
 </ul>
 </td>
@@ -430,7 +446,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><ul class="simple">
 <li><p>Demonstration Financial Institution</p></li>
 <li><p>Wallet</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 <li><p>Usability</p></li>
 </ul>
 </td>
@@ -439,7 +455,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><p>Wallets shall present communications, such as on-screen instructions for setting up the wallet, labels for identifying different functions, system feedback for successful or unsuccessful transactions (and how to recover), and notifications for important information that are clear, meaningful, and concise.</p></td>
 <td><ul class="simple">
 <li><p>Wallet</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 <li><p>Usability</p></li>
 </ul>
 </td>
@@ -476,7 +492,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><ul class="simple">
 <li><p>Demonstration Financial Institution</p></li>
 <li><p>Demonstration Financial Institution Mobile Application</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 <li><p>Verifier</p></li>
 </ul>
 </td>
@@ -493,7 +509,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><p>The financial mobile applications shall support all requirements of the demonstration financial institution except where requirements are specific to cross device flows.</p></td>
 <td><ul class="simple">
 <li><p>Demonstration Financial Institution Mobile Application</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 </ul>
 </td>
 </tr>
@@ -526,7 +542,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><p>The TSP signing public key shall be provided to the use case verifier components.</p></td>
 <td><ul class="simple">
 <li><p>Trust Service Provider</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 </ul>
 </td>
 </tr>
@@ -534,7 +550,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><p>The TSP shall provide a documented API to programmatically retrieve the trust list.</p></td>
 <td><ul class="simple">
 <li><p>Trust Service Provider</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 </ul>
 </td>
 </tr>
@@ -542,7 +558,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><p>The TSP shall provide a machine-readable, documented format list of public keys that correspond to the Issuers participating in the use case.</p></td>
 <td><ul class="simple">
 <li><p>Trust Service Provider</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 </ul>
 </td>
 </tr>
@@ -550,7 +566,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><p>The Issuing Authority shall support provisioning credentials to OEM or 3rd Party Wallets.</p></td>
 <td><ul class="simple">
 <li><p>Issuing Authority</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 </ul>
 </td>
 </tr>
@@ -558,7 +574,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><p>The Issuing Authority shall provide test identities that can be provisioned to and removed from compatible wallets to facilitate use case development.</p></td>
 <td><ul class="simple">
 <li><p>Issuing Authority</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 </ul>
 </td>
 </tr>
@@ -566,7 +582,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><p>The Issuing Authority shall provide a public key to validate issued digital credentials to the Trust Service Provider.</p></td>
 <td><ul class="simple">
 <li><p>Issuing Authority</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 </ul>
 </td>
 </tr>
@@ -574,7 +590,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><p>The demonstration financial institution mobile application shall support an on-device presentment as described in OpenID4VP to support verification events.</p></td>
 <td><ul class="simple">
 <li><p>Demonstration Financial Institution Mobile Application</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 </ul>
 </td>
 </tr>
@@ -582,7 +598,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><p>The demonstration financial institution mobile application shall support iOS and Android platforms.</p></td>
 <td><ul class="simple">
 <li><p>Demonstration Financial Institution Mobile Application</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 </ul>
 </td>
 </tr>
@@ -590,7 +606,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><p>Wallets shall support a transaction history capability, wherein the record the time of the transaction, claims requested and presented, verifier details, success status are captured. These are only available to the holder, on device and can be deleted by the holder at will. This information shall have a defined retention period and the holder shall be notified of said retention period.</p></td>
 <td><ul class="simple">
 <li><p>Wallet</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 <li><p>Open Wallet Foundation Safe Wallet Guide</p></li>
 </ul>
 </td>
@@ -599,7 +615,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><p>Cryptographic keys that support the generation of proofs shall be securely stored (i.e., mechanisms provided by the operating system ).</p></td>
 <td><ul class="simple">
 <li><p>Wallet</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 <li><p>Open Wallet Foundation Safe Wallet Guide</p></li>
 </ul>
 </td>
@@ -634,7 +650,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><p>Wallets that support 18013-7 shall support OpenID4VP 2nd Implementer’s Draft as specified in Annex B or OpenID4VP over the Digital Credentials API to retrieve the holder’s mdoc.</p></td>
 <td><ul class="simple">
 <li><p>Wallet</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 </ul>
 </td>
 </tr>
@@ -642,7 +658,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><p>Wallets shall support presentation of the credential in a cross device and on-device scenario as defined by OpenID4VP.</p></td>
 <td><ul class="simple">
 <li><p>Wallet</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 </ul>
 </td>
 </tr>
@@ -650,7 +666,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><p>Wallets shall support the mDoc (ISO 18013-5) standardized credential format to support the FI use case. Other formats may also be supported.</p></td>
 <td><ul class="simple">
 <li><p>Wallet</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 </ul>
 </td>
 </tr>
@@ -658,7 +674,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><p>3rd party wallets shall support iOS and Android platforms.</p></td>
 <td><ul class="simple">
 <li><p>Wallet</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 </ul>
 </td>
 </tr>
@@ -728,7 +744,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><p>The demonstration financial institution shall use a cloud-based or on-premises Identity Management System (IDMS) to manage customer (test) lifecycle activities.</p></td>
 <td><ul class="simple">
 <li><p>Demonstration Financial Institution</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 <li><p>Identity Management System</p></li>
 </ul>
 </td>
@@ -797,7 +813,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><p>The new account creation process shall have a mechanism to determine the integrity of the mobile device that holds the digital credential.</p></td>
 <td><ul class="simple">
 <li><p>Demonstration Financial Institution</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 </ul>
 </td>
 </tr>
@@ -825,7 +841,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><p>The demonstration financial institution shall support an account creation process to support remote identity validation that cryptographically verifies a standards-based digital credential. The verification may occur locally or offloaded to a remote, cloud service.</p></td>
 <td><ul class="simple">
 <li><p>Demonstration Financial Institution</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 <li><p>Verifier</p></li>
 </ul>
 </td>
@@ -834,7 +850,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><p>The banking services will be accessible by a REST API to support native iOS and Android mobile device applications. The API will also support access from web browsers.</p></td>
 <td><ul class="simple">
 <li><p>Demonstration Financial Institution</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 </ul>
 </td>
 </tr>
@@ -842,7 +858,7 @@ best practices, banking regulatory requirements, and other guidance. We are publ
 <td><p>The demonstration financial institution shall support customer new account creation, account balance viewing, and funds transfer between accounts to support online use cases (mobile apps and web).</p></td>
 <td><ul class="simple">
 <li><p>Demonstration Financial Institution</p></li>
-<li><p>Internal Requirement</p></li>
+<li><p>Internal Criteria</p></li>
 </ul>
 </td>
 </tr>
@@ -872,11 +888,11 @@ best practices, banking regulatory requirements, and other guidance. We are publ
       </div>
     </a>
     <a class="right-next"
-       href="comments.html"
+       href="nccoe-bank-faq.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Submit Comments</p>
+        <p class="prev-next-title">Sample Bank mDL Information Page</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -905,8 +921,8 @@ best practices, banking regulatory requirements, and other guidance. We are publ
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 <footer class="footer mt-5 mt-md-0">
     <div class="container">
       <p>
