@@ -5,14 +5,15 @@ Comments can be submitted in one of the following ways:
 
 1. |github-issues| (See the instructions below for creating an issue on GitHub)
 
-2. Send an email to `mdl-nccoe@nist.gov <mailto:mdl-nccoe@nist.gov?subject=Comment%20on%20Requirement%20%23%20&body=-%20Name%3A%0D%0A-%20Email%20Address%3A%0D%0A-%20Organization%3A%0D%0A-%20Requirement%20ID%3A%0D%0A-%20Comment%3A>`_ with the following information:
+2. Send an email to `mdl-nccoe@nist.gov <mailto:mdl-nccoe@nist.gov?subject=Comment%20Submission&body=-%20Name%3A%0D%0A%0D%0A-%20Contact%20Email%3A%0D%0A%0D%0A-%20Organization%3A%0D%0A%0D%0A-%20Criteria%20ID%2C%20if%20it%20relates%20to%20a%20criteria%3A%0D%0A%0D%0A-%20Wireframe%20reference%2C%20if%20it%20relates%20to%20one%20of%20our%20wireframes%3A%0D%0A%0D%0A-%20Other%20topic%3A%20Description%20of%20other%20topic%20addressed%20by%20the%20comment%3A%0D%0A%0D%0A-%20Text%20and%20content%20of%20your%20comment%3A>`_ with the following information:
 
-   - First Name
-   - Last Name
-   - Contact Email
-   - Organization
-   - Requirement ID
-   - Your Comment
+   - Name (optional)
+   - Contact Email (optional)
+   - Organization (optional)
+   - Criteria ID, if it relates to a criteria
+   - Wireframe reference, if it relates to one of our wireframes
+   - Other topic: Description of other topic addressed by the comment
+   - Text and content of your comment
 
 
 **Instructions for submitting comments by creating an issue on GitHub**
