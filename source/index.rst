@@ -35,8 +35,10 @@ for the NCCoE mDL Project to include project criteria and a sample bank mDL info
 
 *As part of this project, the NCCoE will be deploying the "NCCoE Bank",
 a fictitious bank that will demonstrate how mDLs might be implemented at
-a real financial institution. Currently we have published our* `Draft CIP/KYC use case criteria <criteria.html>`__ *that
-will be used when deploying our architecture for the NCCoE Bank.
+a real financial institution. Currently, we have published our* `Draft CIP/KYC use case criteria <criteria.html>`__,
+*which will be used when deploying our architecture for the NCCoE Bank. Additionally, we have created videos and flows
+implemented as* `wireframes <wireframes.html>`__ *to provide a visual representation of a customer navigating a sample
+bank site. These wireframes illustrate the step-by-step process in a browser on a laptop or desktop device.
 We have also published a* `SAMPLE Bank mDL Information Page <nccoe-bank-faq.html>`__ *that mimics information pages
 currently in use by financial institutions and highlights the benefits that mDLs
 might provide customers of those institutions.*
