@@ -69,6 +69,8 @@ collaborate with NIST in a consortium to build this example solution.
 - `Department of Homeland Security (DHS), Science and Technology
   Directorate <https://www.dhs.gov/science-and-technology>`__
 
+- `Georgia Department of Driver Services <https://dds.georgia.gov/>`__
+
 - `Google <https://www.google.com/>`__
 
 - `Idemia <https://www.idemia.com/>`__
