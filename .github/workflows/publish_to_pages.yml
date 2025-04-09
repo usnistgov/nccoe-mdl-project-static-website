@@ -1,4 +1,4 @@
-name: Sphinx documentation
+name: Build and Deploy Documentation and Vue App
 
 on:
   push:
@@ -8,26 +8,24 @@ on:
       - "*.*.*"
 
 jobs:
-  docs:
+  build:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v4
-
-      - name: setup python 3.9
+      - name: Setup Python 3.9
         uses: actions/setup-python@v5.1.0
         with:
           python-version: "3.9"
 
-      - name: upgrade pip
-        run: |
-          # install pip=>20.1 to use "pip cache dir"
-          python3 -m pip install --upgrade pip
+      - name: Upgrade pip
+        run: python3 -m pip install --upgrade pip
 
-      - name: get pip cache dir
+      # Cache Python dependencies
+      - name: Get pip cache dir
         id: pip-cache
         run: echo "dir=$(pip cache dir)" >> $GITHUB_OUTPUT
 
-      - name: cache dependencies
+      - name: Cache Python dependencies
         uses: actions/cache@v4.2.2
         with:
           path: ${{ steps.pip-cache.outputs.dir }}
@@ -35,19 +33,47 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
 
-      - name: install dependencies
-        run: python3 -m pip install -U sphinx sphinx_book_theme myst_parser sphinxcontrib.jquery sp$ry sphinx_copybutton sphinx_design sphinx_togglebutton make
+      - name: Install Sphinx dependencies
+        run: python3 -m pip install -U sphinx sphinx_book_theme myst_parser sphinxcontrib.jquery sphinx_copybutton sphinx_design sphinx_togglebutton
 
-      - name: build the site
-        run: make html && cp -r source/nccoe-bank public/
+      - name: Build Sphinx site
+        run: make html
 
-      - name: archive the site
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Cache Node.js dependencies
+        uses: actions/cache@v4.2.2
+        with:
+          path: source/nccoe-bank/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('source/nccoe-bank/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install Vue dependencies
+        run: |
+          cd source/nccoe-bank
+          npm install
+
+      # Build Vue app
+      - name: Build Vue app
+        run: |
+          cd source/nccoe-bank
+          npm run build
+          mkdir -p ../../public/nccoe-bank
+          cp -r dist/* ../../public/nccoe-bank/
+
+      # Archive the combined site
+      - name: Archive the site
         uses: actions/upload-artifact@v4
         with:
           name: site-build
           path: public
 
-      - name: deploy site to github pages
+      # Deploy the site to GitHub Pages
+      - name: Deploy site to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
