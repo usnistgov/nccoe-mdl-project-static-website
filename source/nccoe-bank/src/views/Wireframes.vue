@@ -99,8 +99,8 @@ const videoPdfPairs = [
   },
   {
     title: 'Preventing unauthorized high-risk transactions',
-    entryId: null,
-    pdf: null,
+    entryId: '1_kdil6gff',
+    pdf: new URL('../assets/account_re-verification.pdf', import.meta.url).href,
   },
 ];
 
