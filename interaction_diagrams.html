@@ -58,6 +58,14 @@
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+    <script src="_static/_static/d3.min.js"></script>
+    <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'interaction_diagrams';</script>
     <script src="_static/jquery.visible.js?v=5b129ffc"></script>
     <script src="_static/jquery.leaveNotice-nist.js?v=7cf1efa2"></script>
@@ -65,6 +73,7 @@
     <script src="_static/smoothNavScroll.js?v=2ce98a12"></script>
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.min.js"></script>
+    <script src="_static/d3.min.js?v=11e63a10"></script>
     <script src="_static/main.js?v=e61cfd5e"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -357,8 +366,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-the-diagrams">Viewing the Diagrams</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-1-applying-for-a-financial-account-using-an-mdl">Flow 1 - Applying for a Financial Account using an mDL</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-device-financial-account-application-flow">Cross Device Financial Account Application Flow</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-1-applying-for-a-financial-account-using-an-mdl">Flow 1 - Applying for a Financial Account using an mDL</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-device-financial-account-application-flow">Cross Device Financial Account Application Flow</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-user-initiates-application-process">Part 1 - User Initiates Application Process</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-mdl-verification-using-the-dc-api">Part 2 - mDL Verification Using the DC API</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-collection-of-additional-user-identity-information-and-application-completion">Part 3 - Collection of Additional User Identity Information and Application Completion</a></li>
@@ -366,15 +375,15 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-2-setting-up-online-access-after-application-approval">Flow 2 - Setting up Online Access after Application Approval</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-device-setting-up-online-access">Cross Device Setting up Online Access</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-2-setting-up-online-access-after-application-approval">Flow 2 - Setting up Online Access after Application Approval</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-device-setting-up-online-access">Cross Device Setting up Online Access</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-initiating-the-digital-enrollment-process-triggered-by-a-notification-from-the-banking-system">Part 1 - Initiating the Digital Enrollment Process Triggered by a Notification from the Banking System</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-passkey-registration-and-linkage-to-the-applicant">Part 2 - Passkey Registration and Linkage to the Applicant</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-3-re-verification-for-step-up-flow">Flow 3 - Re-Verification for Step-Up Flow</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-3-re-verification-for-step-up-flow">Flow 3 - Re-Verification for Step-Up Flow</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#re-verification-for-step-up-flow">Re-verification for Step-Up Flow</a></li>
 </ul>
 </li>
@@ -428,13 +437,248 @@ complete. The session identifier is then used to retrieve the verification resul
 <h3>Cross Device Financial Account Application Flow<a class="headerlink" href="#cross-device-financial-account-application-flow" title="Link to this heading">#</a></h3>
 <section id="part-1-user-initiates-application-process">
 <h4>Part 1 - User Initiates Application Process<a class="headerlink" href="#part-1-user-initiates-application-process" title="Link to this heading">#</a></h4>
-</section>
+<pre  class="mermaid">
+        %%{init: {&quot;theme&quot;: &quot;base&quot;, &quot;themeVariables&quot;: {&quot;primaryColor&quot;: &quot;#1f77b4&quot;, &quot;edgeLabelBackground&quot;:&quot;#ffffff&quot;, &quot;actorTextColor&quot;: &quot;#ffffff&quot;, &quot;actorBackground&quot;: &quot;#2ca02c&quot;, &quot;fontSize&quot;:&quot;30px&quot;}}}%%
+sequenceDiagram
+    autonumber
+    %%box Issuing Authority
+    %% participant sor as System of Record
+    %%participant iaendpoints as mDL Issuing Endpoints
+    %%end
+
+    box Mobile Device 
+    participant wallet as Wallet App
+    end
+    box Web Browser
+    %% participant browser as Digital Credentials API
+    participant webapp as Banking Single Page Application
+    end
+    box Identity Management System (IDMS)
+    participant idp as Identity Provider
+    participant bpl as Bank Provisioning Logic
+    participant sdk as Verifier SDK
+    end
+    box Financial Institution Banking System
+    participant backend as Banking Backend
+    %% participant cbs as Core Banking Services
+    %% participant database as Data Storage
+    %% participant bankapi as IDMS Provisioning API
+    %% participant ssn as SSN Validation Service
+    end
+    %%box Verifier
+    %% participant adminendpoints as Tenant Administration Endpoints
+    %% participant verifier as Verifier Endpoints
+    %% end
+    %%box Trust Service
+    %% participant dts as Digital Trust Service
+    %%end
+
+
+
+    %%note over wallet,verifier: ... ↑ ...
+    note over webapp: Applicant navigates to the banking site to begin the scenario &lt;br /&gt;where they choose a banking product application.&lt;br /&gt; The interactions begin with the browser redirect &lt;br /&gt; to the demonstration IDMS.
+    %%note over wallet,verifier: ... ↓ ...
+
+
+
+    rect rgb(0,255,0)
+    backend-&gt;&gt;webapp: OpenID Connect Authorization Request redirect response
+    webapp-)idp: OpenID Connect Authorization Request sent
+    end
+
+    idp-&gt;&gt;bpl: Invoke Application form
+
+    %%note over wallet,verifier: ... ↑ ...
+    note over webapp: Applicant completes initial workflow &lt;br /&gt; submitting email and telephone number &lt;br /&gt;that are stored in the applicant's &lt;br /&gt; directory entry.
+    %%note over wallet,verifier: ... ↓ ...
+
+
+    bpl-&gt;&gt;webapp: Social Security Number form rendered
+    webapp-&gt;&gt;bpl: Applicant submits Social Security Number
+    bpl-&gt;&gt;bpl: Store Social Security Number in applicant's directory entry temporarily
+
+    bpl-&gt;&gt;webapp: Application form identity verification workflow rendered
+    webapp-&gt;&gt;bpl: Applicant consent to present mDL to the bank
+
+    </pre></section>
 <section id="part-2-mdl-verification-using-the-dc-api">
 <h4>Part 2 - mDL Verification Using the DC API<a class="headerlink" href="#part-2-mdl-verification-using-the-dc-api" title="Link to this heading">#</a></h4>
-</section>
+<pre  class="mermaid">
+        %%{init: {&quot;theme&quot;: &quot;base&quot;, &quot;themeVariables&quot;: {&quot;primaryColor&quot;: &quot;#1f77b4&quot;, &quot;edgeLabelBackground&quot;:&quot;#ffffff&quot;, &quot;actorTextColor&quot;: &quot;#ffffff&quot;, &quot;actorBackground&quot;: &quot;#2ca02c&quot;, &quot;fontSize&quot;:&quot;30px&quot;}}}%%
+sequenceDiagram
+    autonumber
+    box Issuing Authority
+    %% participant sor as System of Record
+    %%participant iaendpoints as mDL Issuing Endpoints
+    end
+
+
+    box Mobile Device
+    participant wallet as Wallet App
+    participant os as Operating System
+    end
+
+
+    box Web Browser
+    participant browser as Digital Credentials API
+    participant webapp as Banking Single Page Application
+    end
+
+    box Verifier
+    %% participant adminendpoints as Tenant Administration Endpoints
+    participant verifier as Verifier Endpoints
+    end
+
+    box Identity Management System (IDMS)
+    participant idp as Identity Provider
+    participant bpl as Bank Provisioning Logic
+    participant sdk as Verifier SDK
+    end
+    box Financial Institution Banking System
+    %%participant backend as Banking Backend
+    %% participant cbs as Core Banking Services
+    participant database as Data Storage
+    participant bankapi as IDMS Provisioning API
+    %%participant ssn as SSN Validation Service
+    end
+
+    box Trust Service
+    %% participant dts as Digital Trust Service
+    end
+
+    rect rgb(217, 218, 241)
+    bpl-&gt;&gt;bpl: Digital Credentials Query Language object and Challenge prepared
+    bpl-&gt;&gt;sdk: requestCredentials() invoked&lt;br /&gt; with Digital Credentials Query Language&lt;br /&gt; object and Challenge
+    end
+
+    %%note over wallet,verifier: ... ↑ ...
+    note over sdk: Verifier SDK waits for Applicant to complete verification.
+    %%note over wallet,verifier: ... ↓ ...
+
+    rect rgb(217, 218, 241)
+    sdk-&gt;&gt;browser: SDK invokes Digital Credential API with OpenID4VP Authorization Request
+    browser-&gt;&gt;browser: Authorization Request rendered via QR code
+    end
+
+    %%note over wallet,verifier: ... ↑ ...
+    note over os: Applicant opens camera or wallet app on their mobile device &lt;br /&gt;and scans the QR code presented in the browser.
+    %%note over wallet,verifier: ... ↓ ...
+
+    rect rgb(217, 218, 241)
+    browser-&gt;&gt;os: Wallet app presentation workflow invoked
+    os-&gt;&gt;os: Eligible Wallets displayed to Applicant
+    end
+
+    %%note over wallet,verifier: ... ↑ ...
+    note over os: Applicant chooses appropriate credential, &lt;br /&gt;consents to presenting attributes, &lt;br /&gt;and locally authenticates via biometric.
+    %%note over wallet,verifier: ... ↓ ...
+
+    rect rgb(217, 218, 241)
+    wallet-&gt;&gt;verifier: Wallet submits &lt;br /&gt;Authorization Response containing &lt;br /&gt;requested attributes
+    end
+    %%note over wallet,verifier: ... ↑ ...
+    note over sdk: Verifier SDK callback invoked.
+    %%note over wallet,verifier: ... ↓ ...
+
+    verifier-&gt;&gt;sdk: Results retrieval identifier returned
+    sdk-&gt;&gt;bpl: Results retrieval identifier returned
+
+    bpl-&gt;&gt;bankapi: Bank customer provisioning API invoked with presentation attribute retrieval identifier
+
+    %%note over wallet,verifier: ... ↑ ...
+    %%note over wallet,verifier: ... Azure Function not pictured for clarity ...
+    %%note over wallet,verifier: ... ↓ ...
+
+
+    bankapi-&gt;&gt;verifier: Presentation attributes retrieved via identifier
+    verifier-&gt;&gt;bankapi: Presentation attributes returned
+    bankapi-&gt;&gt;database: Document Number and Issuing Authority &lt;br /&gt; attributes persisted as unique identifier &lt;br /&gt; in new record as keyed hash
+    bankapi-&gt;&gt;database: Record updated with presentation &lt;br /&gt;attributes as encrypted JSON Web Token
+    bankapi-&gt;&gt;bpl: Presentation attributes returned
+
+    bpl-&gt;&gt;bpl: Document Number and Issuing Authority attributes persisted as a keyed hash
+
+
+    </pre></section>
 <section id="part-3-collection-of-additional-user-identity-information-and-application-completion">
 <h4>Part 3 - Collection of Additional User Identity Information and Application Completion<a class="headerlink" href="#part-3-collection-of-additional-user-identity-information-and-application-completion" title="Link to this heading">#</a></h4>
-</section>
+<pre  class="mermaid">
+        %%{init: {&quot;theme&quot;: &quot;base&quot;, &quot;themeVariables&quot;: {&quot;primaryColor&quot;: &quot;#1f77b4&quot;, &quot;edgeLabelBackground&quot;:&quot;#ffffff&quot;, &quot;actorTextColor&quot;: &quot;#ffffff&quot;, &quot;actorBackground&quot;: &quot;#2ca02c&quot;, &quot;fontSize&quot;:&quot;30px&quot;}}}%%
+sequenceDiagram
+    autonumber
+    box Issuing Authority
+    %% participant sor as System of Record
+    %%participant iaendpoints as mDL Issuing Endpoints
+    end
+    box Verifier
+    %% participant adminendpoints as Tenant Administration Endpoints
+    %%participant verifier as Verifier Endpoints
+    end
+
+    box Mobile Device
+    %%participant wallet as Wallet App
+    end
+    box Web Browser
+    %% participant browser as Digital Credentials API
+    participant webapp as Banking Single Page Application
+    end
+    box Identity Management System (IDMS)
+    participant idp as Identity Provider
+    participant bpl as Bank Provisioning Logic
+    participant sdk as Verifier SDK
+    end
+    box Financial Institution Banking System
+    participant backend as Banking Backend
+    %% participant cbs as Core Banking Services
+    participant database as Data Storage
+    participant bankapi as IDMS Provisioning API
+    participant ssn as SSN Validation Service
+    end
+
+    box Trust Service
+    %% participant dts as Digital Trust Service
+    end
+
+
+
+
+    %%note over wallet,verifier: ... ↑ ...
+    note over webapp: Applicant returns to bank account application where mDL attributes are displayed. &lt;br /&gt; where the interactions below resume.
+    %%note over wallet,verifier: ... ↓ ...
+
+    webapp-&gt;&gt;bpl: Applicant confirms information and submits form
+    rect rgb(0,255,0)
+    bpl-)webapp: OpenID Connect Authorization response returned
+
+    webapp-&gt;&gt;idp: Request OpenID Connect identity token
+    idp-&gt;&gt;webapp: Token returned with &lt;br /&gt;Entra GUID and acr value &quot;Completed Account Application&quot;
+
+    webapp-&gt;&gt;backend: Request redirect URI with retrieved tokens
+    end
+    backend-&gt;&gt;webapp: &quot;Application complete&quot; webpage rendered
+
+    backend-&gt;&gt;idp: Graph API lookup for Document Number and Issuing Authority keyed hash via Entra GUID
+    idp-&gt;&gt;backend: Document Number and Issuing Authority keyed hash returned
+    backend-&gt;&gt;database: Lookup record with &lt;br /&gt;Document Number and Issuing Authority
+    database-&gt;&gt;backend: Found record returned
+    backend-&gt;&gt;database: Write Social Security Number to encrypted CIP token associated with record
+    database-&gt;&gt;backend: Record updated with encrypted CIP token
+    backend-&gt;&gt;backend: Add record to Social Security Number verification service queue
+
+    %%note over wallet,verifier: ... ↑ ...
+    note over backend: Queue is executed at a predermined interval.
+    %%note over wallet,verifier: ... ↓ ...
+
+    backend-&gt;&gt;ssn: Request Social Security Number verification
+    ssn-&gt;&gt;backend: Social Security Number verification result returned
+
+    %%note over wallet,verifier: ... ↑ ...
+    note left of ssn: Social Security Number verification result valid.
+    %%note over wallet,verifier: ... ↓ ...
+
+    backend-&gt;&gt;backend: Generate notification with unique URL for Applicant to continue digital enrollment
+
+    </pre></section>
 </section>
 </section>
 <section id="flow-2-setting-up-online-access-after-application-approval">
@@ -450,10 +694,154 @@ The Digital Enrollment interactions are divided into two sections:</p>
 <h3>Cross Device Setting up Online Access<a class="headerlink" href="#cross-device-setting-up-online-access" title="Link to this heading">#</a></h3>
 <section id="part-1-initiating-the-digital-enrollment-process-triggered-by-a-notification-from-the-banking-system">
 <h4>Part 1 - Initiating the Digital Enrollment Process Triggered by a Notification from the Banking System<a class="headerlink" href="#part-1-initiating-the-digital-enrollment-process-triggered-by-a-notification-from-the-banking-system" title="Link to this heading">#</a></h4>
-</section>
+<pre  class="mermaid">
+        %%{init: {&quot;theme&quot;: &quot;base&quot;, &quot;themeVariables&quot;: {&quot;primaryColor&quot;: &quot;#1f77b4&quot;, &quot;edgeLabelBackground&quot;:&quot;#ffffff&quot;, &quot;actorTextColor&quot;: &quot;#ffffff&quot;, &quot;actorBackground&quot;: &quot;#2ca02c&quot;, &quot;fontSize&quot;:&quot;30px&quot;}}}%%
+sequenceDiagram
+    autonumber
+    box Issuing Authority
+    %% participant sor as System of Record
+    %%participant iaendpoints as mDL Issuing Endpoints
+    end
+
+    box Mobile Device
+    %%participant wallet as Wallet App
+    end
+    box Web Browser
+    %% participant browser as Digital Credentials API
+    participant webauthn as Web Authentication API
+    participant webapp as Banking Single Page Application
+    end
+    box Identity Management System (IDMS)
+    participant idp as Identity Provider
+    participant bpl as Bank Provisioning Logic
+    participant sdk as Verifier SDK
+    end
+    box Financial Institution Banking System
+    participant backend as Banking Backend
+    %% participant cbs as Core Banking Services
+    %% participant database as Data Storage
+    %% participant bankapi as IDMS Provisioning API
+    %% participant ssn as SSN Validation Service
+    end
+    box Verifier
+    %% participant adminendpoints as Tenant Administration Endpoints
+    %%participant verifier as Verifier Endpoints
+    end
+    box Trust Service
+    %% participant dts as Digital Trust Service
+    end
+
+
+
+    %%note over wallet,verifier: ... ↑ ...
+    note over webapp: The applicant receives an e-mail stating that the application previously &lt;br /&gt; submitted has been approved. The applicant follows the instructions &lt;br /&gt; in the e-mail and clicks on the enclosed link to setup digital enrollment.
+    %%note over wallet,verifier: ... ↓ ...
+
+    webapp-&gt;&gt;backend: Enrollee clicks digital enrollment link in approval email
+    backend-&gt;&gt;backend: Lookup enrollment code and verify application status
+    backend-&gt;&gt;webapp: &quot;Welcome back&quot; webpage rendered
+    webapp-&gt;&gt;backend: Enrollee clicks &quot;Continue&quot;
+
+    rect rgb(0,255,0)
+    backend-&gt;&gt;webapp: OpenID Connect Authorization Request redirect response
+    webapp-)idp: OpenID Connect Authorization Request sent
+    end
+
+    idp-&gt;&gt;bpl: Invoke Digital Enrollment form
+    bpl-&gt;&gt;webapp: Digital Enrollment form &quot;Set Up Online Access&quot; rendered
+    webapp-&gt;&gt;bpl: Enrollee clicks &quot;Next&quot; to invoke mDL verification
+
+
+    bpl-&gt;&gt;webapp: Identity verification workflow rendered
+    webapp-&gt;&gt;bpl: Enrollee consents to present mDL to the bank
+
+
+
+
+    </pre></section>
 <section id="part-2-passkey-registration-and-linkage-to-the-applicant">
 <h4>Part 2 - Passkey Registration and Linkage to the Applicant<a class="headerlink" href="#part-2-passkey-registration-and-linkage-to-the-applicant" title="Link to this heading">#</a></h4>
-</section>
+<pre  class="mermaid">
+        %%{init: {&quot;theme&quot;: &quot;base&quot;, &quot;themeVariables&quot;: {&quot;primaryColor&quot;: &quot;#1f77b4&quot;, &quot;edgeLabelBackground&quot;:&quot;#ffffff&quot;, &quot;actorTextColor&quot;: &quot;#ffffff&quot;, &quot;actorBackground&quot;: &quot;#2ca02c&quot;, &quot;fontSize&quot;:&quot;30px&quot;}}}%%
+sequenceDiagram
+    autonumber
+    box Issuing Authority
+    %% participant sor as System of Record
+    %%participant iaendpoints as mDL Issuing Endpoints
+    end
+
+    box Mobile Device
+    %%participant wallet as Wallet App
+    end
+    box Web Browser
+    %% participant browser as Digital Credentials API
+    %%participant webauthn as Web Authentication API
+    participant webapp as Banking Single Page Application
+    end
+    box Identity Management System (IDMS)
+    participant idp as Identity Provider
+    participant bpl as Bank Provisioning Logic
+    %%participant sdk as Verifier SDK
+    end
+    box Financial Institution Banking System
+    participant backend as Banking Backend
+    %% participant cbs as Core Banking Services
+    participant database as Data Storage
+    %%participant bankapi as IDMS Provisioning API
+    %%participant ssn as SSN Validation Service
+    end
+    box Verifier
+    %% participant adminendpoints as Tenant Administration Endpoints
+    %%participant verifier as Verifier Endpoints
+    end
+    box Trust Service
+    %% participant dts as Digital Trust Service
+    end
+
+
+
+
+    %%note over wallet,verifier: ... ↑ ...
+    note right of webapp: Enrollee returns to enrollment form and completes mDL verification&lt;br /&gt; flow as documented in the account application flow. &lt;br /&gt;Banking Provisioning Logic has retrieved mDL attributes in the interactions below.
+    %%note over wallet,verifier: ... ↓ ...
+
+    bpl-&gt;&gt;bpl: Document Number and Issuing Authority keyed hash lookup
+
+    bpl-&gt;&gt;webapp: &quot;Set up the authentication method&quot; page rendered
+    webapp-&gt;&gt;bpl: Enrollee clicks &quot;Create a Passkey&quot;
+    bpl-&gt;&gt;webapp: Start Passkey creation flow
+
+    webapp-&gt;&gt;bpl: Invoke navigator.credentials.create() with PublicKey and &quot;platform&quot; option
+
+    %%note over wallet,verifier: ... ↑ ...
+    note right of webapp: Enrollee completes Passkey flow, &lt;br /&gt;depending on creation options and target platform.
+    %%note over wallet,verifier: ... ↓ ...
+
+    bpl-&gt;&gt;bpl: Passkey public key persisted
+
+    bpl-&gt;&gt;webapp: &quot;Success&quot; screen rendered
+    webapp-&gt;&gt;webapp: &quot;Passkey saved&quot; notification displayed to the Enrollee
+    webapp-&gt;&gt;bpl: Enrollee clicks &quot;Go to my account&quot;
+
+    rect rgb(0,255,0)
+    bpl-)webapp: OpenID Connect Authorization response returned
+
+    webapp-&gt;&gt;idp: Request OpenID Connect Access and Identity tokens
+    idp-&gt;&gt;webapp: Token returned with Entra GUID, acr &quot;Completed Digital Enrollment&quot;,&lt;br /&gt; and Document Number + Issuing Authority keyed hash value claims
+    end
+
+    webapp-&gt;&gt;backend: Request redirect URI with Access and Identity tokens
+
+
+    backend-&gt;&gt;database: Lookup customer record &lt;br /&gt;with Document Number &lt;br /&gt; and Issuing Authority keyed hash value
+    database-&gt;&gt;backend: Found customer record returned
+    backend-&gt;&gt;backend: Activate customer
+
+
+    backend-&gt;&gt;webapp: &quot;Account Balance&quot; webpage rendered
+
+
+    </pre></section>
 </section>
 </section>
 <section id="flow-3-re-verification-for-step-up-flow">
@@ -463,7 +851,95 @@ of the mDL. For a visualization of this process, please view our <a class="refer
 <p>This re-verification flow that occurs at Flow 3, Step 10 and is the same as Flow 1 - <a class="reference external" href="#part-2-mdl-verification-using-the-dci-api">Part 2</a>.</p>
 <section id="re-verification-for-step-up-flow">
 <h3>Re-verification for Step-Up Flow<a class="headerlink" href="#re-verification-for-step-up-flow" title="Link to this heading">#</a></h3>
-</section>
+<pre  class="mermaid">
+        %%{init: {&quot;theme&quot;: &quot;base&quot;, &quot;themeVariables&quot;: {&quot;primaryColor&quot;: &quot;#1f77b4&quot;, &quot;edgeLabelBackground&quot;:&quot;#ffffff&quot;, &quot;actorTextColor&quot;: &quot;#ffffff&quot;, &quot;actorBackground&quot;: &quot;#2ca02c&quot;, &quot;fontSize&quot;:&quot;30px&quot;}}}%%
+sequenceDiagram
+    autonumber
+    box Issuing Authority
+    %% participant sor as System of Record
+    %%participant iaendpoints as mDL Issuing Endpoints
+    end
+
+    box Mobile Device
+    %%participant wallet as Wallet App
+    end
+    box Web Browser
+    %% participant browser as Digital Credentials API
+    %%participant webauthn as Web Authentication API
+    participant webapp as Banking Single Page Application
+    end
+    box Identity Management System (IDMS)
+    participant idp as Identity Provider
+    participant bpl as Bank Provisioning Logic
+    %%participant sdk as MATTR SDK
+    end
+    box Financial Institution Banking System
+    participant backend as Banking Backend
+    %% participant cbs as Core Banking Services
+    participant database as Data Storage
+    %%participant bankapi as IDMS Provisioning API
+    %%participant ssn as SSN Validation Service
+    end
+    box Verifier
+    %% participant adminendpoints as Tenant Administration Endpoints
+    %%participant verifier as Verifier Endpoints
+    end
+    box Trust Service
+    %% participant dts as Digital Trust Service
+    end
+
+
+    webapp -&gt;&gt; backend: Sign in request submitted
+    rect rgb(0,255,0)
+    backend-&gt;&gt;webapp: OpenID Connect Authorization Request redirect response
+    webapp-)idp: OpenID Connect Authorization Request sent
+    end
+
+
+    %%note over wallet,verifier: ... ↑ ...
+    note over webapp: Customer completes Passkey authentication flow, &lt;br /&gt;depending on creation options and target platform.
+    %%note over wallet,verifier: ... ↓ ...
+
+
+    rect rgb(0,255,0)
+    bpl-)webapp: OpenID Connect Authorization response returned
+
+    webapp-&gt;&gt;idp: Request OpenID Connect Access and Identity tokens
+    idp-&gt;&gt;webapp: Token returned with Entra GUID and acr &quot;Passkey Authentication&quot; claims
+    end
+
+    %%note over wallet,verifier: ... ↑ ...
+    note over webapp: Customer returns to bank website &lt;br /&gt; to submit transaction that exceeds threshold
+    %%note over wallet,verifier: ... ↓ ...
+
+    webapp-&gt;&gt;backend: Transaction request submitted with Access and Identity tokens
+    backend-&gt;&gt;backend: Evaluate Identity token for acr claim &quot;mDL Verification&quot;
+    backend-&gt;&gt;webapp: Deny transaction and request reverification
+
+    rect rgb(0,255,0)
+    webapp-)idp: OpenID Connect Authorization Request sent with mDL verification request
+    end
+
+    %%note over wallet,verifier: ... ↑ ...
+    note over webapp: Customer completes mDL verification workflow &lt;br /&gt; as described in Digital Enrollment
+    %%note over wallet,verifier: ... ↓ ...
+
+    rect rgb(0,255,0)
+    bpl-)webapp: OpenID Connect Authorization response returned
+
+    webapp-&gt;&gt;idp: Request OpenID Connect Access and Identity tokens
+    idp-&gt;&gt;webapp: Token returned with Entra GUID and acr &quot;mDL Verification&quot; claims
+    end
+
+    webapp-&gt;&gt;backend: Transaction request submitted with updated Access and Identity tokens
+    backend-&gt;&gt;backend: Evaluate Identity token acr claim &quot;mDL Verification&quot;
+    backend-&gt;&gt;backend: Invoke transaction with core banking service
+    backend-&gt;&gt;webapp: Transaction approval response rendered
+
+
+
+
+    </pre></section>
 </section>
 </section>
 
@@ -514,8 +990,8 @@ of the mDL. For a visualization of this process, please view our <a class="refer
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-the-diagrams">Viewing the Diagrams</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-1-applying-for-a-financial-account-using-an-mdl">Flow 1 - Applying for a Financial Account using an mDL</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-device-financial-account-application-flow">Cross Device Financial Account Application Flow</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-1-applying-for-a-financial-account-using-an-mdl">Flow 1 - Applying for a Financial Account using an mDL</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-device-financial-account-application-flow">Cross Device Financial Account Application Flow</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-user-initiates-application-process">Part 1 - User Initiates Application Process</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-mdl-verification-using-the-dc-api">Part 2 - mDL Verification Using the DC API</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-collection-of-additional-user-identity-information-and-application-completion">Part 3 - Collection of Additional User Identity Information and Application Completion</a></li>
@@ -523,15 +999,15 @@ of the mDL. For a visualization of this process, please view our <a class="refer
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-2-setting-up-online-access-after-application-approval">Flow 2 - Setting up Online Access after Application Approval</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-device-setting-up-online-access">Cross Device Setting up Online Access</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-2-setting-up-online-access-after-application-approval">Flow 2 - Setting up Online Access after Application Approval</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-device-setting-up-online-access">Cross Device Setting up Online Access</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-initiating-the-digital-enrollment-process-triggered-by-a-notification-from-the-banking-system">Part 1 - Initiating the Digital Enrollment Process Triggered by a Notification from the Banking System</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-passkey-registration-and-linkage-to-the-applicant">Part 2 - Passkey Registration and Linkage to the Applicant</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-3-re-verification-for-step-up-flow">Flow 3 - Re-Verification for Step-Up Flow</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-3-re-verification-for-step-up-flow">Flow 3 - Re-Verification for Step-Up Flow</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#re-verification-for-step-up-flow">Re-verification for Step-Up Flow</a></li>
 </ul>
 </li>
