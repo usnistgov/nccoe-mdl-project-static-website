@@ -31,7 +31,11 @@ extensions = [
     "sphinx_design",
     "sphinx_togglebutton",
     "sphinx.ext.autosectionlabel",
+    "sphinxcontrib.mermaid",
 ]
+
+mermaid_output_format = 'raw'
+d3_use_local = '_static/d3.min.js'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -71,6 +75,7 @@ html_js_files = [
     "smoothNavScroll.js",
     "https://cdn.datatables.net/2.1.8/js/dataTables.min.js",
     "https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.min.js",
+    "d3.min.js",
     "main.js"
 ]
 
@@ -78,5 +83,7 @@ html_theme_options = {
     "repository_branch": "main",
     "use_repository_button": False,
     "home_page_in_toc": True,
+    "show_navbar_depth": 5,
+    "show_toc_level": 5,
     "path_to_docs": "docs/source",
 }
