@@ -1,0 +1,78 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#1f77b4", "edgeLabelBackground":"#ffffff", "actorTextColor": "#ffffff", "actorBackground": "#2ca02c", "fontSize":"30px"}}}%%
+sequenceDiagram
+    autonumber
+    box Issuing Authority
+    %% participant sor as System of Record
+    %%participant iaendpoints as mDL Issuing Endpoints
+    end
+
+    box Mobile Device
+    %%participant wallet as Wallet App
+    end
+    box Web Browser
+    %% participant browser as Digital Credentials API
+    %%participant webauthn as Web Authentication API
+    participant webapp as Banking Single Page Application
+    end
+    box Identity Management System (IDMS)
+    participant idp as Identity Provider
+    participant bpl as Bank Provisioning Logic
+    %%participant sdk as Verifier SDK
+    end
+    box Financial Institution Banking System
+    participant backend as Banking Backend
+    %% participant cbs as Core Banking Services
+    participant database as Data Storage
+    %%participant bankapi as IDMS Provisioning API
+    %%participant ssn as SSN Validation Service
+    end
+    box Verifier
+    %% participant adminendpoints as Tenant Administration Endpoints
+    %%participant verifier as Verifier Endpoints
+    end
+    box Trust Service
+    %% participant dts as Digital Trust Service
+    end
+
+
+
+
+    %%note over wallet,verifier: ... ↑ ...
+    note right of webapp: Enrollee returns to enrollment form and completes mDL verification<br /> flow as documented in the account application flow. <br />Banking Provisioning Logic has retrieved mDL attributes in the interactions below.
+    %%note over wallet,verifier: ... ↓ ...
+
+    bpl->>bpl: Document Number and Issuing Authority keyed hash lookup
+
+    bpl->>webapp: "Set up the authentication method" page rendered
+    webapp->>bpl: Enrollee clicks "Create a Passkey"
+    bpl->>webapp: Start Passkey creation flow
+
+    webapp->>bpl: Invoke navigator.credentials.create() with PublicKey and "platform" option
+
+    %%note over wallet,verifier: ... ↑ ...
+    note right of webapp: Enrollee completes Passkey flow, <br />depending on creation options and target platform.
+    %%note over wallet,verifier: ... ↓ ...
+
+    bpl->>bpl: Passkey public key persisted
+
+    bpl->>webapp: "Success" screen rendered
+    webapp->>webapp: "Passkey saved" notification displayed to the Enrollee
+    webapp->>bpl: Enrollee clicks "Go to my account"
+
+    rect rgb(0,255,0)
+    bpl-)webapp: OpenID Connect Authorization response returned
+
+    webapp->>idp: Request OpenID Connect Access and Identity tokens
+    idp->>webapp: Token returned with Entra GUID, acr "Completed Digital Enrollment",<br /> and Document Number + Issuing Authority keyed hash value claims
+    end
+
+    webapp->>backend: Request redirect URI with Access and Identity tokens
+
+
+    backend->>database: Lookup customer record <br />with Document Number <br /> and Issuing Authority keyed hash value
+    database->>backend: Found customer record returned
+    backend->>backend: Activate customer
+
+
+    backend->>webapp: "Account Balance" webpage rendered
+

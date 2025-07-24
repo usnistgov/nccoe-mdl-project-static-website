@@ -1,3 +1,15 @@
+:root {
+  --pst-color-link-hover: inherit;
+}
+
+.table tbody tr:nth-child(odd):hover {
+  background-color: var(--pst-color-table-row-zebra-low-bg);
+}
+
+.table tbody tr:nth-child(even):hover {
+  background-color: var(--pst-color-table-row-zebra-high-bg);
+}
+
 #tag-list li {
   cursor: pointer;
 }
@@ -24,3 +36,105 @@ a:hover {
 .bd-main .bd-content div.bd-article-container {
   max-width: unset;
 }
+
+.red-text {
+    color:  #8b0a03;
+}
+
+table.fi-requested-item tr:nth-of-type(7) td:nth-of-type(3) p,
+table.fi-requested-item tr:nth-of-type(7) td:nth-of-type(2) p,
+table.fi-requested-item tr:nth-of-type(6) td:nth-of-type(3) p:nth-of-type(9),
+table.fi-requested-item tr:nth-of-type(6) td:nth-of-type(3) p:nth-of-type(10),
+table.fi-requested-item tr:nth-of-type(5) td:nth-of-type(2) p,
+table.fi-requested-item tr:nth-of-type(5) td:nth-of-type(3) p,
+table.fi-requested-item tr:nth-of-type(3) td:nth-of-type(2) p,
+table.fi-requested-item tr:nth-of-type(3) td:nth-of-type(3) p,
+table.fi-requested-item tr:nth-of-type(1) td:nth-of-type(3) p:nth-of-type(3),
+table.fi-requested-item tr:nth-of-type(1) td:nth-of-type(3) p:nth-of-type(4) {
+    color: #8b0a03;
+}
+
+.oidc::before {
+  content: "";
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-color: lime;
+  margin-right: 5px;
+}
+
+
+.oidvp::before {
+  content: "";
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-color: #d9daf1;
+  margin-right: 5px;
+}
+
+.mermaid {
+  cursor: pointer;
+}
+
+.mermaid svg.enlarged {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  width: calc(90vw);
+  max-width: 1500px;
+  height: calc(90vh);
+  max-height: 1000px;
+  background: white;
+  border: 2px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 8px;
+  cursor: grab;
+}
+
+.close-button {
+  display: none;
+  position: fixed;
+  color: white;
+  border: none;
+  border-radius: 10%;
+  width: 80px;
+  height: 50px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 1002;
+  background-color: black;
+}
+
+.close-button:hover {
+  background-color: #646464;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.overlay.active {
+  display: block;
+}
+
+.close-button.active {
+  display: block;
+}
+
+.mermaid rect.rect+text {
+  transform: translateY(4px);
+}
+ 

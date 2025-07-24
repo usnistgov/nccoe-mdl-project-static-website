@@ -1,0 +1,86 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#1f77b4", "edgeLabelBackground":"#ffffff", "actorTextColor": "#ffffff", "actorBackground": "#2ca02c", "fontSize":"30px"}}}%%
+sequenceDiagram
+    autonumber
+    box Issuing Authority
+    %% participant sor as System of Record
+    %%participant iaendpoints as mDL Issuing Endpoints
+    end
+
+    box Mobile Device
+    %%participant wallet as Wallet App
+    end
+    box Web Browser
+    %% participant browser as Digital Credentials API
+    %%participant webauthn as Web Authentication API
+    participant webapp as Banking Single Page Application
+    end
+    box Identity Management System (IDMS)
+    participant idp as Identity Provider
+    participant bpl as Bank Provisioning Logic
+    %%participant sdk as MATTR SDK
+    end
+    box Financial Institution Banking System
+    participant backend as Banking Backend
+    %% participant cbs as Core Banking Services
+    participant database as Data Storage
+    %%participant bankapi as IDMS Provisioning API
+    %%participant ssn as SSN Validation Service
+    end
+    box Verifier
+    %% participant adminendpoints as Tenant Administration Endpoints
+    %%participant verifier as Verifier Endpoints
+    end
+    box Trust Service
+    %% participant dts as Digital Trust Service
+    end
+
+
+    webapp ->> backend: Sign in request submitted
+    rect rgb(0,255,0)
+    backend->>webapp: OpenID Connect Authorization Request redirect response
+    webapp-)idp: OpenID Connect Authorization Request sent
+    end
+
+
+    %%note over wallet,verifier: ... ↑ ...
+    note over webapp: Customer completes Passkey authentication flow, <br />depending on creation options and target platform.
+    %%note over wallet,verifier: ... ↓ ...
+
+
+    rect rgb(0,255,0)
+    bpl-)webapp: OpenID Connect Authorization response returned
+
+    webapp->>idp: Request OpenID Connect Access and Identity tokens
+    idp->>webapp: Token returned with Entra GUID and acr "Passkey Authentication" claims
+    end
+
+    %%note over wallet,verifier: ... ↑ ...
+    note over webapp: Customer returns to bank website <br /> to submit transaction that exceeds threshold
+    %%note over wallet,verifier: ... ↓ ...
+
+    webapp->>backend: Transaction request submitted with Access and Identity tokens
+    backend->>backend: Evaluate Identity token for acr claim "mDL Verification"
+    backend->>webapp: Deny transaction and request reverification
+
+    rect rgb(0,255,0)
+    webapp-)idp: OpenID Connect Authorization Request sent with mDL verification request
+    end
+
+    %%note over wallet,verifier: ... ↑ ...
+    note over webapp: Customer completes mDL verification workflow <br /> as described in Digital Enrollment
+    %%note over wallet,verifier: ... ↓ ...
+
+    rect rgb(0,255,0)
+    bpl-)webapp: OpenID Connect Authorization response returned
+
+    webapp->>idp: Request OpenID Connect Access and Identity tokens
+    idp->>webapp: Token returned with Entra GUID and acr "mDL Verification" claims
+    end
+
+    webapp->>backend: Transaction request submitted with updated Access and Identity tokens
+    backend->>backend: Evaluate Identity token acr claim "mDL Verification"
+    backend->>backend: Invoke transaction with core banking service
+    backend->>webapp: Transaction approval response rendered
+
+
+
