@@ -1,0 +1,61 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#1f77b4", "edgeLabelBackground":"#ffffff", "actorTextColor": "#ffffff", "actorBackground": "#2ca02c", "fontSize":"30px"}}}%%
+sequenceDiagram
+    autonumber
+    %%box Issuing Authority
+    %% participant sor as System of Record
+    %%participant iaendpoints as mDL Issuing Endpoints
+    %%end
+
+    box Mobile Device 
+    participant wallet as Wallet App
+    end
+    box Web Browser
+    %% participant browser as Digital Credentials API
+    participant webapp as Banking Single Page Application
+    end
+    box Identity Management System (IDMS)
+    participant idp as Identity Provider
+    participant bpl as Bank Provisioning Logic
+    participant sdk as Verifier SDK
+    end
+    box Financial Institution Banking System
+    participant backend as Banking Backend
+    %% participant cbs as Core Banking Services
+    %% participant database as Data Storage
+    %% participant bankapi as IDMS Provisioning API
+    %% participant ssn as SSN Validation Service
+    end
+    %%box Verifier
+    %% participant adminendpoints as Tenant Administration Endpoints
+    %% participant verifier as Verifier Endpoints
+    %% end
+    %%box Trust Service
+    %% participant dts as Digital Trust Service
+    %%end
+
+
+
+    %%note over wallet,verifier: ... ↑ ...
+    note over webapp: Applicant navigates to the banking site to begin the scenario <br />where they choose a banking product application.<br /> The interactions begin with the browser redirect <br /> to the demonstration IDMS.
+    %%note over wallet,verifier: ... ↓ ...
+
+
+
+    rect rgb(0,255,0)
+    backend->>webapp: OpenID Connect Authorization Request redirect response
+    webapp-)idp: OpenID Connect Authorization Request sent
+    end
+
+    idp->>bpl: Invoke Application form
+
+    %%note over wallet,verifier: ... ↑ ...
+    note over webapp: Applicant completes initial workflow <br /> submitting email and telephone number <br />that are stored in the applicant's <br /> directory entry.
+    %%note over wallet,verifier: ... ↓ ...
+
+
+    bpl->>webapp: Social Security Number form rendered
+    webapp->>bpl: Applicant submits Social Security Number
+    bpl->>bpl: Store Social Security Number in applicant's directory entry temporarily
+
+    bpl->>webapp: Application form identity verification workflow rendered
+    webapp->>bpl: Applicant consent to present mDL to the bank

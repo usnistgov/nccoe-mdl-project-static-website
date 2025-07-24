@@ -116,4 +116,5 @@ collaborate with NIST in a consortium to build this example solution.
    nccoe-bank-faq.rst
    wireframes.rst
    kyc_cip_onboarding.rst
+   interaction_diagrams.rst
    Submit Comments <comments.rst>

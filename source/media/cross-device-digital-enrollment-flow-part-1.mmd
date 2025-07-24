@@ -1,0 +1,62 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#1f77b4", "edgeLabelBackground":"#ffffff", "actorTextColor": "#ffffff", "actorBackground": "#2ca02c", "fontSize":"30px"}}}%%
+sequenceDiagram
+    autonumber
+    box Issuing Authority
+    %% participant sor as System of Record
+    %%participant iaendpoints as mDL Issuing Endpoints
+    end
+
+    box Mobile Device
+    %%participant wallet as Wallet App
+    end
+    box Web Browser
+    %% participant browser as Digital Credentials API
+    participant webauthn as Web Authentication API
+    participant webapp as Banking Single Page Application
+    end
+    box Identity Management System (IDMS)
+    participant idp as Identity Provider
+    participant bpl as Bank Provisioning Logic
+    participant sdk as Verifier SDK
+    end
+    box Financial Institution Banking System
+    participant backend as Banking Backend
+    %% participant cbs as Core Banking Services
+    %% participant database as Data Storage
+    %% participant bankapi as IDMS Provisioning API
+    %% participant ssn as SSN Validation Service
+    end
+    box Verifier
+    %% participant adminendpoints as Tenant Administration Endpoints
+    %%participant verifier as Verifier Endpoints
+    end
+    box Trust Service
+    %% participant dts as Digital Trust Service
+    end
+
+
+
+    %%note over wallet,verifier: ... ↑ ...
+    note over webapp: The applicant receives an e-mail stating that the application previously <br /> submitted has been approved. The applicant follows the instructions <br /> in the e-mail and clicks on the enclosed link to setup digital enrollment.
+    %%note over wallet,verifier: ... ↓ ...
+
+    webapp->>backend: Enrollee clicks digital enrollment link in approval email
+    backend->>backend: Lookup enrollment code and verify application status
+    backend->>webapp: "Welcome back" webpage rendered
+    webapp->>backend: Enrollee clicks "Continue"
+
+    rect rgb(0,255,0)
+    backend->>webapp: OpenID Connect Authorization Request redirect response
+    webapp-)idp: OpenID Connect Authorization Request sent
+    end
+
+    idp->>bpl: Invoke Digital Enrollment form
+    bpl->>webapp: Digital Enrollment form "Set Up Online Access" rendered
+    webapp->>bpl: Enrollee clicks "Next" to invoke mDL verification
+
+
+    bpl->>webapp: Identity verification workflow rendered
+    webapp->>bpl: Enrollee consents to present mDL to the bank
+
+
+

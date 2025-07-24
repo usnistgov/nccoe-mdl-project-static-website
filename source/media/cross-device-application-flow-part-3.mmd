@@ -1,0 +1,74 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#1f77b4", "edgeLabelBackground":"#ffffff", "actorTextColor": "#ffffff", "actorBackground": "#2ca02c", "fontSize":"30px"}}}%%
+sequenceDiagram
+    autonumber
+    box Issuing Authority
+    %% participant sor as System of Record
+    %%participant iaendpoints as mDL Issuing Endpoints
+    end
+    box Verifier
+    %% participant adminendpoints as Tenant Administration Endpoints
+    %%participant verifier as Verifier Endpoints
+    end
+
+    box Mobile Device
+    %%participant wallet as Wallet App
+    end
+    box Web Browser
+    %% participant browser as Digital Credentials API
+    participant webapp as Banking Single Page Application
+    end
+    box Identity Management System (IDMS)
+    participant idp as Identity Provider
+    participant bpl as Bank Provisioning Logic
+    participant sdk as Verifier SDK
+    end
+    box Financial Institution Banking System
+    participant backend as Banking Backend
+    %% participant cbs as Core Banking Services
+    participant database as Data Storage
+    participant bankapi as IDMS Provisioning API
+    participant ssn as SSN Validation Service
+    end
+
+    box Trust Service
+    %% participant dts as Digital Trust Service
+    end
+
+
+
+
+    %%note over wallet,verifier: ... ↑ ...
+    note over webapp: Applicant returns to bank account application where mDL attributes are displayed. <br /> where the interactions below resume.
+    %%note over wallet,verifier: ... ↓ ...
+
+    webapp->>bpl: Applicant confirms information and submits form
+    rect rgb(0,255,0)
+    bpl-)webapp: OpenID Connect Authorization response returned
+
+    webapp->>idp: Request OpenID Connect identity token
+    idp->>webapp: Token returned with <br />Entra GUID and acr value "Completed Account Application"
+
+    webapp->>backend: Request redirect URI with retrieved tokens
+    end
+    backend->>webapp: "Application complete" webpage rendered
+
+    backend->>idp: Graph API lookup for Document Number and Issuing Authority keyed hash via Entra GUID
+    idp->>backend: Document Number and Issuing Authority keyed hash returned
+    backend->>database: Lookup record with <br />Document Number and Issuing Authority
+    database->>backend: Found record returned
+    backend->>database: Write Social Security Number to encrypted CIP token associated with record
+    database->>backend: Record updated with encrypted CIP token
+    backend->>backend: Add record to Social Security Number verification service queue
+
+    %%note over wallet,verifier: ... ↑ ...
+    note over backend: Queue is executed at a predermined interval.
+    %%note over wallet,verifier: ... ↓ ...
+
+    backend->>ssn: Request Social Security Number verification
+    ssn->>backend: Social Security Number verification result returned
+
+    %%note over wallet,verifier: ... ↑ ...
+    note left of ssn: Social Security Number verification result valid.
+    %%note over wallet,verifier: ... ↓ ...
+
+    backend->>backend: Generate notification with unique URL for Applicant to continue digital enrollment

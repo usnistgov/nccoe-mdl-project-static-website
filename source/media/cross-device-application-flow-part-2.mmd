@@ -1,0 +1,94 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#1f77b4", "edgeLabelBackground":"#ffffff", "actorTextColor": "#ffffff", "actorBackground": "#2ca02c", "fontSize":"30px"}}}%%
+sequenceDiagram
+    autonumber
+    box Issuing Authority
+    %% participant sor as System of Record
+    %%participant iaendpoints as mDL Issuing Endpoints
+    end
+
+
+    box Mobile Device
+    participant wallet as Wallet App
+    participant os as Operating System
+    end
+
+
+    box Web Browser
+    participant browser as Digital Credentials API
+    participant webapp as Banking Single Page Application
+    end
+
+    box Verifier
+    %% participant adminendpoints as Tenant Administration Endpoints
+    participant verifier as Verifier Endpoints
+    end
+
+    box Identity Management System (IDMS)
+    participant idp as Identity Provider
+    participant bpl as Bank Provisioning Logic
+    participant sdk as Verifier SDK
+    end
+    box Financial Institution Banking System
+    %%participant backend as Banking Backend
+    %% participant cbs as Core Banking Services
+    participant database as Data Storage
+    participant bankapi as IDMS Provisioning API
+    %%participant ssn as SSN Validation Service
+    end
+
+    box Trust Service
+    %% participant dts as Digital Trust Service
+    end
+
+    rect rgb(217, 218, 241)
+    bpl->>bpl: Digital Credentials Query Language object and Challenge prepared
+    bpl->>sdk: requestCredentials() invoked<br /> with Digital Credentials Query Language<br /> object and Challenge
+    end
+
+    %%note over wallet,verifier: ... ↑ ...
+    note over sdk: Verifier SDK waits for Applicant to complete verification.
+    %%note over wallet,verifier: ... ↓ ...
+
+    rect rgb(217, 218, 241)
+    sdk->>browser: SDK invokes Digital Credential API with OpenID4VP Authorization Request
+    browser->>browser: Authorization Request rendered via QR code
+    end
+
+    %%note over wallet,verifier: ... ↑ ...
+    note over os: Applicant opens camera or wallet app on their mobile device <br />and scans the QR code presented in the browser.
+    %%note over wallet,verifier: ... ↓ ...
+
+    rect rgb(217, 218, 241)
+    browser->>os: Wallet app presentation workflow invoked
+    os->>os: Eligible Wallets displayed to Applicant
+    end
+
+    %%note over wallet,verifier: ... ↑ ...
+    note over os: Applicant chooses appropriate credential, <br />consents to presenting attributes, <br />and locally authenticates via biometric.
+    %%note over wallet,verifier: ... ↓ ...
+
+    rect rgb(217, 218, 241)
+    wallet->>verifier: Wallet submits <br />Authorization Response containing <br />requested attributes
+    end
+    %%note over wallet,verifier: ... ↑ ...
+    note over sdk: Verifier SDK callback invoked.
+    %%note over wallet,verifier: ... ↓ ...
+
+    verifier->>sdk: Results retrieval identifier returned
+    sdk->>bpl: Results retrieval identifier returned
+
+    bpl->>bankapi: Bank customer provisioning API invoked with presentation attribute retrieval identifier
+
+    %%note over wallet,verifier: ... ↑ ...
+    %%note over wallet,verifier: ... Azure Function not pictured for clarity ...
+    %%note over wallet,verifier: ... ↓ ...
+
+
+    bankapi->>verifier: Presentation attributes retrieved via identifier
+    verifier->>bankapi: Presentation attributes returned
+    bankapi->>database: Document Number and Issuing Authority <br /> attributes persisted as unique identifier <br /> in new record as keyed hash
+    bankapi->>database: Record updated with presentation <br />attributes as encrypted JSON Web Token
+    bankapi->>bpl: Presentation attributes returned
+
+    bpl->>bpl: Document Number and Issuing Authority attributes persisted as a keyed hash
+
