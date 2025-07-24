@@ -34,7 +34,7 @@ jobs:
             ${{ runner.os }}-pip-
 
       - name: Install Sphinx dependencies
-        run: python3 -m pip install -U sphinx sphinx_book_theme myst_parser sphinxcontrib.jquery sphinx_copybutton sphinx_design sphinx_togglebutton
+        run: python3 -m pip install -U sphinx sphinx_book_theme myst_parser sphinxcontrib.jquery sphinx_copybutton sphinx_design sphinx_togglebutton sphinxcontrib-mermaid
 
       - name: Build Sphinx site
         run: make html
