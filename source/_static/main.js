@@ -104,5 +104,40 @@ $(document).ready(function () {
     $('body').css('overflow', '');
   }
 
+  var $accordionButtons = $('.accordion-button');
+  var $expandCollapseAllButton = $('#expand-collapse-all');
+  var isExpandedAll = false;
+
+  $accordionButtons.on('click', function () {
+    var $this = $(this);
+    var $panel = $('#' + $this.attr('aria-controls'));
+    var isExpanded = $this.attr('aria-expanded') === 'true';
+    console.log("clicked");
+
+    $this.attr('aria-expanded', isExpanded ? 'false' : 'true');
+    if (isExpanded) {
+      $panel.slideUp(300, function () {
+        $panel.attr('hidden', '');
+      });
+    } else {
+      $panel.removeAttr('hidden');
+      $panel.hide().slideDown(300);
+    }
+
+  });
+
+  $expandCollapseAllButton.on('click', function () {
+    isExpandedAll = !isExpandedAll;
+    $accordionButtons.attr('aria-expanded', isExpandedAll ? 'true' : 'false');
+    if (isExpandedAll) {
+      $('.accordion-panel').removeAttr('hidden').hide().slideDown(300);
+    } else {
+      $('.accordion-panel').slideUp(300, function () {
+        $(this).attr('hidden', '');
+      });
+    }
+    $expandCollapseAllButton.text(isExpandedAll ? 'Collapse All' : 'Expand All');
+  });
+
 });
 

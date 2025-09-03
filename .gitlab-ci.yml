@@ -7,7 +7,7 @@ build_sphinx_app:
   image: python:latest
   stage: build-sphinx
   script:
-    - pip install -U sphinx sphinx_book_theme myst_parser sphinxcontrib.jquery sphinx_copybutton sphinx_design sphinx_togglebutton sphinxcontrib-mermaid
+    - pip install -r requirements.txt
     - make html BUILDDIR=public/nccoe-mdl-project-static-website
   artifacts:
     paths:

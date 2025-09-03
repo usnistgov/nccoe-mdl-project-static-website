@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Python 3.9
+      - name: Setup Python 3.12
         uses: actions/setup-python@v5.1.0
         with:
-          python-version: "3.9"
+          python-version: "3.12"
 
       - name: Upgrade pip
         run: python3 -m pip install --upgrade pip
@@ -34,7 +34,7 @@ jobs:
             ${{ runner.os }}-pip-
 
       - name: Install Sphinx dependencies
-        run: python3 -m pip install -U sphinx sphinx_book_theme myst_parser sphinxcontrib.jquery sphinx_copybutton sphinx_design sphinx_togglebutton sphinxcontrib-mermaid
+        run: python3 -m pip install -r requirements.txt
 
       - name: Build Sphinx site
         run: make html

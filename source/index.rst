@@ -70,7 +70,7 @@ collaborate with NIST in a consortium to build this example solution.
   Directorate <https://www.dhs.gov/science-and-technology>`__
 
 - `Georgia Department of Driver Services <https://dds.georgia.gov/>`__
-
+  
 - `Google <https://www.google.com/>`__
 
 - `Idemia <https://www.idemia.com/>`__
@@ -116,5 +116,7 @@ collaborate with NIST in a consortium to build this example solution.
    nccoe-bank-faq.rst
    wireframes.rst
    kyc_cip_onboarding.rst
+   building_mdl_assurance/building_mdl_assurance.rst
    interaction_diagrams.rst
+   Privacy Risk Assessment Methodology <pram.rst>
    Submit Comments <comments.rst>
