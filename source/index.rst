@@ -86,7 +86,11 @@ collaborate with NIST in a consortium to build this example solution.
 
 - `Microsoft Corporation <https://www.microsoft.com/en-us>`__
 
+- `Navy Federal Credit Union <https://www.navyfederal.org/>`__
+
 - `New York State Department of Motor Vehicle <https://dmv.ny.gov/>`__
+
+- `Ohio Bureau of Motor Vehicles <https://www.bmv.ohio.gov/>`__
 
 - `OpenID Foundation <https://openid.net/foundation/>`__
 
@@ -105,7 +109,6 @@ collaborate with NIST in a consortium to build this example solution.
 - `Yubico <https://www.yubico.com/>`__
 
 
-
 .. toctree::
    :maxdepth: 1
    :titlesonly:
@@ -115,8 +118,7 @@ collaborate with NIST in a consortium to build this example solution.
    criteria.rst
    nccoe-bank-faq.rst
    wireframes.rst
-   kyc_cip_onboarding.rst
+   architecture/kyc_cip_onboarding.rst
    building_mdl_assurance/building_mdl_assurance.rst
-   interaction_diagrams.rst
    Privacy Risk Assessment Methodology <pram.rst>
    Submit Comments <comments.rst>
