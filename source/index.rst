@@ -86,7 +86,11 @@ collaborate with NIST in a consortium to build this example solution.
 
 - `Microsoft Corporation <https://www.microsoft.com/en-us>`__
 
+- `Navy Federal Credit Union <https://www.navyfederal.org/>`__
+
 - `New York State Department of Motor Vehicle <https://dmv.ny.gov/>`__
+
+- `Ohio Bureau of Motor Vehicles <https://www.bmv.ohio.gov/>`__
 
 - `OpenID Foundation <https://openid.net/foundation/>`__
 
@@ -103,7 +107,6 @@ collaborate with NIST in a consortium to build this example solution.
 - `Wells Fargo <https://www.wellsfargo.com/>`__
 
 - `Yubico <https://www.yubico.com/>`__
-
 
 
 .. toctree::
