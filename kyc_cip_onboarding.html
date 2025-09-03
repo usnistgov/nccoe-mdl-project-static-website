@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/content.css?v=59cd0ab0" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.min.css" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=675016f0" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=0172e03b" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -46,7 +46,7 @@
     <script src="_static/jquery.js?v=5d32c60e"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
@@ -57,7 +57,6 @@
     <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'kyc_cip_onboarding';</script>
     <script src="_static/jquery.visible.js?v=5b129ffc"></script>
     <script src="_static/jquery.leaveNotice-nist.js?v=7cf1efa2"></script>
@@ -66,10 +65,10 @@
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.min.js"></script>
     <script src="_static/d3.min.js?v=11e63a10"></script>
-    <script src="_static/main.js?v=e61cfd5e"></script>
+    <script src="_static/main.js?v=355b5256"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Interaction Diagrams" href="interaction_diagrams.html" />
+    <link rel="next" title="Building Assurance in the mDL Ecosystem" href="building_mdl_assurance/building_mdl_assurance.html" />
     <link rel="prev" title="Wireframes" href="wireframes.html" />
     
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -206,7 +205,12 @@
 <li class="toctree-l1"><a class="reference internal" href="nccoe-bank-faq.html">Sample Bank mDL Information Page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="wireframes.html">Wireframes</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Financial Use Case Reference Architecture</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="building_mdl_assurance/building_mdl_assurance.html">Building Assurance in the mDL Ecosystem</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="building_mdl_assurance/nist_800-63a.html">NIST 800-63A Profile for mDL Issuance</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="interaction_diagrams.html">Interaction Diagrams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pram.html">Privacy Risk Assessment Methodology</a></li>
 <li class="toctree-l1"><a class="reference internal" href="comments.html">Submit Comments</a></li>
 </ul>
 
@@ -398,21 +402,21 @@ transaction.</p></li>
 <li><p>The bank has verifier capabilities to request and cryptographically verify the mDL.</p></li>
 <li><p>The bank can create and manage the customer’s account via an identity management system.</p></li>
 </ol>
-<figure class="align-default" id="id1">
-<a class="reference internal image-reference" href="_images/image1.png"><img alt="Cross-Device Flow diagram. See figure 1 caption below image." src="_images/image1.png" style="width: 6.5in; height: 5.17986in;" />
+<figure class="align-default" id="id20">
+<a class="reference internal image-reference" href="_images/image1.png"><img alt="Cross-Device Flow diagram. See figure 1 caption below image." src="_images/image1.png" style="width: 6.5in; height: 5.49444in;" />
 </a>
 <figcaption>
 <p><span class="caption-text"><strong>Figure 1 Cross-Device Flow.</strong> A flow where the holder presents an mDL stored in the digital wallet on their mobile device to a service the user is
 interacting with through a web browser on a desktop or laptop. The web browser will present the user with a QR code to invoke the wallet on the mobile
-device.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+device.</span><a class="headerlink" href="#id20" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id2">
-<a class="reference internal image-reference" href="_images/image2.png"><img alt="Same-device flow diagram. See figure 2 caption below image." src="_images/image2.png" style="width: 6.5in; height: 7.91111in;" />
+<figure class="align-default" id="id21">
+<a class="reference internal image-reference" href="_images/image2.png"><img alt="Same-device flow diagram. See figure 2 caption below image." src="_images/image2.png" style="width: 6.5in; height: 8.35417in;" />
 </a>
 <figcaption>
 <p><span class="caption-text"><strong>Figure 2 Same-device flow.</strong> A flow where the mDL holder presents an mDL stored in the digital wallet on their mobile device to another application on the
-same device. This application could be a native application or could be a website the user has navigated to through a mobile browser.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+same device. This application could be a native application or could be a website the user has navigated to through a mobile browser.</span><a class="headerlink" href="#id21" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -421,44 +425,93 @@ same device. This application could be a native application or could be a websit
 <p>For an overview of the general architecture components, please review our <a class="reference external" href="https://www.nist.gov/blogs/cybersecurity-insights/digital-identities-getting-know-verifiable-digital-credential-ecosystem">Digital Identities: Getting to Know the Verifiable Digital Credential
 Ecosystem</a> blog post.</p>
 <p>To facilitate the demonstration needed for this project, the NCCoE is building a fictitious bank called the NCCoE Bank. This service is represented in the
-architecture as the financial institution banking systems. The NCCoE is building out this minimal set of banking capabilities such that they can be adapted to
-operational systems. These capabilities include:</p>
+architecture as the financial institution banking systems. These represent a minimal set of banking capabilities that can be adapted to operational systems.
+These capabilities include:</p>
 <p><strong>Banking Backend</strong> - A system that implements a scoped set of banking functions, provides an API to facilitate front end interactions, and a client to the core
 banking services.</p>
 <p><strong>Core Banking Services</strong> - Refer to the systems that facilitate vital bank business. For our demonstration this will including processing transactions and
-updating accounts.</p>
+updating accounts. <a class="footnote-reference brackets" href="#id12" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>.</p>
 <p><strong>Identity Management System (IDMS) Provisioning API</strong> - A system that implements interfaces that interact with the IDMS to facilitate account opening and
 digital enrollment phases.</p>
-<p><strong>API Proxy</strong> - A <a class="reference external" href="https://learn.microsoft.com/en-us/azure/architecture/microservices/design/gateway">reverse proxy</a> routing requests from clients to
-services.</p>
-<p><strong>SSN Validation Service</strong> - A system that emulates the functionality of the <a class="reference external" href="https://www.ssa.gov/dataexchange/eCBSV/documents/Technical%20Information%20Document%20for%20eCBSV.pdf">Electronic Consent Based SSN Verification (eCBSV)
-Service</a> designed to validate social security numbers.</p>
+<p><strong>API Proxy</strong> - A reverse proxy routing requests from clients to
+services <a class="footnote-reference brackets" href="#id13" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>.</p>
+<p><strong>SSN Validation Service</strong> - A system that emulates the functionality of the Electronic Consent Based SSN Verification (eCBSV)
+Service <a class="footnote-reference brackets" href="#id14" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a> designed to validate social security numbers.</p>
 <p><strong>Data Storage</strong> - The core banking repository for data retention criteria and associated transactional data.</p>
 <p><strong>Standards Included in this Architecture</strong></p>
-<p>This architecture makes use of several standards in the mDL ecosystem.</p>
+<p>This architecture makes use of several standards in the mDL ecosystem. To learn more about the standards that encompass the VDC ecosystem, we encourage the
+reader to visit our upcoming deep dive in our blog series <a class="footnote-reference brackets" href="#id16" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a>.</p>
 <p><strong>OpenID4VP</strong> - OpenID4VP is a protocol under the OpenID Foundation that enables the presentation of verifiable digital credentials (in this case mobile
 driver’s licenses) and is built upon multiple standardized protocols and data formats.</p>
-<p><strong>ISO 18013-5</strong> - An international standard that defines the specifications for mDLs and their data exchange with electronic devices. It defines the
+<p><strong>ISO 18013-5 -</strong> An international standard that defines the specifications for mDLs and their data exchange with electronic devices. It defines the
 technical structure and data structure of mDLs, including how personal data should be encoded and stored securely.</p>
-<p><strong>ISO 18013-7</strong> - An international standard that defines the specifications for mDLs licenses and their data exchange during online presentation.</p>
-<p><strong>Digital Credentials API</strong> - In both flows, our demonstration banking system may leverage a modern web browser which implements the <a class="reference external" href="https://wicg.github.io/digital-credentials/">Digital Credential
-API</a>. This draft community group report describes how relying parties, such as financial institutions, can
-request the presentation of digital credentials from wallet applications. In our scenarios, this API will facilitate identity verification during the account
-application, digital enrollment, and re-verification.</p>
-<p><strong>WebAuthN</strong> - is a web standard developed by the World Wide Web Consortium (W3C) and the FIDO Alliance (Fast Identity Online). It allows websites and
-applications to implement phishing resistant authentication using passkeys and/or external security keys. This project will demonstrate passkey creation and
-authentication.</p>
-<p><strong>OAuth 2.0</strong> - OAuth 2.0 is an <a class="reference external" href="https://datatracker.ietf.org/doc/html/rfc6749">authorization standard</a> that may be used to support access control objectives
-by API services. The standard defines a set of technical specifications for the generation, protection, and delivery of authorization tokens (JSON Web Tokens or
-JWT) to different connected endpoints (e.g., servers). The authorization (or access token) is used to define what actions an endpoint may take relative to a
-specific service. For API protection, these tokens are typically issued to consumers of the service, allowing them to make requests to the API service and
-allowing the API service to confirm that such requests are coming from a valid and approved source.</p>
-<p><strong>OpenID Connect</strong> - <a class="reference external" href="https://openid.net/developers/how-connect-works/">OpenID Connect 1.0</a> (OIDC) is a specification that is built upon the Internet
-Engineering Task Force OAuth2 Authorization Framework which enables application and website developers to launch sign-in flows and receive verifiable assertions
-about users across Web-based, mobile, and JavaScript clients.</p>
-<p>As part of this project, we intend to use OIDC to invoke an authentication event from a Passkey or an identity verification event via a mobile driver’s license.
-Further, in the same-device flow, the authentication events will adhere to IETF’s <a class="reference external" href="https://datatracker.ietf.org/doc/html/rfc8252">Best Current Practice</a> when
-using native banking applications.</p>
+<p><strong>ISO 18013-7 -</strong> An international standard that defines the specifications for mDLs licenses and their data exchange during online presentation.</p>
+<p><strong>Digital Credentials API</strong> - In both flows, our demonstration banking system may leverage a modern web browser which implements the Digital Credential
+API <a class="footnote-reference brackets" href="#id15" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a>. This draft community group report describes how relying parties,
+such as financial institutions, can request the presentation of digital credentials from wallet applications. In our scenarios, this API will facilitate
+identity verification during the account application, digital enrollment, and re-verification.</p>
+<p><strong>WebAuthN -</strong> is a web standard developed by the World Wide Web Consortium (W3C) and the FIDO Alliance (Fast Identity Online). It allows websites and
+applications to implement phishing resistant authentication using passkeys and/or external security keys. This project will demonstrating a user creating and
+authenticating with a passkey.</p>
+<p><strong>OAuth 2.0 -</strong> OAuth 2.0 is an authorization standard that may be used to support access control objectives by API services. The standard defines a set of
+technical specifications for the generation, protection, and delivery of authorization tokens (JSON Web Tokens or JWT) to different connected endpoints (e.g.,
+servers). The authorization (or access token) is used to define what actions an endpoint may take relative to a specific service. For API protection, these
+tokens are typically issued to consumers of the service, allowing them to make requests to the API service and allowing the API service to confirm that such
+requests are coming from a valid and approved source.</p>
+<p><strong>OpenID Connect</strong> <a class="footnote-reference brackets" href="#id17" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a> - OpenID Connect 1.0 (OIDC) is a specification that
+is built upon the Internet Engineering Task Force OAuth2 Authorization
+Framework <a class="footnote-reference brackets" href="#id18" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a> which enables application and website developers to launch
+sign-in flows and receive verifiable assertions about users across Web-based, mobile, and JavaScript clients.</p>
+<p>We’re currently working with our technology partners to create a customized OIDC profile that will describe how a financial institution can leverage OIDC with
+an identity management system to support the demonstration scenarios. In this future profile, we will use OIDC to invoke an authentication event from a Passkey
+or an identity verification event via a mobile driver’s license. Further, in the same-device flow, the authentication events will adhere to IETF’s Best Current
+Practice <a class="footnote-reference brackets" href="#id19" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></a> when using a native banking applications.</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id9" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.nist.gov/image/vdc-map">https://www.nist.gov/image/vdc-map</a></p>
+</aside>
+<aside class="footnote brackets" id="id10" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://openid.net/specs/openid-4-verifiable-presentations-1_0.html">https://openid.net/specs/openid-4-verifiable-presentations-1_0.html</a></p>
+</aside>
+<aside class="footnote brackets" id="id11" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.nist.gov/blogs/cybersecurity-insights/digital-identities-getting-know-verifiable-digital-credential-ecosystem">https://www.nist.gov/blogs/cybersecurity-insights/digital-identities-getting-know-verifiable-digital-credential-ecosystem</a></p>
+</aside>
+<aside class="footnote brackets" id="id12" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">4</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://crsreports.congress.gov/product/pdf/IF/IF11985">https://crsreports.congress.gov/product/pdf/IF/IF11985</a></p>
+</aside>
+<aside class="footnote brackets" id="id13" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">5</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://learn.microsoft.com/en-us/azure/architecture/microservices/design/gateway">https://learn.microsoft.com/en-us/azure/architecture/microservices/design/gateway</a></p>
+</aside>
+<aside class="footnote brackets" id="id14" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">6</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.ssa.gov/dataexchange/eCBSV/documents/Technical%20Information%20Document%20for%20eCBSV.pdf">https://www.ssa.gov/dataexchange/eCBSV/documents/Technical%20Information%20Document%20for%20eCBSV.pdf</a></p>
+</aside>
+<aside class="footnote brackets" id="id15" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">7</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://wicg.github.io/digital-credentials/">https://wicg.github.io/digital-credentials/</a></p>
+</aside>
+<aside class="footnote brackets" id="id16" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">8</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.nist.gov/blogs/cybersecurity-insights">https://www.nist.gov/blogs/cybersecurity-insights</a></p>
+</aside>
+<aside class="footnote brackets" id="id17" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">9</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://openid.net/developers/how-connect-works/">https://openid.net/developers/how-connect-works/</a></p>
+</aside>
+<aside class="footnote brackets" id="id18" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">10</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://datatracker.ietf.org/doc/html/rfc6749">https://datatracker.ietf.org/doc/html/rfc6749</a></p>
+</aside>
+<aside class="footnote brackets" id="id19" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">11</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://datatracker.ietf.org/doc/html/rfc8252">https://datatracker.ietf.org/doc/html/rfc8252</a></p>
+</aside>
+</aside>
 </section>
 </section>
 
@@ -483,11 +536,11 @@ using native banking applications.</p>
       </div>
     </a>
     <a class="right-next"
-       href="interaction_diagrams.html"
+       href="building_mdl_assurance/building_mdl_assurance.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Interaction Diagrams</p>
+        <p class="prev-next-title">Building Assurance in the mDL Ecosystem</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

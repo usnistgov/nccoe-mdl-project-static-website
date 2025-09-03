@@ -1,0 +1,809 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>NIST 800-63A Profile for mDL Issuance &#8212; NCCoE Mobile Driver&#39;s License Project</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/content.css?v=59cd0ab0" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=0172e03b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'building_mdl_assurance/nist_800-63a';</script>
+    <script src="../_static/jquery.visible.js?v=5b129ffc"></script>
+    <script src="../_static/jquery.leaveNotice-nist.js?v=7cf1efa2"></script>
+    <script src="../_static/applyLeaveNotice.js?v=e4171245"></script>
+    <script src="../_static/smoothNavScroll.js?v=2ce98a12"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.min.js"></script>
+    <script src="../_static/d3.min.js?v=11e63a10"></script>
+    <script src="../_static/main.js?v=355b5256"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Interaction Diagrams" href="../interaction_diagrams.html" />
+    <link rel="prev" title="Building Assurance in the mDL Ecosystem" href="building_mdl_assurance.html" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+
+    <!-- Google tag (gtag.js) -->
+    <script async
+        src="https://www.googletagmanager.com/gtag/js?id=G-RJSMY46M5C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-RJSMY46M5C');
+
+    </script>
+    <!-- Old DAP UA tag -->
+    <script async type="text/javascript" id="_fed_an_ua_tag"
+        src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NIST&subagency=github&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c">
+    </script>
+    <link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+    <link rel="stylesheet" type="text/css" href="https://pages.nist.gov/leaveNotice/css/jquery.leaveNotice.css" />
+    <script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer-v-2.0.js" type="text/javascript" defer="defer"></script>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">NCCoE Mobile Driver's License Project</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Digital Identities - Mobile Driver’s License (mDL)
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../criteria.html">Draft CIP/KYC Use Case Criteria</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nccoe-bank-faq.html">Sample Bank mDL Information Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wireframes.html">Wireframes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kyc_cip_onboarding.html">Financial Use Case Reference Architecture</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="building_mdl_assurance.html">Building Assurance in the mDL Ecosystem</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">NIST 800-63A Profile for mDL Issuance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../interaction_diagrams.html">Interaction Diagrams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pram.html">Privacy Risk Assessment Methodology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comments.html">Submit Comments</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/building_mdl_assurance/nist_800-63a.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>NIST 800-63A Profile for mDL Issuance</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-of-nist-special-publication-800-63a-for-the-issuance-of-mdls-to-a-user-controlled-wallet-or-mdl-application">Profile of NIST Special Publication 800-63A for the issuance of mDLs to a user controlled wallet or mDL application</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="nist-800-63a-profile-for-mdl-issuance">
+<h1>NIST 800-63A Profile for mDL Issuance<a class="headerlink" href="#nist-800-63a-profile-for-mdl-issuance" title="Link to this heading">#</a></h1>
+<section id="profile-of-nist-special-publication-800-63a-for-the-issuance-of-mdls-to-a-user-controlled-wallet-or-mdl-application">
+<h2>Profile of NIST Special Publication 800-63A for the issuance of mDLs to a user controlled wallet or mDL application<a class="headerlink" href="#profile-of-nist-special-publication-800-63a-for-the-issuance-of-mdls-to-a-user-controlled-wallet-or-mdl-application" title="Link to this heading">#</a></h2>
+<p>The following appendix provides recommended controls selected from NIST SP 800-63A Digital Identity Guidelines: Identity Proofing and Enrollment to address the
+need for a more consistent process for issuing an mDL to a digital wallet. While the Digital Identity Guidelines are not mandated for state mDL issuers, they
+provide a common construct and control set that can support interoperability and trust enhancement among Relying Parties if applied consistently
+by issuers of mDLs and other Verifiable Digital Credentials. Terminology used in this profile is consistent with the Digital Identity Guidelines and being is applied
+to the specific concepts in the mDL, and more broadly, the verifiable digital credentials ecosystem.</p>
+<p><strong>Context</strong>: The Digital Identity Guidelines define several key concepts that contribute to the degree of assurance an issuer can have in the identity of the
+user. The guidelines cover a far greater scope of uses than what is required for this profile. As a result, the following subset of requirements will be
+covered.</p>
+<p><strong>Note:</strong> While Issuers are ultimately responsible for determining which controls are met before issuing credentials to wallets, many of the controls listed in this profile will be implemented by the wallet provider. Therefore, issuers should work closely with wallet providers to determine how individual wallets meet these controls.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Topic</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Identity Evidence Requirements</p></td>
+<td><p>Requirements that define what identity evidence is needed to support the real-world identity of an applicant seeking an mDL.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Evidence &amp; Attribute Validation Requirements</p></td>
+<td><p>Requirements that define what steps an issuer must take to confirm that supplied identity evidence is genuine, authentic, and accurate. Requirements that
+define the process to confirm the accuracy of the applicant’s attributes.</p></td>
+</tr>
+<tr class="row-even"><td><p>Verification &amp; Biometric Usage Requirements</p></td>
+<td><p>Requirements that define the process to confirm that the applicant is the genuine owner of the presented evidence and attributes. Requirements for the
+use and performance of biometrics in the issuance process; this includes Presentation Attack Detection requirements.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Digital Injection Prevention and Forged Media Detection</p></td>
+<td><p>Requirements for addressing digital injection and deepfake threats to issuance systems</p></td>
+</tr>
+<tr class="row-even"><td><p>Fraud Management</p></td>
+<td><p>Requirements for addressing attacks on issuance systems, detect potential fraudulent enrollment attempts, and manage privacy related to fraud detection
+systems.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The requirements outlined here largely build off of the baseline requirement for Identity Assurance Level 2 and common requirements that exist across all
+assurance levels.</p>
+<p><strong>Evidence Requirements</strong>
+Evidence of an existing DMV record is required to confirm that an applicant for an mDL has a valid driver’s license with accurate information on file. Issuers
+of mDL should collect the following evidence for the issuance process.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Identifier</p></th>
+<th class="head"><p>Control</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>EV-1</p></td>
+<td><p>One piece of strong evidence as represented by a Driver’s License or ID issued by the DMV that will be issuing the mDL.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For most instances of IAL2 identity proofing, more than one piece of evidence is required. However, in the case of mDL the applicant is interacting directly
+with the DMV where identity evidence was already collected during previous proofing events. As a result, no additional evidence beyond a valid Driver’s License
+or State ID is required. If issuers wish to increase confidence in the identity of a given applicant, additional evidence (e.g., phone account, platform
+account) may be used to support issuance processes.</p>
+<p><strong>Evidence &amp; Attribute Validation Requirements</strong>
+To be a trusted source of information, the mDL must have accurate information tied to the System of Record associated with the applicant’s original driver’s
+license or state issued ID. As such, an authoritative records check is expected unlike in other forms of proofing where such access is not available or
+afforded. With this comes greater assurance in the correctness and validity of the information signed into the issued credentials.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Identifier</p></th>
+<th class="head"><p>Control</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>VAL-1</p></td>
+<td><p>Compare the attributes contained in the presented evidence against the issuers’ authoritative System of Record to resolve the identity to the SOR and
+confirm accuracy of the data.</p></td>
+</tr>
+<tr class="row-odd"><td><p>VAL-2</p></td>
+<td><p>Ensure the validity of the presented evidence by confirming the System of Record indicates that the applicant still has a valid driver’s license or state
+issued ID.</p></td>
+</tr>
+<tr class="row-even"><td><p>VAL-3</p></td>
+<td><p>(Optional) Confirm the authenticity of the physical evidence by either:</p>
+<ol class="arabic simple">
+<li><p>Using automated scanning technology that is able to detect physical security
+features, or</p></li>
+<li><p>Confirming the integrity of any physical security features through the physical and tactile inspection by a proofing agent at an onsite
+location, or</p></li>
+<li><p>Confirming the integrity of digital or cryptographic security features.</p></li>
+</ol>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Note that the requirements for confirming the authenticity of evidence is not mandatory. While issuers may wish to add a physical or automated authenticity
+check of evidence to increase confidence in legitimacy of what is being presented, this is less important when coupled with the direct access they maintain to
+the System of Record and the ability to conduct a biometric verification against the image stored in the System of Record. If Issuers desire to maintain an
+inspection of evidence, they should apply the controls contained in Section 3.13 Requirements for Validation of Physical Evidence in NIST SP 800-63A. Issuers
+should also balance the marginal increase in confidence against the usability, accuracy, and cost challenges that will be introduced by physical or automated
+inspections.</p>
+<p><strong>Verification &amp; Biometric Usage Requirements</strong> <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>
+Verification processes allow for the Issuer to increase confidence that the individual presenting attributes or evidence is the individual who is associated
+with that evidence in the System of Record. When verifying an applicant’s identity the Issuer should apply the following controls:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Identifier</p></th>
+<th class="head"><p>Control</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>VER-1</p></td>
+<td><p>Compare, via automated biometric means, a facial image stored in the System of Record associated with the driver’s license or state ID, to a live sample
+provided by the applicant.</p></td>
+</tr>
+<tr class="row-odd"><td><p>VER-2</p></td>
+<td><p>Implement presentation attack detection (PAD) capabilities, which meet IAPAR performance metric &lt;0.07, to confirm the genuine presence of a live human
+being and to mitigate spoofing and impersonation attempts. Conduct all biometric presentation attack detection tests conformant to ISO/IEC 30107-3:2023.</p></td>
+</tr>
+<tr class="row-even"><td><p>VER-3</p></td>
+<td><p>Meet the following performance thresholds if 1:1 biometric comparison algorithms are used for verification against a claimed identity: False match rate:
+1:10,000 or better; and False non-match rate: 1:100 or better</p></td>
+</tr>
+<tr class="row-odd"><td><p>VER-4</p></td>
+<td><p>Have biometric recognition and attack detection algorithms periodically tested by independent entities (e.g., accredited laboratories or research
+institutions) for their performance characteristics, including performance across demographic groups. Conduct internal testing on biometric algorithms
+based on the update schedule of the provider.</p></td>
+</tr>
+<tr class="row-even"><td><p>VER-5</p></td>
+<td><p>Assess the performance and demographic impacts of employed biometric technologies in conditions that are substantially similar to the operational
+environment and user base of the system. The user base is defined by both the expected users as well as the devices they are expected to use. When such
+assessments include real-world users, make participation by users voluntary.</p></td>
+</tr>
+<tr class="row-odd"><td><p>VER-6</p></td>
+<td><p>Provide performance for applicants of different demographic types that is no more than 25% worse than the performance for the overall population. For
+example, if the measured FNMR for the overall population is 0.006, the FNMR for a specific demographic group cannot exceed 0.0075. Similarly, if the FMR
+for the overall population is 0.0001, the FMR for each demographic group cannot exceed 0.000125. Configure the biometric system with a fixed threshold;
+it is not feasible to change the threshold for each demographic group. Include sex, age, and skin tone as factors that affect biometric performance.</p></td>
+</tr>
+<tr class="row-even"><td><p>VER-7</p></td>
+<td><p>Conduct all biometric testing conformant to ISO/IEC 19795-1:2021 and ISO/IEC 19795-10:2024, including demographics testing.</p></td>
+</tr>
+<tr class="row-odd"><td><p>VER-8</p></td>
+<td><p>Make the results of their biometric algorithm performance and biometric system operational test results publicly available.</p></td>
+</tr>
+<tr class="row-even"><td><p>VER-9</p></td>
+<td><p>Provide clear, publicly available information about all uses of biometrics, what biometric data is collected, how it is stored, how it is protected, and
+information on how to remove biometric information consistent with applicable laws and regulations.</p></td>
+</tr>
+<tr class="row-odd"><td><p>VER-10</p></td>
+<td><p>Obtain an explicit informed consent to collect and use biometrics from all applicants.</p></td>
+</tr>
+<tr class="row-even"><td><p>VER-11</p></td>
+<td><p>Store a record of the subscriber’s consent for biometric use and associate it with the subscriber’s account.</p></td>
+</tr>
+<tr class="row-odd"><td><p>VER-12</p></td>
+<td><p>(If attended) Visually compare the applicant’s facial image to a facial portrait in records associated with the driver’s license or state ID either an
+onsite attended session (in-person with a proofing agent) or a remote attended session (live video with a proofing agent).</p></td>
+</tr>
+<tr class="row-even"><td><p>VER-13</p></td>
+<td><p>(If attended) Collect biometrics in such a way that provides reasonable assurance that the biometric is collected from the applicant, and not another
+subject.</p></td>
+</tr>
+<tr class="row-odd"><td><p>VER-14</p></td>
+<td><p>(If attended and onsite) Have the proofing agent view the biometric source (e.g., fingers, face) for the presence of non-natural materials and perform
+such inspections as part of the issuance process.</p></td>
+</tr>
+<tr class="row-even"><td><p>VER-15</p></td>
+<td><p>(If attended) Train proofing agents to conduct visual facial image comparison. Include in this training: techniques and methods for identifying facial
+characteristics, unique traits, and other indicators of positive or negative matches between an applicant and their presented evidence.</p></td>
+</tr>
+<tr class="row-odd"><td><p>VER-16</p></td>
+<td><p>(If attended) Assess proofing agents regarding their ability to conduct visual facial image comparisons. Additionally, re-assess proofing agents, and
+remedially trained if needed, on an annual basis. Design training to reflect potential real-world attack scenarios such as the comparison of applicants
+to images of relatives, twins, and individuals of a similar appearance.</p></td>
+</tr>
+<tr class="row-even"><td><p>VER-17</p></td>
+<td><p>(If remote attended) Provide proofing agents that conduct visual facial comparisons during remote attended transactions (e.g., video) with resources that
+support accurate comparisons including, but not limited to, resources such as high quality image feeds, high definition monitors, and image analysis
+software.</p></td>
+</tr>
+<tr class="row-odd"><td><p>VER-18</p></td>
+<td><p>(If attended) Document proofing agent training and assessment procedures for visual image comparisons and make them available RPs upon request.</p></td>
+</tr>
+<tr class="row-even"><td><p>VER-19</p></td>
+<td><p>(If exceptions to biometrics are offered) Confirm the applicant’s ability to return a confirmation code delivered to a physical address (i.e., postal
+address) that was obtained from the System of Record associated with the applicant. Limit the validity of confirmation codes to 21 days, when sent to a
+validated postal address within the contiguous United States and 30 days, when sent to a validated postal address outside the contiguous United States.</p></td>
+</tr>
+<tr class="row-odd"><td><p>VER-20</p></td>
+<td><p>(if exceptions to biometrics are offered) Provide RPs with an indication of the use of exception handling processes by encoding in the MSO.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Digital Injections and Fraudulent Media</strong>
+Many emerging attacks on remote identity proofing processes, both attended and unattended, pair digital injection attacks with increasingly effective and
+available generative Artificial Intelligence (AI) tools. AI tools are used to create or modify media containing images or videos of applicants and evidence
+(i.e., deepfakes) to defeat automated document validation processes, biometric operations, and visual comparisons done by proofing agents. Injection attacks
+insert modified or forged media between the capture point, such as a device, and the element conducting the comparison or other operation, such as a server
+running the algorithms or a workstation used by a proofing agent. As such, issuers should implement the following controls:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Identifier</p></th>
+<th class="head"><p>Control</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DI-1</p></td>
+<td><p>Implement technical controls to increase confidence that digital media is being produced by a genuine sensor during the issuance process (e.g., detect
+the presence of a virtual camera, device emulator, or a jailbroken device).</p></td>
+</tr>
+<tr class="row-odd"><td><p>DI-2</p></td>
+<td><p>Analyze all digital media submitted during the identity proofing process for artifacts and indicators of potential modification, manipulation, tampering,
+or forgery. Test Automated image analysis algorithms against available attack artifacts (i.e., forged and manipulated images and videos) and genuine
+media to provide a baseline of performance and to determine the expected rate of false positives and false negatives generated by the system. Augment
+algorithmic analysis of media and automated decisioning with manual reviews to address detection errors.</p></td>
+</tr>
+<tr class="row-even"><td><p>DI-3</p></td>
+<td><p>Use only authenticated protected channels for the exchange of data during remote issuance processes.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DI-4</p></td>
+<td><p>(optional) introduce passive means (e.g., webrtc commands) of detecting forged or manipulated media for all capture scenarios.</p></td>
+</tr>
+<tr class="row-even"><td><p>DI-5</p></td>
+<td><p>(optional) Authenticate capture sensors or implement device attestation to increase the confidence in a device being used to transmit digital media as
+part of a remote identity proofing process.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DI-6</p></td>
+<td><p>(optional) Analyze digital media for signatures of generative AI algorithms and deepfake tools that are known to be used to create forged digital media.</p></td>
+</tr>
+<tr class="row-even"><td><p>DI-7</p></td>
+<td><p>(if attended) Train proofing agents and trusted referees to look for indications of manipulated media (e.g., high latency, synchronization issues,
+inconsistent skin tone and resolution).</p></td>
+</tr>
+<tr class="row-odd"><td><p>DI-8</p></td>
+<td><p>(if attended) Introduce random “human-in-the-loop” cues into their capture processes that increase the possibility of forged or manipulated media being
+detected (e.g., by requesting user movements or requesting that the user move objects between the capture sensor and their face).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><strong>Fraud Management Requirements</strong></div>
+<div class="line">Issuers of mDLs and other verifiable credentials should implement the following controls and processes to help manage potential attempts to subvert the
+issuance process through fraudulent enrollment attempts.</div>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Identifier</p></th>
+<th class="head"><p>Control</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>FM-1</p></td>
+<td><p>Establish and maintain a fraud management program that provides fraud identification, detection, investigation, reporting, and resolution capabilities.</p></td>
+</tr>
+<tr class="row-odd"><td><p>FM-2</p></td>
+<td><p>Conduct a Privacy Risk Assessment of all fraud checks and fraud mitigation technologies prior to implementation.</p></td>
+</tr>
+<tr class="row-even"><td><p>FM-3</p></td>
+<td><p>Establish a self-reporting mechanism and investigation capability for subjects who believe they have been the victim of fraud or an attempt to compromise
+their involvement in the identity proofing processes.</p></td>
+</tr>
+<tr class="row-odd"><td><p>FM-4</p></td>
+<td><p>Analyze all credential issuance communications &amp; channels to look for high risk indicators of potential fraud (e.g., block-listed proxies and IP
+addresses).</p></td>
+</tr>
+<tr class="row-even"><td><p>FM-5</p></td>
+<td><p>Take measures to prevent unsuccessful applicants from inferring the accuracy of any self-asserted information with that confirmed by authoritative or
+credible sources.</p></td>
+</tr>
+<tr class="row-odd"><td><p>FM-6</p></td>
+<td><p>Establish a technical or process-based mechanism to allow RPs to communicate suspected and confirmed fraud events to RPs.</p></td>
+</tr>
+<tr class="row-even"><td><p>FM-7</p></td>
+<td><p>Monitor the performance of their fraud checks and fraud mitigation technologies to ensure continued effectiveness in mitigating fraud risks.</p></td>
+</tr>
+<tr class="row-odd"><td><p>FM-8</p></td>
+<td><p>Implement a death records check for all issuance processes, by confirming with a credible, authoritative, or issuing source that the applicant is not
+deceased.</p></td>
+</tr>
+<tr class="row-even"><td><p>FM-9</p></td>
+<td><p>Evaluate the length of time a phone service subscription or other account (e.g., account with wallet provider) has existed without substantial
+modifications or changes.</p></td>
+</tr>
+<tr class="row-odd"><td><p>FM-10</p></td>
+<td><p>Incorporate device fingerprinting checks to provide protections against scaled and automated attacks and enrollment duplication.</p></td>
+</tr>
+<tr class="row-even"><td><p>EM-11</p></td>
+<td><p>Evaluate anticipated transaction characteristics – such as IP Addresses, geolocations, and transaction velocities – to identify anomalous behaviors or
+activities that can indicate a higher risk or a potentially fraudulent event.</p></td>
+</tr>
+<tr class="row-odd"><td><p>FM-12</p></td>
+<td><p>Evaluate records, such as reported, confirmed, or historical fraud events to determine if there is an elevated risk related to a specific applicant,
+applicant’s data, or device.</p></td>
+</tr>
+<tr class="row-even"><td><p>FM-13</p></td>
+<td><p>Periodically employ independent testing, such as red teaming exercises, to validate the effectiveness of their fraud mitigation measures.</p></td>
+</tr>
+<tr class="row-odd"><td><p>FM-14</p></td>
+<td><p>Provide a means of invalidating attribute bundles issued to a subscriber. This can be achieved by: issue mDLs with a limited time validity window;
+provide a means to independently verify the status of mDLs (i.e., whether a specific bundle has been revoked by the CSP); or both Note: For methods that
+use independent status of mDL this needs to be implemented in a manner such that the Issuer is not alerted to the use of a specific mDL at a specific
+verifier/RP. For example with certificate status lists that can be independently downloaded by verifiers..</p></td>
+</tr>
+<tr class="row-even"><td><p>FM-15</p></td>
+<td><p>(In-person issuance) Train proofing agents to detect indicators of fraud and SHALL provide proofing agents and trusted referees with tools to flag
+suspected fraudulent events for further treatment and investigation.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p><strong>Note:</strong> The use of the term “verification” is consistent with its usage in NIST SP 800-63. Specifically, “the process to confirm that the applicant is the
+genuine owner of the presented identity evidence.” It is not the general term “identity verification” which is often used as a synonym for identity proofing.</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="building_mdl_assurance.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Building Assurance in the mDL Ecosystem</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../interaction_diagrams.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Interaction Diagrams</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-of-nist-special-publication-800-63a-for-the-issuance-of-mdls-to-a-user-controlled-wallet-or-mdl-application">Profile of NIST Special Publication 800-63A for the issuance of mDLs to a user controlled wallet or mDL application</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<p>
+  
+    By NIST<br/>
+  
+</p>
+
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+<footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        <div class="disclaimer">
+          <strong>Disclaimer:</strong> Certain commercial equipment, instruments, or
+          materials are identified in this documentation to foster understanding. Such
+          identification does not imply recommendation or endorsement by the National
+          Institute of Standards and Technology, nor does it imply that the materials
+          or equipment identified are necessarily the best available for the purpose.
+        </div>
+      </p>
+    </div>
+</footer>
+
+  </body>
+</html>
