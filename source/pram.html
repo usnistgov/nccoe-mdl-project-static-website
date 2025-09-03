@@ -1,0 +1,2028 @@
+<p>The <a class="reference local" href="https://www.nist.gov/privacy-framework/nist-pram">NIST Privacy Risk Assessment
+      Methodology (PRAM)</a> is a tool that helps organizations analyze, assess,
+   and prioritize privacy risks to determine how to respond and select appropriate solutions. <a
+      class="footnote-reference brackets local" href="#id7" id="id1" role="doc-noteref"><span
+         class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> The PRAM can help drive collaboration and
+   communication between
+   various components of an organization, including privacy, cybersecurity, business, and IT personnel.</p>
+<p>Taking on the persona of a financial institution, the NCCoE applied the PRAM to assess privacy risk of using an mDL
+   to establish a financial account through
+   online remote identity proofing. The content below is representative of how a financial institution may complete a
+   privacy assessment and is exemplary in
+   nature. It is not intended to be normative in nature, as the responses will vary for each organization. However,
+   completing this process allowed the NCCoE to
+   create a more impactful set of recommendations and improve the build behind our fictitious NCCoE Bank. It is also
+   worth noting that our example PRAM is
+   representative of the mDL request and presentation model only, and does not assess alternative models of identity
+   verification which would likely have different
+   privacy risks. For example, when using document capture of a physical driver’s license there is no selective
+   disclosure of information supported as with mDL.
+   This would introduce different risks and issues with different impacts for the financial institution. A comparable
+   assessment should be conducted of all
+   techniques used by financial institutions for identifying and authenticating its users.</p>
+<p>The NIST PRAM is a freely available resource any organization can use. However, financial institutions may extend
+   their existing privacy risk assessment
+   approaches if they have already adopted one. It is recommended that these organization specific approaches consider a
+   detailed evaluation of the data flows and
+   functions of the technology they are evaluating, similar to the method applied in the PRAM.</p>
+<p>The sections that follow dive into the completed sample privacy risk assessment, answering five key questions for the
+   (not real) NCCoE Bank (referenced later as
+   “our organization”).</p>
+
+<div class="pram-nav">
+   <button type="button" id="expand-collapse-all">Expand All</button>
+   <div class="accordion-container">
+      <div class="accordion-item">
+         <button class="accordion-button" aria-expanded="false" aria-controls="accordion-panel-1"
+            id="accordion-button-1">
+            <strong>What are the organizational privacy goals?</strong>
+            <p>Frame organizational privacy goals and regulatory context.</p>
+         </button>
+         <div class="accordion-panel" id="accordion-panel-1" aria-labelledby="accordion-button-1" role="region" hidden>
+            <section id="what-are-the-organizational-privacy-goals">
+               <h2>What are the organizational privacy goals?<a class="headerlink local"
+                     href="#what-are-the-organizational-privacy-goals" title="Link to this heading">#</a></h2>
+               <section id="mission-business-needs-the-system-serves">
+                  <h3>Mission/business needs the system serves<a class="headerlink local"
+                        href="#mission-business-needs-the-system-serves" title="Link to this heading">#</a></h3>
+                  <p>The term “digital first” describes the increasing population of customers who prefer to interact on-line rather
+                     than through traditional methods, such as making
+                     telephone calls or visiting a branch. Pursuing a digital-first strategy prioritizes the customer experience,
+                     enables operational scaling, and strengthens
+                     security – crucial aspects of our exemplar financial organizational goals. More specifically, using a mobile
+                     driver’s license (mDL) for online account
+                     establishment and access, serves the following needs of our “digital-first” bank customers:</p>
+                  <ul class="simple">
+                     <li>
+                        <p><strong>Customer Convenience</strong>: Increased efficacy and accuracy with which customers can present
+                           and validate their identity with our online services, reducing the
+                           need for customers to make in-person visits to a brick-and-mortar branch and expanding the hours when
+                           they can complete identity verification.</p>
+                     </li>
+                     <li>
+                        <p><strong>Operational Efficiency</strong>: Increased automation, reducing manual labor and lowering
+                           operational costs.</p>
+                     </li>
+                     <li>
+                        <p><strong>Customer Empowerment</strong>: Self-service options for account opening, enrollment (setting up
+                           secure online access), executing transactions and account
+                           recovery.</p>
+                     </li>
+                     <li>
+                        <p><strong>Competitive Advantage</strong>: Attracts “digital-first” customers and expands reach to new
+                           markets (e.g. customers from various generations, non-local
+                           customers <a class="footnote-reference brackets local" href="#id8" id="id2" role="doc-noteref"><span
+                                 class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a><sup>,</sup> <sup>,</sup> <a
+                              class="footnote-reference brackets local" href="#id10" id="id4" role="doc-noteref"><span
+                                 class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>)</p>
+                     </li>
+                     <li>
+                        <p><strong>Security and Compliance</strong>: Advanced security protocols that improve the accuracy of
+                           customer information collected for identity verification. Increase
+                           ability to report fraud to states whose IDs may be used by bad actors. Improved regulatory compliance for
+                           Customer Identification Programs/Customer Due
+                           Diligence (CIP/CDD).</p>
+                     </li>
+                     <li>
+                        <p><strong>Increased Customer Service:</strong> Increase the ability of bank tellers to focus more on
+                           customer service and less on identifying fraud such as checking
+                           counterfeit IDs or explaining to customers that they cannot provide service due to a failed security
+                           check.</p>
+                     </li>
+                  </ul>
+               </section>
+               <section id="privacy-preserving-goals-of-the-system">
+                  <h3>Privacy-preserving goals of the system<a class="headerlink local"
+                        href="#privacy-preserving-goals-of-the-system" title="Link to this heading">#</a></h3>
+                  <p>When customers opt to use an mDL for establishing and accessing an online our exemplar financial institution
+                     goals are to ensure the following , they benefit
+                     from enhanced privacy protections.</p>
+                  <ul class="simple">
+                     <li>
+                        <p><strong>User control and selective data disclosure</strong>: Only data <em>required</em> for opening the
+                           account is shared, minimizing the data collected and stored—a level of
+                           granular data control which is unique to the mobile Driver’s License.</p>
+                     </li>
+                     <li>
+                        <p><strong>Notice and transparency</strong>: Customers are provided with easy-to-understand customer
+                           interfaces to enable informed decision-making about sharing their
+                           personal information. Additionally, mobile wallets commonly offer customers a record of the organizations
+                           with which they have shared their information.</p>
+                     </li>
+                     <li>
+                        <p><strong>Built-in security</strong>: We incorporate strong security into the way we present, store, and
+                           transmit customer information. Enabling confidentiality, integrity,
+                           and availability of data facilitates controls which double as privacy protections for customer data—such
+                           as access control, encryption, and
+                           retention/deletion.</p>
+                     </li>
+                  </ul>
+               </section>
+               <section id="legal-environment-in-which-we-operate">
+                  <h3>Legal environment in which we operate<a class="headerlink local" href="#legal-environment-in-which-we-operate"
+                        title="Link to this heading">#</a></h3>
+                  <p><strong>Federal Regulations</strong></p>
+                  <p>As a financial institution, our organization is subject to the Financial Modernization Act of 1999, also known
+                     as the Gramm-Leach Bliley Act (GLBA), which
+                     includes:</p>
+                  <ul class="simple">
+                     <li>
+                        <p>The <em>Financial Privacy Rule</em> (governs how financial institutions can collect and disclose
+                           customers’ personal financial data),</p>
+                     </li>
+                     <li>
+                        <p>The <em>Safeguards Rule</em> (requires all financial institutions to maintain safeguards to protect
+                           customer information); and</p>
+                     </li>
+                     <li>
+                        <p>A provision to prevent access to customers’ financial information under false pretenses (“pretexting”).
+                        </p>
+                     </li>
+                  </ul>
+                  <p>Source: <a class="reference external"
+                        href="https://www.ftc.gov/news-events/topics/protecting-consumer-privacy-security/financial-privacy">FTC
+                        Financial Privacy</a></p>
+                  <p>When our customers establish or access an online financial account, we also are subject to Customer
+                     Identification Program (CIP) and Customer Due Diligence
+                     (CDD) regulations – both falling under the USA PATRIOT Act, aimed at preventing fraud and financial crimes.</p>
+                  <p>Source: <a class="reference external"
+                        href="https://www.fdic.gov/news/financial-institution-letters/2024/fil24015.html">FDIC explains the CIP
+                        requirements</a></p>
+                  <p>Cybersecurity and Privacy risk fall under operational risk for our organization. Operational risk is subject to
+                     safety and soundness examinations under the FDI
+                     act and Federal Reserve Board supervision and regulation letters.</p>
+                  <p>Source: <a class="reference external"
+                        href="https://www.fdic.gov/federal-deposit-insurance-act/section-39-standards-safety-and-soundness">FDI Act
+                        Section 39</a>, <a class="reference external"
+                        href="https://www.federalreserve.gov/supervisionreg/srletters/sr2114.htm">SR
+                        21-14</a></p>
+                  <p><strong>State Regulations</strong></p>
+                  <p>In addition, since we operate in California and Oregon, we also must comply with the California Consumer
+                     Privacy Act and the Oregon Consumer Privacy Act.</p>
+                  <p><strong>International Regulations</strong></p>
+                  <p>Our mDL efforts will be subject to the regulations in each country where we operate. This PRAM is based upon
+                     the requirements of our US operations. Privacy
+                     risks should be evaluated for each country where we introduce mDL, either in a separate PRAM or by integrating
+                     international considerations into this PRAM.</p>
+                  <p><strong>Contractual Requirements</strong></p>
+                  <p>Certain contracts with key partners include privacy requirements beyond those mandated by law. These may
+                     include:</p>
+                  <ul class="simple">
+                     <li>
+                        <p>Permissible uses of shared data,</p>
+                     </li>
+                     <li>
+                        <p>Specific data retention periods and methods of destruction,</p>
+                     </li>
+                     <li>
+                        <p>Role-based access control for certain data, and</p>
+                     </li>
+                     <li>
+                        <p>Notification procedures for incidents.</p>
+                     </li>
+                  </ul>
+                  <p>These contractual privacy requirements should also be addressed in the PRAM.</p>
+               </section>
+            </section>
+         </div>
+      </div>
+
+      <div class="accordion-item">
+         <button class="accordion-button" aria-expanded="false" aria-controls="accordion-panel-2"
+            id="accordion-button-2">
+            <strong>How does the system work?</strong>
+            <p>Identify data and data processing activities.</p>
+         </button>
+         <div class="accordion-panel" id="accordion-panel-2" aria-labelledby="accordion-button-2" role="region" hidden>
+            <section id="how-does-this-mdl-system-work">
+               <h2>How does this mDL system work?<a class="headerlink local" href="#how-does-this-mdl-system-work"
+                     title="Link to this heading">#</a></h2>
+               <p>The figure below is an example data flow diagram based on the architecture we have implemented as part of the
+                  NCCoE Lab demonstration. This diagram highlights
+                  how data flows through our NCCoE Bank and third-party systems to include government and commercial third parties.
+                  Each step of the flow elucidates data actions
+                  relevant to the PRAM.</p>
+               <figure class="align-default">
+                  <a class="reference internal image-reference local" href="_images/pram-image2.png"><img
+                        alt="A graphical representation of the mDL system. See table directly below for full description"
+                        src="_images/pram-image2.png" style="width: 5.7in; height: 5.4in;">
+                  </a>
+               </figure>
+               <p><strong>Fig. 1. mDL Privacy Assessment Data Flow.</strong></p>
+               <p>The following table describes the data actions (collection, generation, disclosure,
+                  retention, disposal, or transformation) for each of the numbered interaction steps in the</p>
+               <p>flow in Figure 1.</p>
+               <div class="pst-scrollable-table-container">
+                  <table class="table">
+                     <thead>
+                        <tr class="row-odd">
+                           <th class="head">
+                              <p><strong>Data Action</strong></p>
+                           </th>
+                           <th class="head">
+                              <p><strong>Data</strong></p>
+                           </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr class="row-even">
+                           <td>
+                              <ol class="arabic simple">
+                                 <li>
+                                    <p>The IDMS collects personal attributes self-asserted by the applicant.</p>
+                                    <ul class="simple">
+                                       <li>
+                                          <p>Data generation by applicant through a web browser.</p>
+                                       </li>
+                                       <li>
+                                          <p>Data collection by IDMS.</p>
+                                       </li>
+                                    </ul>
+                                 </li>
+                              </ol>
+                           </td>
+                           <td>
+                              <ul class="simple">
+                                 <li>
+                                    <p>Phone number</p>
+                                 </li>
+                                 <li>
+                                    <p>Email</p>
+                                 </li>
+                                 <li>
+                                    <p>SSN</p>
+                                 </li>
+                                 <li>
+                                    <p>Optionally, preferred names and alternate
+                                       address</p>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                        <tr class="row-odd">
+                           <td>
+                              <ol class="arabic simple" start="2">
+                                 <li>
+                                    <p>The applicant presents requested attributes from their mDL stored in their digital
+                                       wallet. The verifier collects the applicant’s attributes from the mDL.</p>
+                                    <ul class="simple">
+                                       <li>
+                                          <p>Request information passed through the browser.</p>
+                                       </li>
+                                       <li>
+                                          <p>Data collection by verifier.</p>
+                                       </li>
+                                    </ul>
+                                 </li>
+                              </ol>
+                           </td>
+                           <td>
+                              <ul class="simple">
+                                 <li>
+                                    <p>Driver license number</p>
+                                 </li>
+                                 <li>
+                                    <p>Issuing state</p>
+                                 </li>
+                                 <li>
+                                    <p>Legal name</p>
+                                 </li>
+                                 <li>
+                                    <p>Date of birth</p>
+                                 </li>
+                                 <li>
+                                    <p>Legal address</p>
+                                 </li>
+                                 <li>
+                                    <p>Issue date</p>
+                                 </li>
+                                 <li>
+                                    <p>Expiry date</p>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                        <tr class="row-even">
+                           <td>
+                              <ol class="arabic simple" start="3">
+                                 <li>
+                                    <p>The verifier confirms that the mDL is valid and discloses the mDL attributes to
+                                       the IDMS. The verifier disposes of all the mDL attributes in the verifier by deleting them
+                                       immediately after disclosure.</p>
+                                    <ul class="simple">
+                                       <li>
+                                          <p>Data transfer from the verifier to IDMS.</p>
+                                       </li>
+                                       <li>
+                                          <p>Data collection by IDMS.</p>
+                                       </li>
+                                       <li>
+                                          <p>Data disposal by the verifier.</p>
+                                       </li>
+                                    </ul>
+                                 </li>
+                              </ol>
+                           </td>
+                           <td>
+                              <ul class="simple">
+                                 <li>
+                                    <p>Driver license number</p>
+                                 </li>
+                                 <li>
+                                    <p>Issuing state</p>
+                                 </li>
+                                 <li>
+                                    <p>Legal name</p>
+                                 </li>
+                                 <li>
+                                    <p>Date of birth</p>
+                                 </li>
+                                 <li>
+                                    <p>Legal address</p>
+                                 </li>
+                                 <li>
+                                    <p>Issue date</p>
+                                 </li>
+                                 <li>
+                                    <p>Expiry date</p>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                        <tr class="row-odd">
+                           <td>
+                              <ol class="arabic simple" start="4">
+                                 <li>
+                                    <p>The IDMS creates a unique user identifier (UUID) for the applicant and transfers
+                                       the identifier along with all the attributes (both self-asserted and from the mDL) to the
+                                       appropriate bank IT back-end applications.</p>
+                                    <ul class="simple">
+                                       <li>
+                                          <p>Data generation by IDMS.</p>
+                                       </li>
+                                       <li>
+                                          <p>Data transfer from the IDMS to the bank back-end.</p>
+                                       </li>
+                                       <li>
+                                          <p>Data retention by the back end.</p>
+                                       </li>
+                                       <li>
+                                          <p>Data disposal by the IDMS. (Note: FIs retain the attributes of the customer for 7
+                                             years from the closure of an account at the bank.)</p>
+                                       </li>
+                                    </ul>
+                                 </li>
+                              </ol>
+                           </td>
+                           <td>
+                              <ul class="simple">
+                                 <li>
+                                    <p>Phone number</p>
+                                 </li>
+                                 <li>
+                                    <p>Email</p>
+                                 </li>
+                                 <li>
+                                    <p>SSN</p>
+                                 </li>
+                                 <li>
+                                    <p>Preferred name</p>
+                                 </li>
+                                 <li>
+                                    <p>Alternate address</p>
+                                 </li>
+                                 <li>
+                                    <p>Driver license #</p>
+                                 </li>
+                                 <li>
+                                    <p>Issuing state</p>
+                                 </li>
+                                 <li>
+                                    <p>Legal name</p>
+                                 </li>
+                                 <li>
+                                    <p>Date of birth</p>
+                                 </li>
+                                 <li>
+                                    <p>Legal address</p>
+                                 </li>
+                                 <li>
+                                    <p>Issue date</p>
+                                 </li>
+                                 <li>
+                                    <p>Expiry date</p>
+                                 </li>
+                                 <li>
+                                    <p>UUID</p>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                        <tr class="row-even">
+                           <td>
+                              <ol class="arabic simple" start="5">
+                                 <li>
+                                    <p>The bank validates that the application attributes match the Applicant SSN. SSN
+                                       verifier responds with “yes” or “no” and disposes of the data sent by the bank back-end. The
+                                       bank may also validate attributes with third party databases.</p>
+                                    <ul class="simple">
+                                       <li>
+                                          <p>Data transfer from the bank back-end to the SSN validator.</p>
+                                       </li>
+                                       <li>
+                                          <p>Data disposal by the SSN validator.</p>
+                                       </li>
+                                       <li>
+                                          <p>Self-asserted attributes are validated with a 3<sup>rd</sup> party.</p>
+                                       </li>
+                                    </ul>
+                                 </li>
+                              </ol>
+                           </td>
+                           <td>
+                              <ul class="simple">
+                                 <li>
+                                    <p>SSN</p>
+                                 </li>
+                                 <li>
+                                    <p>Legal name</p>
+                                 </li>
+                                 <li>
+                                    <p>Date of birth</p>
+                                 </li>
+                                 <li>
+                                    <p>Phone number</p>
+                                 </li>
+                                 <li>
+                                    <p>Email</p>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                        <tr class="row-odd">
+                           <td>
+                              <ol class="arabic simple" start="6">
+                                 <li>
+                                    <p>Bank IT back-end processes the information collected and uses its decision logic
+                                       to determine what financial offering will be made to the customer.</p>
+                                    <ul class="simple">
+                                       <li>
+                                          <p>Data processed by bank IT back-end</p>
+                                       </li>
+                                       <li>
+                                          <p>Data disposal by the Bank IT back-end. (Note: FIs retain the attributes of the
+                                             customer for 7 years from the closure of an account at the bank.)</p>
+                                       </li>
+                                    </ul>
+                                 </li>
+                              </ol>
+                           </td>
+                           <td>
+                              <ul class="simple">
+                                 <li>
+                                    <p>Phone number</p>
+                                 </li>
+                                 <li>
+                                    <p>Email</p>
+                                 </li>
+                                 <li>
+                                    <p>SSN (verified)</p>
+                                 </li>
+                                 <li>
+                                    <p>Preferred name</p>
+                                 </li>
+                                 <li>
+                                    <p>Alternate address</p>
+                                 </li>
+                                 <li>
+                                    <p>Driver license #</p>
+                                 </li>
+                                 <li>
+                                    <p>Issuing state</p>
+                                 </li>
+                                 <li>
+                                    <p>Legal name</p>
+                                 </li>
+                                 <li>
+                                    <p>Date of birth</p>
+                                 </li>
+                                 <li>
+                                    <p>Legal address</p>
+                                 </li>
+                                 <li>
+                                    <p>Issue date</p>
+                                 </li>
+                                 <li>
+                                    <p>Expiry date</p>
+                                 </li>
+                                 <li>
+                                    <p>UUID</p>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                        <tr class="row-even">
+                           <td>
+                              <ol class="arabic simple" start="7">
+                                 <li>
+                                    <p>Bank creates an account for the applicant and initiates passkey set up via the
+                                       IDMS.</p>
+                                    <ul class="simple">
+                                       <li>
+                                          <p>Data transfer from the bank back-end to the IDMS.</p>
+                                       </li>
+                                    </ul>
+                                 </li>
+                              </ol>
+                           </td>
+                           <td>
+                              <ul class="simple">
+                                 <li>
+                                    <p>UUID</p>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                        <tr class="row-odd">
+                           <td colspan="2">
+                              <p>Note: The below items happen outside of the identity verification flow</p>
+                           </td>
+                        </tr>
+                        <tr class="row-even">
+                           <td>
+                              <ol class="upperalpha simple">
+                                 <li>
+                                    <p>The third-party trust service distributes the signing public key of mDL issuers.
+                                       No information about the applicant is disclosed by the trust service in obtaining this public
+                                       key or distributing these public keys.</p>
+                                 </li>
+                              </ol>
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr class="row-odd">
+                           <td colspan="2">
+                              <ol class="upperalpha simple" start="2">
+                                 <li>
+                                    <p>The verifier obtains an mDL issuer’s signing public key from the trust service to
+                                       validate the mDL. No information about the applicant is disclosed to the verifier in
+                                       obtaining
+                                       this public key.</p>
+                                 </li>
+                              </ol>
+                           </td>
+                        </tr>
+                        <tr class="row-even">
+                           <td colspan="2">
+                              <ol class="upperalpha simple" start="3">
+                                 <li>
+                                    <p>A passkey is generated on the client device.</p>
+                                 </li>
+                              </ol>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </section>
+         </div>
+      </div>
+
+      <div class="accordion-item">
+         <button class="accordion-button" aria-expanded="false" aria-controls="accordion-panel-3"
+            id="accordion-button-3">
+            <strong>What privacy problems might the system introduce?</strong>
+            <p>Identify privacy problems for individuals arising from data processing.</p>
+         </button>
+         <div class="accordion-panel" id="accordion-panel-3" aria-labelledby="accordion-button-3" role="region" hidden>
+            <section id="what-potential-privacy-risks-does-this-mdl-system-introduce">
+               <h2>What potential privacy risks does this mDL system introduce?<a class="headerlink local"
+                     href="#what-potential-privacy-risks-does-this-mdl-system-introduce" title="Link to this heading">#</a></h2>
+               <p>The below table uses the <a class="reference external"
+                     href="https://github.com/usnistgov/PrivacyEngCollabSpace/blob/master/tools/risk-assessment/NIST-Privacy-Risk-Assessment-Methodology-PRAM/catalog-PDAP.md">privacy
+                     problems for
+                     individuals</a>
+                  as defined in the NIST PRAM and highlights some of the organization impact that could result if those problems
+                  manifested for NCCoE Bank customers.</p>
+               <div class="pst-scrollable-table-container">
+                  <table class="table">
+                     <thead>
+                        <tr class="row-odd">
+                           <th class="head">
+                              <p><strong>Data Action</strong></p>
+                           </th>
+                           <th class="head">
+                              <p><strong>Potential Problems for Individuals</strong></p>
+                           </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr class="row-even">
+                           <td>
+                              <p>(1) The IDMS collects personal
+                                 attributes self-asserted by the
+                                 applicant.</p>
+                           </td>
+                           <td>
+                              <p><strong>Loss of Trust:</strong> Individuals could lose trust in a bank because they’re
+                                 uncomfortable with how the bank is handling their data. Example: A
+                                 customer assumes the data they provide is only for account enrollment,
+                                 then they receive an email marketing mailer that is tailored to their
+                                 identity.</p>
+                              <p>Customers may also lose trust in the bank if they’re asked for sensitive
+                                 data without knowing why. Example: A customer may not realize SSN is
+                                 required regardless of mDL, in all financial institution account creation
+                                 processes.</p>
+                           </td>
+                        </tr>
+                        <tr class="row-odd">
+                           <td>
+                              <p>(2) The applicant presents an mDL
+                                 from their digital wallet. The
+                                 verifier collects the applicant’s
+                                 attributes from the mDL.</p>
+                           </td>
+                           <td>
+                              <p><strong>Loss of Trust:</strong> Customers could lose trust in a bank if the data they
+                                 collect is beyond what’s predictable or expected. Example: A customer may
+                                 think only certain attributes from their mDL are transferred, while the
+                                 bank may actually collect all attributes from the mDL.</p>
+                              <p><strong>Loss of Autonomy:</strong> A perceived loss of customer control over how their
+                                 data is used. Example: A customer’s data is sent to a third party without
+                                 their knowledge or used in a way they were not made explicitly aware of.</p>
+                           </td>
+                        </tr>
+                        <tr class="row-even">
+                           <td>
+                              <p>(3) The verifier confirms that the
+                                 mDL is valid and discloses the mDL
+                                 attributes to the IDMS. The
+                                 verifier disposes of all the mDL
+                                 attributes in the verifier by
+                                 deleting them immediately after
+                                 disclosure.</p>
+                           </td>
+                           <td>
+                              <p><strong>Loss of Trust:</strong> The customer could lose trust in the bank and its
+                                 partners because of how they’re handling the customer data. Example:</p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>Surveillance (Verifier):</strong> If the verifier maintains data about the
+                                       customer and creates a “shadow profile” for each customer and
+                                       aggregates their data to craft a narrative about their habits.</p>
+                                 </li>
+                                 <li>
+                                    <p><strong>Surveillance (Issuer)</strong>: If the verifier directly contacts the issuer
+                                       to verify each transaction, the issuer could create a pattern of the
+                                       users’ behaviors and actions online with their mDL.</p>
+                                 </li>
+                              </ul>
+                              <p><strong>Dignity Loss:</strong> An issuer tracking customer activities across
+                                 transactions could lead to stress or embarrassment. Example: Issuer uses a
+                                 series of transactions to piece together habits of the customer, or
+                                 aspects of the customer’s identity, which they do not expect or want to be
+                                 known.</p>
+                           </td>
+                        </tr>
+                        <tr class="row-odd">
+                           <td>
+                              <p>(4) The IDMS creates a unique user
+                                 identifier for the applicant and
+                                 transfers the identifier along
+                                 with all the attributes (both
+                                 self-asserted and from the mDL) to
+                                 the appropriate bank IT back-end
+                                 applications.</p>
+                           </td>
+                           <td>
+                              <p><strong>Loss of Trust:</strong> If a customer identifier is used to aggregate data
+                                 about the customer’s transactions beyond the financial institution tenant.
+                                 Example:</p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>Surveillance (IDMS):</strong> Customers may be tracked if the IDMS
+                                       aggregates their transactions across different tenants. IDMS could link
+                                       transactions across namespaces and domains for well-intended, mission
+                                       critical reasons (fraud prevention), or other business reasons, some of
+                                       which may not be compatible with user preferences (marketing) and some
+                                       that may be nefarious (targeting).</p>
+                                 </li>
+                              </ul>
+                              <p><strong>Dignity Loss:</strong> An IDMS tracking customer activities across tenants
+                                 could lead to stress or embarrassment. Example: Issuer uses a series of
+                                 transactions to piece together habits of the customer, or aspects of the
+                                 customer’s identity, which they do not expect or want to be known.</p>
+                              <p><strong>Economic Loss:</strong> If customer data is breached at the IDMS, this leak may
+                                 be used to defraud the individual. Example: A nefarious actor could use
+                                 leaked data to phish a customer and steal their identity, which could
+                                 result in significant economic loss.</p>
+                           </td>
+                        </tr>
+                        <tr class="row-even">
+                           <td>
+                              <p>(5) The bank validates that the
+                                 application attributes match the
+                                 Applicant SSN. SSN verifier
+                                 responds with “yes” or “no” and
+                                 disposes of the data sent by the
+                                 bank back-end. The bank may also
+                                 validate attributes with third
+                                 party databases.</p>
+                           </td>
+                           <td>
+                              <p><strong>Loss of Trust:</strong> The bank’s business partner may not effectively secure
+                                 customer data from external actors. Example:</p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>Insecurity:</strong> The bank’s business partner may suffer a data breach by
+                                       an external bad actor that results in the leak of the customer’s SSN
+                                       and other sensitive information, and ultimately in identity theft.</p>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                        <tr class="row-odd">
+                           <td>
+                              <p>(6) Bank IT back-end processes the
+                                 information gathered, uses its
+                                 decision logic to determine what
+                                 financial offering will be made to
+                                 the customer.</p>
+                           </td>
+                           <td>
+                              <p><strong>Discrimination:</strong> If assumptions are made about individuals or groups of
+                                 individuals based on their self-asserted information, this could result in
+                                 discrimination. Joining this self-asserted data with other datasets could
+                                 reveal a narrative about an individual. Example: Drawing conclusions about
+                                 race or financial situation.</p>
+                              <p><strong>Economic Loss:</strong> Individuals could receive unfair value in a transaction
+                                 due to discrimination. Example: Assuming credit worthiness based solely on
+                                 someone’s area code.</p>
+                              <p>Additionally, if customer data is breached at the bank back end, this leak
+                                 may be used to defraud the individual. Example: A nefarious actor could
+                                 use leaked data to phish a customer and steal their identity, which could
+                                 result in significant economic loss.</p>
+                              <p><strong>Loss of Autonomy</strong>: Customers may lose control over how their data is
+                                 processed, because the bank chooses to process it in a new way internally
+                                 without proper notice (i.e., secondary use or repurposing). Example:
+                                 Customers may expect their personal data to be accessed for only certain
+                                 purposes, such as identity verification when applying for a financial
+                                 product, but then it is later used for fraud scoring without their
+                                 consent.</p>
+                           </td>
+                        </tr>
+                        <tr class="row-even">
+                           <td>
+                              <p>(7) Bank creates an account for
+                                 the applicant and initiates
+                                 passkey setup via the IDMS.</p>
+                           </td>
+                           <td>
+                              <p><strong>Loss of Trust:</strong> Customers may lose trust in the bank if they’re unclear
+                                 on who has access to which data. Example: A customer doesn’t know why
+                                 they’re interacting with the IDMS instead of the bank.</p>
+                              <p>Customers may also lose trust in the bank if they’re asked to present
+                                 their mDL and attributes each time they authenticate after account
+                                 creation. Example: If customers are asked to use their mDL for regular
+                                 authentication, they will need to assert attributes from their mDL each
+                                 time. Such actions could be perceived as disproportionate to the
+                                 purpose or outcome of the transaction.</p>
+                              <p><strong>Loss of Autonomy</strong>: A perceived loss of customer control over how their
+                                 data is used. Example: Customers may experience stress if they cannot
+                                 update or delete their information within financial institution systems.
+                                 Customers may also not be aware of financial institution data retention
+                                 requirements.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </section>
+         </div>
+      </div>
+
+      <div class="accordion-item">
+         <button class="accordion-button" aria-expanded="false" aria-controls="accordion-panel-4"
+            id="accordion-button-4">
+            <strong>What's the impact of the problems?</strong>
+            <p>Identify the impact to the organization of the problems arising from data processing.</p>
+         </button>
+         <div class="accordion-panel" id="accordion-panel-4" aria-labelledby="accordion-button-4" role="region" hidden>
+            <section id="whats-the-potential-impact-to-the-financial-institution">
+               <h2>What’s the potential impact to the Financial Institution?<a class="headerlink local"
+                     href="#whats-the-potential-impact-to-the-financial-institution" title="Link to this heading">#</a></h2>
+               <p>The below table uses the <a class="reference external"
+                     href="https://github.com/usnistgov/PrivacyEngCollabSpace/blob/master/tools/risk-assessment/NIST-Privacy-Risk-Assessment-Methodology-PRAM/catalog-PDAP.md">privacy
+                     problems for
+                     individuals</a>
+                  as defined in the NIST PRAM and highlights some of the organization impact that could result if those problems
+                  manifested for NCCoE Bank customers.</p>
+               <div class="pst-scrollable-table-container">
+                  <table class="table">
+                     <thead>
+                        <tr class="row-odd">
+                           <th class="head">
+                              <p><strong>Data Action</strong></p>
+                           </th>
+                           <th class="head">
+                              <p><strong>Potential Problems for Individuals</strong></p>
+                           </th>
+                           <th class="head">
+                              <p><strong>Impact to the Financial Institution</strong></p>
+                           </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr class="row-even">
+                           <td>
+                              <p>(1) The IDMS collects personal
+                                 attributes self-asserted by the
+                                 applicant.</p>
+                           </td>
+                           <td>
+                              <p><strong>Loss of Trust:</strong> Individuals could lose trust in a bank because they’re
+                                 uncomfortable with how the bank is handling their data. Example: A
+                                 customer assumes the data they provide is only for account enrollment,
+                                 then they receive an email marketing mailer that is tailored to their
+                                 identity.</p>
+                              <p>Customers may also lose trust in the bank if they’re asked for sensitive
+                                 data without knowing why. Example: A customer may not realize SSN is
+                                 required regardless of mDL, in all financial institution account creation
+                                 processes.</p>
+                           </td>
+                           <td>
+                              <p>The bank may incur direct business costs
+                                 if customers choose to bank elsewhere
+                                 because they aren’t comfortable with how
+                                 banks are using their data.</p>
+                           </td>
+                        </tr>
+                        <tr class="row-odd">
+                           <td>
+                              <p>(2) The applicant presents an mDL
+                                 from their digital wallet. The
+                                 verifier collects the applicant’s
+                                 attributes from the mDL.</p>
+                           </td>
+                           <td>
+                              <p><strong>Loss of Trust:</strong> Customers could lose trust in a bank if the data they
+                                 collect is beyond what’s predictable or expected. Example: A customer may
+                                 think only certain attributes from their mDL are transferred, while the
+                                 bank may actually collect all attributes from the mDL.</p>
+                              <p><strong>Loss of Autonomy:</strong> A perceived loss of customer control over how their
+                                 data is used. Example: A customer’s data is sent to a third party without
+                                 their knowledge or used in a way they were not made explicitly aware of.</p>
+                           </td>
+                           <td>
+                              <p>If customers are not clear of their
+                                 choices in how to enroll with or without
+                                 mDL, if they are not clear on the data
+                                 collected from the mDL or if their data
+                                 is used in ways they didn’t predict, they
+                                 may lose trust in the bank and then
+                                 choose to do business elsewhere.</p>
+                           </td>
+                        </tr>
+                        <tr class="row-even">
+                           <td>
+                              <p>(3) The verifier confirms that the
+                                 mDL is valid and discloses the mDL
+                                 attributes to the IDMS. The
+                                 verifier disposes of all the mDL
+                                 attributes in the verifier by
+                                 deleting them immediately after
+                                 disclosure.</p>
+                           </td>
+                           <td>
+                              <p><strong>Loss of Trust:</strong> The customer could lose trust in the bank and its
+                                 partners because of how they’re handling the customer data. Example:</p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>Surveillance (Verifier):</strong> If the verifier maintains data about the
+                                       customer and creates a “shadow profile” for each customer and
+                                       aggregates their data to craft a narrative about their habits.</p>
+                                 </li>
+                                 <li>
+                                    <p><strong>Surveillance (Issuer)</strong>: If the verifier directly contacts the issuer
+                                       to verify each transaction, the issuer could create a pattern of the
+                                       users’ behaviors and actions online with their mDL.</p>
+                                 </li>
+                              </ul>
+                              <p><strong>Dignity Loss:</strong> An issuer tracking customer activities across
+                                 transactions could lead to stress or embarrassment. Example: Issuer uses a
+                                 series of transactions to piece together habits of the customer, or
+                                 aspects of the customer’s identity, which they do not expect or want to be
+                                 known.</p>
+                           </td>
+                           <td>
+                              <p>If third party software that is
+                                 processing data on the bank’s behalf uses
+                                 customer data to surveil them, banks may
+                                 face reputational damage.</p>
+                              <p>The bank may incur direct business costs
+                                 if customers choose to bank elsewhere
+                                 because they aren’t comfortable with how
+                                 banks— associated external
+                                 organizations—are using their data.</p>
+                              <p>The bank may incur noncompliance costs if
+                                 customer data is stored when they’re told
+                                 it’s deleted, or if it’s used beyond the
+                                 purposes to which the customers
+                                 consented.</p>
+                              <p>Customers could lose trust in mDLs,
+                                 driving the financial institution to use
+                                 less effective and secure means for
+                                 meeting CIP requirements, opening them up
+                                 to fraud and customer loss.</p>
+                           </td>
+                        </tr>
+                        <tr class="row-odd">
+                           <td>
+                              <p>(4) The IDMS creates a unique user
+                                 identifier for the applicant and
+                                 transfers the identifier along
+                                 with all the attributes (both
+                                 self-asserted and from the mDL) to
+                                 the appropriate bank IT back-end
+                                 applications.</p>
+                           </td>
+                           <td>
+                              <p><strong>Loss of Trust:</strong> If a customer identifier is used to aggregate data
+                                 about the customer’s transactions beyond the financial institution tenant.
+                                 Example:</p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>Surveillance (IDMS):</strong> Customers may be tracked if the IDMS
+                                       aggregates their transactions across different tenants. IDMS could link
+                                       transactions across namespaces and domains for well-intended, mission
+                                       critical reasons (fraud prevention), or other business reasons, some of
+                                       which may not be compatible with user preferences (marketing) and some
+                                       that may be nefarious (targeting).</p>
+                                 </li>
+                              </ul>
+                              <p><strong>Dignity Loss:</strong> An IDMS tracking customer activities across tenants
+                                 could lead to stress or embarrassment. Example: Issuer uses a series of
+                                 transactions to piece together habits of the customer, or aspects of the
+                                 customer’s identity, which they do not expect or want to be known.</p>
+                              <p><strong>Economic Loss:</strong> If customer data is breached at the IDMS, this leak may
+                                 be used to defraud the individual. Example: A nefarious actor could use
+                                 leaked data to phish a customer and steal their identity, which could
+                                 result in significant economic loss.</p>
+                           </td>
+                           <td>
+                              <p>If third party software that is
+                                 processing data on the bank’s behalf uses
+                                 customer data to surveil them, banks may
+                                 face reputational damage.</p>
+                              <p>The bank may incur direct business costs
+                                 if customers choose to go elsewhere for
+                                 banking because they aren’t comfortable
+                                 with how banks— associated external
+                                 organizations—are using their data.</p>
+                              <p>The bank may incur noncompliance costs if
+                                 the bank isn’t securely handling
+                                 sensitive data about the customer.</p>
+                           </td>
+                        </tr>
+                        <tr class="row-even">
+                           <td>
+                              <p>(5) The bank validates that the
+                                 application attributes match the
+                                 Applicant SSN. SSN verifier
+                                 responds with “yes” or “no” and
+                                 disposes of the data sent by the
+                                 bank back-end. The bank may also
+                                 validate attributes with third
+                                 party databases.</p>
+                           </td>
+                           <td>
+                              <p><strong>Loss of Trust:</strong> The bank’s business partner may not effectively secure
+                                 customer data from external actors. Example:</p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>Insecurity:</strong> The bank’s business partner may suffer a data breach by
+                                       an external bad actor that results in the leak of the customer’s SSN
+                                       and other sensitive information, and ultimately in identity theft.</p>
+                                 </li>
+                              </ul>
+                           </td>
+                           <td>
+                              <p>The bank may incur noncompliance costs if
+                                 the bank isn’t securely handling
+                                 sensitive data about the customer.</p>
+                              <p>Customers may choose to work with other
+                                 banks if they don’t trust a bank with
+                                 their data.</p>
+                           </td>
+                        </tr>
+                        <tr class="row-odd">
+                           <td>
+                              <p>(6) Bank IT back-end processes the
+                                 information gathered, uses its
+                                 decision logic to determine what
+                                 financial offering will be made to
+                                 the customer.</p>
+                           </td>
+                           <td>
+                              <p><strong>Discrimination:</strong> If assumptions are made about individuals or groups of
+                                 individuals based on their self-asserted information, this could result in
+                                 discrimination. Joining this self-asserted data with other datasets could
+                                 reveal a narrative about an individual. Example: Drawing conclusions about
+                                 race or financial situation.</p>
+                              <p><strong>Economic Loss:</strong> Individuals could receive unfair value in a transaction
+                                 due to discrimination. Example: Assuming credit worthiness based solely on
+                                 someone’s area code.</p>
+                              <p>Additionally, if customer data is breached at the bank back end, this leak
+                                 may be used to defraud the individual. Example: A nefarious actor could
+                                 use leaked data to phish a customer and steal their identity, which could
+                                 result in significant economic loss.</p>
+                              <p><strong>Loss of Autonomy</strong>: Customers may lose control over how their data is
+                                 processed, because the bank chooses to process it in a new way internally
+                                 without proper notice (i.e., secondary use or repurposing). Example:
+                                 Customers may expect their personal data to be accessed for only certain
+                                 purposes, such as identity verification when applying for a financial
+                                 product, but then it is later used for fraud scoring without their
+                                 consent.</p>
+                           </td>
+                           <td>
+                              <p>The bank may face noncompliance costs if
+                                 data is not used for the purposes
+                                 approved/expected.</p>
+                              <p>The bank may incur direct business costs
+                                 if they are making inaccurate assumptions
+                                 about customers and maintain poor-quality
+                                 data.</p>
+                              <p>The bank may incur noncompliance costs if
+                                 the bank isn’t securely handling
+                                 sensitive data about the customer.</p>
+                           </td>
+                        </tr>
+                        <tr class="row-even">
+                           <td>
+                              <p>(7) Bank creates an account for
+                                 the applicant and initiates
+                                 passkey setup via the IDMS.</p>
+                           </td>
+                           <td>
+                              <p><strong>Loss of Trust:</strong> Customers may lose trust in the bank if they’re unclear
+                                 on who has access to which data. Example: A customer doesn’t know why
+                                 they’re interacting with the IDMS instead of the bank.</p>
+                              <p>Customers may also lose trust in the bank if they’re asked to present
+                                 their mDL and attributes each time they authenticate after account
+                                 creation. Example: If customers are asked to use their mDL for regular
+                                 authentication, they will need to assert attributes from their mDL each
+                                 time. Such actions could be perceived as disproportionate to the
+                                 purpose or outcome of the transaction.</p>
+                              <p><strong>Loss of Autonomy</strong>: A perceived loss of customer control over how their
+                                 data is used. Example: Customers may experience stress if they cannot
+                                 update or delete their information within financial institution systems.
+                                 Customers may also not be aware of financial institution data retention
+                                 requirements.</p>
+                           </td>
+                           <td>
+                              <p>The bank may face reputational damage if
+                                 customers’ data is accessible by
+                                 organizations they didn’t expect, or if
+                                 there are security issues.</p>
+                              <p>The bank may incur direct business costs
+                                 if customers choose to go bank elsewhere
+                                 because they don’t have control over
+                                 their data.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </section>
+         </div>
+      </div>
+
+      <div class="accordion-item">
+         <button class="accordion-button" aria-expanded="false" aria-controls="accordion-panel-5"
+            id="accordion-button-5">
+            <strong>How do we address the problems?</strong>
+            <p>Select controls to address system requirements and mitigate prioritized privacy risks.</p>
+         </button>
+         <div class="accordion-panel" id="accordion-panel-5" aria-labelledby="accordion-button-5" role="region" hidden>
+            <section id="how-do-we-mitigate-these-risks">
+               <h2>How do we mitigate these risks?<a class="headerlink local" href="#how-do-we-mitigate-these-risks"
+                     title="Link to this heading">#</a></h2>
+               <p>The below table highlights controls that can help mitigate problems to individuals and impact to banks. For a
+                  complete rationale for why these controls were
+                  chosen, please refer to our <a class="reference download internal local" download=""
+                     href="_downloads/8d7e74a305ec2baea7a563fc960b0813/mdl-PRAM.xlsx"><code
+                        class="xref download docutils literal notranslate"><span class="pre">excel</span> <span class="pre">mapping</span> <span class="pre">here</span></code></a>.
+               </p>
+               <p>Note: The Privacy Framework subcategories below align with the Initial Public Draft of the Privacy Framework version 1.1.</p>
+               <div class="pst-scrollable-table-container">
+                  <table class="table">
+                     <thead>
+                        <tr class="row-odd">
+                           <th class="head">
+                              <p><strong>Problems</strong></p>
+                           </th>
+                           <th class="head" colspan="2">
+                              <p><strong>Controls</strong></p>
+                           </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr class="row-even">
+                           <td colspan="3">
+                                    <p><strong>(1) The IDMS collects personal
+                                       attributes self-asserted by the
+                                       applicant.</strong></p>
+                           </td>
+                        </tr>
+                        <tr class="row-odd">
+                           <td colspan="2">
+                              <p><strong>Loss of Trust:</strong> Individuals could lose trust in a bank because they’re
+                                 uncomfortable with how the bank is handling their data. Example:
+                                 A customer assumes the data they provide is only for account enrollment, then they receive an email
+                                 marketing mailer that is tailored to
+                                 their identity.</p>
+                              <ul class="simple">
+                                 <li>
+                                    <p>Customers may also lose trust in the bank if they’re asked for sensitive data without knowing
+                                       why. Example: A customer may not realize
+                                       SSN is required regardless of mDL, in all financial institution account <em>creation</em>
+                                       processes.</p>
+                                 </li>
+                              </ul>
+                           </td>
+                           <td>
+                              <p><strong>NIST SP 800-53r5 Controls</strong></p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>PT-02:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=PT-02">Data
+                                          tagging</a> enables more effective data management.</p>
+                                 </li>
+                                 <li>
+                                    <p><strong>AC-03:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=AC-03">Access
+                                          enforcement</a> is important for compliance obligations and to protect data from malicious
+                                       actors, or unauthorized uses.</p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PT-05:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_0/home?element=PT-5">Just-in-time
+                                          notice</a> helps bring transparency to customers about how their data is processed.</p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PT-04:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=PT-04">Consent</a>
+                                       is important for enabling customer’s decision making in how their data is processed.</p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PM-22:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=PM-22">Quality
+                                          management</a> ensures there are avenues for customers to seek correction or deletion of
+                                       their information.</p>
+                                 </li>
+                                 <li>
+                                    <p><strong>SC-12:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=SC-12">Cryptographic
+                                          protection</a> can be used for data at rest or in transit.</p>
+                                 </li>
+                                 <li>
+                                    <p><strong>SA-08:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=SA-08">Data
+                                          Minimization</a> helps the bank to only collect what’s needed and reduce the data the bank
+                                       needs to store. mDL enables selective disclosure of only the necessary attributes.</p>
+                                 </li>
+                              </ul>
+                              <p><a class="reference external"
+                                    href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.40.ipd.pdf">Privacy Framework 1.1
+                                    Subcategories</a></p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>ID.IM-P5:</strong> <em>The purposes for the data actions are inventoried.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.PO-P2:</strong> <em>Policies, processes, and procedures for enabling data review,
+                                          transfer, sharing or disclosure, alteration, and deletion are established and in place
+                                          (e.g., to maintain data quality, manage data retention).</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CM.PO-P1:</strong> <em>Transparency policies, processes, and procedures for
+                                          communicating data processing purposes, practices, and associated privacy risks are
+                                          established and in place.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.PO-P3:</strong> <em>Policies, processes, and procedures for enabling individuals’
+                                          data processing preferences and requests are established and in place.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.PO-P4:</strong> <em>A data life cycle to manage data is aligned and implemented
+                                          with the system development life cycle to manage systems.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CM.AW-P8:</strong> <em>Individuals are provided with mitigation mechanisms (e.g.,
+                                          credit monitoring, consent withdrawal, data alteration or deletion) to address impacts of
+                                          problematic data actions.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>GV.MT-P7:</strong> <em>Policies, processes, and procedures for receiving, tracking,
+                                          and responding to complaints, concerns, and questions from individuals about
+                                          organizational privacy practices are established and in place.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>ID.RA-P6:</strong> <em>Data processing ecosystem parties (e.g., service providers,
+                                          customers, partners, product manufacturers, application developers) are assessed using a
+                                          privacy risk assessment process.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.DP-P1:</strong> <em>Data are processed to limit observability, linkability, and
+                                          singling out (e.g., data actions take place on local devices, privacy-preserving
+                                          cryptography).</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PR.DS-P1:</strong> <em>The confidentiality, integrity, and availability of
+                                          data-at-rest are protected.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PR.DS-P2:</strong> <em>The confidentiality, integrity, and availability of
+                                          data-in-transit are protected.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PR.DS-P9:</strong> <em>The confidentiality, integrity, and availability of
+                                          data-in-use are protected.</em></p>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                        <tr class="row-even">
+                           <td colspan="3">
+                                    <p><strong>(2) The applicant presents requested attributes from their mDL stored in their digital wallet.
+                                       The verifier collects the
+                                       applicant’s attributes from the mDL.</strong></p>
+                           </td>
+                        </tr>
+                        <tr class="row-odd">
+                           <td colspan="2">
+                              <p><strong>Loss of Trust:</strong> Customers could lose trust in a bank if the data they collect is
+                                 beyond what’s predictable or expected. Example: A
+                                 customer may think only certain attributes from their mDL are transferred, while the bank may
+                                 actually collect all attributes from the mDL.</p>
+                           </td>
+                           <td>
+                              <p>See loss of trust controls for data action 1. These controls apply to both the IDSM in data action
+                                 1 as well as the verifier in data action 2. In some architectures the verifier may be an element of
+                                 the IDMS.</p>
+                           </td>
+                        </tr>
+                        <tr class="row-even">
+                           <td colspan="2">
+                              <p><strong>Loss of Autonomy:</strong> A perceived loss of customer control over how their data is
+                                 used. Example: A customer’s data is sent to a third party
+                                 without their knowledge or used in a way they were not made explicitly aware of.</p>
+                           </td>
+                           <td>
+                              <p><strong>NIST SP 800-53r5 Controls</strong></p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>SR-06:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=SR-06">Supplier
+                                          assessments and reviews</a> are important for securing the broader supply chain when
+                                       vendors are involved in data processing.</p>
+                                 </li>
+                              </ul>
+                              <p><a class="reference external"
+                                    href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.40.ipd.pdf">Privacy Framework 1.1
+                                    Subcategories</a></p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>CM.AW-P8</strong>: <em>Individuals are provided with mitigation mechanisms (e.g.,
+                                          credit monitoring, consent withdrawal, data alteration or deletion) to address impacts of
+                                          problematic data actions.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>ID.BE-P4:</strong> <em>Data processing ecosystem parties (e.g., service providers,
+                                          customers, partners, product manufacturers, application developers) are identified and
+                                          prioritized.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>ID.RA-P6:</strong> <em>Data processing ecosystem parties (e.g., service providers,
+                                          customers, partners, product manufacturers, application developers) are assessed using a
+                                          privacy risk assessment process.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.DP-P1:</strong> <em>Data are processed to limit observability, linkability, and
+                                          singling out (e.g., data actions take place on local devices, privacy-preserving
+                                          cryptography).</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PR.DS-P1:</strong> <em>The confidentiality, integrity, and availability of
+                                          data-at-rest are protected.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PR.DS-P2:</strong> <em>The confidentiality, integrity, and availability of
+                                          data-in-transit are protected.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PR.DS-P9:</strong> <em>The confidentiality, integrity, and availability of
+                                          data-in-use are protected.</em></p>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                        <tr class="row-odd">
+                           <td colspan="3">
+                                    <p><strong>(3) The verifier confirms that the mDL is valid and discloses the mDL attributes to the IDMS. The
+                                       verifier disposes of all the
+                                       mDL attributes in the verifier by deleting them immediately after disclosure.</strong></p>
+                           </td>
+                        </tr>
+                        <tr class="row-even">
+                           <td colspan="2">
+                              <p><strong>Loss of Trust:</strong> The customer could lose trust in the bank and its partners because
+                                 of how they’re handling the customer data. Example:</p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>Surveillance (Verifier):</strong> If the verifier maintains data about the customer
+                                       and creates a “shadow profile” for each customer and
+                                       aggregates their data to craft a narrative about their habits.</p>
+                                 </li>
+                                 <li>
+                                    <p><strong>Surveillance (Issuer)</strong>: If the verifier directly contacts the issuer to
+                                       verify each transaction, the issuer could create a pattern
+                                       of the users’ behaviors and actions online with their mDL.</p>
+                                 </li>
+                              </ul>
+                              <p><strong>Dignity Loss:</strong> An issuer tracking customer activities across transactions could
+                                 lead to stress or embarrassment. Example: Issuer uses a
+                                 series of transactions to piece together habits of the customer, or aspects of the customer’s
+                                 identity, which they do not expect or want to
+                                 be known.</p>
+                           </td>
+                           <td>
+                              <p><strong>NIST SP 800-53r5 Controls</strong></p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>CA-07:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=CA-07">Continuous
+                                          Monitoring</a> is important to ensure privacy controls are implemented as expected.</p>
+                                 </li>
+                                 <li>
+                                    <p><strong>SC-12:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=SC-12">Cryptographic
+                                          protection</a> can be used for data at rest or in transit.</p>
+                                 </li>
+                                 <li>
+                                    <p><strong>SI-12:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=SI-12">Information
+                                          management and retention</a> – <strong>including data disposal</strong> - helps the bank
+                                       meet compliance obligations and reduces the data they need to store and protect.</p>
+                                 </li>
+                                 <li>
+                                    <p><strong>IA-02:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=IA-02">Identification
+                                          and Authentication</a> is important for ensuring only those who are authorized to access
+                                       personal data can do so.</p>
+                                 </li>
+                                 <li>
+                                    <p><strong>SR-06:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=SR-06">Supplier
+                                          assessments and reviews</a> are important for securing the broader supply chain when
+                                       vendors are involved in data processing.</p>
+                                 </li>
+                              </ul>
+                              <p><strong>Device retrieval</strong> – a verification model that allows the verifier to independently
+                                 verify the integrity and accuracy of the user’s attributes without contacting the issuer at
+                                 transaction time. Server retrieval is not supported.</p>
+                              <p><a class="reference external"
+                                    href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.40.ipd.pdf">Privacy Framework 1.1
+                                    Subcategories</a></p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>GV.DE-P4:</strong> <em>Data processing ecosystem parties are routinely assessed using
+                                          audits, test results, or other forms of evaluations to confirm they are meeting their
+                                          contractual, interoperability framework, or other obligations.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.PO-P2:</strong> <em>Policies, processes, and procedures for enabling data review,
+                                          transfer, sharing or disclosure, alteration, and deletion are established and in place
+                                          (e.g., to maintain data quality, manage data retention).</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PR.AA-P1:</strong> <em>Identities and credentials for authorized individuals,
+                                          services, and hardware are managed by the organization.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PR.AA-P2:</strong> <em>Identities are proofed and bound to credentials based on the
+                                          context of interactions.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>ID.BE-P4:</strong> <em>Data processing ecosystem parties (e.g., service providers,
+                                          customers, partners, product manufacturers, application developers) are identified and
+                                          prioritized.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>ID.RA-P6:</strong> <em>Data processing ecosystem parties (e.g., service providers,
+                                          customers, partners, product manufacturers, application developers) are assessed using a
+                                          privacy risk assessment process</em>.</p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.DP-P1:</strong> <em>Data are processed to limit observability, linkability, and
+                                          singling out (e.g., data actions take place on local devices, privacy-preserving
+                                          cryptography).</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PR.DS-P1:</strong> <em>The confidentiality, integrity, and availability of
+                                          data-at-rest are protected.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PR.DS-P2:</strong> <em>The confidentiality, integrity, and availability of
+                                          data-in-transit are protected.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PR.DS-P9:</strong> <em>The confidentiality, integrity, and availability of
+                                          data-in-use are protected.</em></p>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                        <tr class="row-odd">
+                           <td colspan="3">
+                                    <p><strong>(4) The IDMS creates a unique user identifier (UUID) for the applicant and transfers the
+                                       identifier along with all the
+                                       attributes (both self-asserted and from the mDL) to the appropriate bank IT back-end
+                                       applications.</strong></p>
+
+                           </td>
+                        </tr>
+                        <tr class="row-even">
+                           <td colspan="2">
+                              <p><strong>Loss of Trust:</strong> If a customer identifier is used to aggregate data about the
+                                 customer’s transactions beyond the financial institution
+                                 tenant. Example:</p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>Surveillance (IDMS):</strong> Customers may be tracked if the IDMS aggregates their
+                                       transactions across different tenants. IDMS could link
+                                       transactions across namespaces and domains for well-intended, mission critical reasons (fraud
+                                       prevention), or other business reasons,
+                                       some of which may not be compatible with user preferences (marketing) and some that may be
+                                       nefarious (targeting).</p>
+                                 </li>
+                              </ul>
+                              <p><strong>Dignity Loss:</strong> An IDMS tracking customer activities across tenants could lead to
+                                 stress or embarrassment. Example: Issuer uses a series
+                                 of transactions to piece together habits of the customer, or aspects of the customer’s identity,
+                                 which they do not expect or want to be
+                                 known.</p>
+                           </td>
+                           <td>
+                              <p><strong>NIST SP 800-53r5 Controls</strong></p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>IA-02:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=IA-02">Identification
+                                          and Authentication</a> is important for ensuring only those who are authorized to access
+                                       personal data, can do so.</p>
+                                 </li>
+                                 <li>
+                                    <p><strong>SC-12:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=SC-12">Cryptographic
+                                          protection</a> can be used for data at rest or in transit.</p>
+                                 </li>
+                                 <li>
+                                    <p><strong>SI-12:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=SI-12">Information
+                                          management and retention</a> – <strong>including data disposal</strong> - helps the bank
+                                       meet compliance obligations and reduces the data they need to store and protect.</p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PT-03:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=PT-03">Personally
+                                          identifiable information processing purposes</a> limits the use of data to only that which
+                                       is approved.</p>
+                                 </li>
+                                 <li>
+                                    <p><strong>SR-06:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=SR-06">Supplier
+                                          assessments and reviews</a> are important for securing the broader supply chain when
+                                       vendors are involved in data processing.</p>
+                                 </li>
+                              </ul>
+                              <p><strong>Unique identifiers</strong> are randomly generated so they aren’t inherently revealing
+                                 about an individual.</p>
+                              <p><a class="reference external"
+                                    href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.40.ipd.pdf">Privacy Framework 1.1
+                                    Subcategories</a></p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>GV.DE-P4:</strong> <em>Data processing ecosystem parties are routinely assessed using
+                                          audits, test results, or other forms of evaluations to confirm they are meeting their
+                                          contractual, interoperability framework, or other obligations.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.PO-P2:</strong> <em>Policies, processes, and procedures for enabling data review,
+                                          transfer, sharing or disclosure, alteration, and deletion are established and in place
+                                          (e.g., to maintain data quality, manage data retention).</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>ID.IM-P5:</strong> <em>The purposes for the data actions are inventoried.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>ID.BE-P4:</strong> <em>Data processing ecosystem parties (e.g., service providers,
+                                          customers, partners, product manufacturers, application developers) are identified and
+                                          prioritized.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>ID.RA-P6:</strong> <em>Data processing ecosystem parties (e.g., service providers,
+                                          customers, partners, product manufacturers, application developers) are assessed using a
+                                          privacy risk assessment process</em>.</p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.DP-P1:</strong> <em>Data are processed to limit observability, linkability, and
+                                          singling out (e.g., data actions take place on local devices, privacy-preserving
+                                          cryptography).</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PR.DS-P1:</strong> <em>The confidentiality, integrity, and availability of
+                                          data-at-rest are protected.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PR.DS-P2:</strong> <em>The confidentiality, integrity, and availability of
+                                          data-in-transit are protected.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PR.DS-P9:</strong> <em>The confidentiality, integrity, and availability of
+                                          data-in-use are protected.</em></p>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                        <tr class="row-odd">
+                           <td colspan="2">
+                              <p><strong>Economic Loss:</strong> If customer data is breached at the IDMS, this leak may be used to
+                                 defraud the individual. Example: A nefarious actor
+                                 could use leaked data to phish a customer and steal their identity, which could result in
+                                 significant economic loss.</p>
+                           </td>
+                           <td>
+                              <p><strong>NIST SP 800-53r5 Controls</strong></p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>AC-06:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=AC-06">Least
+                                          privilege</a> is valuable for ensuring data is not comingled and broadly accessible beyond
+                                       what’s required.</p>
+                                 </li>
+                                 <li>
+                                    <p><strong>SC-07:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=SC-07">Boundary
+                                          Protection</a> is helpful for limiting data comingling across distinct datasets and
+                                       preventing unapproved processing.</p>
+                                 </li>
+                              </ul>
+                              <p><a class="reference external"
+                                    href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.40.ipd.pdf">Privacy Framework 1.1
+                                    Subcategories</a></p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>CT.DP-P1:</strong> <em>Data are processed to limit observability, linkability, and
+                                          singling out (e.g., data actions take place on local devices, privacy-preserving
+                                          cryptography).</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PR.DS-P1:</strong> <em>The confidentiality, integrity, and availability of
+                                          data-at-rest are protected.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PR.DS-P2:</strong> <em>The confidentiality, integrity, and availability of
+                                          data-in-transit are protected.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PR.DS-P9:</strong> <em>The confidentiality, integrity, and availability of
+                                          data-in-use are protected.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PR.IR-P1:</strong> <em>Networks and environments are protected from unauthorized
+                                          logical access and usage</em>.</p>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                        <tr class="row-even">
+                           <td colspan="3">
+                                    <p><strong>(5) The bank validates that the applicant attributes match a valid SSN record. SSN verifier
+                                       responds with “yes” or “no” and
+                                       disposes of the data sent by the bank back-end. The bank may also validate attributes with
+                                       third party databases.</strong></p>
+                           </td>
+                        </tr>
+                        <tr class="row-odd">
+                           <td colspan="2">
+                              <p><strong>Loss of Trust:</strong> The bank’s business partner may not effectively secure customer
+                                 data from external actors. Example:</p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>Insecurity:</strong> The bank’s business partner may suffer a data breach by an
+                                       external bad actor that results in the leak of the customer’s
+                                       SSN and other sensitive information, and ultimately in identity theft.</p>
+                                 </li>
+                              </ul>
+                           </td>
+                           <td>
+                              <p><strong>NIST SP 800-53r5 Controls</strong></p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>IA-02:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=IA-02">Identification
+                                          and Authentication</a> is important for ensuring only those who are authorized to access
+                                       personal data, can do so.</p>
+                                 </li>
+                                 <li>
+                                    <p><strong>SI-12:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=SI-12">Information
+                                          management and retention</a> – including data disposal - helps the bank meet compliance
+                                       obligations and reduces the data they need to store and protect.</p>
+                                 </li>
+                                 <li>
+                                    <p><strong>SC-12:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=SC-12">Cryptographic
+                                          protection</a> can be used for data at rest or in transit.</p>
+                                 </li>
+                                 <li>
+                                    <p><strong>SR-06:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=SR-06">Supplier
+                                          assessments and reviews</a> are important for securing the broader supply chain when
+                                       vendors are involved in data processing.</p>
+                                 </li>
+                              </ul>
+                              <p>Use of Social Security Administration’s SSN Verifier incorporates a secure approach to
+                                 verification.</p>
+                              <p><a class="reference external"
+                                    href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.40.ipd.pdf">Privacy Framework 1.1
+                                    Subcategories</a></p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>PR.AA-P1:</strong> <em>Identities and credentials for authorized individuals,
+                                          services, and hardware are managed by the organization.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PR.AA-P2:</strong> <em>Identities are proofed and bound to credentials based on the
+                                          context of interactions.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.PO-P2:</strong> <em>Policies, processes, and procedures for enabling data review,
+                                          transfer, sharing or disclosure, alteration, and deletion are established and in place
+                                          (e.g., to maintain data quality, manage data retention).</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.DP-P1:</strong> <em>Data are processed to limit observability, linkability, and
+                                          singling out (e.g., data actions take place on local devices, privacy-preserving
+                                          cryptography).</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.DP-P2:</strong> <em>Data are processed to limit the identification of individuals
+                                          (e.g., de-identification privacy techniques, tokenization).</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.DP-P3:</strong> <em>Data are processed to limit the formulation of inferences
+                                          about individuals’ behavior or activities (e.g., data processing is decentralized,
+                                          distributed architectures).</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>ID.BE-P4:</strong> <em>Data processing ecosystem parties (e.g., service providers,
+                                          customers, partners, product manufacturers, application developers) are identified and
+                                          prioritized.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>ID.RA-P6:</strong> <em>Data processing ecosystem parties (e.g., service providers,
+                                          customers, partners, product manufacturers, application developers) are assessed using a
+                                          privacy risk assessment process.</em></p>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                        <tr class="row-even">
+                           <td colspan="3">
+                                    <p><strong>(6) Bank IT back-end processes the information collected and uses its decision logic to determine
+                                       what financial offering will
+                                       be made to the applicant.</strong></p>
+                           </td>
+                        </tr>
+                        <tr class="row-odd">
+                           <td colspan="2">
+                              <p><strong>Discrimination:</strong> If assumptions are made about individuals or groups of individuals
+                                 based on their self-asserted information, this could
+                                 result in discrimination. Joining this self-asserted data with other datasets could reveal a
+                                 narrative about an individual. Example:
+                                 Drawing conclusions about race or financial situation.</p>
+                           </td>
+                           <td>
+                              <p><strong>NIST SP 800-53r5 Controls</strong></p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>SA-08:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=SA-08">Data
+                                          Minimization</a> is important for limiting the data processed to only that which is needed
+                                       for the decision logic.</p>
+                                 </li>
+                              </ul>
+                              <p><a class="reference external"
+                                    href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.40.ipd.pdf">Privacy Framework 1.1
+                                    Subcategories</a></p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>CT.PO-P4:</strong> <em>A data life cycle to manage data is aligned and implemented
+                                          with the system development life cycle to manage systems.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.DP-P1:</strong> <em>Data are processed to limit observability, linkability, and
+                                          singling out (e.g., data actions take place on local devices, privacy-preserving
+                                          cryptography).</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.DP-P2:</strong> <em>Data are processed to limit the identification of individuals
+                                          (e.g., de-identification privacy techniques, tokenization).</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.DP-P3:</strong> <em>Data are processed to limit the formulation of inferences
+                                          about individuals’ behavior or activities (e.g., data processing is decentralized,
+                                          distributed architectures).</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.DP-P4:</strong> <em>System or device configurations permit selective collection or
+                                          disclosure of data elements.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.DP-P5:</strong> <em>Attribute values are substituted with derived attribute values
+                                          (e.g., providing an “age older than” statement rather than the actual age).</em></p>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                        <tr class="row-even">
+                           <td colspan="2">
+                              <p><strong>Economic Loss:</strong> Individuals could receive unfair value in a transaction due to
+                                 discrimination. Example: Assuming credit worthiness based
+                                 solely on someone’s area code.</p>
+                              <p>Additionally, if customer data is breached at the bank back end, this leak may be used to defraud
+                                 the individual. Example: A nefarious
+                                 actor could use leaked data to phish a customer and steal their identity, which could result in
+                                 significant economic loss.</p>
+                           </td>
+                           <td>
+                              <p><strong>NIST SP 800-53r5 Controls</strong></p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>AC-03:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=AC-03">Access
+                                          Enforcement - Individual Access</a> enables individuals to review what information about
+                                       them the bank holds - which gives individuals more predictability and manageability of their
+                                       own data.</p>
+                                 </li>
+                              </ul>
+                              <p><a class="reference external"
+                                    href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.40.ipd.pdf">Privacy Framework 1.1
+                                    Subcategories</a></p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>PR.PS-P1:</strong> <em>Configuration management practices are established and
+                                          applied.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.PO-P2:</strong> <em>Policies, processes, and procedures for enabling data review,
+                                          transfer, sharing or disclosure, alteration, and deletion are established and in place
+                                          (e.g., to maintain data quality, manage data retention).</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.PO-P3:</strong> <em>Policies, processes, and procedures for enabling individuals’
+                                          data processing preferences and requests are established and in place.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.DM-P1:</strong> <em>Data Elements can be accessed for review.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.DM-P2:</strong> <em>Data elements can be accessed for transmission or
+                                          disclosure.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.DM-P3:</strong> <em>Data elements can be accessed for alteration.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.DM-P4:</strong> <em>Data elements can be accessed for deletion.</em></p>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                        <tr class="row-odd">
+                           <td colspan="2">
+                              <p><strong>Loss of Autonomy</strong>: Customers may lose control over how their data is processed,
+                                 because the bank chooses to process it in a new way
+                                 internally without proper notice (i.e., secondary use or repurposing). Example: Customers may
+                                 expect their personal data to be accessed for
+                                 only certain purposes, such as identity verification when applying for a financial product, but
+                                 then it is later used for fraud scoring
+                                 without their consent.</p>
+                           </td>
+                           <td>
+                              <p><strong>NIST SP 800-53r5 Controls</strong></p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>PT-02</strong>: <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=PT-02">Data
+                                          tagging</a> <em>enables more effective data management.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PT-03:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=PT-03">Personally
+                                          identifiable information processing purposes</a> <em>limits the use of data to only that
+                                          which is approved.</em></p>
+                                 </li>
+                              </ul>
+                              <p><a class="reference external"
+                                    href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.40.ipd.pdf">Privacy Framework 1.1
+                                    Subcategories</a></p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>ID.IM-P5:</strong> <em>The purposes for the data actions are inventoried.</em></p>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                        <tr class="row-even">
+                           <td colspan="3">
+
+                                    <p><strong>(7) Bank creates an account for the approved applicant and initiates passkey set up via the IDMS.</strong>
+                                    </p>
+
+                           </td>
+                        </tr>
+                        <tr class="row-odd">
+                           <td colspan="2">
+                              <p><strong>Loss of Trust:</strong> Customers may lose trust in the bank if they’re unclear on who has
+                                 access to which data. Example: A customer doesn’t
+                                 know why they’re interacting with the IDMS instead of the bank.</p>
+                              <p>Customers may also lose trust in the bank if they’re asked to present their mDL and attributes each
+                                 time they authenticate after account
+                                 creation. Example: If customers are asked to use their mDL for regular authentication, they will
+                                 need to assert attributes from their mDL
+                                 each time. Such actions could be perceived as disproportionate to the purpose or outcome of the transaction.</span></a></p>
+                           </td>
+                           <td>
+                              <p><strong>NIST SP 800-53r5 Controls</strong></p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>IA-02:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=IA-02">Identification
+                                          and Authentication</a> <em>is important for ensuring only those who are authorized to
+                                          access personal data, can do so.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>AC-03</strong>: <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=AC-03">Access
+                                          Enforcement - Individual Access</a> <em>enables individuals to review what information
+                                          about them the bank holds - which gives individuals more predictability and manageability
+                                          of their own data.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PM-26:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=PM-26">Complaint
+                                          Management</a> <em>offers a mechanism for individuals to raise concerns about privacy
+                                          practices - crucial for individuals’ ongoing participation in their personal data
+                                          processing.</em></p>
+                                 </li>
+                              </ul>
+                              <p><strong>Pseudonymous Authentication</strong> - Using authentication methods (e.g., passkeys) that
+                                 does not require the assertion of user attributes as part of the authentication protocol.</p>
+                              <p><a class="reference external"
+                                    href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.40.ipd.pdf">Privacy Framework 1.1
+                                    Subcategories</a></p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>PR.AA-P1:</strong> <em>Identities and credentials for authorized individuals,
+                                          services, and hardware are managed by the organization.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PR.AA-P2:</strong> <em>Identities are proofed and bound to credentials based on the
+                                          context of interactions.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PR.PS-P1:</strong> <em>Configuration management practices are established and
+                                          applied.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.PO-P2:</strong> <em>Policies, processes, and procedures for enabling data review,
+                                          transfer, sharing or disclosure, alteration, and deletion are established and in place
+                                          (e.g., to maintain data quality, manage data retention).</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.PO-P3:</strong> <em>Policies, processes, and procedures for enabling individuals’
+                                          data processing preferences and requests are established and in place.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.DM-P1:</strong> <em>Data Elements can be accessed for review.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.DM-P2:</strong> <em>Data elements can be accessed for transmission or
+                                          disclosure.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.DM-P3:</strong> <em>Data elements can be accessed for alteration.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.DM-P4:</strong> <em>Data elements can be accessed for deletion.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>PR.PS-P1:</strong> <em>Configuration management practices are established and
+                                          applied.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.DP-P1:</strong> <em>Data are processed to limit observability, linkability, and
+                                          singling out (e.g., data actions take place on local devices, privacy-preserving
+                                          cryptography).</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>CT.DP-P2:</strong> <em>Data are processed to limit the identification of individuals
+                                          (e.g., de-identification privacy techniques, tokenization).</em></p>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                        <tr class="row-even">
+                           <td colspan="2">
+                              <p><strong>Loss of Autonomy</strong>: A perceived loss of customer control over how their data is
+                                 used. Example: Customers may experience stress if they
+                                 cannot update or delete their information within financial institution systems. Customers may also
+                                 not be aware of financial institution
+                                 data retention requirements.</p>
+                           </td>
+                           <td>
+                              <p><strong>NIST SP 800-53r5 Controls</strong></p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>PM-26:</strong> <a class="reference local"
+                                          href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_1/home?element=PM-26">Complaint
+                                          Management</a> <em>offers a mechanism for individuals to raise concerns about privacy
+                                          practices - crucial for individuals’ ongoing participation in their personal data
+                                          processing.</em></p>
+                                 </li>
+                              </ul>
+                              <p><a class="reference external"
+                                    href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.40.ipd.pdf">Privacy Framework 1.1
+                                    Subcategories</a></p>
+                              <ul class="simple">
+                                 <li>
+                                    <p><strong>CM.AW-P2:</strong> <em>Mechanisms for obtaining feedback from individuals (e.g.,
+                                          surveys or focus groups) about data processing and associated privacy risks are
+                                          established and in place.</em></p>
+                                 </li>
+                                 <li>
+                                    <p><strong>GV.MT-P7:</strong> <em>Policies, processes, and procedures for receiving, tracking,
+                                          and responding to complaints, concerns, and questions from individuals about
+                                          organizational privacy practices are established and in place.</em></p>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </section>
+         </div>
+      </div>
+
+   </div>
+
+   <aside class="footnote-list brackets">
+      <aside class="footnote brackets" id="id7" role="doc-footnote">
+         <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1"
+               class="local">1</a><span class="fn-bracket">]</span></span>
+         <p>The privacy assessment here is an abbreviated presentation of material using the full linked PRAM.</p>
+      </aside>
+      <aside class="footnote brackets" id="id8" role="doc-footnote">
+         <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2"
+               class="local">2</a><span class="fn-bracket">]</span></span>
+         <p><a class="reference external"
+               href="https://blogs.idc.com/2020/05/15/defining-the-data-native-worker-gen-d/">https://blogs.idc.com/2020/05/15/defining-the-data-native-worker-gen-d/</a>
+         </p>
+      </aside>
+      <aside class="footnote brackets" id="id10" role="doc-footnote">
+         <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4"
+               class="local">3</a><span class="fn-bracket">]</span></span>
+         <p><a class="reference external"
+               href="https://www.pymnts.com/digital-first-banking/2025/the-young-and-impatient-digital-native-generations-want-instant-payments-from-banks/">https://www.pymnts.com/digital-first-banking/2025/the-young-and-impatient-digital-native-generations-want-instant-payments-from-banks/</a>
+         </p>
+      </aside>
+      <aside class="footnote brackets" id="id11" role="doc-footnote">
+         <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5"
+               class="local">4</a><span class="fn-bracket">]</span></span>
+         <p>This retention requirement is from the Sarbanes-Oxley Act of 2002: <a class="reference external"
+               href="https://www.congress.gov/bill/107th-congress/house-bill/3763">https://www.congress.gov/bill/107th-congress/house-bill/3763</a>.
+         </p>
+      </aside>
+      <aside class="footnote brackets" id="id12" role="doc-footnote">
+         <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6"
+               class="local">5</a><span class="fn-bracket">]</span></span>
+         <p>The NCCoE Bank example implementation does not go to an external entity for validation of self-asserted
+            attributes, but in real world implementations the
+            bank would leverage 3<sup>rd</sup> party entities to validate all self-asserted data (e.g., Emailage to
+            validate email).</p>
+      </aside>
+   </aside>

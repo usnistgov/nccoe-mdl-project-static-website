@@ -1,0 +1,258 @@
+NIST 800-63A Profile for mDL Issuance
+=====================================
+
+Profile of NIST Special Publication 800-63A for the issuance of mDLs to a user controlled wallet or mDL application
+--------------------------------------------------------------------------------------------------------------------
+
+The following appendix provides recommended controls selected from NIST SP 800-63A Digital Identity Guidelines: Identity Proofing and Enrollment to address the
+need for a more consistent process for issuing an mDL to a digital wallet. While the Digital Identity Guidelines are not mandated for state mDL issuers, they
+provide a common construct and control set that can support interoperability and trust enhancement among Relying Parties if applied consistently
+by issuers of mDLs and other Verifiable Digital Credentials. Terminology used in this profile is consistent with the Digital Identity Guidelines and being is applied
+to the specific concepts in the mDL, and more broadly, the verifiable digital credentials ecosystem.
+
+**Context**: The Digital Identity Guidelines define several key concepts that contribute to the degree of assurance an issuer can have in the identity of the
+user. The guidelines cover a far greater scope of uses than what is required for this profile. As a result, the following subset of requirements will be
+covered.
+
+**Note:** While Issuers are ultimately responsible for determining which controls are met before issuing credentials to wallets, many of the controls listed in this profile will be implemented by the wallet provider. Therefore, issuers should work closely with wallet providers to determine how individual wallets meet these controls.
+
+.. list-table::
+   :widths: 80 80
+   :header-rows: 1
+
+   * - Topic
+     - Description
+   * - Identity Evidence Requirements
+     - Requirements that define what identity evidence is needed to support the real-world identity of an applicant seeking an mDL.
+   * - Evidence & Attribute Validation Requirements
+     - Requirements that define what steps an issuer must take to confirm that supplied identity evidence is genuine, authentic, and accurate. Requirements that
+       define the process to confirm the accuracy of the applicant’s attributes.
+   * - Verification & Biometric Usage Requirements
+     - Requirements that define the process to confirm that the applicant is the genuine owner of the presented evidence and attributes. Requirements for the
+       use and performance of biometrics in the issuance process; this includes Presentation Attack Detection requirements.
+   * - Digital Injection Prevention and Forged Media Detection
+     - Requirements for addressing digital injection and deepfake threats to issuance systems
+   * - Fraud Management
+     - Requirements for addressing attacks on issuance systems, detect potential fraudulent enrollment attempts, and manage privacy related to fraud detection
+       systems.
+
+The requirements outlined here largely build off of the baseline requirement for Identity Assurance Level 2 and common requirements that exist across all
+assurance levels.
+
+**Evidence Requirements**
+Evidence of an existing DMV record is required to confirm that an applicant for an mDL has a valid driver’s license with accurate information on file. Issuers
+of mDL should collect the following evidence for the issuance process.
+
+.. list-table::
+   :widths: 40 120
+   :header-rows: 1
+   
+   * - Identifier
+     - Control
+   * - EV-1
+     - One piece of strong evidence as represented by a Driver’s License or ID issued by the DMV that will be issuing the mDL.
+
+For most instances of IAL2 identity proofing, more than one piece of evidence is required. However, in the case of mDL the applicant is interacting directly
+with the DMV where identity evidence was already collected during previous proofing events. As a result, no additional evidence beyond a valid Driver’s License
+or State ID is required. If issuers wish to increase confidence in the identity of a given applicant, additional evidence (e.g., phone account, platform
+account) may be used to support issuance processes.
+
+**Evidence & Attribute Validation Requirements**
+To be a trusted source of information, the mDL must have accurate information tied to the System of Record associated with the applicant’s original driver’s
+license or state issued ID. As such, an authoritative records check is expected unlike in other forms of proofing where such access is not available or
+afforded. With this comes greater assurance in the correctness and validity of the information signed into the issued credentials.
+
+.. list-table::
+   :widths: 40 120
+   :header-rows: 1
+
+   * - Identifier
+     - Control
+   * - VAL-1
+     - Compare the attributes contained in the presented evidence against the issuers’ authoritative System of Record to resolve the identity to the SOR and
+       confirm accuracy of the data.
+   * - VAL-2
+     - Ensure the validity of the presented evidence by confirming the System of Record indicates that the applicant still has a valid driver’s license or state
+       issued ID.
+   * - VAL-3
+     - (Optional) Confirm the authenticity of the physical evidence by either: 
+       
+       1. Using automated scanning technology that is able to detect physical security
+          features, or 
+
+       2. Confirming the integrity of any physical security features through the physical and tactile inspection by a proofing agent at an onsite
+          location, or 
+
+       3. Confirming the integrity of digital or cryptographic security features.
+
+Note that the requirements for confirming the authenticity of evidence is not mandatory. While issuers may wish to add a physical or automated authenticity
+check of evidence to increase confidence in legitimacy of what is being presented, this is less important when coupled with the direct access they maintain to
+the System of Record and the ability to conduct a biometric verification against the image stored in the System of Record. If Issuers desire to maintain an
+inspection of evidence, they should apply the controls contained in Section 3.13 Requirements for Validation of Physical Evidence in NIST SP 800-63A. Issuers
+should also balance the marginal increase in confidence against the usability, accuracy, and cost challenges that will be introduced by physical or automated
+inspections.
+
+**Verification & Biometric Usage Requirements** [1]_
+Verification processes allow for the Issuer to increase confidence that the individual presenting attributes or evidence is the individual who is associated
+with that evidence in the System of Record. When verifying an applicant’s identity the Issuer should apply the following controls:
+
+.. list-table::
+   :widths: 40 120
+   :header-rows: 1
+
+   * - Identifier
+     - Control
+   * - VER-1
+     - Compare, via automated biometric means, a facial image stored in the System of Record associated with the driver’s license or state ID, to a live sample
+       provided by the applicant.
+   * - VER-2
+     - Implement presentation attack detection (PAD) capabilities, which meet IAPAR performance metric <0.07, to confirm the genuine presence of a live human
+       being and to mitigate spoofing and impersonation attempts. Conduct all biometric presentation attack detection tests conformant to ISO/IEC 30107-3:2023.
+   * - VER-3
+     - Meet the following performance thresholds if 1:1 biometric comparison algorithms are used for verification against a claimed identity: False match rate:
+       1:10,000 or better; and False non-match rate: 1:100 or better
+   * - VER-4
+     - Have biometric recognition and attack detection algorithms periodically tested by independent entities (e.g., accredited laboratories or research
+       institutions) for their performance characteristics, including performance across demographic groups. Conduct internal testing on biometric algorithms
+       based on the update schedule of the provider.
+   * - VER-5
+     - Assess the performance and demographic impacts of employed biometric technologies in conditions that are substantially similar to the operational
+       environment and user base of the system. The user base is defined by both the expected users as well as the devices they are expected to use. When such
+       assessments include real-world users, make participation by users voluntary.
+   * - VER-6
+     - Provide performance for applicants of different demographic types that is no more than 25% worse than the performance for the overall population. For
+       example, if the measured FNMR for the overall population is 0.006, the FNMR for a specific demographic group cannot exceed 0.0075. Similarly, if the FMR
+       for the overall population is 0.0001, the FMR for each demographic group cannot exceed 0.000125. Configure the biometric system with a fixed threshold;
+       it is not feasible to change the threshold for each demographic group. Include sex, age, and skin tone as factors that affect biometric performance.
+   * - VER-7
+     - Conduct all biometric testing conformant to ISO/IEC 19795-1:2021 and ISO/IEC 19795-10:2024, including demographics testing.
+   * - VER-8
+     - Make the results of their biometric algorithm performance and biometric system operational test results publicly available.
+   * - VER-9
+     - Provide clear, publicly available information about all uses of biometrics, what biometric data is collected, how it is stored, how it is protected, and
+       information on how to remove biometric information consistent with applicable laws and regulations.
+   * - VER-10
+     - Obtain an explicit informed consent to collect and use biometrics from all applicants.
+   * - VER-11
+     - Store a record of the subscriber’s consent for biometric use and associate it with the subscriber’s account.
+   * - VER-12
+     - (If attended) Visually compare the applicant’s facial image to a facial portrait in records associated with the driver’s license or state ID either an
+       onsite attended session (in-person with a proofing agent) or a remote attended session (live video with a proofing agent).
+   * - VER-13
+     - (If attended) Collect biometrics in such a way that provides reasonable assurance that the biometric is collected from the applicant, and not another
+       subject.
+   * - VER-14
+     - (If attended and onsite) Have the proofing agent view the biometric source (e.g., fingers, face) for the presence of non-natural materials and perform
+       such inspections as part of the issuance process.
+   * - VER-15
+     - (If attended) Train proofing agents to conduct visual facial image comparison. Include in this training: techniques and methods for identifying facial
+       characteristics, unique traits, and other indicators of positive or negative matches between an applicant and their presented evidence.
+   * - VER-16
+     - (If attended) Assess proofing agents regarding their ability to conduct visual facial image comparisons. Additionally, re-assess proofing agents, and
+       remedially trained if needed, on an annual basis. Design training to reflect potential real-world attack scenarios such as the comparison of applicants
+       to images of relatives, twins, and individuals of a similar appearance.
+   * - VER-17
+     - (If remote attended) Provide proofing agents that conduct visual facial comparisons during remote attended transactions (e.g., video) with resources that
+       support accurate comparisons including, but not limited to, resources such as high quality image feeds, high definition monitors, and image analysis
+       software.
+   * - VER-18
+     - (If attended) Document proofing agent training and assessment procedures for visual image comparisons and make them available RPs upon request.
+   * - VER-19
+     - (If exceptions to biometrics are offered) Confirm the applicant’s ability to return a confirmation code delivered to a physical address (i.e., postal
+       address) that was obtained from the System of Record associated with the applicant. Limit the validity of confirmation codes to 21 days, when sent to a
+       validated postal address within the contiguous United States and 30 days, when sent to a validated postal address outside the contiguous United States.
+   * - VER-20
+     - (if exceptions to biometrics are offered) Provide RPs with an indication of the use of exception handling processes by encoding in the MSO.
+
+**Digital Injections and Fraudulent Media**
+Many emerging attacks on remote identity proofing processes, both attended and unattended, pair digital injection attacks with increasingly effective and
+available generative Artificial Intelligence (AI) tools. AI tools are used to create or modify media containing images or videos of applicants and evidence
+(i.e., deepfakes) to defeat automated document validation processes, biometric operations, and visual comparisons done by proofing agents. Injection attacks
+insert modified or forged media between the capture point, such as a device, and the element conducting the comparison or other operation, such as a server
+running the algorithms or a workstation used by a proofing agent. As such, issuers should implement the following controls:
+
+.. list-table::
+   :widths: 40 120
+   :header-rows: 1
+
+   * - Identifier
+     - Control
+   * - DI-1
+     - Implement technical controls to increase confidence that digital media is being produced by a genuine sensor during the issuance process (e.g., detect
+       the presence of a virtual camera, device emulator, or a jailbroken device).
+   * - DI-2
+     - Analyze all digital media submitted during the identity proofing process for artifacts and indicators of potential modification, manipulation, tampering,
+       or forgery. Test Automated image analysis algorithms against available attack artifacts (i.e., forged and manipulated images and videos) and genuine
+       media to provide a baseline of performance and to determine the expected rate of false positives and false negatives generated by the system. Augment
+       algorithmic analysis of media and automated decisioning with manual reviews to address detection errors.
+   * - DI-3
+     - Use only authenticated protected channels for the exchange of data during remote issuance processes.
+   * - DI-4
+     - (optional) introduce passive means (e.g., webrtc commands) of detecting forged or manipulated media for all capture scenarios.
+   * - DI-5
+     - (optional) Authenticate capture sensors or implement device attestation to increase the confidence in a device being used to transmit digital media as
+       part of a remote identity proofing process.
+   * - DI-6
+     - (optional) Analyze digital media for signatures of generative AI algorithms and deepfake tools that are known to be used to create forged digital media.
+   * - DI-7
+     - (if attended) Train proofing agents and trusted referees to look for indications of manipulated media (e.g., high latency, synchronization issues,
+       inconsistent skin tone and resolution).
+   * - DI-8
+     - (if attended) Introduce random “human-in-the-loop” cues into their capture processes that increase the possibility of forged or manipulated media being
+       detected (e.g., by requesting user movements or requesting that the user move objects between the capture sensor and their face).
+
+| **Fraud Management Requirements**
+| Issuers of mDLs and other verifiable credentials should implement the following controls and processes to help manage potential attempts to subvert the
+  issuance process through fraudulent enrollment attempts.
+
+.. list-table::
+   :widths: 40 120
+   :header-rows: 1
+
+   * - Identifier
+     - Control
+   * - FM-1
+     - Establish and maintain a fraud management program that provides fraud identification, detection, investigation, reporting, and resolution capabilities.
+   * - FM-2
+     - Conduct a Privacy Risk Assessment of all fraud checks and fraud mitigation technologies prior to implementation.
+   * - FM-3
+     - Establish a self-reporting mechanism and investigation capability for subjects who believe they have been the victim of fraud or an attempt to compromise
+       their involvement in the identity proofing processes.
+   * - FM-4
+     - Analyze all credential issuance communications & channels to look for high risk indicators of potential fraud (e.g., block-listed proxies and IP
+       addresses).
+   * - FM-5
+     - Take measures to prevent unsuccessful applicants from inferring the accuracy of any self-asserted information with that confirmed by authoritative or
+       credible sources.
+   * - FM-6
+     - Establish a technical or process-based mechanism to allow RPs to communicate suspected and confirmed fraud events to RPs.
+   * - FM-7
+     - Monitor the performance of their fraud checks and fraud mitigation technologies to ensure continued effectiveness in mitigating fraud risks.
+   * - FM-8
+     - Implement a death records check for all issuance processes, by confirming with a credible, authoritative, or issuing source that the applicant is not
+       deceased.
+   * - FM-9
+     - Evaluate the length of time a phone service subscription or other account (e.g., account with wallet provider) has existed without substantial
+       modifications or changes.
+   * - FM-10
+     - Incorporate device fingerprinting checks to provide protections against scaled and automated attacks and enrollment duplication.
+   * - EM-11
+     - Evaluate anticipated transaction characteristics – such as IP Addresses, geolocations, and transaction velocities – to identify anomalous behaviors or
+       activities that can indicate a higher risk or a potentially fraudulent event.
+   * - FM-12
+     - Evaluate records, such as reported, confirmed, or historical fraud events to determine if there is an elevated risk related to a specific applicant,
+       applicant’s data, or device.
+   * - FM-13
+     - Periodically employ independent testing, such as red teaming exercises, to validate the effectiveness of their fraud mitigation measures.
+   * - FM-14
+     - Provide a means of invalidating attribute bundles issued to a subscriber. This can be achieved by: issue mDLs with a limited time validity window;
+       provide a means to independently verify the status of mDLs (i.e., whether a specific bundle has been revoked by the CSP); or both Note: For methods that
+       use independent status of mDL this needs to be implemented in a manner such that the Issuer is not alerted to the use of a specific mDL at a specific
+       verifier/RP. For example with certificate status lists that can be independently downloaded by verifiers..
+   * - FM-15
+     - (In-person issuance) Train proofing agents to detect indicators of fraud and SHALL provide proofing agents and trusted referees with tools to flag
+       suspected fraudulent events for further treatment and investigation.
+
+
+.. [1] **Note:** The use of the term “verification” is consistent with its usage in NIST SP 800-63. Specifically, “the process to confirm that the applicant is the
+   genuine owner of the presented identity evidence.” It is not the general term “identity verification” which is often used as a synonym for identity proofing.
