@@ -37,7 +37,7 @@ Each flow makes the following assumptions:
 
 4. The bank can create and manage the customer's account via an identity management system.
 
-.. figure:: media/image1.png
+.. figure:: ../media/image1.png
    :width: 6.5in
    :height: 5.49444in
    :alt: Cross-Device Flow diagram. See figure 1 caption below image.
@@ -46,7 +46,7 @@ Each flow makes the following assumptions:
    interacting with through a web browser on a desktop or laptop. The web browser will present the user with a QR code to invoke the wallet on the mobile
    device.
 
-.. figure:: media/image2.png
+.. figure:: ../media/image2.png
    :width: 6.5in
    :height: 8.35417in
    :alt: Same-device flow diagram. See figure 2 caption below image.
@@ -151,3 +151,11 @@ Practice [11]_ when using a native banking applications.
 
 .. [11]
    https://datatracker.ietf.org/doc/html/rfc8252
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+   :glob:
+   :hidden:
+
+   interaction_diagrams.rst

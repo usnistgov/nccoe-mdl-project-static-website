@@ -54,7 +54,7 @@ Cross Device Financial Account Application Flow
 Part 1 - User Initiates Application Process
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. mermaid:: media/cross-device-application-flow-part-1.mmd
+.. mermaid:: ../media/cross-device-application-flow-part-1.mmd
 
 
 
@@ -62,14 +62,14 @@ Part 1 - User Initiates Application Process
 Part 2 - mDL Verification Using the DC API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. mermaid:: media/cross-device-application-flow-part-2.mmd
+.. mermaid:: ../media/cross-device-application-flow-part-2.mmd
 
 
 
 Part 3 - Collection of Additional User Identity Information and Application Completion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. mermaid:: media/cross-device-application-flow-part-3.mmd
+.. mermaid:: ../media/cross-device-application-flow-part-3.mmd
 
 
 Flow 2 - Setting up Online Access after Application Approval
@@ -90,13 +90,13 @@ Cross Device Setting up Online Access
 Part 1 - Initiating the Digital Enrollment Process Triggered by a Notification from the Banking System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. mermaid:: media/cross-device-digital-enrollment-flow-part-1.mmd
+.. mermaid:: ../media/cross-device-digital-enrollment-flow-part-1.mmd
 
 
 Part 2 - Passkey Registration and Linkage to the Applicant
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. mermaid:: media/cross-device-digital-enrollment-flow-part-2.mmd
+.. mermaid:: ../media/cross-device-digital-enrollment-flow-part-2.mmd
 
 
 Flow 3 - Re-Verification for Step-Up Flow
@@ -111,4 +111,4 @@ This re-verification flow that occurs at Flow 3, Step 10 and is the same as Flow
 Re-verification for Step-Up Flow
 ---------------------------------
 
-.. mermaid:: media/re-verification-flow.mmd
+.. mermaid:: ../media/re-verification-flow.mmd

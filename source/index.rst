@@ -115,8 +115,7 @@ collaborate with NIST in a consortium to build this example solution.
    criteria.rst
    nccoe-bank-faq.rst
    wireframes.rst
-   kyc_cip_onboarding.rst
+   architecture/kyc_cip_onboarding.rst
    building_mdl_assurance/building_mdl_assurance.rst
-   interaction_diagrams.rst
    Privacy Risk Assessment Methodology <pram.rst>
    Submit Comments <comments.rst>
