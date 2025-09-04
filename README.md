@@ -8,10 +8,10 @@ The National Cybersecurity Center of Excellence (NCCoE) is helping to accelerate
 
 3. **Healthcare and Electronic Prescribe** which will demonstrate the use of an mDL and/or VC for provider access and prescription uses.
 
-NCCoE is currently implementing our first use case to demonstrate how mDLs can be deployed to meet CIP/KYC requirements of financial institutions.
+NCCoE is currently implementing our first use case to demonstrate how mDLs can be deployed to meet CIP/KYC criteria of financial institutions.
 To learn more about this project and the industry collaborators who have partnered with NIST to solve this challenge, please visit our [project web page](https://www.nccoe.nist.gov/projects/digital-identities-mdl).
 To gain a better understanding of the technology and standards the NCCoE will be implementing as part of this project, please consider reading [our blog series](https://www.nist.gov/blogs/cybersecurity-insights/digital-identities-getting-know-verifiable-digital-credential-ecosystem).
 
-This repository will be used to publish additional content for the NCCoE mDL Project to include project requirements, architectures, and FAQs.
+This repository will be used to publish additional content for the NCCoE mDL Project to include project criteria, architectures, and other related material.
 
-Currently we have published our [Draft CIP/KYC use case requirements here](https://pages.nist.gov/nccoe-mdl-project-static-website/requirements.html). If you wish to comment on these requirements, you can do so [here](https://pages.nist.gov/nccoe-mdl-project-static-website/comments.html).
+Currently we have published our [Draft CIP/KYC use case criteria here](https://pages.nist.gov/nccoe-mdl-project-static-website/criteria.html). If you wish to comment on these criteria, you can do so [here](https://pages.nist.gov/nccoe-mdl-project-static-website/comments.html).
