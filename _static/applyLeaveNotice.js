@@ -1,7 +1,7 @@
 (function ($) {
   $(document).ready(function () {
     // Regex to identify NIST domain links
-    var re_nist = new RegExp('^https?:\\/\\/((csrc|nccoe|www|www\\.nccoe|)*\\.)*nist\\.gov(\\/|$)');
+    var re_nist = new RegExp('^https?:\\/\\/((csrc|nccoe|www|nccoe-mdl-project-fce54a\\.ipages|www\\.nccoe|)*\\.)*nist\\.gov(\\/|$)');
     // Regex to identify absolute URLs
     var re_absolute_address = new RegExp('^((https?:)?\\/\\/)');
     // Regex to identify mailto links

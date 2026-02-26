@@ -1,0 +1,673 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJSMY46M5C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RJSMY46M5C');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building Assurance in the mDL Ecosystem &mdash; NCCoE Mobile Driver&#39;s License Project Supporting Resources</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9c5504cc" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-2.3.0/datatables.min.css" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=5c905044" />
+
+  <link rel="stylesheet" href="../../_static/css/datatables.min.css">
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+      <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+      <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+      <script src="https://cdn.datatables.net/v/dt/dt-2.3.0/datatables.min.js"></script>
+      <script src="../../_static/activate_datatables.js"></script>
+      <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.min.js"></script>
+      <script src="../../_static/main.js?v=355b5256"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <script src="../../_static/js/d3.min.js"></script>
+    <script src="../../_static/js/mermaid.min.js"></script>
+    <script>
+      // Configure and let Mermaid auto-run when DOM is ready
+      window.addEventListener('DOMContentLoaded', () => {
+        mermaid.initialize({startOnLoad: true,securityLevel: 'loose'});
+      });
+    </script>
+    <script src="../../_static/js/datatables.min.js"></script>
+    <script src="../../_static/js/main.js"></script>
+    <link rel="stylesheet" href="../../_static/css/leaveNotice.css">
+    <script src="../../_static/js/jquery.leaveNotice-nist.js"></script>
+    <script src="../../_static/js/applyLeaveNotice.js"
+            data-site-name="NCCoE Mobile Driver's License Project Supporting Resources"></script>
+
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // only run on pages that have: .. meta::  :comments: on
+      if (!document.querySelector('meta[name="comments"][content="on"]')) return;
+
+      var base = "../../_static/";
+
+      // load CSS
+      var css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = base + 'css/annotator.min.css';
+      document.head.appendChild(css);
+
+      // load annotator, then our capture script
+      var a = document.createElement('script');
+      a.src = base + 'js/annotator-full.min.js';
+      a.onload = function () {
+        var c = document.createElement('script');
+        c.src = base + 'js/comment-capture.js';
+        c.setAttribute('data-email', "feedback@example.com");
+        c.setAttribute('data-site-name', "NCCoE Mobile Driver's License Project Supporting Resources");
+        c.setAttribute('data-subject', "[Doc review] NCCoE Mobile Driver's License Project Supporting Resources — {N} comments");
+        document.body.appendChild(c);
+      };
+      document.body.appendChild(a);
+    });
+    </script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="NIST 800-63A Profile for mDL Issuance" href="nist_800-63a.html" />
+    <link rel="prev" title="Interaction Diagrams" href="../architecture/interaction-diagrams.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+  
+    <header class="nist-header" id="nist-header" role="banner">
+    
+        <a href="https://www.nist.gov/" title="National Institute of Standards and Technology"
+            class="nist-header__logo-link" rel="home">
+            <svg aria-hidden="true" class="nist-header__logo-icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                width="24" height="32" viewBox="0 0 24 32">
+                <path
+                    d="M20.911 5.375l-9.482 9.482 9.482 9.482c0.446 0.446 0.446 1.161 0 1.607l-2.964 2.964c-0.446 0.446-1.161 0.446-1.607 0l-13.25-13.25c-0.446-0.446-0.446-1.161 0-1.607l13.25-13.25c0.446-0.446 1.161-0.446 1.607 0l2.964 2.964c0.446 0.446 0.446 1.161 0 1.607z">
+                </path>
+            </svg>
+            <svg class="nist-header__logo-image" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                viewBox="-237 385.7 109.7 29.3">
+                <title>National Institute of Standards and Technology</title>
+                <g>
+                    <path class="st0" d="M-231,415h-6v-23.1c0,0,0-4.4,4.4-5.8c4-1.3,6.6,1.3,6.6,1.3l19.7,21.3c1,0.6,1.4,0,1.4-0.6v-22h6.1V409
+              c0,1.9-1.6,4.4-4,5.3c-2.4,0.9-4.9,0.9-7.9-1.7l-18.5-20c-0.5-0.5-1.8-0.6-1.8,0.4L-231,415L-231,415z"></path>
+                    <path class="st0" d="M-195,386.1h6.1v20.7c0,2.2,1.9,2.2,3.6,2.2h26.8c1.1,0,2.4-1.3,2.4-2.7c0-1.4-1.3-2.8-2.5-2.8H-176
+              c-3,0.1-9.2-2.7-9.2-8.5c0-7.1,5.9-8.8,8.6-9h49.4v6.1h-12.3V415h-6v-22.9h-30.2c-2.9-0.2-4.9,4.7-0.2,5.4h18.6
+              c2.8,0,7.4,2.4,7.5,8.4c0,6.1-3.6,9-7.5,9H-185c-4.5,0-6.2-1.1-7.8-2.5c-1.5-1.5-1.7-2.3-2.2-5.3L-195,386.1
+              C-194.9,386.1-195,386.1-195,386.1z"></path>
+                </g>
+            </svg>
+        </a>
+    
+    </header>
+  
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+
+          
+          
+          <a class="nccoe-logo"  href="../../index.html" aria-label="NIST | National Cybersecurity Center of Excellence (NCCoE)">
+            <!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+            <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
+              xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+              xmlns="http://www.w3.org/2000/svg" xml:space="preserve" enable-background="new 75 0 245 75"
+              viewBox="75 0 245 75" height="82.323px" width="273.268px" y="0px" x="0px" class="nccoe-logo-svg"
+              version="1.1">
+              <style type="text/css">
+                .nccoe-logo-svg .st0 {
+                  fill: #4F8BBE;
+                }
+
+                .nccoe-logo-svg .st1 {
+                  fill: none;
+                }
+
+                .nccoe-logo-svg .st2 {
+                  fill: #818286;
+                }
+
+                .nccoe-logo-svg .st3 {
+                  fill: #D3AF73;
+                }
+
+                .nccoe-logo-svg .st4 {
+                  fill: #E89824;
+                }
+
+                .nccoe-logo-svg .st5 {
+                  fill: #10659C;
+                }
+
+                .nccoe-logo-svg .st6 {
+                  fill: none;
+                  stroke: #000000;
+                  stroke-width: 1.0443;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-miterlimit: 10;
+                }
+              </style>
+              <g>
+                <g>
+                  <path d="M79.1,51.4h-3.4V38.1c0,0,0-2.5,2.5-3.3c2.3-0.7,3.8,0.7,3.8,0.7l11.3,12.3c0.6,0.4,0.8,0,0.8-0.4V34.8h3.5V48
+          			c0,1.1-0.9,2.5-2.3,3.1c-1.3,0.5-2.8,0.5-4.6-1L80.1,38.5c-0.3-0.3-1-0.3-1,0.3V51.4L79.1,51.4z"></path>
+                  <path d="M99.8,34.8h3.5v11.9c0,1.3,1,1.3,2.1,1.3h15.4c0.6,0,1.4-0.8,1.4-1.5c0-0.8-0.7-1.6-1.4-1.6h-10c-1.7,0.1-5.3-1.5-5.3-4.9
+          			c0-4.1,3.4-5,4.9-5.2h28.4v3.5h-7.1v13.1h-3.4V38.3h-17.4c-1.7-0.1-2.8,2.7-0.1,3.1h10.7c1.6,0,4.3,1.4,4.3,4.8
+          			c0,3.5-2.1,5.2-4.3,5.2h-15.8c-2.6,0-3.5-0.6-4.5-1.5c-0.9-0.8-1-1.3-1.3-3.1V34.8L99.8,34.8z"></path>
+                </g>
+              </g>
+              <rect x="158.3" y="42.8" class="st0" width="4.1" height="1"></rect>
+              <rect x="174" y="43" class="st0" width="16.8" height="0.5"></rect>
+              <path class="st1" d="M172.6,34.4c-4.9,0-8.9,4-8.9,8.9c0,4.9,4,8.9,8.9,8.9c2.8,0,5.4-1.3,7-3.4l-4.5-5.1c-0.3,1-1.3,1.8-2.4,1.8
+          	c-1.4,0-2.5-1.1-2.5-2.5s1.1-2.5,2.5-2.5c1.1,0,2,0.7,2.4,1.7l4.3-4.6C177.6,35.6,175.2,34.4,172.6,34.4z"></path>
+              <path class="st1" d="M172.6,29.5c-7.6,0-13.7,6.2-13.7,13.7S165,57,172.6,57c4.1,0,7.8-1.8,10.3-4.7l-1.7-1.9c-2.1,2.5-5.2,4-8.6,4
+          	c-6.2,0-11.3-5.1-11.3-11.3c0-6.2,5.1-11.3,11.3-11.3c3.3,0,6.3,1.4,8.4,3.7l1.6-1.7C180.1,31.2,176.5,29.5,172.6,29.5z">
+              </path>
+              <path class="st1" d="M172.1,25.1c-10,0-18.2,8.2-18.2,18.2c0,10,8.2,18.2,18.2,18.2c5.4,0,10.2-2.3,13.5-6l-2-2.2
+          	c-2.7,3-6.7,5-11.1,5c-8.3,0-15-6.7-15-15s6.7-15,15-15c4.3,0,8.1,1.8,10.8,4.7l2-2.1C182,27.3,177.3,25.1,172.1,25.1z">
+              </path>
+              <path class="st0" d="M172.6,52.1c-4.9,0-8.9-4-8.9-8.9c0-4.9,4-8.9,8.9-8.9c2.7,0,5,1.2,6.7,3l1.7-1.8c-2.1-2.3-5-3.7-8.4-3.7
+          	c-6.2,0-11.3,5.1-11.3,11.3c0,6.2,5.1,11.3,11.3,11.3c3.5,0,6.6-1.6,8.6-4l-1.7-1.9C177.9,50.8,175.4,52.1,172.6,52.1z">
+              </path>
+              <path class="st2"
+                d="M172.6,57c-7.6,0-13.7-6.2-13.7-13.7s6.2-13.7,13.7-13.7c3.9,0,7.5,1.7,10,4.3l0.8-0.9
+          	c-2.7-2.9-6.6-4.7-10.8-4.7c-8.3,0-15,6.7-15,15s6.7,15,15,15c4.4,0,8.4-1.9,11.1-5l-0.8-0.9C180.4,55.2,176.7,57,172.6,57z"></path>
+              <path class="st3" d="M172.1,61.4c-10,0-18.2-8.2-18.2-18.2c0-10,8.2-18.2,18.2-18.2c5.2,0,9.9,2.2,13.2,5.7l0.3-0.4
+          	c-3.4-3.6-8.2-5.8-13.5-5.8c-10.3,0-18.6,8.3-18.6,18.6c0,10.3,8.3,18.6,18.6,18.6c5.5,0,10.4-2.4,13.8-6.1l-0.3-0.4
+          	C182.3,59.1,177.5,61.4,172.1,61.4z"></path>
+              <path class="st4" d="M175,42.4c-0.4-1-1.3-1.7-2.4-1.7c-1.4,0-2.5,1.1-2.5,2.5c0,1.4,1.1,2.5,2.5,2.5c1.1,0,2.1-0.8,2.4-1.8
+          	c0.1-0.2,0.1-0.5,0.1-0.8C175.2,42.9,175.1,42.6,175,42.4z"></path>
+              <g>
+                <path class="st5" d="M190.9,28.8l1.5,0L195,33c0.2,0.4,0.5,1,0.5,1l0,0c0,0,0-0.8,0-1.3l0-3.9l1.5,0l0,7.5l-1.5,0l-2.6-4.1
+          		c-0.2-0.4-0.5-1-0.5-1h0c0,0,0,0.8,0,1.3l0,3.9l-1.5,0L190.9,28.8z"></path>
+                <path class="st5" d="M200.2,28.8l1.6,0l2.7,7.5l-1.6,0l-0.5-1.6l-2.7,0l-0.5,1.6l-1.5,0L200.2,28.8z M200,33.5l2,0l-0.7-2.2
+          		c-0.1-0.4-0.3-1.2-0.3-1.2h0c0,0-0.2,0.8-0.3,1.2L200,33.5z"></path>
+                <path class="st5" d="M203.7,28.8l6,0l0,1.3l-2.3,0l0,6.2l-1.5,0l0-6.2l-2.3,0L203.7,28.8z"></path>
+                <path class="st5" d="M210.5,28.7l1.5,0l0,7.5l-1.5,0L210.5,28.7z"></path>
+                <path class="st5" d="M212.9,32.5c0-2.2,1.4-3.9,3.6-3.9c2.2,0,3.6,1.7,3.6,3.9s-1.4,3.9-3.6,3.9C214.4,36.4,212.9,34.7,212.9,32.5z
+          		 M218.6,32.5c0-1.5-0.7-2.7-2.1-2.7c-1.4,0-2.1,1.2-2.1,2.7c0,1.5,0.7,2.7,2.1,2.6C217.9,35.1,218.6,33.9,218.6,32.5z">
+                </path>
+                <path class="st5" d="M221,28.7l1.5,0l2.5,4.2c0.2,0.4,0.5,1,0.5,1h0c0,0,0-0.8,0-1.3l0-3.9l1.5,0l0,7.5l-1.5,0L223,32
+          		c-0.2-0.4-0.5-1-0.5-1h0c0,0,0,0.8,0,1.3l0,3.9l-1.5,0L221,28.7z"></path>
+                <path class="st5" d="M230.2,28.6l1.6,0l2.7,7.5l-1.6,0l-0.5-1.6l-2.7,0l-0.5,1.6l-1.5,0L230.2,28.6z M230,33.4l2,0l-0.7-2.2
+          		c-0.1-0.4-0.3-1.2-0.3-1.2h0c0,0-0.2,0.8-0.3,1.2L230,33.4z"></path>
+                <path class="st5" d="M235.1,28.6l1.5,0l0,6.2l3.5,0l0,1.3l-5,0L235.1,28.6z"></path>
+                <path class="st5" d="M190.7,43.1c0-2.2,1.4-3.9,3.6-3.9c1.8,0,2.9,1.1,3.1,2.5l-1.5,0c-0.1-0.8-0.7-1.2-1.6-1.2c-1.4,0-2,1.2-2,2.7
+          		c0,1.5,0.8,2.6,2.1,2.6c0.9,0,1.5-0.5,1.6-1.3l1.5,0c0,0.7-0.3,1.3-0.8,1.8c-0.5,0.5-1.2,0.8-2.3,0.8
+          		C192.2,47,190.7,45.4,190.7,43.1z"></path>
+                <path class="st5" d="M199.7,43.9l-2.5-4.6l1.7,0l1.1,2.2c0.2,0.4,0.5,1.1,0.5,1.1h0c0,0,0.3-0.6,0.5-1.1l1.1-2.2l1.6,0l-2.5,4.6
+          		l0,2.9l-1.5,0L199.7,43.9z"></path>
+                <path class="st5" d="M204.4,39.3l3.4,0c0.8,0,1.4,0.2,1.8,0.5c0.4,0.4,0.6,0.8,0.6,1.4c0,0.8-0.5,1.3-1.2,1.5v0
+          		c0.8,0.2,1.4,0.9,1.4,1.9c0,0.7-0.2,1.2-0.7,1.6c-0.4,0.4-1.1,0.6-1.9,0.6l-3.4,0L204.4,39.3z M207.5,42.3c0.7,0,1.1-0.3,1.1-0.9
+          		c0-0.6-0.4-0.9-1.1-0.9l-1.7,0l0,1.8L207.5,42.3z M205.9,45.5l1.8,0c0.7,0,1.2-0.4,1.2-1c0-0.7-0.5-1.1-1.2-1.1l-1.7,0L205.9,45.5z
+          		"></path>
+                <path class="st5" d="M211.2,39.2l5.5,0l0,1.3l-4,0l0,1.7l3.5,0l0,1.2l-3.5,0l0,2l4,0l0,1.3l-5.6,0L211.2,39.2z">
+                </path>
+                <path class="st5" d="M217.7,39.2l3.4,0c1.4,0,2.4,0.8,2.4,2.1c0,0.9-0.4,1.6-1.4,1.8l0,0c0.7,0.2,1.1,0.6,1.2,1.5
+          		c0.1,1.1,0.1,1.9,0.3,2v0.1l-1.5,0c-0.2-0.1-0.2-0.9-0.3-1.7c-0.1-0.8-0.5-1.3-1.5-1.3l-1.2,0l0,3l-1.5,0L217.7,39.2z M219.3,42.5
+          		l1.6,0c0.8,0,1.2-0.4,1.2-1c0-0.6-0.4-1.1-1.2-1.1l-1.7,0L219.3,42.5z"></path>
+                <path class="st5" d="M224.3,44.3l1.5,0c0.1,0.9,0.6,1.3,1.7,1.3c0.8,0,1.5-0.3,1.5-1c0-0.7-0.7-0.9-1.9-1.1
+          		c-1.3-0.3-2.6-0.6-2.6-2.2c0-1.5,1.2-2.3,2.9-2.3c1.7,0,2.8,0.8,2.9,2.3l-1.5,0c-0.1-0.8-0.7-1.1-1.5-1.1c-0.8,0-1.4,0.4-1.4,0.9
+          		c0,0.6,0.5,0.8,1.6,1c1.5,0.3,2.8,0.7,2.8,2.3c0,1.5-1.2,2.4-2.9,2.4C225.5,46.8,224.3,45.9,224.3,44.3z"></path>
+                <path class="st5" d="M231.3,39.1l5.5,0l0,1.3l-4,0l0,1.7l3.5,0l0,1.2l-3.5,0l0,2l4,0l0,1.3l-5.6,0L231.3,39.1z">
+                </path>
+                <path class="st5" d="M237.4,42.9c0-2.2,1.4-3.9,3.6-3.9c1.8,0,2.9,1.1,3.1,2.5l-1.5,0c-0.1-0.8-0.7-1.2-1.6-1.2c-1.4,0-2,1.2-2,2.7
+          		c0,1.5,0.8,2.6,2.1,2.6c0.9,0,1.5-0.5,1.6-1.3l1.5,0c0,0.7-0.3,1.3-0.8,1.8c-0.5,0.5-1.2,0.8-2.3,0.8
+          		C238.9,46.8,237.4,45.1,237.4,42.9z"></path>
+                <path class="st5" d="M244.8,44.2l0-5.1l1.5,0l0,5.1c0,0.8,0.4,1.3,1.4,1.3c1,0,1.4-0.6,1.4-1.3l0-5.1l1.5,0l0,5.1
+          		c0,1.6-1,2.5-2.9,2.6C245.8,46.7,244.8,45.8,244.8,44.2z"></path>
+                <path class="st5" d="M251.7,39l3.4,0c1.4,0,2.4,0.8,2.4,2.1c0,0.9-0.4,1.6-1.4,1.8l0,0c0.7,0.2,1.1,0.6,1.2,1.5
+          		c0.1,1.1,0.1,1.9,0.3,2v0.1l-1.5,0c-0.2-0.1-0.2-0.9-0.3-1.7c-0.1-0.8-0.5-1.3-1.5-1.3l-1.2,0l0,3l-1.5,0L251.7,39z M253.3,42.3
+          		l1.6,0c0.8,0,1.2-0.4,1.2-1c0-0.6-0.4-1.1-1.2-1.1l-1.7,0L253.3,42.3z"></path>
+                <path class="st5" d="M258.6,39l1.5,0l0,7.5l-1.5,0L258.6,39z"></path>
+                <path class="st5" d="M260.9,39l6,0l0,1.3l-2.3,0l0,6.2l-1.5,0l0-6.2l-2.3,0L260.9,39z"></path>
+                <path class="st5" d="M269.8,43.6l-2.5-4.6l1.7,0l1.1,2.2c0.2,0.5,0.5,1.1,0.5,1.1l0,0c0,0,0.3-0.6,0.5-1.1l1.1-2.2l1.6,0l-2.5,4.6
+          		l0,2.9l-1.5,0L269.8,43.6z"></path>
+                <path class="st5" d="M190.9,53.6c0-2.2,1.3-3.9,3.5-3.9c1.8,0,2.8,1,3,2.4l-0.9,0c-0.2-0.9-0.9-1.6-2.1-1.6c-1.6,0-2.6,1.3-2.6,3.1
+          		c0,1.8,1,3.1,2.6,3.1c1.4,0,2.1-1,2.2-2.1l0.9,0c0,0.7-0.4,1.6-0.9,2.1c-0.5,0.5-1.3,0.8-2.2,0.8C192.3,57.5,190.9,55.8,190.9,53.6
+          		z"></path>
+                <path class="st5" d="M198.6,49.8l5.3,0l0,0.8l-4.4,0l0,2.4l4,0l0,0.8l-4,0l0,2.6l4.5,0l0,0.9l-5.4,0L198.6,49.8z">
+                </path>
+                <path class="st5" d="M205.1,49.8l1,0l3.4,5.2c0.3,0.4,0.6,1,0.6,1h0l0-6.2l0.9,0l0,7.5l-1,0l-3.5-5.2c-0.2-0.4-0.6-0.9-0.6-0.9h0
+          		l0,6.2l-0.9,0L205.1,49.8z"></path>
+                <path class="st5" d="M211.9,49.7l5.9,0l0,0.8l-2.5,0l0,6.7l-0.9,0l0-6.7l-2.5,0L211.9,49.7z"></path>
+                <path class="st5" d="M218.8,49.7l5.3,0l0,0.8l-4.4,0l0,2.4l4,0l0,0.8l-4,0l0,2.6l4.5,0l0,0.9l-5.4,0L218.8,49.7z">
+                </path>
+                <path class="st5" d="M225.4,49.7l3.5,0c1.3,0,2.2,0.8,2.2,2c0,0.9-0.4,1.6-1.3,1.9v0c0.8,0.3,1,0.8,1.1,1.9
+          		c0.1,1.2,0.2,1.5,0.4,1.6l0,0l-1,0c-0.2-0.1-0.2-0.4-0.3-1.7c-0.1-1.1-0.5-1.5-1.5-1.5l-2.1,0l0,3.2l-0.9,0L225.4,49.7z
+          		 M226.3,53.2l2.2,0c1,0,1.6-0.5,1.6-1.4c0-0.9-0.4-1.4-1.5-1.4l-2.3,0L226.3,53.2z"></path>
+                <path class="st5" d="M233.6,53.4c0-2.2,1.4-3.9,3.7-3.9s3.7,1.7,3.7,3.9c0,2.2-1.4,3.9-3.7,3.9S233.6,55.6,233.6,53.4z M240,53.3
+          		c0-1.8-1-3.1-2.7-3.1s-2.7,1.3-2.7,3.1s1,3.1,2.7,3.1S240,55.1,240,53.3z"></path>
+                <path class="st5" d="M242.1,49.6l5.1,0l0,0.8l-4.1,0l0,2.3l3.5,0l0,0.8l-3.5,0l0,3.5l-0.9,0L242.1,49.6z"></path>
+                <path class="st5" d="M249.8,49.5l5.3,0l0,0.8l-4.4,0l0,2.4l4,0l0,0.8l-4,0l0,2.6l4.5,0l0,0.9l-5.4,0L249.8,49.5z">
+                </path>
+                <path class="st5"
+                  d="M258.4,53.2l-2.4-3.7l1.1,0l1.9,3h0l1.9-3l1,0l-2.4,3.7L262,57l-1.1,0l-1.9-3.2h0l-2,3.2l-1.1,0L258.4,53.2z">
+                </path>
+                <path class="st5" d="M261.9,53.2c0-2.2,1.3-3.9,3.5-3.9c1.8,0,2.8,1,3,2.4l-0.9,0c-0.2-0.9-0.9-1.6-2.1-1.6c-1.6,0-2.6,1.3-2.6,3.1
+          		c0,1.8,1,3.1,2.6,3.1c1.4,0,2.1-1,2.2-2.1l0.9,0c0,0.7-0.4,1.6-0.9,2.1c-0.5,0.5-1.3,0.8-2.2,0.8C263.3,57.1,261.9,55.5,261.9,53.2
+          		z"></path>
+                <path class="st5" d="M269.6,49.5l5.3,0l0,0.8l-4.4,0l0,2.4l4,0l0,0.8l-4,0l0,2.6l4.5,0l0,0.9l-5.4,0L269.6,49.5z">
+                </path>
+                <path class="st5" d="M276.2,49.4l0.9,0l0,6.6l3.9,0l0,0.9l-4.9,0L276.2,49.4z"></path>
+                <path class="st5" d="M282,49.4l0.9,0l0,6.6l3.9,0l0,0.9l-4.9,0L282,49.4z"></path>
+                <path class="st5" d="M287.8,49.4l5.3,0l0,0.8l-4.4,0l0,2.4l4,0l0,0.8l-4,0l0,2.6l4.5,0l0,0.9l-5.4,0L287.8,49.4z">
+                </path>
+                <path class="st5" d="M294.3,49.3l1,0l3.4,5.2c0.3,0.4,0.6,1,0.6,1h0l0-6.2l0.9,0l0,7.5l-1,0l-3.5-5.2c-0.2-0.4-0.6-0.9-0.6-0.9h0
+          		l0,6.2l-0.9,0L294.3,49.3z"></path>
+                <path class="st5"
+                  d="M301.3,53.1c0-2.2,1.3-3.9,3.5-3.9c1.8,0,2.8,1,3,2.4l-0.9,0c-0.2-0.9-0.9-1.6-2.1-1.6c-1.6,0-2.6,1.3-2.6,3.1
+          		c0,1.8,1,3.1,2.6,3.1c1.4,0,2.1-1,2.2-2.1l0.9,0c0,0.7-0.4,1.6-0.9,2.1c-0.5,0.5-1.3,0.8-2.2,0.8C302.7,57,301.3,55.3,301.3,53.1z">
+                </path>
+                <path class="st5" d="M309,49.3l5.3,0l0,0.8l-4.4,0l0,2.4l4,0l0,0.8l-4,0l0,2.6l4.5,0l0,0.9l-5.4,0L309,49.3z"></path>
+              </g>
+              <polyline class="st6" points="143.9,24.8 143.9,40 148.6,42.7 143.9,45.5 143.9,61.2 "></polyline>
+
+            </svg>
+          </a>
+          <a class="project-title" href="../../index.html">
+          NCCoE Mobile Driver's License Project Supporting Resources
+          </a>
+
+          <a class="project-page-link" href="https://www.nccoe.nist.gov/projects/digital-identities-mdl">
+            Go to Project Page
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search" aria-label="Search" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../blogs.html">mDL Blog Series</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Financial Institution Use Case</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../criteria.html">Draft CIP/KYC Use Case Criteria</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nccoe-bank-faq.html">Sample Bank mDL Information Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wireframes.html">Wireframes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture/kyc-cip-onboarding.html">Financial Use Case Reference Architecture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../architecture/interaction-diagrams.html">Interaction Diagrams</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Building Assurance in the mDL Ecosystem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nist_800-63a.html">NIST 800-63A Profile for mDL Issuance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pram.html">Privacy Risk Assessment Methodology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usability-results.html">Usability Assessment Findings</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../demonstration-videos.html">Demonstration Videos</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../use-case-2/index.html">Government Services Use Case</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../use-case-2/criteria.html">Use Case Criteria</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../use-case-2/architecture/index.html">Architecture</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../use-case-2/interaction-diagrams/index.html">Interaction Diagrams</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../comments.html">Submit Comments</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">NCCoE Mobile Driver's License Project Supporting Resources</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Financial Institution Use Case</a></li>
+      <li class="breadcrumb-item active">Building Assurance in the mDL Ecosystem</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="building-assurance-in-the-mdl-ecosystem">
+<h1>Building Assurance in the mDL Ecosystem<a class="headerlink" href="#building-assurance-in-the-mdl-ecosystem" title="Link to this heading"></a></h1>
+<p>In our discussion with the Financial Institutions (FIs) under the NCCoE mDL project, FIs have expressed need for additional clarity around the processes
+used to enroll, issue and present mDLs. Specifically, FIs must have a clear understanding of the assurances they are getting and the potential risk they
+are accepting when implementing mDLs.</p>
+<p>Traditionally, FIs own and control their identity verification systems, which allows for maximum agility when responding to threats and mitigating risks
+associated with identity verification. While the mDL ecosystem offers potential benefits to FIs across security, privacy and usability, it also requires
+confidence in third parties such as the mDL issuer and wallet that stores the mDL. This document outlines technical implementations and security controls
+that could provide FIs the assurance they seek.</p>
+<p>Absent additional assurances, there is concern that high assurance relying parties (HARPs) may ask users to complete a server-side biometric match whenever
+an mDL is presented. If possible, we would like to avoid this for usability, privacy, and performance reasons. There are also potential impacts to broader
+adoption of mDLs if HARPs are not able to understand, convey, and address perceived risks related to mDL usage.</p>
+<p><strong>Issue #1: Enrollment into the System of Record (SOR) at the DMV</strong></p>
+<p><strong>What we heard</strong>: FIs are concerned about lack of visibility into the process used to vet identity and enroll a user into the SOR at the DMVs when issuing the
+user with their initial, physical credentials on which the mDL will be based.</p>
+<p><strong>Discussion</strong>: Each state has their own, clear authorities for how they enroll residents at the DMV. However, in order to be used for access to federal
+facilities (including airports) licenses are mandated to comply with the RealD act which covers expectations for enrollment at the DMV.</p>
+<p><strong>Proposed Solution</strong>: The NCCoE project will develop a profile of ISO 18013-5 data elements consistent with the requirements provided by the Association of
+American Motor Vehicle Administrators (AAMVA) <a class="footnote-reference brackets" href="#id4" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> which will include the DHS Compliance data element encoded into the mobile security object (MSO) of the mDL.
+This element will allow FIs to decide how to treat credentials based on whether the individual was enrolled into the DMV SOR and issued a driver’s license/ID
+consistent with Real ID issuance requirements.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33.3%" />
+<col style="width: 33.3%" />
+<col style="width: 33.3%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Identifier</p></th>
+<th class="head"><p>Meaning</p></th>
+<th class="head"><p>Definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DHS_compliance</p></td>
+<td><p>Compliance type</p></td>
+<td><p>Field that indicates compliance with REAL ID. Only the following values are allowed: “F” = fully compliant “N” = non-compliant If a state chooses not to
+participate in REAL ID, all its credentials are considered “N”. <a class="footnote-reference brackets" href="#id5" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></td>
+</tr>
+</tbody>
+</table>
+<p>Additionally - DHS plans to publish a list of those state mDL programs that have been assessed by DHS for alignment with the <a class="reference external" href="https://www.govinfo.gov/content/pkg/FR-2024-10-25/pdf/2024-23881.pdf">Waiver
+Program</a>. This includes assessment against 79 requirements as well as an assessment of
+their Real ID issuance process for physical cards. This will not include assessment of the mDL provisioning/issuance process in any detail.</p>
+<p><strong>Issue #2: Issuance of the mDL or Digital Credential to the Holder’s Digital Wallet</strong></p>
+<p><strong>What we heard:</strong> FIs are concerned about the limited visibility they have into issuance processes for mDL and other forms of verifiable digital credentials.
+With mDLs becoming more valuable, the issuance processes are increasingly likely to be the focus of attackers.</p>
+<p><strong>Discussion</strong>: We often hear a discussion of a “three-way” biometric match between the image on the physical license, the live facial recognition capture of the individual and
+the image that exists in the system of record (SOR) at the DMV. In addition to how the facil recognition match is performed, FIs have concerns around biometric injection
+attacks. FIs would like clarity on the liveness, presentation attack detection, and other controls that protect For mDL, the issuance information could be
+addressed by greater consistency through normative requirements that the states follow when issuing mDLs.</p>
+<p><strong>Proposed Solution Part 1: The development of NIST SP 800-63A profile that aligns the controls in that guidance to the specific issuance use cases.</strong>
+NIST’s Digital Identity Guidelines contain controls for validation, verification, biometric performance, document validation, and injection protection. As a
+primary concern expressed by FIs is inconsistency in the mDL issuance process, a profile could serve as a reference for issuers seeking a common set of
+requirements. This could not be normative as NIST has no authority to direct state actions, but could be referenced by entities such as AAMVA, TSA, or FIs
+themselves when evaluating state issuers for acceptance. A draft of this profile can be found <a class="reference external" href="nist_800-63a.html">here</a>.</p>
+<p><strong>Proposed Solution Part 2:</strong> <strong>The encoding of issuance information into the credential itself.</strong>
+Encode issuance information into the mDL credential itself (i.e., the MSO itself) so that FI will have issuer signed data to evaluate related to the issuance
+process. Use OpenID connect for syntax and naming conventions to align with federation efforts across the identity ecosystem. This will allow FIs to inspect
+and assess the specific process taken to issue the digital form of the driver’s license to a user’s wallet or mDL application and determine how they wish to
+treat it at run-time. The requested elements mapped to available claims and values from the OpenID Connect (OIDC) for Information Assurance (IA) <a class="footnote-reference brackets" href="#id6" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> are included below.</p>
+<table class="fi-requested-item docutils align-default">
+<colgroup>
+<col style="width: 33.3%" />
+<col style="width: 33.3%" />
+<col style="width: 33.3%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>FI Requested Item</p></th>
+<th class="head"><p>OIDC for IA Claim</p></th>
+<th class="head"><p>Relevant OIDC for IA Values</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Evidence</strong>: The evidence presented to support the issuance of an mDOC to the user’s wallet.</p></td>
+<td><p>Documents</p></td>
+<td><p><strong>idcard</strong></p>
+<p>An identity document issued by a country’s government for the purpose of identifying a citizen.</p>
+<p><strong>US Drivers License</strong></p>
+<p>An identity document
+issued by a national or local authority identifying the user and defining driver’s privileges.</p>
+<p><strong>US State ID</strong></p>
+<p>An identity document issued by US state that does not include driver’s privileges.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p><strong>Issuance Type:</strong> The general type of issuance that occurred.</p></td>
+<td><p>Method</p></td>
+<td><p><strong>pipp</strong></p>
+<p>Physical In-Person Proofing.</p>
+<p><strong>uripp</strong></p>
+<p>Unsupervised remote in-person proofing with video capture of the ID document, user self-portrait video
+and liveness checks.</p>
+<p><strong>sripp</strong></p>
+<p>Supervised remote In-Person Proofing</p>
+</td>
+</tr>
+<tr class="row-even"><td><p><strong>Validation</strong>: The processes used to confirm the accuracy of the information contained on the evidence.</p></td>
+<td><p>Electronic Records</p></td>
+<td><p><strong>dmv_register</strong></p>
+<p>A record from an institution or authority that issues drivers licenses or identification cards.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p><strong>Authenticity</strong>: The process used to confirm the evidence is genuine and has not been forged, modified, or tampered with.</p></td>
+<td><p>Check Methods</p></td>
+<td><p><strong>vpip</strong> Validation that physical evidence is genuine through inspection of its physical properties in person.</p>
+<p><strong>vpiruv</strong></p>
+<p>Validation that physical
+evidence is genuine through inspection of its physical properties in person including its optical characteristics under non-visible light.</p>
+<p><strong>vri</strong></p>
+<p>Validation that physical evidence is genuine through the inspection of an image taken remotely under visible light.</p>
+<p><strong>vcrypt</strong></p>
+<p>Validation the cryptographic security features of the evidence are intact and correct.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p><strong>Authenticity Presentation Attack Detection</strong>: Automated capture and inspection of evidence included methods for detecting digitally generated images of
+the evidence.</p></td>
+<td><p>Check methods</p></td>
+<td><p><strong>docpad</strong></p>
+<p>Live capture was used to determine the authenticity of a remotely presented document used during a remote identity proofing event.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p><strong>Verification</strong>: The process used to confirm the applicant is the individual represented by the evidence.</p></td>
+<td><p>Check Methods</p></td>
+<td><p><strong>pvp</strong></p>
+<p>Physical verification in person by a qualified/authorised person, the comparison of a physical characteristic (such as face) of the user with a
+known image/template of the owner of the claims.</p>
+<p><strong>pvr</strong></p>
+<p>Physical verification by a qualified/authorised person when the user is remote, the comparison
+of a physical characteristic (such as face) from an image or video of the user with a known image/template of the owner of the claims.</p>
+<p><strong>bvp</strong></p>
+<p>Biometric verification by an automated system with the user physically present to the system and the verifier, the use of a biometric modality (such as face) to
+match the user with a known template of the owner of the claims.</p>
+<p><strong>bvr</strong></p>
+<p>Biometric verification by an automated system where the user and capture device
+is remote to the verifier, the use of a biometric modality (such as face) to match the user with a known template of the owner of the claims.</p>
+<p><strong>pstl</strong></p>
+<p>Verification of the user was conducted by mailing an enrollment code to the address of record contained on supplied evidence or available within an
+authoritative system of record.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p><strong>Biometric Presentation Attack Detection</strong>: The evidence was checked using methods to detect potential imposters posing as the individual represented in
+the evidence or presenting digitally generated.</p></td>
+<td><p>Check Methods</p></td>
+<td><p><strong>biopad</strong></p>
+<p>Presentation attack detection tools were used to confirm the presence of a genuine human during a remote identity proofing event.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p><strong>Biometric Digital Injection Attack Mitigation</strong>: The evidence was checked using methods to detect or mitigate attempts of bypassing the biometric capture sensor by injecting synthetic or captured biometric data directly into the systems data stream.</p></td>
+<td><p>Check Methods</p></td>
+<td><p><strong>biodi</strong></p>
+<p>Biometric digital injection detection and mitigation tools were used to confirm the authenticity of the received biometric data during a remote identity proofing event</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="red-text">*Red Text indicates claims/values that are currently not included in OIDC for IA and thus need to be specified and submitted for approval.</p>
+<p><strong>NOTE: This will likely require changes to the mDL Technical Specifications and will not be able to be tested as part of the NCCoE Build.</strong></p>
+<p>This can also be augmented by trust frameworks and certification programs that allow for issuer processes to be vetted and conveyed in the credential using the
+claim and values from OIDC for IA under the “trust framework” claims.</p>
+<p><strong>Issue #3: Holder Binding during mDL Presentment</strong></p>
+<p><strong>What we heard:</strong> FIs are concerned that processes used to authenticate the holder of an mDL vary in implementation and security assurances across platforms.</p>
+<p><strong>Discussion</strong>: Currently holder authentication processes differ depending on the combination of the wallet and operating system used. Biometric verification is
+enforced on some platforms, while a user defined pin is available on others. For biometric verification, some platforms create a new and separate biometric
+template during the issuance process that is used for future authentication during presentment, while other platforms rely on previously enrolled biometric
+templates used for device unlock. Similarly, users might be given an option to use their device unlock pin to unlock the credential or the wallet may have them
+establish a new and separate pin. Each of these processes has different assurance aspects.</p>
+<p><strong>Proposed Solution Part 1: The development of NIST SP 800-63B profile that aligns the controls in that guidance to the specific issuance use cases.</strong></p>
+<p>NIST’s Digital Identity Guidelines contain controls for authentication of users including activation of cryptographic authenticators such as digital wallets. As
+a primary concern expressed by FIs is inconsistency in the holder authentication, a profile could serve as a reference for issuers seeking a common set of
+requirements. This could not be normative as NIST has no authority to direct state actions, but could be referenced by entities such as AAMVA, TSA, or FIs
+themselves when evaluating state issuers for acceptance.</p>
+<p><strong>Purposed Solution Part 2: The encoding of holder authentication information into the presentation.</strong>
+Wallets will add information to the presentation that covers the holder authentication process. This will be signed using the same device signing key used in
+the MSO. Potential values could be included as indicated below.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33.3%" />
+<col style="width: 33.3%" />
+<col style="width: 33.3%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Holder Auth Type</p></th>
+<th class="head"><p>Presentation Value</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Device Unlock - Secret</p></td>
+<td><p>unlk_sec</p></td>
+<td><p>The holder was authenticated using the local device unlock secret such as a PIN, password, or pattern.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Device Unlock - Biometric</p></td>
+<td><p>unlk_bio</p></td>
+<td><p>The holder was authenticated using the local device unlock biometric such as a face recognition, fingerprint, or iris match.</p></td>
+</tr>
+<tr class="row-even"><td><p>Credential - Secret</p></td>
+<td><p>cred_sec</p></td>
+<td><p>The holder was authenticated using the presentation of a secret (PIN, Password) unique to the credential being presented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Credential - Biometric</p></td>
+<td><p>cred_bio</p></td>
+<td><p>The holder was authenticated through a biometric match to either a biometric encoded in the credential or a unique template created at the time of
+issuance.</p></td>
+</tr>
+</tbody>
+</table>
+<p>These values may be requested by the RP during the request portion of the presentation protocol if specific values are required to make access or step-up
+decisions. Wallets may respond with whatever authentication actions took place, though the responsibility for evaluation remains that of the RP. This is similar
+to how the “flags” (e.g., the UV flag) function in WebAuthN/FIDO2.</p>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id4" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://aamva.org/getmedia/261ed16b-3f5c-4678-a2db-cc3016934234/MobileDLImplementationGuidelines-Version1-3.pdf">https://aamva.org/getmedia/261ed16b-3f5c-4678-a2db-cc3016934234/MobileDLImplementationGuidelines-Version1-3.pdf</a></p>
+</aside>
+<aside class="footnote brackets" id="id5" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.ecfr.gov/current/title-6/chapter-I/part-37/subpart-A/section-37.10">eCFR :: 6 CFR 37.10 – Application criteria for issuance of temporary waiver for mDLs; audit report</a></p>
+</aside>
+<aside class="footnote brackets" id="id6" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://bitbucket.org/openid/ekyc-ida/wiki/identifiers">https://bitbucket.org/openid/ekyc-ida/wiki/identifiers</a></p>
+</aside>
+</aside>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <div class="page-footer">
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+</div>
+        </div>
+      </div>
+      <footer class="nist-footer">
+  <div class="nist-footer__inner">
+    <div class="nist-footer__menu" role="navigation">
+      <ul>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy-policy">Site Privacy</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/oism/accessibility">Accessibility</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy">Privacy Program</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/oism/copyrights">Copyrights</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.commerce.gov/vulnerability-disclosure-policy">Vulnerability Disclosure</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/no-fear-act-policy">No Fear Act Policy</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/foia">FOIA</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/environmental-policy-statement">Environmental Policy</a>
+        </li>
+        <li class="nist-footer__menu-item ">
+          <a href="https://www.nist.gov/summary-report-scientific-integrity">Scientific Integrity</a>
+        </li>
+        <li class="nist-footer__menu-item ">
+          <a href="https://www.nist.gov/nist-information-quality-standards">Information Quality Standards</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.commerce.gov/">Commerce.gov</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.science.gov/">Science.gov</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.usa.gov/">USA.gov</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://vote.gov/">Vote.gov</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="nist-footer__logo">
+    <a href="https://www.nist.gov/" title="National Institute of Standards and Technology" class="nist-footer__logo-link" rel="home">
+      <img src="https://pages.nist.gov/nist-header-footer/images/nist_logo_brand_white.svg" alt="National Institute of Standards and Technology logo">
+    </a>
+  </div>
+</footer>
+    </section>
+  </div>
+  <script>
+      // expose collapse_navigation theme option to runtime JS so theme scripts can
+      // decide whether to expand first-level toctree entries automatically.
+      window.themeCollapseNavigation = false;
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+    <!-- Old DAP UA tag -->
+    <script async type="text/javascript" id="_fed_an_ua_tag"
+        src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NIST&subagency=github&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c">
+    </script> 
+
+</body>
+</html>

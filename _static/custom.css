@@ -1,5 +1,50 @@
 :root {
   --pst-color-link-hover: inherit;
+  /* --sd-color-card-background: #a4d9d6; */
+}
+
+.sd-card.welcome {
+    /* --card-bg: rgba(255, 255, 255, 0.1); */
+  
+    /* background-color: rgba(255, 255, 255, 0.1) !important; Semi-transparent white */
+    background-color: var(--card-bg) !important;
+    backdrop-filter: blur(10px); /* The "frosted glass" look */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Ensure the header and footer are also transparent */
+.sd-card-header.welcome, .sd-card-footer.welcome {
+    background-color: transparent !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Hover effect for interactivity */
+.sd-card.welcome:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Adjust text color if background is dark */
+.sd-card-body.welcome {
+    color: inherit; 
+}
+
+.transparent {
+    --card-bg: rgba(255, 255, 255, 0.1);
+}
+
+.howtostep {
+    --card-bg: rgba(164, 217, 214);
+}
+
+/* Hover effect for interactivity */
+.sd-card.howtostep:hover {
+    transform: translateY(-5px);
+    background-color: rgba(164, 217, 214, 0.85) !important;
 }
 
 .table tbody tr:nth-child(odd):hover {
@@ -22,6 +67,10 @@
 a:hover {
   color: inherit !important;
   text-decoration: underline;
+}
+
+.howtodrop {
+  background-color: transparent;
 }
 
 #main-content {
@@ -63,7 +112,7 @@ table.fi-requested-item tr:nth-of-type(1) td:nth-of-type(3) p:nth-of-type(6) {
   display: inline-block;
   width: 25px;
   height: 25px;
-  background-color: lime;
+  background-color: #79EEE4;
   margin-right: 5px;
 }
 
