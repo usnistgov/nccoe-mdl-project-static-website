@@ -49,7 +49,19 @@
         <h2 class="text-customSlate text-2xl mb-10 text-center">{{ item.title }}</h2>
         <div class="flex flex-col items-center justify-center space-y-4">
           <div class="flex-1 flex justify-center w-full">
-            <div v-if="item.entryId" :id="'video-' + index" class="w-full max-w-6xl h-[35rem]"></div>
+              <!-- Render video player -->
+            <div v-if="item.videoSrc" class="w-full max-w-6xl h-[35rem]">
+              <video
+                  class="w-full h-full"
+                  controls
+                  :src="item.videoSrc"
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <!-- Render Kaltura player -->
+            <div v-else-if="item.entryId" :id="'video-' + index" class="w-full max-w-6xl h-[35rem]"></div>
+            <!-- Placeholder for "Coming Soon" -->
             <div v-else class="flex items-center justify-center w-full max-w-6xl h-[35rem] bg-gray-200 text-gray-600">
               Coming Soon
             </div>

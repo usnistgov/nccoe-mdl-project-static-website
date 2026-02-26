@@ -50,16 +50,16 @@ sequenceDiagram
     rect rgb(0,255,0)
     bpl-)webapp: OpenID Connect Authorization response returned
 
-    webapp->>idp: Request OpenID Connect Access and Identity tokens
-    idp->>webapp: Token returned with Entra GUID and acr "Passkey Authentication" claims
+    webapp->>idp: Request OpenID Connect access token
+    idp->>webapp: Token returned with Entra GUID claims
     end
 
     %%note over wallet,verifier: ... ↑ ...
-    note over webapp: Customer returns to bank website <br /> to submit transaction that exceeds threshold
+    note over webapp: Customer returns to bank website <br /> to submit transaction that exceeds $15,000 threshold
     %%note over wallet,verifier: ... ↓ ...
 
-    webapp->>backend: Transaction request submitted with Access and Identity tokens
-    backend->>backend: Evaluate Identity token for acr claim "mDL Verification"
+    webapp->>backend: Transaction request submitted with access tokens
+    backend->>backend: Evaluate session authentication method 
     backend->>webapp: Deny transaction and request reverification
 
     rect rgb(0,255,0)
@@ -71,14 +71,14 @@ sequenceDiagram
     %%note over wallet,verifier: ... ↓ ...
 
     rect rgb(0,255,0)
-    bpl-)webapp: OpenID Connect Authorization response returned
+    bpl-)webapp: OpenID Connect Authorization response returned 
 
-    webapp->>idp: Request OpenID Connect Access and Identity tokens
-    idp->>webapp: Token returned with Entra GUID and acr "mDL Verification" claims
+    webapp->>idp: Request OpenID Connect access token
+    idp->>webapp: Token returned to unique callback URL with Entra GUID claim
     end
 
-    webapp->>backend: Transaction request submitted with updated Access and Identity tokens
-    backend->>backend: Evaluate Identity token acr claim "mDL Verification"
+    webapp->>backend: Transaction request submitted with updated access token
+    backend->>backend: Evaluate session authentication method
     backend->>backend: Invoke transaction with core banking service
     backend->>webapp: Transaction approval response rendered
 

@@ -16,14 +16,14 @@ sequenceDiagram
     end
     box Identity Management System (IDMS)
     participant idp as Identity Provider
-    participant bpl as Bank Provisioning Logic
+    participant bpl as Bank Enrollment Workflow
     participant sdk as Verifier SDK
     end
     box Financial Institution Banking System
     participant backend as Banking Backend
     %% participant cbs as Core Banking Services
     %% participant database as Data Storage
-    %% participant bankapi as IDMS Provisioning API
+    %% participant bankapi as Verifier Mediation Service
     %% participant ssn as SSN Validation Service
     end
     box Verifier
