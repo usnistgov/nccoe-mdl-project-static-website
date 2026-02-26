@@ -15,7 +15,7 @@ sequenceDiagram
     end
     box Identity Management System (IDMS)
     participant idp as Identity Provider
-    participant bpl as Bank Provisioning Logic
+    participant bpl as Bank Application Workflow
     participant sdk as Verifier SDK
     end
     box Financial Institution Banking System
@@ -49,13 +49,13 @@ sequenceDiagram
     idp->>bpl: Invoke Application form
 
     %%note over wallet,verifier: ... ↑ ...
-    note over webapp: Applicant completes initial workflow <br /> submitting email and telephone number <br />that are stored in the applicant's <br /> directory entry.
+    note over webapp: Applicant submits <br />  email and telephone number, <br /> which are stored temporarily for use later in the workflow.
     %%note over wallet,verifier: ... ↓ ...
 
 
     bpl->>webapp: Social Security Number form rendered
     webapp->>bpl: Applicant submits Social Security Number
-    bpl->>bpl: Store Social Security Number in applicant's directory entry temporarily
+    bpl->>bpl: Temporarily store Social Security Number in the applicant's session.
 
-    bpl->>webapp: Application form identity verification workflow rendered
+    bpl->>webapp: Application identity verification workflow rendered
     webapp->>bpl: Applicant consent to present mDL to the bank

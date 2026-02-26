@@ -16,14 +16,14 @@ sequenceDiagram
     end
     box Identity Management System (IDMS)
     participant idp as Identity Provider
-    participant bpl as Bank Provisioning Logic
+    participant bpl as Bank Enrollment Workflow
     %%participant sdk as Verifier SDK
     end
     box Financial Institution Banking System
     participant backend as Banking Backend
     %% participant cbs as Core Banking Services
     participant database as Data Storage
-    %%participant bankapi as IDMS Provisioning API
+    %%participant bankapi as Verifier Mediation Service
     %%participant ssn as SSN Validation Service
     end
     box Verifier
@@ -38,10 +38,10 @@ sequenceDiagram
 
 
     %%note over wallet,verifier: ... ↑ ...
-    note right of webapp: Enrollee returns to enrollment form and completes mDL verification<br /> flow as documented in the account application flow. <br />Banking Provisioning Logic has retrieved mDL attributes in the interactions below.
+    note right of webapp: Enrollee returns to enrollment form and completes mDL verification<br /> flow as documented in the account application flow. <br />Bank Enrollment Workflow has retrieved mDL attributes in the interactions below.
     %%note over wallet,verifier: ... ↓ ...
 
-    bpl->>bpl: Document Number and Issuing Authority keyed hash lookup
+    bpl->>bpl: Document Number and Issuing Authority concatenated hash value lookup
 
     bpl->>webapp: "Set up the authentication method" page rendered
     webapp->>bpl: Enrollee clicks "Create a Passkey"
@@ -62,14 +62,14 @@ sequenceDiagram
     rect rgb(0,255,0)
     bpl-)webapp: OpenID Connect Authorization response returned
 
-    webapp->>idp: Request OpenID Connect Access and Identity tokens
-    idp->>webapp: Token returned with Entra GUID, acr "Completed Digital Enrollment",<br /> and Document Number + Issuing Authority keyed hash value claims
+    webapp->>idp: Request OpenID Connect access token
+    idp->>webapp: Token returned with Entra GUID,<br /> and Document Number and Issuing Authority concatenated hash value claims
     end
 
-    webapp->>backend: Request redirect URI with Access and Identity tokens
+    webapp->>backend: Request redirect URI with access token
 
 
-    backend->>database: Lookup customer record <br />with Document Number <br /> and Issuing Authority keyed hash value
+    backend->>database: Lookup customer record <br />with Document Number <br /> and Issuing Authority concatenated hash value value
     database->>backend: Found customer record returned
     backend->>backend: Activate customer
 

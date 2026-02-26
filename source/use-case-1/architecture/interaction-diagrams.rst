@@ -6,9 +6,9 @@ Interaction Diagrams
 Introduction
 ============
 
-The following interaction diagrams visualize the flow of data between components in our `architecture </kyc_cip_onboarding.html>`__ as the user interacts with the NCCoE Bank. 
+The following interaction diagrams visualize the flow of data between components in our `architecture </../kyc_cip_onboarding.html>`__ as the user interacts with the NCCoE Bank. 
 The flows below are cross-device flows where the user presents their mDL from the digital wallet on their phone to the NCCoE bank through a browser on a secondary device.
-These flows correspond to three of our `wireframes </wireframes.html>`__ videos - Applying for a Financial Account using an mDL, Setting up Online Access after Application Approval, 
+These flows correspond to three of our `wireframes </../wireframes.html>`__ videos - Applying for a Financial Account using an mDL, Setting up Online Access after Application Approval, 
 and Identity Re-verification. The diagrams generally depict user journey “happy paths”, that is, free from error conditions or edge cases. System architects and those in similar 
 roles may find these diagrams useful as a reference when implementing their own solutions for an individual use case.
 
@@ -20,18 +20,18 @@ There are interactions which take place prior to the user journeys which not dem
 Viewing the Diagrams
 ====================
 
-While the components in the interaction diagrams align with our `architecture </kyc_cip_onboarding.html>`__, they omit some components and subcomponents 
+While the components in the interaction diagrams align with our `architecture </../kyc_cip_onboarding.html>`__, they omit some components and subcomponents 
 for brevity and clarity. We used the following color scheme to highlight important protocol interactions. 
 
 .. rst-class:: oidc
-OpenID Connect
+    
+OpenID Connect or for Verifiable Presentations
 
-.. rst-class:: oidvp
-OpenID for Verifiable Presentations
+
 
 Click the diagram to expand it. Once expanded, you can zoom in or out using your mouse scroll wheel and pan by clicking and dragging the diagram.
 
-`Comments and feedback </comments.html>`__ are welcomed.
+`Comments and feedback </../comments.html>`__ are welcomed.
 
 Flow 1 - Applying for a Financial Account using an mDL
 ========================================================
@@ -54,7 +54,7 @@ Cross Device Financial Account Application Flow
 Part 1 - User Initiates Application Process
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. mermaid:: ../media/cross-device-application-flow-part-1.mmd
+.. thumbnail:: ../../media/Application1.PNG
 
 
 
@@ -62,15 +62,14 @@ Part 1 - User Initiates Application Process
 Part 2 - mDL Verification Using the DC API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. mermaid:: ../media/cross-device-application-flow-part-2.mmd
+.. thumbnail:: ../../media/Application2.PNG
 
 
 
 Part 3 - Collection of Additional User Identity Information and Application Completion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. mermaid:: ../media/cross-device-application-flow-part-3.mmd
-
+.. thumbnail:: ../../media/Application3.PNG
 
 Flow 2 - Setting up Online Access after Application Approval
 ============================================================
@@ -90,13 +89,13 @@ Cross Device Setting up Online Access
 Part 1 - Initiating the Digital Enrollment Process Triggered by a Notification from the Banking System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. mermaid:: ../media/cross-device-digital-enrollment-flow-part-1.mmd
+.. thumbnail:: ../../media/Enrollment1.PNG
 
 
 Part 2 - Passkey Registration and Linkage to the Applicant
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. mermaid:: ../media/cross-device-digital-enrollment-flow-part-2.mmd
+.. thumbnail:: ../../media/Enrollment2.PNG
 
 
 Flow 3 - Re-Verification for Step-Up Flow
@@ -111,4 +110,4 @@ This re-verification flow that occurs at Flow 3, Step 10 and is the same as Flow
 Re-verification for Step-Up Flow
 ---------------------------------
 
-.. mermaid:: ../media/re-verification-flow.mmd
+.. thumbnail:: ../../media/Re-verification1.PNG

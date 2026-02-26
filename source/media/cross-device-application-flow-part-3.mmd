@@ -19,14 +19,14 @@ sequenceDiagram
     end
     box Identity Management System (IDMS)
     participant idp as Identity Provider
-    participant bpl as Bank Provisioning Logic
+    participant bpl as Bank Application Workflow
     participant sdk as Verifier SDK
     end
     box Financial Institution Banking System
     participant backend as Banking Backend
     %% participant cbs as Core Banking Services
     participant database as Data Storage
-    participant bankapi as IDMS Provisioning API
+    participant bankapi as Verifier Mediation Service
     participant ssn as SSN Validation Service
     end
 
@@ -38,26 +38,26 @@ sequenceDiagram
 
 
     %%note over wallet,verifier: ... ↑ ...
-    note over webapp: Applicant returns to bank account application where mDL attributes are displayed. <br /> where the interactions below resume.
+    note over webapp: Applicant returns to bank account application where mDL attributes are displayed. 
     %%note over wallet,verifier: ... ↓ ...
 
     webapp->>bpl: Applicant confirms information and submits form
     rect rgb(0,255,0)
     bpl-)webapp: OpenID Connect Authorization response returned
 
-    webapp->>idp: Request OpenID Connect identity token
-    idp->>webapp: Token returned with <br />Entra GUID and acr value "Completed Account Application"
+    webapp->>idp: Request OpenID Connect access token
+    idp->>webapp: Token returned to unique callback URL with <br />Entra GUID claim
 
     webapp->>backend: Request redirect URI with retrieved tokens
     end
     backend->>webapp: "Application complete" webpage rendered
 
-    backend->>idp: Graph API lookup for Document Number and Issuing Authority keyed hash via Entra GUID
-    idp->>backend: Document Number and Issuing Authority keyed hash returned
-    backend->>database: Lookup record with <br />Document Number and Issuing Authority
-    database->>backend: Found record returned
-    backend->>database: Write Social Security Number to encrypted CIP token associated with record
-    database->>backend: Record updated with encrypted CIP token
+    backend->>idp: Azure Graph API query Document Number and Issuing Authority concatenated hash value via applicant's Entra GUID
+    idp->>backend: Document Number and Issuing Authority concatenated hash value returned
+    backend->>database: Lookup record with <br />Document Number and Issuing Authority concatenated hash value
+    database->>backend: Applicant record returned
+    backend->>database: Write Social Security Number to encrypted CIP token associated with applicant record
+    database->>backend: Applicant record updated with encrypted CIP token
     backend->>backend: Add record to Social Security Number verification service queue
 
     %%note over wallet,verifier: ... ↑ ...

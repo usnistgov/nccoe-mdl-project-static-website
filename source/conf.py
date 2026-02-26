@@ -102,5 +102,13 @@ html_theme_options = {
 }
 
 redirects = {
+     "criteria": "use-case-1/criteria.html",
+     "pram": "use-case-1/pram.html",
+     "wireframes": "use-case-1/wireframes.html",
+     "nccoe-bank-faq": "use-case-1/nccoe-bank-faq.html",
+     "architecture/interaction_diagrams": "/nccoe-mdl-project-static-website/use-case-1/architecture/interaction-diagrams.html",
+     "architecture/kyc_cip_onboarding": "/nccoe-mdl-project-static-website/use-case-1/architecture/kyc-cip-onboarding.html",
+     "building_mdl_assurance/building_mdl_assurance": "/nccoe-mdl-project-static-website/use-case-1/building-mdl-assurance/index.html",
+     "building_mdl_assurance/nist_800-63a": "/nccoe-mdl-project-static-website/use-case-1/building-mdl-assurance/nist_800-63a.html",
 
 }

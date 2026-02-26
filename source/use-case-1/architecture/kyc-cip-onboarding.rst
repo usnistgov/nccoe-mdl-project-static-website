@@ -10,7 +10,7 @@ Verifiable Digital Credential
 Ecosystem <https://www.nist.gov/blogs/cybersecurity-insights/digital-identities-getting-know-verifiable-digital-credential-ecosystem>`__ blog post to learn more
 about the components referenced in the architecture.
 
-The figures below depict two planned scenarios for the demonstration - *same-device* and *cross-device* flows. These flows are defined in the `Open ID for
+The figures below depict two scenarios for the demonstration - *same device* and *cross device* flows. These flows are defined in the `Open ID for
 Verifiable Presentations <https://openid.net/specs/openid-4-verifiable-presentations-1_0.html>`__ (OpenID4VP) specification as:
 
 **Cross device** - *A flow where the End-User presents a Credential to a Verifier interacting with the End-User on a different device as the device the Wallet
@@ -19,8 +19,8 @@ resides on.*
 **Same device** - *A flow where the End-User presents a Credential to a Verifier interacting with the End-User on the same device that the device the Wallet
 resides on.*
 
-To see a video example of what the cross-device flow might look like from the customer's perspective, please review our `wireframe
-videos. <wireframes.html>`__
+Note that the **same device** architecture depicted below is in Draft form. The **cross device** architecture has been demonstrated and completed. To see a video example of what the cross-device flow looks like from the customer's perspective, please review our `demonstration
+videos. <../demonstration-videos.html>`__
 
 Architecture Diagrams
 -----------------------
@@ -37,21 +37,25 @@ Each flow makes the following assumptions:
 
 4. The bank can create and manage the customer's account via an identity management system.
 
-.. figure:: ../media/image1.png
-   :width: 6.5in
-   :height: 5.49444in
-   :alt: Cross-Device Flow diagram. See figure 1 caption below image.
 
-   **Figure 1 Cross-Device Flow.** A flow where the holder presents an mDL stored in the digital wallet on their mobile device to a service the user is
+Figure 1 Cross Device Flow
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. thumbnail:: ../../media/cross-device-architecture.png
+   :alt: Cross Device Flow diagram. See figure 1 caption below image.
+
+   **Figure 1 Cross Device Flow** A flow where the holder presents an mDL stored in the digital wallet on their mobile device to a service the user is
    interacting with through a web browser on a desktop or laptop. The web browser will present the user with a QR code to invoke the wallet on the mobile
    device.
 
-.. figure:: ../media/image2.png
-   :width: 6.5in
-   :height: 8.35417in
-   :alt: Same-device flow diagram. See figure 2 caption below image.
 
-   **Figure 2 Same-device flow.** A flow where the mDL holder presents an mDL stored in the digital wallet on their mobile device to another application on the
+Figure 2 Draft Same Device Flow
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. thumbnail:: ../../media/image2.png
+   :alt: Same device flow diagram. See figure 2 caption below image.
+
+   **Figure 2 Same device flow** A flow where the mDL holder presents an mDL stored in the digital wallet on their mobile device to another application on the
    same device. This application could be a native application or could be a website the user has navigated to through a mobile browser.
 
 Architecture Components
@@ -70,7 +74,7 @@ banking services.
 **Core Banking Services** - Refer to the systems that facilitate vital bank business. For our demonstration this will including processing transactions and
 updating accounts. [4]_.
 
-**Identity Management System (IDMS) Provisioning API** - A system that implements interfaces that interact with the IDMS to facilitate account opening and
+**Verifier Mediation Service** - A system that implements interfaces that interact with the IDMS to facilitate account opening and
 digital enrollment phases.
 
 **API Proxy** - A reverse proxy routing requests from clients to
@@ -81,12 +85,13 @@ Service [6]_ designed to validate social security numbers.
 
 **Data Storage** - The core banking repository for data retention criteria and associated transactional data.
 
-**Standards Included in this Architecture**
+Standards Included in this Architecture
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This architecture makes use of several standards in the mDL ecosystem. To learn more about the standards that encompass the VDC ecosystem, we encourage the
 reader to visit our upcoming deep dive in our blog series [8]_.
 
-**OpenID4VP** - OpenID4VP is a protocol under the OpenID Foundation that enables the presentation of verifiable digital credentials (in this case mobile
+**OpenID for Verifiable Presentations (OpenID4VP)** - OpenID4VP [2]_ is a protocol described by the OpenID Foundation that enables the presentation of verifiable digital credentials (in this case mobile
 driver's licenses) and is built upon multiple standardized protocols and data formats.
 
 **ISO 18013-5 -** An international standard that defines the specifications for mDLs and their data exchange with electronic devices. It defines the
@@ -158,4 +163,4 @@ Practice [11]_ when using a native banking applications.
    :glob:
    :hidden:
 
-   interaction_diagrams.rst
+   interaction-diagrams.rst
