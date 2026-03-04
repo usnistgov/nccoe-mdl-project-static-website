@@ -1,15 +1,16 @@
 Demonstration Videos
 =====================
 
-**NOTE:** The NCCoE Bank is not a real bank, but part of a collaborative
-project at the National Cybersecurity Center of Excellence involving
-technology providers, financial institutions, and other organizations
-seeking to adopt mDLs. The purpose of the NCCoE Bank is to explore and
-demonstrate how mDLs can be integrated into current financial
-institution business processes to augment functions such as online
-financial account opening, to provide greater security for high-value
-transactions, and to meet requirements for Customer Identification
-Program/Know Your Customer (CIP/KYC) at financial institutions.
+.. attention::
+    The NCCoE Bank is not a real bank, but part of a collaborative
+    project at the National Cybersecurity Center of Excellence involving
+    technology providers, financial institutions, and other organizations
+    seeking to adopt mDLs. The purpose of the NCCoE Bank is to explore and
+    demonstrate how mDLs can be integrated into current financial
+    institution business processes to augment functions such as online
+    financial account opening, to provide greater security for high-value
+    transactions, and to meet requirements for Customer Identification
+    Program/Know Your Customer (CIP/KYC) at financial institutions.
 
 
 .. raw:: html

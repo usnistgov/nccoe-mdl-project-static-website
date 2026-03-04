@@ -17,13 +17,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Financial Use Case Reference Architecture &mdash; NCCoE Mobile Driver&#39;s License Project Supporting Resources</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9c5504cc" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=3b68fefb" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-2.3.0/datatables.min.css" />
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.min.css" />
-      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=5c905044" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e41c2d03" />
 
   <link rel="stylesheet" href="../../_static/css/datatables.min.css">
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -39,13 +39,13 @@
       <script src="../../_static/activate_datatables.js"></script>
       <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.min.js"></script>
       <script src="../../_static/main.js?v=355b5256"></script>
+
     <script src="../../_static/js/theme.js"></script>
     <script src="../../_static/js/d3.min.js"></script>
     <script src="../../_static/js/mermaid.min.js"></script>
     <script>
-      // Configure and let Mermaid auto-run when DOM is ready
       window.addEventListener('DOMContentLoaded', () => {
-        mermaid.initialize({startOnLoad: true,securityLevel: 'loose'});
+        mermaid.initialize({startOnLoad: true, securityLevel: 'loose'});
       });
     </script>
     <script src="../../_static/js/datatables.min.js"></script>
@@ -58,18 +58,15 @@
     
     <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // only run on pages that have: .. meta::  :comments: on
       if (!document.querySelector('meta[name="comments"][content="on"]')) return;
 
       var base = "../../_static/";
 
-      // load CSS
       var css = document.createElement('link');
       css.rel = 'stylesheet';
       css.href = base + 'css/annotator.min.css';
       document.head.appendChild(css);
 
-      // load annotator, then our capture script
       var a = document.createElement('script');
       a.src = base + 'js/annotator-full.min.js';
       a.onload = function () {
@@ -78,6 +75,7 @@
         c.setAttribute('data-email', "feedback@example.com");
         c.setAttribute('data-site-name', "NCCoE Mobile Driver's License Project Supporting Resources");
         c.setAttribute('data-subject', "[Doc review] NCCoE Mobile Driver's License Project Supporting Resources — {N} comments");
+        c.setAttribute('data-static-base', base);
         document.body.appendChild(c);
       };
       document.body.appendChild(a);
@@ -389,7 +387,7 @@ transaction.</p></li>
 <section id="figure-1-cross-device-flow">
 <h3>Figure 1 Cross Device Flow<a class="headerlink" href="#figure-1-cross-device-flow" title="Link to this heading"></a></h3>
 <a class=""
-               data-lightbox="group-10f39afd-637d-473f-9ccd-27c32e32b639"
+               data-lightbox="group-273b005f-3e78-4db2-998f-3ae321b225ef"
                href="../../_images/cross-device-architecture1.png"
                title="Figure 1 Cross Device Flow A flow where the holder presents an mDL stored in the digital wallet on their mobile device to a service the user is
 interacting with through a web browser on a desktop or laptop. The web browser will present the user with a QR code to invoke the wallet on the mobile
@@ -407,7 +405,7 @@ device."
 <section id="figure-2-draft-same-device-flow">
 <h3>Figure 2 Draft Same Device Flow<a class="headerlink" href="#figure-2-draft-same-device-flow" title="Link to this heading"></a></h3>
 <a class=""
-               data-lightbox="group-b81e6a77-1a4a-4e5a-96f1-22215af881cd"
+               data-lightbox="group-644b4f49-2c89-4920-87ec-cccb0243ccc6"
                href="../../_images/image21.png"
                title="Figure 2 Same device flow A flow where the mDL holder presents an mDL stored in the digital wallet on their mobile device to another application on the
 same device. This application could be a native application or could be a website the user has navigated to through a mobile browser."
@@ -590,6 +588,24 @@ Practice <a class="footnote-reference brackets" href="#id20" id="id9" role="doc-
 </footer>
     </section>
   </div>
+  <script>
+    (function () {
+      document.addEventListener(
+        "click",
+        function (e) {
+          const current = e.target.closest(".rst-current-version");
+          if (!current) return;
+
+          const versions = document.querySelector(".rst-versions");
+          if (!versions) return;
+
+          versions.classList.toggle("shift-up");
+        },
+        true // capture: works even if something stops propagation later
+      );
+    })();
+  </script>
+  
   <script>
       // expose collapse_navigation theme option to runtime JS so theme scripts can
       // decide whether to expand first-level toctree entries automatically.

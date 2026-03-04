@@ -1,19 +1,9 @@
 Wireframes
 ==========
 
-**NOTE:** The NCCoE Bank is not a real bank, but part of a collaborative
-project at the National Cybersecurity Center of Excellence involving
-technology providers, financial institutions, and other organizations
-seeking to adopt mDLs. The purpose of the NCCoE Bank is to explore and
-demonstrate how mDLs can be integrated into current financial
-institution business processes to augment functions such as online
-financial account opening, to provide greater security for high-value
-transactions, and to meet requirements for Customer Identification
-Program/Know Your Customer (CIP/KYC) at financial institutions.
+.. attention::
 
-The wireframes below remain published to illustrate the how the project 
-executed a methodical process in the development of the representative demonstration. Visit
-the project's :doc:`demonstration videos <demonstration-videos>` to view the final integrated solution. 
+    These wireframes were developed at the beginning of our first use case to mock up the look and feel of an mDL being presented to a Financial Institution. These videos are have superseded by our :doc:`demonstration videos <demonstration-videos>` which are recording of the actual architecture implemented and example NCCoE Bank build as part of this project.
 
 
 .. raw:: html

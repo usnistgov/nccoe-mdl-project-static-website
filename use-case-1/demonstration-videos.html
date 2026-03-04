@@ -17,13 +17,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Demonstration Videos &mdash; NCCoE Mobile Driver&#39;s License Project Supporting Resources</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9c5504cc" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=3b68fefb" />
       <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-2.3.0/datatables.min.css" />
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.min.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=5c905044" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e41c2d03" />
 
   <link rel="stylesheet" href="../_static/css/datatables.min.css">
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -39,13 +39,13 @@
       <script src="../_static/activate_datatables.js"></script>
       <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.min.js"></script>
       <script src="../_static/main.js?v=355b5256"></script>
+
     <script src="../_static/js/theme.js"></script>
     <script src="../_static/js/d3.min.js"></script>
     <script src="../_static/js/mermaid.min.js"></script>
     <script>
-      // Configure and let Mermaid auto-run when DOM is ready
       window.addEventListener('DOMContentLoaded', () => {
-        mermaid.initialize({startOnLoad: true,securityLevel: 'loose'});
+        mermaid.initialize({startOnLoad: true, securityLevel: 'loose'});
       });
     </script>
     <script src="../_static/js/datatables.min.js"></script>
@@ -58,18 +58,15 @@
     
     <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // only run on pages that have: .. meta::  :comments: on
       if (!document.querySelector('meta[name="comments"][content="on"]')) return;
 
       var base = "../_static/";
 
-      // load CSS
       var css = document.createElement('link');
       css.rel = 'stylesheet';
       css.href = base + 'css/annotator.min.css';
       document.head.appendChild(css);
 
-      // load annotator, then our capture script
       var a = document.createElement('script');
       a.src = base + 'js/annotator-full.min.js';
       a.onload = function () {
@@ -78,6 +75,7 @@
         c.setAttribute('data-email', "feedback@example.com");
         c.setAttribute('data-site-name', "NCCoE Mobile Driver's License Project Supporting Resources");
         c.setAttribute('data-subject', "[Doc review] NCCoE Mobile Driver's License Project Supporting Resources — {N} comments");
+        c.setAttribute('data-static-base', base);
         document.body.appendChild(c);
       };
       document.body.appendChild(a);
@@ -359,7 +357,9 @@
              
   <section id="demonstration-videos">
 <h1>Demonstration Videos<a class="headerlink" href="#demonstration-videos" title="Link to this heading"></a></h1>
-<p><strong>NOTE:</strong> The NCCoE Bank is not a real bank, but part of a collaborative
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>The NCCoE Bank is not a real bank, but part of a collaborative
 project at the National Cybersecurity Center of Excellence involving
 technology providers, financial institutions, and other organizations
 seeking to adopt mDLs. The purpose of the NCCoE Bank is to explore and
@@ -368,6 +368,7 @@ institution business processes to augment functions such as online
 financial account opening, to provide greater security for high-value
 transactions, and to meet requirements for Customer Identification
 Program/Know Your Customer (CIP/KYC) at financial institutions.</p>
+</div>
 <div class="iframe-container" style="position: relative; width: 100%; padding-top: 120%; /* 16:9 Aspect Ratio */ overflow: hidden;">
     <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" src="/nccoe-mdl-project-static-website/nccoe-bank/#/demonstration-videos" frameborder="0" allowfullscreen></iframe>
 </div></section>
@@ -442,6 +443,24 @@ Program/Know Your Customer (CIP/KYC) at financial institutions.</p>
 </footer>
     </section>
   </div>
+  <script>
+    (function () {
+      document.addEventListener(
+        "click",
+        function (e) {
+          const current = e.target.closest(".rst-current-version");
+          if (!current) return;
+
+          const versions = document.querySelector(".rst-versions");
+          if (!versions) return;
+
+          versions.classList.toggle("shift-up");
+        },
+        true // capture: works even if something stops propagation later
+      );
+    })();
+  </script>
+  
   <script>
       // expose collapse_navigation theme option to runtime JS so theme scripts can
       // decide whether to expand first-level toctree entries automatically.
