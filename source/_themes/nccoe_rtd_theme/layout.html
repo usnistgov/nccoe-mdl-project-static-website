@@ -64,16 +64,17 @@
   {#- JAVASCRIPTS #}
   {%- block scripts %}
   {%- if not embedded %}
+
     {%- for scriptfile in script_files %}
       {{ js_tag(scriptfile) }}
     {%- endfor %}
+
     <script src="{{ pathto('_static/js/theme.js', 1) }}"></script>
     <script src="{{ pathto('_static/js/d3.min.js', 1) }}"></script>
     <script src="{{ pathto('_static/js/mermaid.min.js', 1) }}"></script>
     <script>
-      // Configure and let Mermaid auto-run when DOM is ready
       window.addEventListener('DOMContentLoaded', () => {
-        mermaid.initialize({startOnLoad: true,securityLevel: 'loose'});
+        mermaid.initialize({startOnLoad: true, securityLevel: 'loose'});
       });
     </script>
     <script src="{{ pathto('_static/js/datatables.min.js', 1) }}"></script>
@@ -82,12 +83,6 @@
     <script src="{{ pathto('_static/js/jquery.leaveNotice-nist.js', 1) }}"></script>
     <script src="{{ pathto('_static/js/applyLeaveNotice.js', 1) }}"
             data-site-name="{{ project | default('Site') }}"></script>
-
-    {#- VERSION WARNING BANNER #}
-
-    {%- if READTHEDOCS or DEBUG %}
-    <script src="{{ pathto('_static/js/versions.js', 1) }}"></script>
-    {%- endif %}
 
     {#- OPENSEARCH #}
     {%- if use_opensearch %}
@@ -99,18 +94,15 @@
     {# === Dynamic per-page comment loader: reads <meta name="comments" content="on"> === #}
     <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // only run on pages that have: .. meta::  :comments: on
       if (!document.querySelector('meta[name="comments"][content="on"]')) return;
 
       var base = "{{ pathto('_static/', 1) }}";
 
-      // load CSS
       var css = document.createElement('link');
       css.rel = 'stylesheet';
       css.href = base + 'css/annotator.min.css';
       document.head.appendChild(css);
 
-      // load annotator, then our capture script
       var a = document.createElement('script');
       a.src = base + 'js/annotator-full.min.js';
       a.onload = function () {
@@ -119,6 +111,7 @@
         c.setAttribute('data-email', "{{ email | default('feedback@example.com') }}");
         c.setAttribute('data-site-name', "{{ project | default('Site') }}");
         c.setAttribute('data-subject', "{{ subject | default('[Doc review] ' ~ project ~ ' — {N} comments') }}");
+        c.setAttribute('data-static-base', base);
         document.body.appendChild(c);
       };
       document.body.appendChild(a);
@@ -407,7 +400,25 @@
     </section>
   </div>
   {% include "versions.html" -%}
+  
+  <script>
+    (function () {
+      document.addEventListener(
+        "click",
+        function (e) {
+          const current = e.target.closest(".rst-current-version");
+          if (!current) return;
 
+          const versions = document.querySelector(".rst-versions");
+          if (!versions) return;
+
+          versions.classList.toggle("shift-up");
+        },
+        true // capture: works even if something stops propagation later
+      );
+    })();
+  </script>
+  
   <script>
       // expose collapse_navigation theme option to runtime JS so theme scripts can
       // decide whether to expand first-level toctree entries automatically.
