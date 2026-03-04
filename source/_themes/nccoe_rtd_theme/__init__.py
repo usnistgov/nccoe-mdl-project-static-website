@@ -12,7 +12,7 @@ from sphinx import version_info as sphinx_version
 from sphinx.util.logging import getLogger
 
 
-__version__ = '0.4.9'
+__version__ = '0.4.14'
 __version_full__ = __version__
 
 logger = getLogger(__name__)

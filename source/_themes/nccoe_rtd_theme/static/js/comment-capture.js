@@ -7,6 +7,7 @@
     || "NIST | NCCoE";
   var SUBJECT = (document.currentScript && document.currentScript.dataset && document.currentScript.dataset.subject)
     || "[Doc review] {PROJECT} - {N} comments";
+  var STATIC_BASE = (document.currentScript && document.currentScript.dataset && document.currentScript.dataset.staticBase)
   var KEY = 'cm_comment_queue_v1';
 
   if (!window.Annotator) return;
@@ -46,24 +47,46 @@
     if (!s) return '';
     return String(s).replace(/\r/g, '').trim().slice(0, 1000);
   }
-  function linkQuote(s) {
-    if (!s) return '';
-    return String(s).replace(/\s+/g, ' ').trim().slice(0, 150);
-  }
-  function scrollToTextLink(url, exact) {
-    return exact ? (url + '#:~:text=' + encodeURIComponent(exact)) : url;
-  }
 
   function normalize(ann) {
     var url = String(location.href).split('#')[0];
-    var qRaw = (ann && ann.quote) ? String(ann.quote) : selText();
+    var selectedText = String((ann && ann.quote) || selText() || '').trim();
+    var highlightSpan = ann && ann.highlights && ann.highlights[0];
+    var block = highlightSpan && highlightSpan.closest('p,li,td,th,blockquote,pre,h1,h2,h3,h4,h5,h6');
+
+    if (block && selectedText && selectedText.length < 30) {
+      var contextSnippet = selectedText;
+      var blockText = block.textContent.replace(/\s+/g, ' ').trim();
+
+      var r = document.createRange();
+      r.selectNodeContents(block);
+      r.setEndBefore(highlightSpan);
+
+      var beforeText = r.toString().replace(/\s+/g, ' ');
+      var matchIndex = beforeText.length;
+
+      if (matchIndex >= 0) {
+        var contextStart = Math.max(0, matchIndex - 60);
+        var contextEnd = Math.min(blockText.length, matchIndex + selectedText.length + 60);
+
+        contextSnippet = (blockText.slice(contextStart, matchIndex) + selectedText + blockText.slice(matchIndex + selectedText.length, contextEnd)).trim();
+      }
+    }
+
+    var anchorId = '';
+    for (var currentEl = highlightSpan; currentEl && currentEl.nodeType === 1; currentEl = currentEl.parentElement) {
+      if (currentEl.id) { anchorId = currentEl.id; break; }
+    }
+
+    if (!anchorId) anchorId = nearestId();
+
     return {
       url: url,
       page_title: title(),
-      anchor_id: nearestId(),                 // <— key addition
-      text_quote: displayQuote(qRaw),
-      link_quote: linkQuote(qRaw),
-      comment: (ann && ann.text ? String(ann.text).trim() : '')
+      anchor_id: anchorId,
+      text_quote: displayQuote(selectedText),
+      context: contextSnippet,
+      comment: String((ann && ann.text) || '').trim()
     };
   }
 
@@ -75,7 +98,7 @@
   }
 
   function buildCsvFromQueue() {
-    var headers = ['url', 'text', 'comment'];
+    var headers = ['url', 'text', 'context (±60 chars around selection)', 'comment'];
     var q = qLoad();
     var lines = [];
 
@@ -84,9 +107,10 @@
     q.forEach(function (item) {
       var url = item.url || '';
       var quote = (item.text_quote || '').replace(/\r?\n/g, ' ');
+      var context = (item.context || '').replace(/\r?\n/g, ' ');
       var comment = (item.comment || '').replace(/\r?\n/g, ' ');
 
-      lines.push([url, quote, comment].map(csvCell).join(','));
+      lines.push([url, quote, context, comment].map(csvCell).join(','));
     })
     return lines.join('\n');
   }
@@ -118,21 +142,28 @@
     var lines = ['Project: ' + PROJECT, 'Total comments: ' + q.length, ''];
     Object.keys(by).forEach(function (u) {
       var g = by[u];
-      lines.push('=== ' + 'Welcome' + ' ===');
+      lines.push('==========================================');
+      lines.push('PAGE: ' + g.t);
       lines.push('URL: ' + u);
+      lines.push('==========================================');
       g.items.forEach(function (it, i) {
-        var link = it.anchor_id ? (u + '#' + it.anchor_id) : scrollToTextLink(u, it.link_quote);
         lines.push('');
-        lines.push('- Comment #' + (i + 1));
+        lines.push('Comment #' + (i + 1));
+        lines.push('-------------------------------------');
         if (it.text_quote) {
-          lines.push('  Document Text:');
-          lines.push('  ---------------------------------');
-          it.text_quote.split('\n').forEach(function (line) { lines.push('  ' + line); });
-          lines.push('  ---------------------------------');
+          lines.push('');
+          lines.push('Selected Text:');
+          var cleanedQuote = it.text_quote.replace(/\r/g, '').trim();
+          lines.push('"' + cleanedQuote + '"');
+          lines.push('');
         }
-        lines.push('  Comment: ' + (it.comment || '(no comment)'));
-        lines.push('  ---------------------------------');
-        lines.push('  Link: ' + link);
+        if (it.context && it.context.length > 10) {
+          lines.push('Context:');
+          it.context.split('\n').forEach(function (line) { lines.push(line); });
+          lines.push('');
+        }
+        lines.push('Comment: ');
+        it.comment.split('\n').forEach(function (line) { lines.push(line); });
         lines.push('\n');
       });
       lines.push('');
@@ -162,6 +193,7 @@
     wrap.innerHTML =
       '<div class="cm-ep-dialog" role="dialog" aria-modal="true" aria-labelledby="cm-ep-title">' +
       '<div class="cm-ep-h"><h3 id="cm-ep-title" style="margin:0;font-size:16px;">Review and send</h3>' +
+      '<button type="button" class="cm-ep-help" id="cm-ep-help" aria-label="How to comment">How to comment</button>' +
       '<button type="button" class="cm-ep-x" aria-label="Close">×</button></div>' +
       '<div class="cm-ep-f"><label for="cm-ep-to">To</label><input id="cm-ep-to" class="cm-ep-in" type="email"></div>' +
       '<div class="cm-ep-f"><label for="cm-ep-sub">Subject</label><input id="cm-ep-sub" class="cm-ep-in"></div>' +
@@ -196,6 +228,7 @@
       var $cl = document.getElementById('cm-ep-clear');
       var $list = document.getElementById('cm-ep-list');
       var $ex = document.getElementById('cm-ep-export');
+      var $help = document.getElementById('cm-ep-help');
 
       $ex.onclick = function () {
         downloadCsvFromQueue();
@@ -267,6 +300,8 @@
         }
       };
 
+      $help.onclick = openInstructions;
+
       function close() { hide(); document.removeEventListener('keydown', esc); }
       function esc(e) { if (e.key === 'Escape') close(); }
       document.addEventListener('keydown', esc);
@@ -291,7 +326,6 @@
           '&body=' + encodeURIComponent($bo.value || '');
         try { location.href = href; } catch (e) { }
         close();
-        onSend && onSend(); // let caller clear the queue
       };
 
       $cl.onclick = function () {
@@ -315,20 +349,24 @@
     wrap.innerHTML =
       '<div class="cm-instr-dialog" role="dialog" aria-modal="true" aria-labelledby="cm-instr-title">' +
       '<div class="cm-instr-h">' +
-      '<h3 id="cm-instr-title" class="cm-ep-title">How to comment</h3>' +
+      '<h3 id="cm-instr-title" class="cm-ep-title">How to comment & send feedback</h3>' +
       '<button type="button" class="cm-instr-x" aria-label="Close">×</button>' +
       '</div>' +
       '<div class="cm-instr-body">' +
       '<ol>' +
       '<li>Select any text on the page.</li>' +
-      '<li>Click “Annotate” and type your comment.</li>' +
-      '<li>Click “Add to Queue” to stage it.</li>' +
-      '<li>Use “Review &amp; Send” to email all queued comments.</li>' +
+      '<li>Click "Annotate", then type your comment.</li>' +
+      '<li>Click "Save" to stage it.</li>' +
+      '<li>Repeat across as many pages as you want, everything stays in your queue.</li>' +
+      '<li>When you’re ready, click "Send n comments" to review, remove items, export a CSV, copy the email, or open your email app.</li>' +
       '</ol>' +
-      '<div class="cm-instr-note">Tips: Each comment captures the page title, a nearby anchor, and a text quote. You can send multiple pages’ comments in one email.</div>' +
+      '<div class="cm-instr-note">' +
+      'Tips: Your queued comments are saved in this browser until you send or clear them. ' +
+      'Each entry includes the page title, URL, a nearby section anchor (when available), and a quote to help reviewers find the exact spot.' +
+      '</div>' +
       '<div>' +
       '<div class="cm-instr-subtitle">Quick demo</div>' +
-      '<div class="cm-instr-gifbox"><span>(Optional) Drop a GIF here</span></div>' +
+      '<div class="cm-instr-media-box"><span>video error</span></div>' +
       '</div>' +
       '</div>' +
       '<div class="cm-instr-ft">' +
@@ -345,10 +383,14 @@
 
     window.openInstructionsModal = function (opts) {
       opts = opts || {};
-      // If you have a GIF URL, set it here:
-      if (opts.gif) {
-        var box = wrap.querySelector('.cm-instr-gifbox');
-        box.innerHTML = '<img src="' + opts.gif + '" alt="How to comment demo">';
+      // If you have a media URL, set it here:
+      if (opts.media) {
+        var box = wrap.querySelector('.cm-instr-media-box');
+        box.innerHTML =
+          `<video width="1072" height="670" controls muted aria-hidden="true">
+            <source src="${opts.media}" type="video/mp4"> </source>
+            Your browser does not support the video tag.
+          </video>`;
       }
       show();
     };
@@ -366,34 +408,6 @@
 
   // ---- annotator wiring ----
   var app = new Annotator(document.body);
-
-  function injectButton(editor) {
-    if (editor.querySelector('.cm-add-queue')) return;
-    var controls = editor.querySelector('.annotator-controls') || editor;
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.className = 'annotator-button cm-add-queue';
-    b.textContent = 'Add to Queue';
-    b.style.marginLeft = '8px';
-    b.addEventListener('click', function () {
-      var ta = editor.querySelector('textarea');
-      var ann = { text: ta ? ta.value : '', quote: selText(), ranges: [{}] };
-      qAdd(normalize(ann));
-      var cancel = editor.querySelector('.annotator-cancel'); if (cancel) cancel.click();
-    });
-    controls.appendChild(b);
-  }
-
-  var mo = new MutationObserver(function (ms) {
-    for (var i = 0; i < ms.length; i++) {
-      var nodes = ms[i].addedNodes || [];
-      for (var j = 0; j < nodes.length; j++) {
-        var n = nodes[j];
-        if (n.nodeType === 1 && n.classList.contains('annotator-editor')) injectButton(n);
-      }
-    }
-  });
-  mo.observe(document.body, { childList: true, subtree: true });
 
   Annotator.Plugin = Annotator.Plugin || {};
   Annotator.Plugin.QueueCapture = function () { };
@@ -455,7 +469,7 @@
 
   function openInstructions() {
     window.openInstructionsModal({
-      gif: '/_static/img/comment.gif'
+      media: STATIC_BASE + 'img/comment.mp4'
     });
   }
 
