@@ -1,6 +1,17 @@
 Financial Institution Use Case
 ===============================
 
+
+.. admonition:: Accepting Comments on Newly Released Publication!
+
+   The NIST NCCoE has published the `draft NIST Special Publication (SP) 1800-42A`_, Digital Identities - Mobile Driver’s License (mDL): Accelerating Development and Adoption of Digital Identity for Financial Institutions. This practice guide provides financial institutions and other organizations with practical guidelines on implementing mDLs for customer identity verification using existing technology and standards and best practices. 
+
+   The public comment period for this publication is open through May 8th, 2026. You can download the practice guide and use this `comment form`_ to submit your feedback. 
+
+   ..  _draft NIST Special Publication (SP) 1800-42A: https://www.nccoe.nist.gov/projects/digital-identities-mdl 
+
+   .. _comment form: https://www.nccoe.nist.gov/form/mdl-1800-42a-comment-form
+
 As part of this project, the NCCoE has developed the “NCCoE Bank”, a fictitious bank that will demonstrate how mDLs might be implemented as
 an identity verification solution at a real financial institution. To supplement our technical demonstration, we have published `Draft
 CIP/KYC use case criteria <criteria.html>`__, which were used when developing our
