@@ -1,0 +1,1399 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJSMY46M5C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RJSMY46M5C');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Representative Demonstration Implementation Guide &mdash; NCCoE Mobile Driver&#39;s License Project Supporting Resources</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=3b68fefb" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-2.3.0/datatables.min.css" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e41c2d03" />
+
+  <link rel="stylesheet" href="../_static/css/datatables.min.css">
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+      <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+      <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+      <script src="https://cdn.datatables.net/v/dt/dt-2.3.0/datatables.min.js"></script>
+      <script src="../_static/activate_datatables.js"></script>
+      <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.min.js"></script>
+      <script src="../_static/main.js?v=355b5256"></script>
+
+    <script src="../_static/js/theme.js"></script>
+    <script src="../_static/js/d3.min.js"></script>
+    <script src="../_static/js/mermaid.min.js"></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        mermaid.initialize({startOnLoad: true, securityLevel: 'loose'});
+      });
+    </script>
+    <script src="../_static/js/datatables.min.js"></script>
+    <script src="../_static/js/main.js"></script>
+    <link rel="stylesheet" href="../_static/css/leaveNotice.css">
+    <script src="../_static/js/jquery.leaveNotice-nist.js"></script>
+    <script src="../_static/js/applyLeaveNotice.js"
+            data-site-name="NCCoE Mobile Driver's License Project Supporting Resources"></script>
+
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (!document.querySelector('meta[name="comments"][content="on"]')) return;
+
+      var base = "../_static/";
+
+      var css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = base + 'css/annotator.min.css';
+      document.head.appendChild(css);
+
+      var a = document.createElement('script');
+      a.src = base + 'js/annotator-full.min.js';
+      a.onload = function () {
+        var c = document.createElement('script');
+        c.src = base + 'js/comment-capture.js';
+        c.setAttribute('data-email', "feedback@example.com");
+        c.setAttribute('data-site-name', "NCCoE Mobile Driver's License Project Supporting Resources");
+        c.setAttribute('data-subject', "[Doc review] NCCoE Mobile Driver's License Project Supporting Resources — {N} comments");
+        c.setAttribute('data-static-base', base);
+        document.body.appendChild(c);
+      };
+      document.body.appendChild(a);
+    });
+    </script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Government Services Use Case" href="../use-case-2/index.html" />
+    <link rel="prev" title="Demonstration Videos" href="demonstration-videos.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+  
+    <header class="nist-header" id="nist-header" role="banner">
+    
+        <a href="https://www.nist.gov/" title="National Institute of Standards and Technology"
+            class="nist-header__logo-link" rel="home">
+            <svg aria-hidden="true" class="nist-header__logo-icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                width="24" height="32" viewBox="0 0 24 32">
+                <path
+                    d="M20.911 5.375l-9.482 9.482 9.482 9.482c0.446 0.446 0.446 1.161 0 1.607l-2.964 2.964c-0.446 0.446-1.161 0.446-1.607 0l-13.25-13.25c-0.446-0.446-0.446-1.161 0-1.607l13.25-13.25c0.446-0.446 1.161-0.446 1.607 0l2.964 2.964c0.446 0.446 0.446 1.161 0 1.607z">
+                </path>
+            </svg>
+            <svg class="nist-header__logo-image" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                viewBox="-237 385.7 109.7 29.3">
+                <title>National Institute of Standards and Technology</title>
+                <g>
+                    <path class="st0" d="M-231,415h-6v-23.1c0,0,0-4.4,4.4-5.8c4-1.3,6.6,1.3,6.6,1.3l19.7,21.3c1,0.6,1.4,0,1.4-0.6v-22h6.1V409
+              c0,1.9-1.6,4.4-4,5.3c-2.4,0.9-4.9,0.9-7.9-1.7l-18.5-20c-0.5-0.5-1.8-0.6-1.8,0.4L-231,415L-231,415z"></path>
+                    <path class="st0" d="M-195,386.1h6.1v20.7c0,2.2,1.9,2.2,3.6,2.2h26.8c1.1,0,2.4-1.3,2.4-2.7c0-1.4-1.3-2.8-2.5-2.8H-176
+              c-3,0.1-9.2-2.7-9.2-8.5c0-7.1,5.9-8.8,8.6-9h49.4v6.1h-12.3V415h-6v-22.9h-30.2c-2.9-0.2-4.9,4.7-0.2,5.4h18.6
+              c2.8,0,7.4,2.4,7.5,8.4c0,6.1-3.6,9-7.5,9H-185c-4.5,0-6.2-1.1-7.8-2.5c-1.5-1.5-1.7-2.3-2.2-5.3L-195,386.1
+              C-194.9,386.1-195,386.1-195,386.1z"></path>
+                </g>
+            </svg>
+        </a>
+    
+    </header>
+  
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+
+          
+          
+          <a class="nccoe-logo"  href="../index.html" aria-label="NIST | National Cybersecurity Center of Excellence (NCCoE)">
+            <!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+            <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
+              xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+              xmlns="http://www.w3.org/2000/svg" xml:space="preserve" enable-background="new 75 0 245 75"
+              viewBox="75 0 245 75" height="82.323px" width="273.268px" y="0px" x="0px" class="nccoe-logo-svg"
+              version="1.1">
+              <style type="text/css">
+                .nccoe-logo-svg .st0 {
+                  fill: #4F8BBE;
+                }
+
+                .nccoe-logo-svg .st1 {
+                  fill: none;
+                }
+
+                .nccoe-logo-svg .st2 {
+                  fill: #818286;
+                }
+
+                .nccoe-logo-svg .st3 {
+                  fill: #D3AF73;
+                }
+
+                .nccoe-logo-svg .st4 {
+                  fill: #E89824;
+                }
+
+                .nccoe-logo-svg .st5 {
+                  fill: #10659C;
+                }
+
+                .nccoe-logo-svg .st6 {
+                  fill: none;
+                  stroke: #000000;
+                  stroke-width: 1.0443;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-miterlimit: 10;
+                }
+              </style>
+              <g>
+                <g>
+                  <path d="M79.1,51.4h-3.4V38.1c0,0,0-2.5,2.5-3.3c2.3-0.7,3.8,0.7,3.8,0.7l11.3,12.3c0.6,0.4,0.8,0,0.8-0.4V34.8h3.5V48
+          			c0,1.1-0.9,2.5-2.3,3.1c-1.3,0.5-2.8,0.5-4.6-1L80.1,38.5c-0.3-0.3-1-0.3-1,0.3V51.4L79.1,51.4z"></path>
+                  <path d="M99.8,34.8h3.5v11.9c0,1.3,1,1.3,2.1,1.3h15.4c0.6,0,1.4-0.8,1.4-1.5c0-0.8-0.7-1.6-1.4-1.6h-10c-1.7,0.1-5.3-1.5-5.3-4.9
+          			c0-4.1,3.4-5,4.9-5.2h28.4v3.5h-7.1v13.1h-3.4V38.3h-17.4c-1.7-0.1-2.8,2.7-0.1,3.1h10.7c1.6,0,4.3,1.4,4.3,4.8
+          			c0,3.5-2.1,5.2-4.3,5.2h-15.8c-2.6,0-3.5-0.6-4.5-1.5c-0.9-0.8-1-1.3-1.3-3.1V34.8L99.8,34.8z"></path>
+                </g>
+              </g>
+              <rect x="158.3" y="42.8" class="st0" width="4.1" height="1"></rect>
+              <rect x="174" y="43" class="st0" width="16.8" height="0.5"></rect>
+              <path class="st1" d="M172.6,34.4c-4.9,0-8.9,4-8.9,8.9c0,4.9,4,8.9,8.9,8.9c2.8,0,5.4-1.3,7-3.4l-4.5-5.1c-0.3,1-1.3,1.8-2.4,1.8
+          	c-1.4,0-2.5-1.1-2.5-2.5s1.1-2.5,2.5-2.5c1.1,0,2,0.7,2.4,1.7l4.3-4.6C177.6,35.6,175.2,34.4,172.6,34.4z"></path>
+              <path class="st1" d="M172.6,29.5c-7.6,0-13.7,6.2-13.7,13.7S165,57,172.6,57c4.1,0,7.8-1.8,10.3-4.7l-1.7-1.9c-2.1,2.5-5.2,4-8.6,4
+          	c-6.2,0-11.3-5.1-11.3-11.3c0-6.2,5.1-11.3,11.3-11.3c3.3,0,6.3,1.4,8.4,3.7l1.6-1.7C180.1,31.2,176.5,29.5,172.6,29.5z">
+              </path>
+              <path class="st1" d="M172.1,25.1c-10,0-18.2,8.2-18.2,18.2c0,10,8.2,18.2,18.2,18.2c5.4,0,10.2-2.3,13.5-6l-2-2.2
+          	c-2.7,3-6.7,5-11.1,5c-8.3,0-15-6.7-15-15s6.7-15,15-15c4.3,0,8.1,1.8,10.8,4.7l2-2.1C182,27.3,177.3,25.1,172.1,25.1z">
+              </path>
+              <path class="st0" d="M172.6,52.1c-4.9,0-8.9-4-8.9-8.9c0-4.9,4-8.9,8.9-8.9c2.7,0,5,1.2,6.7,3l1.7-1.8c-2.1-2.3-5-3.7-8.4-3.7
+          	c-6.2,0-11.3,5.1-11.3,11.3c0,6.2,5.1,11.3,11.3,11.3c3.5,0,6.6-1.6,8.6-4l-1.7-1.9C177.9,50.8,175.4,52.1,172.6,52.1z">
+              </path>
+              <path class="st2"
+                d="M172.6,57c-7.6,0-13.7-6.2-13.7-13.7s6.2-13.7,13.7-13.7c3.9,0,7.5,1.7,10,4.3l0.8-0.9
+          	c-2.7-2.9-6.6-4.7-10.8-4.7c-8.3,0-15,6.7-15,15s6.7,15,15,15c4.4,0,8.4-1.9,11.1-5l-0.8-0.9C180.4,55.2,176.7,57,172.6,57z"></path>
+              <path class="st3" d="M172.1,61.4c-10,0-18.2-8.2-18.2-18.2c0-10,8.2-18.2,18.2-18.2c5.2,0,9.9,2.2,13.2,5.7l0.3-0.4
+          	c-3.4-3.6-8.2-5.8-13.5-5.8c-10.3,0-18.6,8.3-18.6,18.6c0,10.3,8.3,18.6,18.6,18.6c5.5,0,10.4-2.4,13.8-6.1l-0.3-0.4
+          	C182.3,59.1,177.5,61.4,172.1,61.4z"></path>
+              <path class="st4" d="M175,42.4c-0.4-1-1.3-1.7-2.4-1.7c-1.4,0-2.5,1.1-2.5,2.5c0,1.4,1.1,2.5,2.5,2.5c1.1,0,2.1-0.8,2.4-1.8
+          	c0.1-0.2,0.1-0.5,0.1-0.8C175.2,42.9,175.1,42.6,175,42.4z"></path>
+              <g>
+                <path class="st5" d="M190.9,28.8l1.5,0L195,33c0.2,0.4,0.5,1,0.5,1l0,0c0,0,0-0.8,0-1.3l0-3.9l1.5,0l0,7.5l-1.5,0l-2.6-4.1
+          		c-0.2-0.4-0.5-1-0.5-1h0c0,0,0,0.8,0,1.3l0,3.9l-1.5,0L190.9,28.8z"></path>
+                <path class="st5" d="M200.2,28.8l1.6,0l2.7,7.5l-1.6,0l-0.5-1.6l-2.7,0l-0.5,1.6l-1.5,0L200.2,28.8z M200,33.5l2,0l-0.7-2.2
+          		c-0.1-0.4-0.3-1.2-0.3-1.2h0c0,0-0.2,0.8-0.3,1.2L200,33.5z"></path>
+                <path class="st5" d="M203.7,28.8l6,0l0,1.3l-2.3,0l0,6.2l-1.5,0l0-6.2l-2.3,0L203.7,28.8z"></path>
+                <path class="st5" d="M210.5,28.7l1.5,0l0,7.5l-1.5,0L210.5,28.7z"></path>
+                <path class="st5" d="M212.9,32.5c0-2.2,1.4-3.9,3.6-3.9c2.2,0,3.6,1.7,3.6,3.9s-1.4,3.9-3.6,3.9C214.4,36.4,212.9,34.7,212.9,32.5z
+          		 M218.6,32.5c0-1.5-0.7-2.7-2.1-2.7c-1.4,0-2.1,1.2-2.1,2.7c0,1.5,0.7,2.7,2.1,2.6C217.9,35.1,218.6,33.9,218.6,32.5z">
+                </path>
+                <path class="st5" d="M221,28.7l1.5,0l2.5,4.2c0.2,0.4,0.5,1,0.5,1h0c0,0,0-0.8,0-1.3l0-3.9l1.5,0l0,7.5l-1.5,0L223,32
+          		c-0.2-0.4-0.5-1-0.5-1h0c0,0,0,0.8,0,1.3l0,3.9l-1.5,0L221,28.7z"></path>
+                <path class="st5" d="M230.2,28.6l1.6,0l2.7,7.5l-1.6,0l-0.5-1.6l-2.7,0l-0.5,1.6l-1.5,0L230.2,28.6z M230,33.4l2,0l-0.7-2.2
+          		c-0.1-0.4-0.3-1.2-0.3-1.2h0c0,0-0.2,0.8-0.3,1.2L230,33.4z"></path>
+                <path class="st5" d="M235.1,28.6l1.5,0l0,6.2l3.5,0l0,1.3l-5,0L235.1,28.6z"></path>
+                <path class="st5" d="M190.7,43.1c0-2.2,1.4-3.9,3.6-3.9c1.8,0,2.9,1.1,3.1,2.5l-1.5,0c-0.1-0.8-0.7-1.2-1.6-1.2c-1.4,0-2,1.2-2,2.7
+          		c0,1.5,0.8,2.6,2.1,2.6c0.9,0,1.5-0.5,1.6-1.3l1.5,0c0,0.7-0.3,1.3-0.8,1.8c-0.5,0.5-1.2,0.8-2.3,0.8
+          		C192.2,47,190.7,45.4,190.7,43.1z"></path>
+                <path class="st5" d="M199.7,43.9l-2.5-4.6l1.7,0l1.1,2.2c0.2,0.4,0.5,1.1,0.5,1.1h0c0,0,0.3-0.6,0.5-1.1l1.1-2.2l1.6,0l-2.5,4.6
+          		l0,2.9l-1.5,0L199.7,43.9z"></path>
+                <path class="st5" d="M204.4,39.3l3.4,0c0.8,0,1.4,0.2,1.8,0.5c0.4,0.4,0.6,0.8,0.6,1.4c0,0.8-0.5,1.3-1.2,1.5v0
+          		c0.8,0.2,1.4,0.9,1.4,1.9c0,0.7-0.2,1.2-0.7,1.6c-0.4,0.4-1.1,0.6-1.9,0.6l-3.4,0L204.4,39.3z M207.5,42.3c0.7,0,1.1-0.3,1.1-0.9
+          		c0-0.6-0.4-0.9-1.1-0.9l-1.7,0l0,1.8L207.5,42.3z M205.9,45.5l1.8,0c0.7,0,1.2-0.4,1.2-1c0-0.7-0.5-1.1-1.2-1.1l-1.7,0L205.9,45.5z
+          		"></path>
+                <path class="st5" d="M211.2,39.2l5.5,0l0,1.3l-4,0l0,1.7l3.5,0l0,1.2l-3.5,0l0,2l4,0l0,1.3l-5.6,0L211.2,39.2z">
+                </path>
+                <path class="st5" d="M217.7,39.2l3.4,0c1.4,0,2.4,0.8,2.4,2.1c0,0.9-0.4,1.6-1.4,1.8l0,0c0.7,0.2,1.1,0.6,1.2,1.5
+          		c0.1,1.1,0.1,1.9,0.3,2v0.1l-1.5,0c-0.2-0.1-0.2-0.9-0.3-1.7c-0.1-0.8-0.5-1.3-1.5-1.3l-1.2,0l0,3l-1.5,0L217.7,39.2z M219.3,42.5
+          		l1.6,0c0.8,0,1.2-0.4,1.2-1c0-0.6-0.4-1.1-1.2-1.1l-1.7,0L219.3,42.5z"></path>
+                <path class="st5" d="M224.3,44.3l1.5,0c0.1,0.9,0.6,1.3,1.7,1.3c0.8,0,1.5-0.3,1.5-1c0-0.7-0.7-0.9-1.9-1.1
+          		c-1.3-0.3-2.6-0.6-2.6-2.2c0-1.5,1.2-2.3,2.9-2.3c1.7,0,2.8,0.8,2.9,2.3l-1.5,0c-0.1-0.8-0.7-1.1-1.5-1.1c-0.8,0-1.4,0.4-1.4,0.9
+          		c0,0.6,0.5,0.8,1.6,1c1.5,0.3,2.8,0.7,2.8,2.3c0,1.5-1.2,2.4-2.9,2.4C225.5,46.8,224.3,45.9,224.3,44.3z"></path>
+                <path class="st5" d="M231.3,39.1l5.5,0l0,1.3l-4,0l0,1.7l3.5,0l0,1.2l-3.5,0l0,2l4,0l0,1.3l-5.6,0L231.3,39.1z">
+                </path>
+                <path class="st5" d="M237.4,42.9c0-2.2,1.4-3.9,3.6-3.9c1.8,0,2.9,1.1,3.1,2.5l-1.5,0c-0.1-0.8-0.7-1.2-1.6-1.2c-1.4,0-2,1.2-2,2.7
+          		c0,1.5,0.8,2.6,2.1,2.6c0.9,0,1.5-0.5,1.6-1.3l1.5,0c0,0.7-0.3,1.3-0.8,1.8c-0.5,0.5-1.2,0.8-2.3,0.8
+          		C238.9,46.8,237.4,45.1,237.4,42.9z"></path>
+                <path class="st5" d="M244.8,44.2l0-5.1l1.5,0l0,5.1c0,0.8,0.4,1.3,1.4,1.3c1,0,1.4-0.6,1.4-1.3l0-5.1l1.5,0l0,5.1
+          		c0,1.6-1,2.5-2.9,2.6C245.8,46.7,244.8,45.8,244.8,44.2z"></path>
+                <path class="st5" d="M251.7,39l3.4,0c1.4,0,2.4,0.8,2.4,2.1c0,0.9-0.4,1.6-1.4,1.8l0,0c0.7,0.2,1.1,0.6,1.2,1.5
+          		c0.1,1.1,0.1,1.9,0.3,2v0.1l-1.5,0c-0.2-0.1-0.2-0.9-0.3-1.7c-0.1-0.8-0.5-1.3-1.5-1.3l-1.2,0l0,3l-1.5,0L251.7,39z M253.3,42.3
+          		l1.6,0c0.8,0,1.2-0.4,1.2-1c0-0.6-0.4-1.1-1.2-1.1l-1.7,0L253.3,42.3z"></path>
+                <path class="st5" d="M258.6,39l1.5,0l0,7.5l-1.5,0L258.6,39z"></path>
+                <path class="st5" d="M260.9,39l6,0l0,1.3l-2.3,0l0,6.2l-1.5,0l0-6.2l-2.3,0L260.9,39z"></path>
+                <path class="st5" d="M269.8,43.6l-2.5-4.6l1.7,0l1.1,2.2c0.2,0.5,0.5,1.1,0.5,1.1l0,0c0,0,0.3-0.6,0.5-1.1l1.1-2.2l1.6,0l-2.5,4.6
+          		l0,2.9l-1.5,0L269.8,43.6z"></path>
+                <path class="st5" d="M190.9,53.6c0-2.2,1.3-3.9,3.5-3.9c1.8,0,2.8,1,3,2.4l-0.9,0c-0.2-0.9-0.9-1.6-2.1-1.6c-1.6,0-2.6,1.3-2.6,3.1
+          		c0,1.8,1,3.1,2.6,3.1c1.4,0,2.1-1,2.2-2.1l0.9,0c0,0.7-0.4,1.6-0.9,2.1c-0.5,0.5-1.3,0.8-2.2,0.8C192.3,57.5,190.9,55.8,190.9,53.6
+          		z"></path>
+                <path class="st5" d="M198.6,49.8l5.3,0l0,0.8l-4.4,0l0,2.4l4,0l0,0.8l-4,0l0,2.6l4.5,0l0,0.9l-5.4,0L198.6,49.8z">
+                </path>
+                <path class="st5" d="M205.1,49.8l1,0l3.4,5.2c0.3,0.4,0.6,1,0.6,1h0l0-6.2l0.9,0l0,7.5l-1,0l-3.5-5.2c-0.2-0.4-0.6-0.9-0.6-0.9h0
+          		l0,6.2l-0.9,0L205.1,49.8z"></path>
+                <path class="st5" d="M211.9,49.7l5.9,0l0,0.8l-2.5,0l0,6.7l-0.9,0l0-6.7l-2.5,0L211.9,49.7z"></path>
+                <path class="st5" d="M218.8,49.7l5.3,0l0,0.8l-4.4,0l0,2.4l4,0l0,0.8l-4,0l0,2.6l4.5,0l0,0.9l-5.4,0L218.8,49.7z">
+                </path>
+                <path class="st5" d="M225.4,49.7l3.5,0c1.3,0,2.2,0.8,2.2,2c0,0.9-0.4,1.6-1.3,1.9v0c0.8,0.3,1,0.8,1.1,1.9
+          		c0.1,1.2,0.2,1.5,0.4,1.6l0,0l-1,0c-0.2-0.1-0.2-0.4-0.3-1.7c-0.1-1.1-0.5-1.5-1.5-1.5l-2.1,0l0,3.2l-0.9,0L225.4,49.7z
+          		 M226.3,53.2l2.2,0c1,0,1.6-0.5,1.6-1.4c0-0.9-0.4-1.4-1.5-1.4l-2.3,0L226.3,53.2z"></path>
+                <path class="st5" d="M233.6,53.4c0-2.2,1.4-3.9,3.7-3.9s3.7,1.7,3.7,3.9c0,2.2-1.4,3.9-3.7,3.9S233.6,55.6,233.6,53.4z M240,53.3
+          		c0-1.8-1-3.1-2.7-3.1s-2.7,1.3-2.7,3.1s1,3.1,2.7,3.1S240,55.1,240,53.3z"></path>
+                <path class="st5" d="M242.1,49.6l5.1,0l0,0.8l-4.1,0l0,2.3l3.5,0l0,0.8l-3.5,0l0,3.5l-0.9,0L242.1,49.6z"></path>
+                <path class="st5" d="M249.8,49.5l5.3,0l0,0.8l-4.4,0l0,2.4l4,0l0,0.8l-4,0l0,2.6l4.5,0l0,0.9l-5.4,0L249.8,49.5z">
+                </path>
+                <path class="st5"
+                  d="M258.4,53.2l-2.4-3.7l1.1,0l1.9,3h0l1.9-3l1,0l-2.4,3.7L262,57l-1.1,0l-1.9-3.2h0l-2,3.2l-1.1,0L258.4,53.2z">
+                </path>
+                <path class="st5" d="M261.9,53.2c0-2.2,1.3-3.9,3.5-3.9c1.8,0,2.8,1,3,2.4l-0.9,0c-0.2-0.9-0.9-1.6-2.1-1.6c-1.6,0-2.6,1.3-2.6,3.1
+          		c0,1.8,1,3.1,2.6,3.1c1.4,0,2.1-1,2.2-2.1l0.9,0c0,0.7-0.4,1.6-0.9,2.1c-0.5,0.5-1.3,0.8-2.2,0.8C263.3,57.1,261.9,55.5,261.9,53.2
+          		z"></path>
+                <path class="st5" d="M269.6,49.5l5.3,0l0,0.8l-4.4,0l0,2.4l4,0l0,0.8l-4,0l0,2.6l4.5,0l0,0.9l-5.4,0L269.6,49.5z">
+                </path>
+                <path class="st5" d="M276.2,49.4l0.9,0l0,6.6l3.9,0l0,0.9l-4.9,0L276.2,49.4z"></path>
+                <path class="st5" d="M282,49.4l0.9,0l0,6.6l3.9,0l0,0.9l-4.9,0L282,49.4z"></path>
+                <path class="st5" d="M287.8,49.4l5.3,0l0,0.8l-4.4,0l0,2.4l4,0l0,0.8l-4,0l0,2.6l4.5,0l0,0.9l-5.4,0L287.8,49.4z">
+                </path>
+                <path class="st5" d="M294.3,49.3l1,0l3.4,5.2c0.3,0.4,0.6,1,0.6,1h0l0-6.2l0.9,0l0,7.5l-1,0l-3.5-5.2c-0.2-0.4-0.6-0.9-0.6-0.9h0
+          		l0,6.2l-0.9,0L294.3,49.3z"></path>
+                <path class="st5"
+                  d="M301.3,53.1c0-2.2,1.3-3.9,3.5-3.9c1.8,0,2.8,1,3,2.4l-0.9,0c-0.2-0.9-0.9-1.6-2.1-1.6c-1.6,0-2.6,1.3-2.6,3.1
+          		c0,1.8,1,3.1,2.6,3.1c1.4,0,2.1-1,2.2-2.1l0.9,0c0,0.7-0.4,1.6-0.9,2.1c-0.5,0.5-1.3,0.8-2.2,0.8C302.7,57,301.3,55.3,301.3,53.1z">
+                </path>
+                <path class="st5" d="M309,49.3l5.3,0l0,0.8l-4.4,0l0,2.4l4,0l0,0.8l-4,0l0,2.6l4.5,0l0,0.9l-5.4,0L309,49.3z"></path>
+              </g>
+              <polyline class="st6" points="143.9,24.8 143.9,40 148.6,42.7 143.9,45.5 143.9,61.2 "></polyline>
+
+            </svg>
+          </a>
+          <a class="project-title" href="../index.html">
+          NCCoE Mobile Driver's License Project Supporting Resources
+          </a>
+
+          <a class="project-page-link" href="https://www.nccoe.nist.gov/projects/digital-identities-mdl">
+            Go to Project Page
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search" aria-label="Search" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../blogs.html">mDL Blog Series</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Financial Institution Use Case</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="criteria.html">Draft CIP/KYC Use Case Criteria</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nccoe-bank-faq.html">Sample Bank mDL Information Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wireframes.html">Wireframes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture/kyc-cip-onboarding.html">Financial Use Case Reference Architecture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="architecture/interaction-diagrams.html">Interaction Diagrams</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="building-mdl-assurance/index.html">Building Assurance in the mDL Ecosystem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="building-mdl-assurance/nist_800-63a.html">NIST 800-63A Profile for mDL Issuance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pram.html">Privacy Risk Assessment Methodology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usability-results.html">Usability Assessment Findings</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="demonstration-videos.html">Demonstration Videos</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Representative Demonstration Implementation Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../use-case-2/index.html">Government Services Use Case</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../use-case-2/criteria.html">Use Case Criteria</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../use-case-2/architecture/index.html">Architecture</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../use-case-2/interaction-diagrams/index.html">Interaction Diagrams</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../comments.html">Submit Comments</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">NCCoE Mobile Driver's License Project Supporting Resources</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Financial Institution Use Case</a></li>
+      <li class="breadcrumb-item active">Representative Demonstration Implementation Guide</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <style>
+h1, h2, h3, h4, h5 {
+   color: #1F3864 !important;
+}
+</style><section id="representative-demonstration-implementation-guide">
+<h1>Representative Demonstration Implementation Guide<a class="headerlink" href="#representative-demonstration-implementation-guide" title="Link to this heading"></a></h1>
+<div class="admonition-disclaimer admonition">
+<p class="admonition-title">DISCLAIMER</p>
+<p>Certain commercial entities, equipment, products, or materials may be identified by name or company logo or other insignia in order to acknowledge their participation in this collaboration or to describe an experimental procedure or concept adequately. Such identification is not intended to imply special status or relationship with NIST or recommendation or endorsement by NIST or NCCoE; neither is it intended to imply that the entities, equipment, products, or materials are necessarily the best available for the purpose.</p>
+</div>
+<p>This page describes how we implemented this representative demonstration. Security architects, product managers, and other technical staff within your organization may find this information helpful. We cover the essential products employed in this reference design—the IDMS, Verifier, and Relying Party components. We do not re-create the product manufacturers’ documentation, which is presumed to be widely available. Rather, this webpage shows how we incorporated the products together in our environment. Videos of the final integrated system can be <a class="reference internal" href="demonstration-videos.html"><span class="doc">viewed on this page</span></a> .</p>
+<p>Each section below represents a broad guideline in the integration process, which has been applied to the built <a class="reference internal" href="architecture/kyc-cip-onboarding.html"><span class="doc">architecture</span></a>. Within each section, we describe the steps we executed to satisfy each guideline. We include configuration file snippets, code examples, and links to technology contributor documentation where applicable.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is not a comprehensive tutorial. There are many possible service and security configurations for these products that are out of scope for this reference design. Further, credential issuance was out of scope for this demonstration. We recommend contacting state issuing authorities directly to determine the best path for test credential issuance.</p>
+</div>
+<section id="establish-a-verifier-environment">
+<h2>1. Establish a verifier environment<a class="headerlink" href="#establish-a-verifier-environment" title="Link to this heading"></a></h2>
+<p>A verifier service is central to enabling both traditional and modern credential-based identity proofing. The verifier trusts the issuer’s signature and public keys and validates the
+credential’s authenticity and integrity, without needing to contact the issuer directly. To support this, implementers should:</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Configure a dedicated verifier application</strong> that defines how verification requests from the relying party (RP) are handled. This
+ensures that requests originating from different applications or lines of business can
+be routed and processed according to policy.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>Complete MATTR verifier application documentation can be viewed on the <a class="reference external" href="https://learn.mattr.global/docs/verification/remote-web-verifiers/tutorial#create-a-verifier-application-configuration">MATTR documentation website</a>. Note in
+our implementation, we have set the <code class="docutils literal notranslate"><span class="pre">resultAvailableInFrontChannel</span></code> setting to <code class="docutils literal notranslate"><span class="pre">false</span></code> which allows our
+bank function to retrieve presentation results in the back-channel. We have also enabled Digital Credential
+API support as indicated by the <code class="docutils literal notranslate"><span class="pre">dcApiConfiguration</span></code>. Complete DC API configuration documentation can be viewed at <a class="reference external" href="https://learn.mattr.global/docs/verification/remote-web-verifiers/dc-api/guide">this page</a>.</p>
+<p>Click the dropdown below to view our full configuration.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 howtodrop">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Demonstration Verifier Application Configuration</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxxxx-xxx-xxxx&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bank of NCCoE&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;web&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;domain&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;login.vcidentity.dev&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;additionalDomains&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">  </span><span class="nt">&quot;openid4vpConfiguration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;display&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;bodyText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Please scan the QR code to the right to provide information required for this interaction.&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;logoImage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.nist.gov/sites/default/files/styles/960_x_960_limit/public/images/itl/nccoe_logo_cmyk_1.jpg&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;altText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIST National Cybersecurity Center of Excellence Logo&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;headerText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Please verify your mDL to continue&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;primaryColorHex&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#000000&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;redirectUris&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;https://[IDP-DOMAIN]/[B2C-TENANT]/b2c_1a_fido_enroll_mobile/oauth2/v2.0/authorize&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;supportedModes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;all&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;dcApiConfiguration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;supportedBrowserPlatforms&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;mobile&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;desktop&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;resultAvailableInFrontChannel&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</details></div></blockquote>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Define trusted wallet providers</strong> including the URI schemes used to invoke wallet apps where appropriate.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This demonstration primarily uses the Digital Credential API to invoke wallet presentation, however, this step ensures a fallback path for the user when the DC API is unavailable or unsupported.</p>
+</div>
+<p>Full documentation to create a wallet configuration can be viewed on the <a class="reference external" href="https://learn.mattr.global/docs/verification/remote-web-verifiers/tutorial#create-a-supported-wallet-configuration">MATTR website</a>. We have used the default <code class="docutils literal notranslate"><span class="pre">mdoc-openid4vp</span></code> custom URI scheme when 18013-7 Annex B fallback is required. Any wallet app registered to handle this scheme can respond to the verification request. <a class="reference external" href="https://learn.mattr.global/docs/verification/remote-web-verifiers/guides/oid4vp-wallet-interactions">Additional guidance</a> regarding custom schemes can be found on the MATTR website.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 howtodrop">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Demonstration Wallet Configuration</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxxxx-xxx-xxxx&quot;</span><span class="p">,</span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wallet&quot;</span><span class="p">,</span>
+<span class="nt">&quot;openid4vpConfiguration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;authorizationEndpoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mdoc-openid4vp://&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</details></div></blockquote>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Maintain a list of trusted credential issuers</strong> including certificate authorities or signing keys used to validate mobile credentials (mdocs or similar). Issuer lists should be updated as test credentials evolve and should account for regional or national trust
+frameworks.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>Full documentation to <a class="reference external" href="https://learn.mattr.global/docs/verification/remote-web-verifiers/tutorial#configure-a-trusted-issuer">configure trusted credential issuers</a> can be viewed on the MATTR website. Click below to view our issuer configuration composed of test IACA certificates from MATTR and the states of Maryland and California.</p>
+<blockquote>
+<div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 howtodrop">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Demonstration Issuer Configuration</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a2a001e1-a7b8-4025-8a11-4c3c2badcc1b&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;certificatePem&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;-----BEGIN CERTIFICATE-----[certdata]-----END CERTIFICATE-----&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;certificateData&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;notBefore&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-04-14T17:24:47.000Z&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;notAfter&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2033-02-20T17:24:47.000Z&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;country&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;US&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;commonName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;California DMV Root CA UAT&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;stateOrProvinceName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;US-CA&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;organisationName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DMV&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4298a03d-b348-40d7-b391-6e3534ae8f5b&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;certificatePem&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;-----BEGIN CERTIFICATE-----[certdata]-----END CERTIFICATE-----&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;certificateData&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;notBefore&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-02-18T18:40:57.000Z&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;notAfter&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2035-02-06T18:40:57.000Z&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;country&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;US&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;commonName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;digitalcredentials.dev&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;stateOrProvinceName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;California&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;organisationName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Digital Credentials&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c3cd3adb-2eb4-4917-b4f1-f4c155e20500&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;certificatePem&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;-----BEGIN CERTIFICATE-----[certdata]-----END CERTIFICATE-----&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;certificateData&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;notBefore&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-04-08T06:00:00.000Z&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;notAfter&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2030-04-08T06:00:00.000Z&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;country&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;US&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;commonName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MDOT MVA Root&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;stateOrProvinceName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;US-MD&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;organisationName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Maryland MVA&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</details></div></blockquote>
+</div></blockquote>
+</section>
+<section id="integrate-verification-capabilities-into-an-identity-management-system">
+<h2>2. Integrate verification capabilities into an identity management system<a class="headerlink" href="#integrate-verification-capabilities-into-an-identity-management-system" title="Link to this heading"></a></h2>
+<p>Your integration pattern will be dependent on your specific IDMS and verifier, however, below we have provided a diagram of the interactions between our IDMS (Azure B2C), bank system backend, and the verifier. Interactions between the IDMS and the Verifier are mediated by a set of APIs managed by the banking system as described in our practice guide. We chose to host these functions in the cloud using <a class="reference external" href="https://azure.microsoft.com/en-us/products/functions">Azure Function</a> service. The remainder of this section describes how we implemented this pattern.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Current users of Azure AD B2C can continue to use the B2C policies for orchestration, however, new Microsoft customers must use Entra External ID using <a class="reference external" href="https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api">Native APIs</a>.</p>
+</div>
+<a class="reference internal image-reference" href="../_images/b2c.png"><img alt="B2C / MATTR / Bank System interactions" class="align-center" src="../_images/b2c.png" style="width: 530.0px; height: 476.25px;" />
+</a>
+<p>To support credential-based verification from web applications:</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Integrate a web verification module</strong> that supports back-channel retrieval of presented credentials.
+Back-channel retrieval may offer advantages in environments where server-side validation is preferred.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>Implementers should first ensure that Javascript support <a class="reference external" href="https://learn.microsoft.com/en-us/azure/active-directory-b2c/javascript-and-page-layout?pivots=b2c-custom-policy#enable-javascript">is enabled</a> in their Azure B2C tenant by following the B2C documentation. Javascript is disabled by default for security reasons. Next, embed the MATTR Web SDK into an HTML template that interacts with the user to initiate mDL verification. Our implmentation embeds a <code class="docutils literal notranslate"><span class="pre">script</span></code> tag to the <a class="reference external" href="https://learn.mattr.global/docs/verification/remote-web-verifiers/quickstart#script-tag-1">production SDK</a> within a template that is invoked during the account application, digital enrollment, and re-verification stages.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.mattr.global/js/verifier-sdk-web/2.1/verifier-js.production.js&quot;</span> <span class="na">data-preload</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">/&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Initialize the verification module early in the application lifecycle</strong> so relevant methods and configuration options are available to policy or orchestration engines.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>Refer to the MATTR documentation for complete instructions describing how to initiate the SDK in your application. In our Azure B2C html template which mediates verifcation, we defined a javascript function that is invoked when the user clicks the Verify My Identity button in the browser.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 howtodrop">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">SDK Initialization</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">initializeVerifierSDK</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">MATTRVerifierSDK</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s2">&quot;undefined&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// SDK is loaded, initialize it</span>
+<span class="w">    </span><span class="nx">MATTRVerifierSDK</span><span class="p">.</span><span class="nx">initialize</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">apiBaseUrl</span><span class="o">:</span><span class="w"> </span><span class="nx">apiBaseUrl</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">applicationId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;98ff9c28-8231-421d-a833-0900dd3b4d34&quot;</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="nx">requestCredentials</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;MATTR Verifier SDK initialized&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Retry after a short delay</span>
+<span class="w">    </span><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">initializeVerifierSDK</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</details></div></blockquote>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Define credential queries</strong> that clearly state required document types and attributes. Queries should support both primary mechanisms
+(e.g., DC API) and fallback mechanisms (e.g., protocol-based presentation profiles) to ensure cross-platform operability.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>Learn how to create a <a class="reference external" href="https://learn.mattr.global/docs/verification/remote-web-verifiers/tutorial#create-credential-request">credential query</a> on the MATTR documentation site. Our credential query is dependent on the applicant/customer journey stage. In the example below, we query for the attributes that satisfy Customer Information Program requirements and allow the bank to create a persistent identifier of the user from applicant to customer.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 howtodrop">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Demonstration DCQL CIP Query</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;dcql&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">credentials</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mdl&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mso_mdoc&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">meta</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">doctype_value</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;org.iso.18013.5.1.mDL&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">claims</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;given_name&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;family_name&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;birth_date&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;issue_date&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;expiry_date&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;issuing_country&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;issuing_authority&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;document_number&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;portrait&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;resident_address&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;resident_city&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;resident_state&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;resident_postal_code&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</details><p>The query below enables the bank to create a persistent identifier of the customer with a minimal attribute set.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 howtodrop">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Demonstration DCQL Minimal Query</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;dcql&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">credentials</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mdl&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mso_mdoc&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">meta</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">doctype_value</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;org.iso.18013.5.1.mDL&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">claims</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;issuing_authority&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;document_number&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</details></div></blockquote>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Trigger presentation requests from within the RP workflow,</strong> allowing users to present credentials in a same-device or cross-device
+flow. Implementers should evaluate which approach best aligns with
+their user experience and security goals.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>Refer to step 3 in the <a class="reference external" href="https://learn.mattr.global/docs/verification/remote-web-verifiers/tutorial#create-credential-request">Create credential request</a> section on the MATTR documentation website for general guidance when triggering a presentation request. In our implementation, we rendered an HTML button which triggers the request as shown below.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mdlverifybutton&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;verifyMDL()&quot;</span><span class="p">&gt;</span>Click to verify your mDL<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Select how verification results are returned</strong> (front-end browser flow vs. backend integration). Each option carries different
+integration and data-handling implications that should be assessed based on system architecture and regulatory requirements.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>In our implementation, we made the architectural decision to retrieve validation results through our backend as a decision point to issue an access token to the client. Refer to MATTR’s <a class="reference external" href="https://learn.mattr.global/docs/verification/remote-web-verifiers/workflow#the-mattr-vii-verifier-tenant-returns-the-verification-results">detailed flow</a> that describes general guidance of the backend flow. First, our supporting javascript implements a callback that is invoked once the mDoc payload object has been collected and submitted to MATTR. MATTR returns a session identifier <code class="docutils literal notranslate"><span class="pre">sessionId</span></code> as shown in the code below.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">processResponse</span><span class="p">(</span><span class="nx">response</span><span class="p">,</span><span class="w"> </span><span class="nx">isDcApi</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span>
+<span class="w">        </span><span class="s1">&#39;&lt;&lt;&lt; MATTRVerifierSDK.requestCredentials crossDeviceCallback.onComplete&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">response</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">sessionId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">isDcApi</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">sessionId</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">result</span><span class="p">.</span><span class="nx">sessionId</span><span class="p">;</span>
+<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#sessionId&quot;</span><span class="p">).</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sessionId</span><span class="p">;</span>
+<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;continue&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The B2C orchestration next retrieves an access token from our bank API then uses the <code class="docutils literal notranslate"><span class="pre">sessionId</span></code> to retrieve the presented attributes using Technical Profiles. Note that in the Account Application journey the attributes are not persisted to B2C, they are displayed to the applicant to confirm their information.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 howtodrop">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">MATTR Journey Configuration</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;TechnicalProfile</span><span class="w"> </span><span class="na">Id=</span><span class="s">&quot;REST-getMattrTokenAnnexD&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;DisplayName&gt;</span>GET<span class="w"> </span>mattr<span class="w"> </span>Token<span class="nt">&lt;/DisplayName&gt;</span>
+<span class="w">      </span><span class="nt">&lt;Protocol</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;Proprietary&quot;</span><span class="w"> </span><span class="na">Handler=</span><span class="s">&quot;Web.TPEngine.Providers.RestfulProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;Metadata&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;ServiceUrl&quot;</span><span class="nt">&gt;</span>https://mattr-api.azure-api.net/mattrAPIs-python/token<span class="nt">&lt;/Item&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;AuthenticationType&quot;</span><span class="nt">&gt;</span>Basic<span class="nt">&lt;/Item&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;SendClaimsIn&quot;</span><span class="nt">&gt;</span>Body<span class="nt">&lt;/Item&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;IncludeClaimResolvingInClaimsHandling&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/Item&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/Metadata&gt;</span>
+<span class="w">      </span><span class="nt">&lt;CryptographicKeys&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Key</span><span class="w"> </span><span class="na">Id=</span><span class="s">&quot;BasicAuthenticationUsername&quot;</span><span class="w"> </span><span class="na">StorageReferenceId=</span><span class="s">&quot;B2C_1A_APIUsername&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Key</span><span class="w"> </span><span class="na">Id=</span><span class="s">&quot;BasicAuthenticationPassword&quot;</span><span class="w"> </span><span class="na">StorageReferenceId=</span><span class="s">&quot;B2C_1A_APIPassword&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/CryptographicKeys&gt;</span>
+<span class="w">      </span><span class="nt">&lt;InputClaims&gt;</span>
+<span class="w">        </span><span class="nt">&lt;InputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;mattr_grant_type&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;grant_type&quot;</span><span class="w"> </span><span class="na">DefaultValue=</span><span class="s">&quot;client_credentials&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;InputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;correlationId&quot;</span><span class="w"> </span><span class="na">DefaultValue=</span><span class="s">&quot;{Context:CorrelationId}&quot;</span><span class="w"> </span><span class="na">AlwaysUseDefaultValue=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;InputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;dcApiProtocol&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;type&quot;</span><span class="w"> </span><span class="na">DefaultValue=</span><span class="s">&quot;uri&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;InputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;mDL-Dataset&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;dataset&quot;</span><span class="w"> </span><span class="na">DefaultValue=</span><span class="s">&quot;crossdevice&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/InputClaims&gt;</span>
+<span class="w">      </span><span class="nt">&lt;OutputClaims&gt;</span>
+<span class="w">        </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;access_token&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/OutputClaims&gt;</span>
+<span class="w">      </span><span class="nt">&lt;UseTechnicalProfileForSessionManagement</span><span class="w"> </span><span class="na">ReferenceId=</span><span class="s">&quot;SM-Noop&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/TechnicalProfile&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;TechnicalProfile</span><span class="w"> </span><span class="na">Id=</span><span class="s">&quot;REST-VerifyMdlSessionAnnexD&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;DisplayName&gt;</span>Verify<span class="w"> </span>mattr<span class="w"> </span>session<span class="nt">&lt;/DisplayName&gt;</span>
+<span class="w">      </span><span class="nt">&lt;Protocol</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;Proprietary&quot;</span><span class="w"> </span><span class="na">Handler=</span><span class="s">&quot;Web.TPEngine.Providers.RestfulProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;Metadata&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;ServiceUrl&quot;</span><span class="nt">&gt;</span>https://mattr-api.azure-api.net/mattrAPIs-python/result<span class="nt">&lt;/Item&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;AuthenticationType&quot;</span><span class="nt">&gt;</span>Basic<span class="nt">&lt;/Item&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;SendClaimsIn&quot;</span><span class="nt">&gt;</span>Body<span class="nt">&lt;/Item&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;IncludeClaimResolvingInClaimsHandling&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/Item&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;ResolveJsonPathsInJsonTokens&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/Item&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/Metadata&gt;</span>
+<span class="w">      </span><span class="nt">&lt;CryptographicKeys&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Key</span><span class="w"> </span><span class="na">Id=</span><span class="s">&quot;BasicAuthenticationUsername&quot;</span><span class="w"> </span><span class="na">StorageReferenceId=</span><span class="s">&quot;B2C_1A_APIUsername&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Key</span><span class="w"> </span><span class="na">Id=</span><span class="s">&quot;BasicAuthenticationPassword&quot;</span><span class="w"> </span><span class="na">StorageReferenceId=</span><span class="s">&quot;B2C_1A_APIPassword&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/CryptographicKeys&gt;</span>
+<span class="w">      </span><span class="nt">&lt;InputClaims&gt;</span>
+<span class="w">        </span><span class="nt">&lt;InputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;access_token&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;token&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;InputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;sessionId&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;InputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;correlationId&quot;</span><span class="w"> </span><span class="na">DefaultValue=</span><span class="s">&quot;{Context:CorrelationId}&quot;</span><span class="w"> </span><span class="na">AlwaysUseDefaultValue=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;InputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;dcApiProtocol&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;type&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;InputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;mDL-Dataset&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;dataset&quot;</span><span class="w"> </span><span class="na">DefaultValue=</span><span class="s">&quot;crossdevice&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/InputClaims&gt;</span>
+<span class="w">      </span><span class="nt">&lt;OutputClaims&gt;</span>
+<span class="w">        </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;mattr_challenge&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;challenge&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;family_name&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;family_name.value&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;given_name&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;given_name.value&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;birth_date&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;birth_date.value&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;issue_date&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;issue_date.value&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;expiry_date&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;expiry_date.value&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;issuing_country&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;issuing_country.value&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;issuing_authority&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;issuing_authority.value&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;document_number&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;document_number.value&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;resident_address&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;resident_address.value&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;resident_city&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;resident_city.value&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;resident_state&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;resident_state.value&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;resident_postal_code&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;resident_postal_code.value&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;encrypted_cip_token&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;encrypted_cip_token&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/OutputClaims&gt;</span>
+<span class="w">      </span><span class="nt">&lt;UseTechnicalProfileForSessionManagement</span><span class="w"> </span><span class="na">ReferenceId=</span><span class="s">&quot;SM-Noop&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/TechnicalProfile&gt;</span>
+</pre></div>
+</div>
+</div>
+</details></div></blockquote>
+</section>
+<section id="design-effective-user-journeys-in-an-idms">
+<h2>3. Design effective user journeys in an IDMS<a class="headerlink" href="#design-effective-user-journeys-in-an-idms" title="Link to this heading"></a></h2>
+<p>User journeys should be structured as clear orchestration sequences that
+support identity verification, enrollment, and subsequent
+authentication:</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Use explicit orchestration steps</strong> to guide users through data collection, out-of-band verification, credential presentation, and final approval.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>We recommend implementers review the Azure AD B2C <a class="reference external" href="https://learn.microsoft.com/en-us/azure/active-directory-b2c/userjourneys#orchestrationsteps">orchestration documentation</a> to learn how to translate your business proceseses to web based user
+journeys. Our configuration for the account application registration journey is reproduced below. The journey implements a comprehensive identity verification flow to support a bank account application process that combines traditional methods (email, phone, SSN) with modern mDL verification technology, ultimately creating a verified digital identity stored in Azure AD B2C.</p>
+</div></blockquote>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Persist collected attributes as claims</strong> at each step to ensure continuity across the journey and to support downstream validation
+steps.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>Persisting collected attributes allows them to be stored alongside user information in the <a class="reference external" href="https://learn.microsoft.com/en-us/azure/active-directory-b2c/custom-policy-reference-sso">B2C directory</a>. Attributes such as email, address,
+and the hashed mDL document number and issuing authority must be persisted in the directory for future use. For example, the unique mDL hash
+is used to ensure the correct mDL is presented in subsequent presentations when re-verifying the mDL for large currency transfers.</p>
+<p>In the previously defined registration flow, there is a step to collect the user’s preferred address, preferred name, etc. These are stored
+alongside the user in B2C for use if, for example, their present mailing address does not match the address claim in the mDL. If the user
+fill these in, they should be used in lieu of the mDL attributes.</p>
+</div></blockquote>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Support multiple verification methods</strong> where appropriate, while still allowing organizations to enforce the preferred choice (e.g.,
+mDL verification) for the demonstration or production environment.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>Where possible, financial institutions should support multiple identity verification methods, such as mDL presentation, uploading photos
+of a physical drivers license, or manually entering the drivers license information. Note that for this demonstration, only mDL presentation
+is supported.</p>
+</div></blockquote>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Generate unique identifiers using non-reversible transformations</strong> of verified credential attributes to support deterministic account lookup in later phases (e.g., digital enrollment or reverification).</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>Generating and storing a non-reversible, unique, per-user identifier is required to be able to uniquely identify a user based on
+specific attributes. In this implementation, B2C generates and stores a <a class="reference external" href="https://learn.microsoft.com/en-us/azure/active-directory-b2c/general-transformations">hash</a> of the presented mDL’s document number and issuing authority.
+When combined, these two attributes are guaranteed to be unique per mDL, and therefore unique per user. On subsequent interactions,
+such as mDL reverification and digital enrollment, this hash is used to both look up the user in B2C and to ensure the user has
+presented the same mDL that was presented during registration. If the presented mDL does not match a known or expected one, the flow
+does not continue.</p>
+</div></blockquote>
+</section>
+<section id="implement-digital-mdl-credential-verification">
+<h2>4. Implement digital mDL credential verification<a class="headerlink" href="#implement-digital-mdl-credential-verification" title="Link to this heading"></a></h2>
+<p>When integrating mobile driver’s license (mDL) or similar credential
+verification:</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Invoke verifier endpoints that return the necessary session or authorization data</strong> before initiating wallet-based credential presentation.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>Prior to invoking a wallet, session and/or authorization data must be retrieved from the verifier. In the case of MATTR, prior
+to requesting session information, a dedicated verifier application must be created, as described in Step 1 of this document.
+The verifier application provides the required client ID and secret, and contains information specific to that application,
+such as the redirect URI or package signature (in the case of an Android application). Once the application is configured,
+requests can be made to the API. In this implementation, the MATTR JavaScript API does not require the client ID and secret
+to <a class="reference external" href="https://learn.mattr.global/docs/verification/remote-web-verifiers/tutorial#create-a-session-and-associate-a-challenge">create the presentation session</a>, but the client ID and secret are required to retrieve the attributes via <a class="reference external" href="https://learn.mattr.global/docs/verification/remote-web-verifiers/tutorial#retrieve-verification-results">back-channel</a>.</p>
+<p>To illustrate this flow, the Python function below show how our demonstration retrieved presentation results using a bearer token.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 howtodrop">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Python Azure Function</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">handle_result_request</span><span class="p">(</span><span class="n">request_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">telemetry</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">func</span><span class="o">.</span><span class="n">HttpResponse</span><span class="p">:</span>
+
+<span class="n">token</span> <span class="o">=</span> <span class="n">request_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;token&quot;</span><span class="p">)</span>
+<span class="n">session_id</span> <span class="o">=</span> <span class="n">request_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;sessionId&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">token</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">bad_request</span><span class="p">(</span><span class="s2">&quot;Missing token&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">session_id</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">bad_request</span><span class="p">(</span><span class="s2">&quot;Missing sessionId&quot;</span><span class="p">)</span>
+
+<span class="n">telemetry</span><span class="p">[</span><span class="s2">&quot;sessionId&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">session_id</span>
+
+<span class="n">result_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;MATTR_TENANT_URL&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">/v2/presentations/sessions/</span><span class="si">{</span><span class="n">session_id</span><span class="si">}</span><span class="s2">/result&quot;</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+
+<span class="n">result_response</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">result_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[Result] Response: </span><span class="si">{</span><span class="n">result_response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">fetch_event_logs</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">session_id</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">result_response</span><span class="o">.</span><span class="n">ok</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">error_response</span><span class="p">(</span><span class="s2">&quot;Failed to retrieve session result&quot;</span><span class="p">,</span> <span class="n">result_response</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">process_session_result</span><span class="p">(</span><span class="n">result_response</span><span class="o">.</span><span class="n">json</span><span class="p">(),</span> <span class="n">telemetry</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Failed to process session result&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">server_error</span><span class="p">(</span><span class="s2">&quot;Error processing session result&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</details><p>Implementers should also be prepared to catch and gracefully handle error considerations that may occur in the validation process. The snippet below gives one such example of a validation error in which the user might have presented a credential whose issuer was not preconfigured in the verifier.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;verificationResult&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">&quot;verified&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;False&quot;</span><span class="p">,</span>
+<span class="nt">&quot;reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MobileCredentialInvalid&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;X5Chain was not valid&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Comprehensive guidance describing how verification results can be consumed by your application can be found on the MATTR website.</p>
+</div></blockquote>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Use platform APIs exposed by browsers for credential requests,</strong> supporting both same-device and cross-device flows and ensuring alignment with emerging web standards.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>The <a class="reference external" href="https://learn.mattr.global/docs/verification/remote-web-verifiers/sdks/overview">MATTR Verifier SDK</a> is a highly flexible and customizable SDK for mDL presentation that supports both same-device
+and cross-device flows, and is frequently updated to reflect new mDL changes and standards. In this implementation,
+the cross-device flow was used, and the attributes were not available in the front-channel. Additionally, the Digital Credential (DC) API
+is in MATTR technical preview, requiring additional configuration to enable it. In the example application configuration in Step 1,
+the following JSON code is required in order to enable the DC API for that application:</p>
+<blockquote>
+<div><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// ... your existing configuration</span>
+<span class="w">  </span><span class="s2">&quot;dcApiConfiguration&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;supportedBrowserPlatforms&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;mobile&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;desktop&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Query returned attributes</strong> after credential presentation and store them as claims for subsequent steps, such as user confirmation or
+account creation.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>By storing returned attributes in the B2C <a class="reference external" href="https://learn.microsoft.com/en-us/azure/active-directory-b2c/custom-policy-overview#orchestration-steps">claims bag</a>, subsequent orchestration steps in the user journey can access and use
+the attributes. This allows B2C to easily return the attributes back to the relying party.</p>
+</div></blockquote>
+</section>
+<section id="support-modern-authentication-e-g-passkeys">
+<h2>5. Support modern authentication (e.g., passkeys)<a class="headerlink" href="#support-modern-authentication-e-g-passkeys" title="Link to this heading"></a></h2>
+<p>To support secure, passwordless authentication flows:</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Provide a mechanism to generate a cryptographically secure challenge</strong> during both enrollment and authentication ceremonies to prevent replay attacks.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>In this implementation, a separate, JavaScript-based FIDO service was used to generate <a class="reference external" href="https://www.w3.org/TR/webauthn-2/#sctn-cryptographic-challenges">cryptographically secure challenges</a>.
+The FIDO service is invoked by the B2C user journies via a REST API as shown in the Azure B2C technical profile below.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 howtodrop">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">B2C Secure Challenge</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;TechnicalProfile</span><span class="w"> </span><span class="na">Id=</span><span class="s">&quot;REST-FIDOGetChallenge&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;DisplayName&gt;</span>GET<span class="w"> </span>a<span class="w"> </span>FIDO<span class="w"> </span>Challenge<span class="nt">&lt;/DisplayName&gt;</span>
+<span class="w">      </span><span class="nt">&lt;Protocol</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;Proprietary&quot;</span><span class="w"> </span><span class="na">Handler=</span><span class="s">&quot;Web.TPEngine.Providers.RestfulProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;Metadata&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;ServiceUrl&quot;</span><span class="nt">&gt;</span>https://[Azure-Function-Hostname]/challenge<span class="nt">&lt;/Item&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;AuthenticationType&quot;</span><span class="nt">&gt;</span>None<span class="nt">&lt;/Item&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;SendClaimsIn&quot;</span><span class="nt">&gt;</span>QueryString<span class="nt">&lt;/Item&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;AllowInsecureAuthInProduction&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/Item&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/Metadata&gt;</span>
+<span class="w">      </span><span class="nt">&lt;OutputClaims&gt;</span>
+<span class="w">        </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;challenge&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;result&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!--Sample: Set the identity provider name to FIDO--&gt;</span>
+<span class="w">        </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;identityProvider&quot;</span><span class="w"> </span><span class="na">DefaultValue=</span><span class="s">&quot;fido&quot;</span><span class="w"> </span><span class="na">AlwaysUseDefaultValue=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/OutputClaims&gt;</span>
+<span class="w">      </span><span class="nt">&lt;UseTechnicalProfileForSessionManagement</span><span class="w"> </span><span class="na">ReferenceId=</span><span class="s">&quot;SM-Noop&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/TechnicalProfile&gt;</span>
+</pre></div>
+</div>
+</div>
+</details></div></blockquote>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Trigger authenticator creation and authentication flows via browser APIs</strong> (e.g., WebAuthn) using policy-driven orchestration.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>W3C’s <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/Credential_Management_API">Credential Management API</a> enables the secure creation of credentials used for authentication.
+By invoking the API, the user is prompted where to store the credential. The storage location includes options such as
+a separate device or in the currently signed in Google account (when using the Chrome browser). By selecting the latter, the credential can be used
+in any Google Chrome browser or Android device signed into the account. We chose this approach to facilitate Passkey authentications across desktop
+and mobile contexts. The Azure B2C technical profile below illustrates how are implementation invoked the FIDO service, which in turn uses the
+<a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer/create">create</a> () Credential Management API method.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 howtodrop">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">B2C Credential Create</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;TechnicalProfile</span><span class="w"> </span><span class="na">Id=</span><span class="s">&quot;REST-FIDOMakeCredential&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;DisplayName&gt;</span>GET<span class="w"> </span>a<span class="w"> </span>FIDO<span class="w"> </span>Challenge<span class="nt">&lt;/DisplayName&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Protocol</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;Proprietary&quot;</span><span class="w"> </span><span class="na">Handler=</span><span class="s">&quot;Web.TPEngine.Providers.RestfulProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Metadata&gt;</span>
+<span class="w">      </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;ServiceUrl&quot;</span><span class="nt">&gt;</span>https://[Azure-Function-Hostname]/credentials<span class="nt">&lt;/Item&gt;</span>
+<span class="w">      </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;AuthenticationType&quot;</span><span class="nt">&gt;</span>None<span class="nt">&lt;/Item&gt;</span>
+<span class="w">      </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;SendClaimsIn&quot;</span><span class="nt">&gt;</span>Body<span class="nt">&lt;/Item&gt;</span>
+<span class="w">      </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;AllowInsecureAuthInProduction&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/Item&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/Metadata&gt;</span>
+<span class="w">    </span><span class="nt">&lt;InputClaims&gt;</span>
+<span class="w">      </span><span class="nt">&lt;InputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;extension_fido_rawId&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;id&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;InputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;clientDataJSON&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;clientDataJSON&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;InputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;attestationObject&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;attestationObject&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/InputClaims&gt;</span>
+<span class="w">    </span><span class="nt">&lt;OutputClaims&gt;</span>
+<span class="w">      </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;fido_publicKeyJwk&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;publicKeyJwk&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;extension_fido_publicKeyJwk1&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;publicKeyJwk1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;extension_fido_publicKeyJwk2&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;publicKeyJwk2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/OutputClaims&gt;</span>
+<span class="w">    </span><span class="nt">&lt;UseTechnicalProfileForSessionManagement</span><span class="w"> </span><span class="na">ReferenceId=</span><span class="s">&quot;SM-Noop&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/TechnicalProfile&gt;</span>
+</pre></div>
+</div>
+</div>
+</details></div></blockquote>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Validate the returned public credentials server-side</strong> and persist them in the user directory for future authentication events.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>Credentials should always be validated server-side to avoid the user interfering with the validation process. By storing
+the FIDO claims alongside the user during the digital enrollment B2C journey, the claims will persist and allow the user
+to authenticate in the future. Below is a snippet from the B2C policy that persists the passkey’s public component to the directory.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 howtodrop">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">B2C Write FIDO Credentials</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;TechnicalProfile</span><span class="w"> </span><span class="na">Id=</span><span class="s">&quot;AAD-UserWriteFidoUsingObjectId&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;Metadata&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;Operation&quot;</span><span class="nt">&gt;</span>Write<span class="nt">&lt;/Item&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;RaiseErrorIfClaimsPrincipalAlreadyExists&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/Item&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;RaiseErrorIfClaimsPrincipalDoesNotExist&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/Item&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;ApplicationObjectId&quot;</span><span class="nt">&gt;</span>b8fd7628-15cf-4211-816f-6fc3b52227d0<span class="nt">&lt;/Item&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;ClientId&quot;</span><span class="nt">&gt;</span>c7d93118-32ef-4ce8-8393-a74324557e34<span class="nt">&lt;/Item&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/Metadata&gt;</span>
+<span class="w">  </span><span class="nt">&lt;IncludeInSso&gt;</span>false<span class="nt">&lt;/IncludeInSso&gt;</span>
+<span class="w">  </span><span class="nt">&lt;InputClaims&gt;</span>
+<span class="w">    </span><span class="nt">&lt;InputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;objectId&quot;</span><span class="w"> </span><span class="na">Required=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/InputClaims&gt;</span>
+<span class="w">  </span><span class="nt">&lt;PersistedClaims&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- Required claims --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PersistedClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;objectId&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- Sample: Writ FIDO claims to the user account --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PersistedClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;extension_fido_publicKeyJwk1&quot;</span><span class="w"> </span><span class="na">DefaultValue=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PersistedClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;extension_fido_publicKeyJwk2&quot;</span><span class="w"> </span><span class="na">DefaultValue=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PersistedClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;extension_fido_rawId&quot;</span><span class="w"> </span><span class="na">DefaultValue=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/PersistedClaims&gt;</span>
+<span class="w">  </span><span class="nt">&lt;IncludeTechnicalProfile</span><span class="w"> </span><span class="na">ReferenceId=</span><span class="s">&quot;AAD-Common&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/TechnicalProfile&gt;</span>
+</pre></div>
+</div>
+</div>
+</details></div></blockquote>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Support synced and device-bound credentials,</strong> evaluating tradeoffs according to organizational guidance from digital identity standards
+such as NIST SP 800-63-4.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>Built-in browser APIs provide the abitility to provide custom configurations to specify credential options, such as username-less flows,
+second factors such as a PIN or biometric lock, or bound vs detachable authenticators. Below is a snippet of our configuration which
+used by the WebAuthn API to interact with the passkey backend.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">hints</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;client-device&#39;</span><span class="p">],</span>
+<span class="nx">authenticatorSelection</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//Select authenticators that support username-less flows</span>
+<span class="w">    </span><span class="nx">requireResidentKey</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">//Select authenticators that have a second factor (e.g. PIN, Bio)</span>
+<span class="w">    </span><span class="nx">userVerification</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;required&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">//Selects between bound or detachable authenticators</span>
+
+<span class="p">},</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="implement-re-verification-workflows">
+<h2>6. Implement Re-verification workflows<a class="headerlink" href="#implement-re-verification-workflows" title="Link to this heading"></a></h2>
+<p>To demonstrate a user attempting to make a high-risk transaction is in possession and control of the mDL linked to their account:</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Use mDL-based verification as the primary authentication step</strong> in re-verification flows, ensuring the presented credential corresponds to the same user identity established in prior phases.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>By storing the previously mentioned one-way document number and issuing authority hash, B2C is automatically able to verify
+that the presented credential matches the credential that was used for initial registration by calculating the hash of the
+credential presented for re-verification and verifying it against the hash stored alongside the user in B2C. The B2C policy snippet below shows this user journey in which two steps are executed—we validate the mDL and locate the existing customer using a ClaimsExchange technical profile then issue OIDC tokens to the banking system.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The verifier component plays an active role in re-presenting and validating the credential during high-risk or step-up scenarios. The credential is re-presented and verified through the verifier component (MATTR VII), and the hash comparison in Azure AD B2C is used as a binding mechanism to link the newly verified credential to the previously established identity. Refer to <a class="reference internal" href="#integrate-verification-capabilities-into-an-identity-management-system">2. Integrate verification capabilities into an identity management system</a> section for a detailed description of the verifier interactions that are also implemented in this section’s flow.</p>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;UserJourney</span><span class="w"> </span><span class="na">Id=</span><span class="s">&quot;NCCoEReverification&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;OrchestrationSteps&gt;</span>
+<span class="w">          </span><span class="cm">&lt;!--mDL verification--&gt;</span>
+<span class="w">        </span><span class="nt">&lt;OrchestrationStep</span><span class="w"> </span><span class="na">Order=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;ClaimsExchange&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;ClaimsExchanges&gt;</span>
+<span class="w">            </span><span class="nt">&lt;ClaimsExchange</span><span class="w"> </span><span class="na">Id=</span><span class="s">&quot;SelfAsserted-mDLVerificationAnnexD&quot;</span><span class="w"> </span><span class="na">TechnicalProfileReferenceId=</span><span class="s">&quot;SelfAsserted-mDLVerificationAnnexD&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/ClaimsExchanges&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/OrchestrationStep&gt;</span>
+
+<span class="w">          </span><span class="nt">&lt;OrchestrationStep</span><span class="w"> </span><span class="na">Order=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;SendClaims&quot;</span><span class="w"> </span><span class="na">CpimIssuerTechnicalProfileReferenceId=</span><span class="s">&quot;JwtIssuer&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+
+<span class="w">      </span><span class="nt">&lt;/OrchestrationSteps&gt;</span>
+<span class="w">      </span><span class="nt">&lt;ClientDefinition</span><span class="w"> </span><span class="na">ReferenceId=</span><span class="s">&quot;DefaultWeb&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/UserJourney&gt;</span>
+</pre></div>
+</div>
+<p>Below is an example access token issued by B2C. Note the <code class="code docutils literal notranslate"><span class="pre">hashedDocumentNumberAndIssuingAuthority</span></code> value. This is the unique, one-way
+hash used to verify the presented credential matches the existing one.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;exp&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1757099740</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;nbf&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1757096140</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;ver&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;iss&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://[AZURE-IDP-HOSTNAME]/aaa2bd66-63f9-49cc-a488-3cb2fe8c2785/v2.0/&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;sub&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;b060ab18-9265-457d-a3b5-91a011430d9b&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;aud&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;f3b13cbc-a9ae-4ca6-b0fc-a8b3a022b772&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;acr&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;b2c_1a_nccoe_registration&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;iat&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1757096140</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;auth_time&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1757096139</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;email&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;user@email.com&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;verificationMethodCheckbox&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mdl&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;given_name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Name&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;encrypted_cip_token&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;encrypted_cip_token&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;hashedDocumentNumberAndIssuingAuthority&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;IQfQyeBRp+G81xWAGZW/O2kobyff7nqMW41TRlvAITc=&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Recalculate unique identifier values</strong> using presented credential attributes and match them against existing directory records before
+issuing tokens.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>When the mDL is presented during reverification, the one-way document number and issuing authority hash is calculated and
+compared to the hash stored alongside the user in B2C. If the hashes match, the reverification is a success and a token can
+be issued.</p>
+<p>Review the following B2C policies in which we calculate the hash using a built-in function called a claims transformation then use the calculated value to fetch the user details.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 howtodrop">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">B2C Claims Transformation</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ClaimsTransformation</span><span class="w"> </span><span class="na">Id=</span><span class="s">&quot;HashDocumentNumberAndIssuingAuthority&quot;</span><span class="w"> </span><span class="na">TransformationMethod=</span><span class="s">&quot;Hash&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;InputClaims&gt;</span>
+<span class="w">    </span><span class="nt">&lt;InputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;documentNumberAndIssuingAuthority&quot;</span><span class="w"> </span><span class="na">TransformationClaimType=</span><span class="s">&quot;plaintext&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;InputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;mySalt&quot;</span><span class="w"> </span><span class="na">TransformationClaimType=</span><span class="s">&quot;salt&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/InputClaims&gt;</span>
+<span class="w">  </span><span class="nt">&lt;InputParameters&gt;</span>
+<span class="w">    </span><span class="nt">&lt;InputParameter</span><span class="w"> </span><span class="na">Id=</span><span class="s">&quot;randomizerSecret&quot;</span><span class="w"> </span><span class="na">DataType=</span><span class="s">&quot;string&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;B2C_1A_IdTransformSecret&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/InputParameters&gt;</span>
+<span class="w">  </span><span class="nt">&lt;OutputClaims&gt;</span>
+<span class="w">    </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;hashedDocumentNumberAndIssuingAuthority&quot;</span><span class="w"> </span><span class="na">TransformationClaimType=</span><span class="s">&quot;hash&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/OutputClaims&gt;</span>
+<span class="nt">&lt;/ClaimsTransformation&gt;</span>
+</pre></div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 howtodrop">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">B2C Directory Read Operation</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;TechnicalProfile</span><span class="w"> </span><span class="na">Id=</span><span class="s">&quot;AAD-UserReadUsingDocumentNumber&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;Metadata&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;Operation&quot;</span><span class="nt">&gt;</span>Read<span class="nt">&lt;/Item&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;RaiseErrorIfClaimsPrincipalDoesNotExist&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/Item&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/Metadata&gt;</span>
+<span class="w">  </span><span class="nt">&lt;IncludeInSso&gt;</span>false<span class="nt">&lt;/IncludeInSso&gt;</span>
+<span class="w">  </span><span class="nt">&lt;InputClaimsTransformations&gt;</span>
+<span class="w">    </span><span class="nt">&lt;InputClaimsTransformation</span><span class="w"> </span><span class="na">ReferenceId=</span><span class="s">&quot;JoinDocumentNumberAndIssuingAuthority&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;InputClaimsTransformation</span><span class="w"> </span><span class="na">ReferenceId=</span><span class="s">&quot;HashDocumentNumberAndIssuingAuthority&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/InputClaimsTransformations&gt;</span>
+<span class="w">  </span><span class="nt">&lt;InputClaims&gt;</span>
+<span class="w">    </span><span class="nt">&lt;InputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;hashedDocumentNumberAndIssuingAuthority&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;signInNames.hashedDocNumIssAuth&quot;</span><span class="w"> </span><span class="na">Required=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/InputClaims&gt;</span>
+<span class="w">  </span><span class="nt">&lt;OutputClaims&gt;</span>
+<span class="w">    </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;objectId&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;userPrincipalName&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;signInNames.emailAddress&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;hashedDocumentNumberAndIssuingAuthority&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;signInNames.hashedDocNumIssAuth&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/OutputClaims&gt;</span>
+<span class="w">  </span><span class="nt">&lt;IncludeTechnicalProfile</span><span class="w"> </span><span class="na">ReferenceId=</span><span class="s">&quot;AAD-Common&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;UseTechnicalProfileForSessionManagement</span><span class="w"> </span><span class="na">ReferenceId=</span><span class="s">&quot;SM-AAD&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/TechnicalProfile&gt;</span>
+</pre></div>
+</div>
+</div>
+</details></div></blockquote>
+</section>
+<section id="implement-user-experience-considerations">
+<h2>7. Implement user experience considerations<a class="headerlink" href="#implement-user-experience-considerations" title="Link to this heading"></a></h2>
+<p>To ensure a consistent and trustworthy experience:</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Harmonize theming and interface styles</strong> across all application flows—verification, enrollment, authentication—so users perceive a
+single, coherent system.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>By utilizing common CSS, similar designs can be applied to both B2C custom templates and the banking website itself to provide
+a coherent UI experience for the end user. In this demonstration we used <a class="reference external" href="https://vuejs.org/guide/introduction">Vue</a>, a JavaScript framework for building user interfaces
+that builds on top of standard HTML, CSS, and JavaScript.</p>
+</div></blockquote>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Use custom templates when necessary</strong> to support browser-based interactions, data entry, and credential presentation steps.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>Through the use of B2C <a class="reference external" href="https://learn.microsoft.com/en-us/azure/active-directory-b2c/customize-ui-with-html?pivots=b2c-custom-policy">custom policies</a>, HTML templates can be specified for use throughout the journies. This allows
+a high degree of flexibility when applying theming and other specific UI elements.</p>
+</div></blockquote>
+</section>
+<section id="integrate-verification-and-authentication-capabilities-into-a-relying-party-application">
+<h2>8. Integrate verification and authentication capabilities into a relying party application<a class="headerlink" href="#integrate-verification-and-authentication-capabilities-into-a-relying-party-application" title="Link to this heading"></a></h2>
+<p>A web-based relying party must support standards-based integration
+patterns provided by the IDMS. Implementers should:</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Establish a common lexicon with the IDMS</strong> that conveys the user’s persistent identifier and the authentication/verification method.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>The most common way to convey the user’s persistent identifier is through JSON Web Tokens (JWTs). These are commonly issued
+in the form of identity and access tokens, and are utilized to authenticate and authorize users. The tokens issued by B2C can
+be <a class="reference external" href="https://learn.microsoft.com/en-us/azure/active-directory-b2c/configure-tokens?pivots=b2c-custom-policy">customized</a> to fit specific use cases.</p>
+</div></blockquote>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Use an extensible, widely deployed OpenID Connect software library</strong> to mediate the authentication and verification interactions between the relying party and the IDMS.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>In this implementation, the banking website was developed using Laravel, and all OpenID Connect IDMS (B2C) interactions were handled using
+the Azure AD B2C <a class="reference external" href="https://github.com/SocialiteProviders/AzureADB2C">Socialite Provider</a>. This extensible and highly configurable authentication library transparently
+handled user authentication, as well as all other operations within B2C (registration, digital enrollment, and re-verification). Refer
+to <a class="reference external" href="https://learn.microsoft.com/en-us/azure/active-directory-b2c/openid-connect">Microsoft’s documentation</a> to learn how to integrate your specific OpenID Connect software library.</p>
+</div></blockquote>
+</section>
+<section id="consider-wallet-interoperability-and-configuration">
+<h2>9. Consider Wallet interoperability and configuration<a class="headerlink" href="#consider-wallet-interoperability-and-configuration" title="Link to this heading"></a></h2>
+<p>The mDL project demonstrated interoperability with Android-based wallet apps from our technology partners. However, for testing purposes, we leveraged an open-source wallet
+to test specific scenarios. This section contains general guidelines for wallet-based testing:</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Register wallet applications with platform-level credential management APIs</strong> enabling them to appear as selectable options during credential requests.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>For example, on Android, the <a class="reference external" href="https://developer.android.com/identity/digital-credentials/credential-holder">Credential Manager Holder API</a> enables a wallet app to manage and present digital credentials to verifiers.
+For wallets that are invoked by custom URI schemes, applications must register with the system which URI schemes they are able to handle
+in the application’s manifest. This enables the wallet to appear as an option when that specific URI scheme is invoked by the system, a website, or another application.
+Registering for URI schemes is only doable by the application developer, not the end user, as it is part of the application’s
+source code.</p>
+</div></blockquote>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Ensure wallets can render local authentication prompts</strong> (e.g., biometrics) to complete credential presentations securely.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>By integrating with platform-level biometric APIs, wallets can force user biometric re-authentication prior to presenting
+the credential.</p>
+</div></blockquote>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><strong>Configure test credentials</strong> that match expected issuer profiles and attribute formats to ensure compatibility with verification policies.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>Digital credential test applications, such as <a class="reference external" href="https://github.com/digitalcredentialsdev/CMWallet">CMWallet</a>, allow high a high degree of customization of test credentials to test
+presentation prior to deployment. We created custom credentials by editing the existing configuration files and recompiling the app. More information can be found in the project’s <a class="reference external" href="https://github.com/digitalcredentialsdev/CMWallet/tree/main/testdata">repository</a>.</p>
+</div></blockquote>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <div class="page-footer">
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+</div>
+        </div>
+      </div>
+      <footer class="nist-footer">
+  <div class="nist-footer__inner">
+    <div class="nist-footer__menu" role="navigation">
+      <ul>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy-policy">Site Privacy</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/oism/accessibility">Accessibility</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/privacy">Privacy Program</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/oism/copyrights">Copyrights</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.commerce.gov/vulnerability-disclosure-policy">Vulnerability Disclosure</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/no-fear-act-policy">No Fear Act Policy</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/foia">FOIA</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.nist.gov/environmental-policy-statement">Environmental Policy</a>
+        </li>
+        <li class="nist-footer__menu-item ">
+          <a href="https://www.nist.gov/summary-report-scientific-integrity">Scientific Integrity</a>
+        </li>
+        <li class="nist-footer__menu-item ">
+          <a href="https://www.nist.gov/nist-information-quality-standards">Information Quality Standards</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.commerce.gov/">Commerce.gov</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.science.gov/">Science.gov</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://www.usa.gov/">USA.gov</a>
+        </li>
+        <li class="nist-footer__menu-item">
+          <a href="https://vote.gov/">Vote.gov</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="nist-footer__logo">
+    <a href="https://www.nist.gov/" title="National Institute of Standards and Technology" class="nist-footer__logo-link" rel="home">
+      <img src="https://pages.nist.gov/nist-header-footer/images/nist_logo_brand_white.svg" alt="National Institute of Standards and Technology logo">
+    </a>
+  </div>
+</footer>
+    </section>
+  </div>
+  <script>
+    (function () {
+      document.addEventListener(
+        "click",
+        function (e) {
+          const current = e.target.closest(".rst-current-version");
+          if (!current) return;
+
+          const versions = document.querySelector(".rst-versions");
+          if (!versions) return;
+
+          versions.classList.toggle("shift-up");
+        },
+        true // capture: works even if something stops propagation later
+      );
+    })();
+  </script>
+  
+  <script>
+      // expose collapse_navigation theme option to runtime JS so theme scripts can
+      // decide whether to expand first-level toctree entries automatically.
+      window.themeCollapseNavigation = false;
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+    <!-- Old DAP UA tag -->
+    <script async type="text/javascript" id="_fed_an_ua_tag"
+        src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NIST&subagency=github&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c">
+    </script> 
+
+</body>
+</html>
