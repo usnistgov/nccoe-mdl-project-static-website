@@ -46,3 +46,4 @@ In the future we will update this section of the website with videos of the buil
    Privacy Risk Assessment Methodology <pram.rst>
    usability-results.rst
    demonstration-videos.rst
+   vol-c.rst
