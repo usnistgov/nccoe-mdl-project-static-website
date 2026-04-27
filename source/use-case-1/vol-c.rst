@@ -8,8 +8,8 @@
 
 
 
-Representative Demonstration Implementation Guide
-=================================================
+The NCCoE mDL Configuration Guide
+=================================
 
 .. admonition:: DISCLAIMER
 
@@ -123,52 +123,52 @@ credential’s authenticity and integrity, without needing to contact the issuer
 
   Full documentation to `configure trusted credential issuers`_ can be viewed on the MATTR website. Click below to view our issuer configuration composed of test IACA certificates from MATTR and the states of Maryland and California. 
 
-    .. dropdown:: Demonstration Issuer Configuration    
-      :class-container: howtodrop
+  .. dropdown:: Demonstration Issuer Configuration    
+    :class-container: howtodrop
 
-      .. code-block:: json
+    .. code-block:: json
 
-        {
-          "data": [
-            {
-              "id": "a2a001e1-a7b8-4025-8a11-4c3c2badcc1b",
-              "certificatePem": "-----BEGIN CERTIFICATE-----[certdata]-----END CERTIFICATE-----",
-              "certificateData": {
-                "notBefore": "2023-04-14T17:24:47.000Z",
-                "notAfter": "2033-02-20T17:24:47.000Z",
-                "country": "US",
-                "commonName": "California DMV Root CA UAT",
-                "stateOrProvinceName": "US-CA",
-                "organisationName": "DMV"
-              }
-            },    
-            {
-              "id": "4298a03d-b348-40d7-b391-6e3534ae8f5b",
-              "certificatePem": "-----BEGIN CERTIFICATE-----[certdata]-----END CERTIFICATE-----",
-              "certificateData": {
-                "notBefore": "2025-02-18T18:40:57.000Z",
-                "notAfter": "2035-02-06T18:40:57.000Z",
-                "country": "US",
-                "commonName": "digitalcredentials.dev",
-                "stateOrProvinceName": "California",
-                "organisationName": "Digital Credentials"
-              }
-            },
-            {
-              "id": "c3cd3adb-2eb4-4917-b4f1-f4c155e20500",
-              "certificatePem": "-----BEGIN CERTIFICATE-----[certdata]-----END CERTIFICATE-----",
-              "certificateData": {
-                "notBefore": "2025-04-08T06:00:00.000Z",
-                "notAfter": "2030-04-08T06:00:00.000Z",
-                "country": "US",
-                "commonName": "MDOT MVA Root",
-                "stateOrProvinceName": "US-MD",
-                "organisationName": "Maryland MVA"
-              }
+      {
+        "data": [
+          {
+            "id": "a2a001e1-a7b8-4025-8a11-4c3c2badcc1b",
+            "certificatePem": "-----BEGIN CERTIFICATE-----[certdata]-----END CERTIFICATE-----",
+            "certificateData": {
+              "notBefore": "2023-04-14T17:24:47.000Z",
+              "notAfter": "2033-02-20T17:24:47.000Z",
+              "country": "US",
+              "commonName": "California DMV Root CA UAT",
+              "stateOrProvinceName": "US-CA",
+              "organisationName": "DMV"
             }
-          ]
+          },    
+          {
+            "id": "4298a03d-b348-40d7-b391-6e3534ae8f5b",
+            "certificatePem": "-----BEGIN CERTIFICATE-----[certdata]-----END CERTIFICATE-----",
+            "certificateData": {
+              "notBefore": "2025-02-18T18:40:57.000Z",
+              "notAfter": "2035-02-06T18:40:57.000Z",
+              "country": "US",
+              "commonName": "digitalcredentials.dev",
+              "stateOrProvinceName": "California",
+              "organisationName": "Digital Credentials"
+            }
+          },
+          {
+            "id": "c3cd3adb-2eb4-4917-b4f1-f4c155e20500",
+            "certificatePem": "-----BEGIN CERTIFICATE-----[certdata]-----END CERTIFICATE-----",
+            "certificateData": {
+              "notBefore": "2025-04-08T06:00:00.000Z",
+              "notAfter": "2030-04-08T06:00:00.000Z",
+              "country": "US",
+              "commonName": "MDOT MVA Root",
+              "stateOrProvinceName": "US-MD",
+              "organisationName": "Maryland MVA"
+            }
+          }
+        ]
 
-  .. _configure trusted credential issuers: https://learn.mattr.global/docs/verification/remote-web-verifiers/tutorial#configure-a-trusted-issuer
+.. _configure trusted credential issuers: https://learn.mattr.global/docs/verification/remote-web-verifiers/tutorial#configure-a-trusted-issuer
 
 2. Integrate verification capabilities into an identity management system
 -------------------------------------------------------------------------
