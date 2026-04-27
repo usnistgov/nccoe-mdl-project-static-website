@@ -49,10 +49,10 @@ Figure 1 Cross Device Flow
    device.
 
 
-Figure 2 Draft Same Device Flow
+Figure 2 Same Device Flow
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. thumbnail:: ../../media/image2.png
+.. thumbnail:: ../../media/highressamedevice.png
    :alt: Same device flow diagram. See figure 2 caption below image.
 
    **Figure 2 Same device flow** A flow where the mDL holder presents an mDL stored in the digital wallet on their mobile device to another application on the
