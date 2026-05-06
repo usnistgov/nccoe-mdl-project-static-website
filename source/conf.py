@@ -12,8 +12,8 @@ sys.path.append(os.path.abspath("_themes"))
 
 # -- Project information -----------------------------------------------------
 
-project = "NCCoE Mobile Driver's License Project Supporting Resources"
-html_title = "NCCoE Mobile Driver's License Project Supporting Resources"
+project = "NCCoE Mobile Driver's License Project Resource Hub"
+html_title = "NCCoE Mobile Driver's License Project Resource Hub"
 author = 'NIST NCCoE'
 email = u'nccoe@nist.gov'
 googleanalytics_id = 'G-RJSMY46M5C'
@@ -25,6 +25,10 @@ googleanalytics_id = 'G-RJSMY46M5C'
 
 
 exclude_patterns = ['build', 'Thumbs.db', '.DS_Store', '.git']
+
+  
+
+#include_patterns = ['source/use-case-1/vol-c.rst']
 
 extensions = [
     'sphinxcontrib.rsvgconverter',
@@ -39,7 +43,8 @@ extensions = [
     "sphinx_datatables",
     "sphinxcontrib.googleanalytics",
     'sphinx_reredirects',
-    'sphinxcontrib.images'
+    'sphinxcontrib.images',
+  #  'sphinx_simplepdf',
 ]
 
 

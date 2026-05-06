@@ -9,7 +9,7 @@ Ecosystem. Follow the links below to view the published entries.
 
 #. `Understanding mDL credential formats <https://www.nist.gov/blogs/cybersecurity-insights/digital-identities-getting-know-verifiable-digital-credential-0>`__ 
 
-#. mDL Issuance (Future Blog Entry)
+#. `From DMV to Wallet: Understanding Verifiable Digital Credential Issuance <https://www.nist.gov/blogs/cybersecurity-insights/dmv-wallet-understanding-verifiable-digital-credential-issuance>`__
 
 #. mDL Presentment (Future Blog Entry)
 

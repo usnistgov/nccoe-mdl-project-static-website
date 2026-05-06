@@ -7,15 +7,22 @@ Introduction
 ============
 
 The following interaction diagrams visualize the flow of data between components in our `architecture </../kyc_cip_onboarding.html>`__ as the user interacts with the NCCoE Bank. 
-The flows below are cross-device flows where the user presents their mDL from the digital wallet on their phone to the NCCoE bank through a browser on a secondary device.
-These flows correspond to three of our `wireframes </../wireframes.html>`__ videos - Applying for a Financial Account using an mDL, Setting up Online Access after Application Approval, 
+The flows below depict: 
+
+1. `Cross-device <#cross-device-financial-account-application-flow>`__ flows where the user presents their mDL from the digital wallet on their phone to the NCCoE bank through a browser on a secondary device.
+2. `Same device <#same-device-app-to-app-re-verification-flow>`__ flows where all interactions occur on the mobile device.
+
+These flows correspond to three of our `demonstration </../demonstration-videos.html>`__ videos - Applying for a Financial Account using an mDL, Setting up Online Access after Application Approval, 
 and Identity Re-verification. The diagrams generally depict user journey “happy paths”, that is, free from error conditions or edge cases. System architects and those in similar 
 roles may find these diagrams useful as a reference when implementing their own solutions for an individual use case.
 
-There are interactions which take place prior to the user journeys which not demonstrated in these flows where:
 
-- mDL issuance is out of scope for this project and thus it is assumed the bank applicant has been issued a mobile driver’s license by their state issuer to a digital wallet that supports online presentation. 
-- The Verifier system component has been configured to align with the policies of the banking system to include interaction with a Trust Service to download trusted issuers and configuration of approved wallets.
+.. note::
+
+    There are interactions which take place prior to the user journeys which not demonstrated in these flows where:
+
+    - mDL issuance is out of scope for this project and thus it is assumed the bank applicant has been issued a mobile driver’s license by their state issuer to a digital wallet that supports online presentation. 
+    - The Verifier system component has been configured to align with the policies of the banking system to include interaction with a Trust Service to download trusted issuers and configuration of approved wallets.
 
 Viewing the Diagrams
 ====================
@@ -107,7 +114,26 @@ of the mDL. For a visualization of this process, please view our `wireframe vide
 This re-verification flow that occurs at Flow 3, Step 10 and is the same as Flow 1 - `Part 2 <#part-2-mdl-verification-using-the-dci-api>`__. 
 
 
-Re-verification for Step-Up Flow
+Cross-device Re-verification Flow
 ---------------------------------
 
 .. thumbnail:: ../../media/Re-verification1.PNG
+
+
+
+Same Device App to App Re-verification Flow
+-------------------------------------------
+
+The flows below depict a same device app to app flow in which a native banking application invokes platform Android credential management APIs. Consult `Android developer documentation <https://developer.android.com/identity/digital-credentials/credential-verifier>`__ for additional context and detailed flow depictions. 
+
+
+Part 1 - User Initiates Bank Transaction and Presents Credential
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. thumbnail:: ../../media/SameDevice1.png
+
+
+Part 2 - User Completes Transaction after Verification
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. thumbnail:: ../../media/SameDevice2.png
