@@ -3,6 +3,11 @@
   /* --sd-color-card-background: #a4d9d6; */
 }
 
+.line-block {
+    margin-bottom: 0em !important;
+    
+}
+
 .sd-card.welcome {
     /* --card-bg: rgba(255, 255, 255, 0.1); */
   
@@ -14,6 +19,7 @@
     border-radius: 12px !important;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
+
 }
 
 /* Ensure the header and footer are also transparent */
@@ -39,6 +45,7 @@
 
 .howtostep {
     --card-bg: rgba(164, 217, 214);
+
 }
 
 /* Hover effect for interactivity */

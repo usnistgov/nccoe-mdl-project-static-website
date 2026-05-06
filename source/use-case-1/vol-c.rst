@@ -8,16 +8,15 @@
 
 
 
-The NCCoE mDL Configuration Guide
-=================================
+Use Case 1 Configuration Guide
+==============================
 
 .. admonition:: DISCLAIMER
 
   Certain commercial entities, equipment, products, or materials may be identified by name or company logo or other insignia in order to acknowledge their participation in this collaboration or to describe an experimental procedure or concept adequately. Such identification is not intended to imply special status or relationship with NIST or recommendation or endorsement by NIST or NCCoE; neither is it intended to imply that the entities, equipment, products, or materials are necessarily the best available for the purpose.
 
-This page describes how we implemented this representative demonstration. Security architects, product managers, and other technical staff within your organization may find this information helpful. We cover the essential products employed in this reference design—the IDMS, Verifier, and Relying Party components. We do not re-create the product manufacturers’ documentation, which is presumed to be widely available. Rather, this webpage shows how we incorporated the products together in our environment. Videos of the final integrated system can be :doc:`viewed on this page <demonstration-videos>` .
+This page is a guide that demonstrates how we configured the products in our NCCoE mDL lab . Security architects, product managers, and other technical staff within your organization may find this information helpful. We cover the essential products deployed in our :doc:`reference architecture <architecture/kyc-cip-onboarding>` — the IDMS, Verifier, and Relying Party components. We do not re-create the product manufacturers’ documentation, which is presumed to be widely available. Rather, this webpage shows how we configured and integrated the products in our lab environment. A video demonstration of this architecture in action can be viewed on :doc:`this page <demonstration-videos>`. Within each section, we describe the steps we executed to satisfy each guideline. We include configuration file snippets, code examples, and links to technology contributor documentation where applicable.
 
-Each section below represents a broad guideline in the integration process, which has been applied to the built :doc:`architecture <architecture/kyc-cip-onboarding>`. Within each section, we describe the steps we executed to satisfy each guideline. We include configuration file snippets, code examples, and links to technology contributor documentation where applicable.  
 
 .. note::
   This is not a comprehensive tutorial. There are many possible service and security configurations for these products that are out of scope for this reference design. Further, credential issuance was out of scope for this demonstration. We recommend contacting state issuing authorities directly to determine the best path for test credential issuance.  
@@ -26,26 +25,24 @@ Each section below represents a broad guideline in the integration process, whic
 1. Establish a verifier environment
 -----------------------------------
 
-A verifier service is central to enabling both traditional and modern credential-based identity proofing. The verifier trusts the issuer’s signature and public keys and validates the
-credential’s authenticity and integrity, without needing to contact the issuer directly. To support this, implementers should:
+In the mDL ecosystem, the verifier component is used to request the mDL from a wallet and to cryptographically verify the mDL presented. The verifier is configured to trust the issuer’s signature and public keys and validates the credential’s authenticity of the mDL and integrity of the information it contains, without needing to contact the issuer directly.  To support this the NCCoE implemented a dedicated centralized verifier service.
 
 .. card:: 
   :class-card: welcome howtostep
 
-  **Configure a dedicated verifier application** that defines how verification requests from the relying party (RP) are handled. This
-  ensures that requests originating from different applications or lines of business can 
-  be routed and processed according to policy.
+  **The NCCoE architecture deployed a dedicated centralized verifier application** that defines how verification requests from the relying party (RP) are handled. This ensures that requests originating from different applications or lines of business can be routed and processed according to policy. See section `6.2.1 of Special Publication 1800-42`_. 
 
 | 
      
-  Complete MATTR verifier application documentation can be viewed on the `MATTR documentation website`_. Note in 
-  our implementation, we have set the ``resultAvailableInFrontChannel`` setting to ``false`` which allows our 
-  bank function to retrieve presentation results in the back-channel. We have also enabled Digital Credential 
-  API support as indicated by the ``dcApiConfiguration``. Complete DC API configuration documentation can be viewed at `this page`_. 
+  Complete MATTR verifier application documentation can be viewed on the `MATTR documentation website`_. Note in our implementation, we have set the ``resultAvailableInFrontChannel`` setting to ``false`` which allows our bank function to retrieve presentation results in the back-channel. We have also enabled Digital Credential API support as indicated by the ``dcApiConfiguration``. Complete DC API configuration documentation can be viewed at `this page`_. See section `6.2.4 of Special Publication 1800-42`_ for why we feel it’s important to implement the DC API.
 
   .. _MATTR documentation website: https://learn.mattr.global/docs/verification/remote-web-verifiers/tutorial#create-a-verifier-application-configuration
 
   .. _this page: https://learn.mattr.global/docs/verification/remote-web-verifiers/dc-api/guide
+
+  .. _6.2.1 of Special Publication 1800-42: https://www.nccoe.nist.gov/sites/default/files/2026-03/nist-sp-1800-42a-ipd_0.pdf
+
+  .. _6.2.4 of Special Publication 1800-42: https://www.nccoe.nist.gov/sites/default/files/2026-03/nist-sp-1800-42a-ipd_0.pdf
 
   Click the dropdown below to view our full configuration.
 
@@ -116,8 +113,9 @@ credential’s authenticity and integrity, without needing to contact the issuer
 .. card::  
   :class-card: welcome howtostep
 
-  **Maintain a list of trusted credential issuers** including certificate authorities or signing keys used to validate mobile credentials (mdocs or similar). Issuer lists should be updated as test credentials evolve and should account for regional or national trust
-  frameworks.
+  **Maintain a list of trusted credential issuers** including certificate authorities or signing keys used to validate mobile credentials (mdocs or similar). Issuer lists should be updated as test credentials evolve and should account for regional or national trust frameworks. Optionally, leverage existing trust services that maintain a list of trusted issuers such as AAMVA's `Mobile Driver License Digital Trust Service`_. 
+
+  .. _Mobile Driver License Digital Trust Service: https://www.aamva.org/identity/mobile-driver-license-digital-trust-service
 
 |
 
@@ -173,7 +171,9 @@ credential’s authenticity and integrity, without needing to contact the issuer
 2. Integrate verification capabilities into an identity management system
 -------------------------------------------------------------------------
 
-Your integration pattern will be dependent on your specific IDMS and verifier, however, below we have provided a diagram of the interactions between our IDMS (Azure B2C), bank system backend, and the verifier. Interactions between the IDMS and the Verifier are mediated by a set of APIs managed by the banking system as described in our practice guide. We chose to host these functions in the cloud using `Azure Function`_ service. The remainder of this section describes how we implemented this pattern.
+Your integration pattern will be dependent on your specific IDMS and verifier, however, below we have provided a diagram of the interactions between our IDMS (Azure AD B2C), the bank system backend we built for this demonstration, and the verifier. Interactions between the IDMS and the Verifier are mediated by a set of APIs managed by the banking system as `described in section 6.3`_ of our practice guide. We chose to host these functions in the cloud using `Azure Function`_ service. The remainder of this section describes how we implemented this pattern.
+
+.. _described in section 6.3: https://www.nccoe.nist.gov/sites/default/files/2026-03/nist-sp-1800-42a-ipd_0.pdf
 
 .. note::
 
@@ -193,8 +193,9 @@ To support credential-based verification from web applications:
 .. card:: 
   :class-card: welcome howtostep
   
-  **Integrate a web verification module** that supports back-channel retrieval of presented credentials.
-  Back-channel retrieval may offer advantages in environments where server-side validation is preferred. 
+  **Integrate a web verification module** that supports back-channel retrieval of presented credentials. Back-channel retrieval may offer advantages in environments where server-side validation is preferred. Back-channel is `recommended`_ by our technology partner for production environments to protect against replay attacks rather than retrieving mDL attributes through the front-channel (browser). 
+
+  .. _recommended: https://learn.mattr.global/docs/verification/remote-web-verifiers/workflow#the-web-application-surfaces-verification-results
 
 |
 
@@ -245,8 +246,8 @@ To support credential-based verification from web applications:
   **Define credential queries** that clearly state required document types and attributes. Queries should support both primary mechanisms
   (e.g., DC API) and fallback mechanisms (e.g., protocol-based presentation profiles) to ensure cross-platform operability.
 
-|
-
+|   
+  
   Learn how to create a `credential query`_ on the MATTR documentation site. Our credential query is dependent on the applicant/customer journey stage. In the example below, we query for the attributes that satisfy Customer Information Program requirements and allow the bank to create a persistent identifier of the user from applicant to customer.
   
   .. dropdown:: Demonstration DCQL CIP Query
@@ -310,9 +311,8 @@ To support credential-based verification from web applications:
 .. card::
   :class-card: welcome howtostep
 
-  **Trigger presentation requests from within the RP workflow,** allowing users to present credentials in a same-device or cross-device
-  flow. Implementers should evaluate which approach best aligns with
-  their user experience and security goals.
+  **Trigger presentation requests from within the RP workflow,** allowing users to present credentials in a same-device or cross-device flow. Implementers should evaluate which approach best aligns with
+  the user experience and security goals.
 
 |
 
@@ -348,7 +348,7 @@ To support credential-based verification from web applications:
 
   .. _detailed flow: https://learn.mattr.global/docs/verification/remote-web-verifiers/workflow#the-mattr-vii-verifier-tenant-returns-the-verification-results
 
-  The B2C orchestration next retrieves an access token from our bank API then uses the ``sessionId`` to retrieve the presented attributes using Technical Profiles. Note that in the Account Application journey the attributes are not persisted to B2C, they are displayed to the applicant to confirm their information. 
+  The B2C orchestration next retrieves an access token from our bank API then uses the ``sessionId`` to retrieve the presented attributes using Technical Profiles. Note that in the Account Application journey the attributes are not stored in Azure AD B2C, they are displayed to the applicant to confirm their information. 
 
   .. dropdown:: MATTR Journey Configuration
     :class-container: howtodrop
@@ -440,8 +440,8 @@ authentication:
 
 |
 
-  We recommend implementers review the Azure AD B2C `orchestration documentation`_ to learn how to translate your business proceseses to web based user 
-  journeys. Our configuration for the account application registration journey is reproduced below. The journey implements a comprehensive identity verification flow to support a bank account application process that combines traditional methods (email, phone, SSN) with modern mDL verification technology, ultimately creating a verified digital identity stored in Azure AD B2C.
+  We recommend implementers review the documentation from your IDMS provider to learn how to translate your business proceseses to web based user 
+  journeys. Our configuration for the account application registration journey is reproduced below as configured in Azure AD B2C `orchestration documentation`_. The journey implements a comprehensive identity verification flow to support a bank account application process that combines traditional methods (email, phone, SSN) with modern mDL verification technology, ultimately creating a verified digital identity stored in Azure AD B2C.
 
   .. include:: examples/orchestration.rst
 
@@ -453,19 +453,14 @@ authentication:
 .. card:: 
   :class-card: welcome howtostep
   
-  **Persist collected attributes as claims** at each step to ensure continuity across the journey and to support downstream validation
+  **Store collected attributes as claims** at each step to ensure continuity across the journey and to support downstream validation
   steps.
 
 |
 
-  Persisting collected attributes allows them to be stored alongside user information in the `B2C directory`_. Attributes such as email, address,
-  and the hashed mDL document number and issuing authority must be persisted in the directory for future use. For example, the unique mDL hash
-  is used to ensure the correct mDL is presented in subsequent presentations when re-verifying the mDL for large currency transfers.
+  Storing collected attributes allows them to be stored alongside user information in the `B2C directory`_. User attributes collected during identity verification such as email, phone number, SSN, and mDL information should be stored as claims alongside the user in the identity management system. This allows the claims to support future use cases. For example, in our build, we stored a hash of the driver’s license number and the issuing entity as a claim that is later used to link an mDL to the user when presented as a step-up during high-risk transactions. 
 
-  In the previously defined registration flow, there is a step to collect the user's preferred address, preferred name, etc. These are stored
-  alongside the user in B2C for use if, for example, their present mailing address does not match the address claim in the mDL. If the user
-  fill these in, they should be used in lieu of the mDL attributes.
-
+  
   .. _B2C directory: https://learn.microsoft.com/en-us/azure/active-directory-b2c/custom-policy-reference-sso
 
   .. include:: examples/ad-write-attributes.rst
@@ -478,26 +473,12 @@ authentication:
 
 |
 
-  Where possible, financial institutions should support multiple identity verification methods, such as mDL presentation, uploading photos
-  of a physical drivers license, or manually entering the drivers license information. Note that for this demonstration, only mDL presentation
-  is supported.
+  Because not all users will have an mDL, financial institutions should support multiple identity verification methods, such as mDL presentation, uploading photos of a physical drivers license, or manually entering the drivers license information, etc. However, FIs can encourage mDLs verification as the preferred choice by listing it as the first option and by including helping prompts such as directing user to the AAMVA website to see if their state supports mDLs and by providing simple instructions for mDL presentment. Note that for this demonstration, only mDL presentation is supported.
 
 .. card:: 
   :class-card: welcome howtostep
 
-  **Generate unique identifiers using non-reversible transformations** of verified credential attributes to support deterministic account lookup in later phases (e.g., digital enrollment or reverification).
-
-|
-
-  Generating and storing a non-reversible, unique, per-user identifier is required to be able to uniquely identify a user based on 
-  specific attributes. In this implementation, B2C generates and stores a `hash`_ of the presented mDL's document number and issuing authority.
-  When combined, these two attributes are guaranteed to be unique per mDL, and therefore unique per user. On subsequent interactions,
-  such as mDL reverification and digital enrollment, this hash is used to both look up the user in B2C and to ensure the user has
-  presented the same mDL that was presented during registration. If the presented mDL does not match a known or expected one, the flow
-  does not continue.
-
-.. _hash: https://learn.microsoft.com/en-us/azure/active-directory-b2c/general-transformations
-
+  
 4. Implement digital mDL credential verification
 ----------------------------------------------------------------
 
@@ -581,7 +562,7 @@ verification:
 
 |
 
-  The `MATTR Verifier SDK`_ is a highly flexible and customizable SDK for mDL presentation that supports both same-device
+  The `MATTR Verifier SDK`_ for mDL presentation supports both same-device
   and cross-device flows, and is frequently updated to reflect new mDL changes and standards. In this implementation,
   the cross-device flow was used, and the attributes were not available in the front-channel. Additionally, the Digital Credential (DC) API
   is in MATTR technical preview, requiring additional configuration to enable it. In the example application configuration in Step 1,
@@ -616,10 +597,10 @@ verification:
 
   .. _claims bag: https://learn.microsoft.com/en-us/azure/active-directory-b2c/custom-policy-overview#orchestration-steps
 
-5. Support modern authentication (e.g., passkeys)
--------------------------------------------------
+5. Support phishinng resistant authentication (e.g., passkeys)
+--------------------------------------------------------------
 
-To support secure, passwordless authentication flows:
+FIs should offer customer at customers at least one phishing resistant authentication option. To support this:
 
 .. card:: 
   :class-card: welcome howtostep
@@ -702,13 +683,13 @@ To support secure, passwordless authentication flows:
 .. card:: 
   :class-card: welcome howtostep
   
-  **Validate the returned public credentials server-side** and persist them in the user directory for future authentication events.
+  **Validate the returned public credentials server-side** and store them in the user directory for future authentication events.
 
 |
 
   Credentials should always be validated server-side to avoid the user interfering with the validation process. By storing
-  the FIDO claims alongside the user during the digital enrollment B2C journey, the claims will persist and allow the user
-  to authenticate in the future. Below is a snippet from the B2C policy that persists the passkey's public component to the directory.
+  the FIDO claims alongside the user during the digital enrollment B2C journey, the claims will be stored in the directory entry and allow the user
+  to authenticate in the future. Below is a snippet from the B2C policy that stores the passkey's public component to the directory.
 
   .. dropdown:: B2C Write FIDO Credentials
     :class-container: howtodrop
@@ -762,21 +743,19 @@ To support secure, passwordless authentication flows:
       
     },
 
-6. Implement Re-verification workflows
---------------------------------------
+6. Implementing Re-verification workflows
+-----------------------------------------
 
-To demonstrate a user attempting to make a high-risk transaction is in possession and control of the mDL linked to their account:
+To gain additional confidence in the user identity during a high-risk transaction, FIs may:
 
 .. card:: 
   :class-card: welcome howtostep
   
-  **Use mDL-based verification as the primary authentication step** in re-verification flows, ensuring the presented credential corresponds to the same user identity established in prior phases. 
+  **Ask customers to step-up to mDL re-verification** ensuring the presented credential matches to user identity established in during identity verification.
 
 |
 
-  By storing the previously mentioned one-way document number and issuing authority hash, B2C is automatically able to verify
-  that the presented credential matches the credential that was used for initial registration by calculating the hash of the
-  credential presented for re-verification and verifying it against the hash stored alongside the user in B2C. The B2C policy snippet below shows this user journey in which two steps are executed—we validate the mDL and locate the existing customer using a ClaimsExchange technical profile then issue OIDC tokens to the banking system. 
+  As previously mentioned, our build stored a hash of driver’s license number and issuing authority as a claim in our IDMS. Because of this, B2C is automatically able to verify that the mDL presented during a high-risk transaction matches the credential that was used for initial registration by calculating the hash of the credential presented for re-verification and verifying it against the hash stored alongside the user in B2C. The B2C policy snippet below shows this user journey in which two steps are executed—we validate the mDL and locate the existing customer using a ClaimsExchange technical profile then issue OIDC tokens to the banking system.
 
   .. note:: 
 
@@ -974,12 +953,11 @@ to test specific scenarios. This section contains general guidelines for wallet-
 .. card::  
   :class-card: welcome howtostep
 
-  **Ensure wallets can render local authentication prompts** (e.g., biometrics) to complete credential presentations securely.
+  **Ensure wallets can render native, local authentication prompts** to complete credential presentations securely.
 
 |
 
-  By integrating with platform-level biometric APIs, wallets can force user biometric re-authentication prior to presenting
-  the credential.
+  We recommend selecting wallets that integrate with platform-level biometric APIs to force user biometric re-authentication prior to presenting the credential. Ideally, the credential holder is authenticated through a biometric match to either a biometric encoded in the credential or a unique template created at the time of issuance. However, this approach was not implemented in our demonstration due to technology limitations. 
 
 .. card:: 
   :class-card: welcome howtostep
