@@ -44,7 +44,7 @@ extensions = [
     "sphinxcontrib.googleanalytics",
     'sphinx_reredirects',
     'sphinxcontrib.images',
-    'sphinx_simplepdf',
+  #  'sphinx_simplepdf',
 ]
 
 
