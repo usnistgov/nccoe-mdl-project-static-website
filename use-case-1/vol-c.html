@@ -15,7 +15,7 @@
     </script>
     
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The NCCoE mDL Configuration Guide &mdash; NCCoE Mobile Driver&#39;s License Project Supporting Resources</title>
+  <title>Use Case 1 Configuration Guide &mdash; NCCoE Mobile Driver&#39;s License Project Resource Hub</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=3b68fefb" />
       <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -23,7 +23,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-2.3.0/datatables.min.css" />
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.min.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e41c2d03" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=4fea1e58" />
 
   <link rel="stylesheet" href="../_static/css/datatables.min.css">
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -53,7 +53,7 @@
     <link rel="stylesheet" href="../_static/css/leaveNotice.css">
     <script src="../_static/js/jquery.leaveNotice-nist.js"></script>
     <script src="../_static/js/applyLeaveNotice.js"
-            data-site-name="NCCoE Mobile Driver's License Project Supporting Resources"></script>
+            data-site-name="NCCoE Mobile Driver's License Project Resource Hub"></script>
 
     
     <script>
@@ -73,8 +73,8 @@
         var c = document.createElement('script');
         c.src = base + 'js/comment-capture.js';
         c.setAttribute('data-email', "feedback@example.com");
-        c.setAttribute('data-site-name', "NCCoE Mobile Driver's License Project Supporting Resources");
-        c.setAttribute('data-subject', "[Doc review] NCCoE Mobile Driver's License Project Supporting Resources — {N} comments");
+        c.setAttribute('data-site-name', "NCCoE Mobile Driver's License Project Resource Hub");
+        c.setAttribute('data-subject', "[Doc review] NCCoE Mobile Driver's License Project Resource Hub — {N} comments");
         c.setAttribute('data-static-base', base);
         document.body.appendChild(c);
       };
@@ -282,7 +282,7 @@
             </svg>
           </a>
           <a class="project-title" href="../index.html">
-          NCCoE Mobile Driver's License Project Supporting Resources
+          NCCoE Mobile Driver's License Project Resource Hub
           </a>
 
           <a class="project-page-link" href="https://www.nccoe.nist.gov/projects/digital-identities-mdl">
@@ -316,7 +316,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="demonstration-videos.html">Demonstration Videos</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">The NCCoE mDL Configuration Guide</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Use Case 1 Configuration Guide</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../use-case-2/index.html">Government Services Use Case</a><ul>
@@ -338,7 +338,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">NCCoE Mobile Driver's License Project Supporting Resources</a>
+          <a href="../index.html">NCCoE Mobile Driver's License Project Resource Hub</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -347,7 +347,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Financial Institution Use Case</a></li>
-      <li class="breadcrumb-item active">The NCCoE mDL Configuration Guide</li>
+      <li class="breadcrumb-item active">Use Case 1 Configuration Guide</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -360,37 +360,30 @@
 h1, h2, h3, h4, h5 {
    color: #1F3864 !important;
 }
-</style><section id="the-nccoe-mdl-configuration-guide">
-<h1>The NCCoE mDL Configuration Guide<a class="headerlink" href="#the-nccoe-mdl-configuration-guide" title="Link to this heading"></a></h1>
+</style><section id="use-case-1-configuration-guide">
+<h1>Use Case 1 Configuration Guide<a class="headerlink" href="#use-case-1-configuration-guide" title="Link to this heading"></a></h1>
 <div class="admonition-disclaimer admonition">
 <p class="admonition-title">DISCLAIMER</p>
 <p>Certain commercial entities, equipment, products, or materials may be identified by name or company logo or other insignia in order to acknowledge their participation in this collaboration or to describe an experimental procedure or concept adequately. Such identification is not intended to imply special status or relationship with NIST or recommendation or endorsement by NIST or NCCoE; neither is it intended to imply that the entities, equipment, products, or materials are necessarily the best available for the purpose.</p>
 </div>
-<p>This page describes how we implemented this representative demonstration. Security architects, product managers, and other technical staff within your organization may find this information helpful. We cover the essential products employed in this reference design—the IDMS, Verifier, and Relying Party components. We do not re-create the product manufacturers’ documentation, which is presumed to be widely available. Rather, this webpage shows how we incorporated the products together in our environment. Videos of the final integrated system can be <a class="reference internal" href="demonstration-videos.html"><span class="doc">viewed on this page</span></a> .</p>
-<p>Each section below represents a broad guideline in the integration process, which has been applied to the built <a class="reference internal" href="architecture/kyc-cip-onboarding.html"><span class="doc">architecture</span></a>. Within each section, we describe the steps we executed to satisfy each guideline. We include configuration file snippets, code examples, and links to technology contributor documentation where applicable.</p>
+<p>This page is a guide that demonstrates how we configured the products in our NCCoE mDL lab . Security architects, product managers, and other technical staff within your organization may find this information helpful. We cover the essential products deployed in our <a class="reference internal" href="architecture/kyc-cip-onboarding.html"><span class="doc">reference architecture</span></a> — the IDMS, Verifier, and Relying Party components. We do not re-create the product manufacturers’ documentation, which is presumed to be widely available. Rather, this webpage shows how we configured and integrated the products in our lab environment. A video demonstration of this architecture in action can be viewed on <a class="reference internal" href="demonstration-videos.html"><span class="doc">this page</span></a>. Within each section, we describe the steps we executed to satisfy each guideline. We include configuration file snippets, code examples, and links to technology contributor documentation where applicable.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This is not a comprehensive tutorial. There are many possible service and security configurations for these products that are out of scope for this reference design. Further, credential issuance was out of scope for this demonstration. We recommend contacting state issuing authorities directly to determine the best path for test credential issuance.</p>
 </div>
 <section id="establish-a-verifier-environment">
 <h2>1. Establish a verifier environment<a class="headerlink" href="#establish-a-verifier-environment" title="Link to this heading"></a></h2>
-<p>A verifier service is central to enabling both traditional and modern credential-based identity proofing. The verifier trusts the issuer’s signature and public keys and validates the
-credential’s authenticity and integrity, without needing to contact the issuer directly. To support this, implementers should:</p>
+<p>In the mDL ecosystem, the verifier component is used to request the mDL from a wallet and to cryptographically verify the mDL presented. The verifier is configured to trust the issuer’s signature and public keys and validates the credential’s authenticity of the mDL and integrity of the information it contains, without needing to contact the issuer directly.  To support this the NCCoE implemented a dedicated centralized verifier service.</p>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text"><strong>Configure a dedicated verifier application</strong> that defines how verification requests from the relying party (RP) are handled. This
-ensures that requests originating from different applications or lines of business can
-be routed and processed according to policy.</p>
+<p class="sd-card-text"><strong>The NCCoE architecture deployed a dedicated centralized verifier application</strong> that defines how verification requests from the relying party (RP) are handled. This ensures that requests originating from different applications or lines of business can be routed and processed according to policy. See section <a class="reference external" href="https://www.nccoe.nist.gov/sites/default/files/2026-03/nist-sp-1800-42a-ipd_0.pdf">6.2.1 of Special Publication 1800-42</a>.</p>
 </div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <blockquote>
-<div><p>Complete MATTR verifier application documentation can be viewed on the <a class="reference external" href="https://learn.mattr.global/docs/verification/remote-web-verifiers/tutorial#create-a-verifier-application-configuration">MATTR documentation website</a>. Note in
-our implementation, we have set the <code class="docutils literal notranslate"><span class="pre">resultAvailableInFrontChannel</span></code> setting to <code class="docutils literal notranslate"><span class="pre">false</span></code> which allows our
-bank function to retrieve presentation results in the back-channel. We have also enabled Digital Credential
-API support as indicated by the <code class="docutils literal notranslate"><span class="pre">dcApiConfiguration</span></code>. Complete DC API configuration documentation can be viewed at <a class="reference external" href="https://learn.mattr.global/docs/verification/remote-web-verifiers/dc-api/guide">this page</a>.</p>
+<div><p>Complete MATTR verifier application documentation can be viewed on the <a class="reference external" href="https://learn.mattr.global/docs/verification/remote-web-verifiers/tutorial#create-a-verifier-application-configuration">MATTR documentation website</a>. Note in our implementation, we have set the <code class="docutils literal notranslate"><span class="pre">resultAvailableInFrontChannel</span></code> setting to <code class="docutils literal notranslate"><span class="pre">false</span></code> which allows our bank function to retrieve presentation results in the back-channel. We have also enabled Digital Credential API support as indicated by the <code class="docutils literal notranslate"><span class="pre">dcApiConfiguration</span></code>. Complete DC API configuration documentation can be viewed at <a class="reference external" href="https://learn.mattr.global/docs/verification/remote-web-verifiers/dc-api/guide">this page</a>. See section <a class="reference external" href="https://www.nccoe.nist.gov/sites/default/files/2026-03/nist-sp-1800-42a-ipd_0.pdf">6.2.4 of Special Publication 1800-42</a> for why we feel it’s important to implement the DC API.</p>
 <p>Click the dropdown below to view our full configuration.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 howtodrop">
 <summary class="sd-summary-title sd-card-header">
@@ -457,8 +450,7 @@ API support as indicated by the <code class="docutils literal notranslate"><span
 </details></div></blockquote>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text"><strong>Maintain a list of trusted credential issuers</strong> including certificate authorities or signing keys used to validate mobile credentials (mdocs or similar). Issuer lists should be updated as test credentials evolve and should account for regional or national trust
-frameworks.</p>
+<p class="sd-card-text"><strong>Maintain a list of trusted credential issuers</strong> including certificate authorities or signing keys used to validate mobile credentials (mdocs or similar). Issuer lists should be updated as test credentials evolve and should account for regional or national trust frameworks. Optionally, leverage existing trust services that maintain a list of trusted issuers such as AAMVA’s <a class="reference external" href="https://www.aamva.org/identity/mobile-driver-license-digital-trust-service">Mobile Driver License Digital Trust Service</a>.</p>
 </div>
 </div>
 <div class="line-block">
@@ -515,7 +507,7 @@ frameworks.</p>
 </section>
 <section id="integrate-verification-capabilities-into-an-identity-management-system">
 <h2>2. Integrate verification capabilities into an identity management system<a class="headerlink" href="#integrate-verification-capabilities-into-an-identity-management-system" title="Link to this heading"></a></h2>
-<p>Your integration pattern will be dependent on your specific IDMS and verifier, however, below we have provided a diagram of the interactions between our IDMS (Azure B2C), bank system backend, and the verifier. Interactions between the IDMS and the Verifier are mediated by a set of APIs managed by the banking system as described in our practice guide. We chose to host these functions in the cloud using <a class="reference external" href="https://azure.microsoft.com/en-us/products/functions">Azure Function</a> service. The remainder of this section describes how we implemented this pattern.</p>
+<p>Your integration pattern will be dependent on your specific IDMS and verifier, however, below we have provided a diagram of the interactions between our IDMS (Azure AD B2C), the bank system backend we built for this demonstration, and the verifier. Interactions between the IDMS and the Verifier are mediated by a set of APIs managed by the banking system as <a class="reference external" href="https://www.nccoe.nist.gov/sites/default/files/2026-03/nist-sp-1800-42a-ipd_0.pdf">described in section 6.3</a> of our practice guide. We chose to host these functions in the cloud using <a class="reference external" href="https://azure.microsoft.com/en-us/products/functions">Azure Function</a> service. The remainder of this section describes how we implemented this pattern.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Current users of Azure AD B2C can continue to use the B2C policies for orchestration, however, new Microsoft customers must use Entra External ID using <a class="reference external" href="https://learn.microsoft.com/en-us/entra/identity-platform/reference-native-authentication-api">Native APIs</a>.</p>
@@ -525,8 +517,7 @@ frameworks.</p>
 <p>To support credential-based verification from web applications:</p>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text"><strong>Integrate a web verification module</strong> that supports back-channel retrieval of presented credentials.
-Back-channel retrieval may offer advantages in environments where server-side validation is preferred.</p>
+<p class="sd-card-text"><strong>Integrate a web verification module</strong> that supports back-channel retrieval of presented credentials. Back-channel retrieval may offer advantages in environments where server-side validation is preferred. Back-channel is <a class="reference external" href="https://learn.mattr.global/docs/verification/remote-web-verifiers/workflow#the-web-application-surfaces-verification-results">recommended</a> by our technology partner for production environments to protect against replay attacks rather than retrieving mDL attributes through the front-channel (browser).</p>
 </div>
 </div>
 <div class="line-block">
@@ -635,9 +626,8 @@ Back-channel retrieval may offer advantages in environments where server-side va
 </details></div></blockquote>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text"><strong>Trigger presentation requests from within the RP workflow,</strong> allowing users to present credentials in a same-device or cross-device
-flow. Implementers should evaluate which approach best aligns with
-their user experience and security goals.</p>
+<p class="sd-card-text"><strong>Trigger presentation requests from within the RP workflow,</strong> allowing users to present credentials in a same-device or cross-device flow. Implementers should evaluate which approach best aligns with
+the user experience and security goals.</p>
 </div>
 </div>
 <div class="line-block">
@@ -671,7 +661,7 @@ integration and data-handling implications that should be assessed based on syst
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The B2C orchestration next retrieves an access token from our bank API then uses the <code class="docutils literal notranslate"><span class="pre">sessionId</span></code> to retrieve the presented attributes using Technical Profiles. Note that in the Account Application journey the attributes are not persisted to B2C, they are displayed to the applicant to confirm their information.</p>
+<p>The B2C orchestration next retrieves an access token from our bank API then uses the <code class="docutils literal notranslate"><span class="pre">sessionId</span></code> to retrieve the presented attributes using Technical Profiles. Note that in the Account Application journey the attributes are not stored in Azure AD B2C, they are displayed to the applicant to confirm their information.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 howtodrop">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">MATTR Journey Configuration</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -759,12 +749,12 @@ authentication:</p>
 <div class="line"><br /></div>
 </div>
 <blockquote>
-<div><p>We recommend implementers review the Azure AD B2C <a class="reference external" href="https://learn.microsoft.com/en-us/azure/active-directory-b2c/userjourneys#orchestrationsteps">orchestration documentation</a> to learn how to translate your business proceseses to web based user
-journeys. Our configuration for the account application registration journey is reproduced below. The journey implements a comprehensive identity verification flow to support a bank account application process that combines traditional methods (email, phone, SSN) with modern mDL verification technology, ultimately creating a verified digital identity stored in Azure AD B2C.</p>
+<div><p>We recommend implementers review the documentation from your IDMS provider to learn how to translate your business proceseses to web based user
+journeys. Our configuration for the account application registration journey is reproduced below as configured in Azure AD B2C <a class="reference external" href="https://learn.microsoft.com/en-us/azure/active-directory-b2c/userjourneys#orchestrationsteps">orchestration documentation</a>. The journey implements a comprehensive identity verification flow to support a bank account application process that combines traditional methods (email, phone, SSN) with modern mDL verification technology, ultimately creating a verified digital identity stored in Azure AD B2C.</p>
 </div></blockquote>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text"><strong>Persist collected attributes as claims</strong> at each step to ensure continuity across the journey and to support downstream validation
+<p class="sd-card-text"><strong>Store collected attributes as claims</strong> at each step to ensure continuity across the journey and to support downstream validation
 steps.</p>
 </div>
 </div>
@@ -772,12 +762,7 @@ steps.</p>
 <div class="line"><br /></div>
 </div>
 <blockquote>
-<div><p>Persisting collected attributes allows them to be stored alongside user information in the <a class="reference external" href="https://learn.microsoft.com/en-us/azure/active-directory-b2c/custom-policy-reference-sso">B2C directory</a>. Attributes such as email, address,
-and the hashed mDL document number and issuing authority must be persisted in the directory for future use. For example, the unique mDL hash
-is used to ensure the correct mDL is presented in subsequent presentations when re-verifying the mDL for large currency transfers.</p>
-<p>In the previously defined registration flow, there is a step to collect the user’s preferred address, preferred name, etc. These are stored
-alongside the user in B2C for use if, for example, their present mailing address does not match the address claim in the mDL. If the user
-fill these in, they should be used in lieu of the mDL attributes.</p>
+<div><p>Storing collected attributes allows them to be stored alongside user information in the <a class="reference external" href="https://learn.microsoft.com/en-us/azure/active-directory-b2c/custom-policy-reference-sso">B2C directory</a>. User attributes collected during identity verification such as email, phone number, SSN, and mDL information should be stored as claims alongside the user in the identity management system. This allows the claims to support future use cases. For example, in our build, we stored a hash of the driver’s license number and the issuing entity as a claim that is later used to link an mDL to the user when presented as a step-up during high-risk transactions.</p>
 </div></blockquote>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
 <div class="sd-card-body docutils">
@@ -789,26 +774,12 @@ mDL verification) for the demonstration or production environment.</p>
 <div class="line"><br /></div>
 </div>
 <blockquote>
-<div><p>Where possible, financial institutions should support multiple identity verification methods, such as mDL presentation, uploading photos
-of a physical drivers license, or manually entering the drivers license information. Note that for this demonstration, only mDL presentation
-is supported.</p>
+<div><p>Because not all users will have an mDL, financial institutions should support multiple identity verification methods, such as mDL presentation, uploading photos of a physical drivers license, or manually entering the drivers license information, etc. However, FIs can encourage mDLs verification as the preferred choice by listing it as the first option and by including helping prompts such as directing user to the AAMVA website to see if their state supports mDLs and by providing simple instructions for mDL presentment. Note that for this demonstration, only mDL presentation is supported.</p>
 </div></blockquote>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text"><strong>Generate unique identifiers using non-reversible transformations</strong> of verified credential attributes to support deterministic account lookup in later phases (e.g., digital enrollment or reverification).</p>
 </div>
 </div>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<blockquote>
-<div><p>Generating and storing a non-reversible, unique, per-user identifier is required to be able to uniquely identify a user based on
-specific attributes. In this implementation, B2C generates and stores a <a class="reference external" href="https://learn.microsoft.com/en-us/azure/active-directory-b2c/general-transformations">hash</a> of the presented mDL’s document number and issuing authority.
-When combined, these two attributes are guaranteed to be unique per mDL, and therefore unique per user. On subsequent interactions,
-such as mDL reverification and digital enrollment, this hash is used to both look up the user in B2C and to ensure the user has
-presented the same mDL that was presented during registration. If the presented mDL does not match a known or expected one, the flow
-does not continue.</p>
-</div></blockquote>
 </section>
 <section id="implement-digital-mdl-credential-verification">
 <h2>4. Implement digital mDL credential verification<a class="headerlink" href="#implement-digital-mdl-credential-verification" title="Link to this heading"></a></h2>
@@ -885,7 +856,7 @@ to <a class="reference external" href="https://learn.mattr.global/docs/verificat
 <div class="line"><br /></div>
 </div>
 <blockquote>
-<div><p>The <a class="reference external" href="https://learn.mattr.global/docs/verification/remote-web-verifiers/sdks/overview">MATTR Verifier SDK</a> is a highly flexible and customizable SDK for mDL presentation that supports both same-device
+<div><p>The <a class="reference external" href="https://learn.mattr.global/docs/verification/remote-web-verifiers/sdks/overview">MATTR Verifier SDK</a> for mDL presentation supports both same-device
 and cross-device flows, and is frequently updated to reflect new mDL changes and standards. In this implementation,
 the cross-device flow was used, and the attributes were not available in the front-channel. Additionally, the Digital Credential (DC) API
 is in MATTR technical preview, requiring additional configuration to enable it. In the example application configuration in Step 1,
@@ -918,9 +889,9 @@ account creation.</p>
 the attributes. This allows B2C to easily return the attributes back to the relying party.</p>
 </div></blockquote>
 </section>
-<section id="support-modern-authentication-e-g-passkeys">
-<h2>5. Support modern authentication (e.g., passkeys)<a class="headerlink" href="#support-modern-authentication-e-g-passkeys" title="Link to this heading"></a></h2>
-<p>To support secure, passwordless authentication flows:</p>
+<section id="support-phishinng-resistant-authentication-e-g-passkeys">
+<h2>5. Support phishinng resistant authentication (e.g., passkeys)<a class="headerlink" href="#support-phishinng-resistant-authentication-e-g-passkeys" title="Link to this heading"></a></h2>
+<p>FIs should offer customer at customers at least one phishing resistant authentication option. To support this:</p>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
 <div class="sd-card-body docutils">
 <p class="sd-card-text"><strong>Provide a mechanism to generate a cryptographically secure challenge</strong> during both enrollment and authentication ceremonies to prevent replay attacks.</p>
@@ -1000,7 +971,7 @@ and mobile contexts. The Azure B2C technical profile below illustrates how are i
 </details></div></blockquote>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text"><strong>Validate the returned public credentials server-side</strong> and persist them in the user directory for future authentication events.</p>
+<p class="sd-card-text"><strong>Validate the returned public credentials server-side</strong> and store them in the user directory for future authentication events.</p>
 </div>
 </div>
 <div class="line-block">
@@ -1008,8 +979,8 @@ and mobile contexts. The Azure B2C technical profile below illustrates how are i
 </div>
 <blockquote>
 <div><p>Credentials should always be validated server-side to avoid the user interfering with the validation process. By storing
-the FIDO claims alongside the user during the digital enrollment B2C journey, the claims will persist and allow the user
-to authenticate in the future. Below is a snippet from the B2C policy that persists the passkey’s public component to the directory.</p>
+the FIDO claims alongside the user during the digital enrollment B2C journey, the claims will be stored in the directory entry and allow the user
+to authenticate in the future. Below is a snippet from the B2C policy that stores the passkey’s public component to the directory.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 howtodrop">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">B2C Write FIDO Credentials</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -1065,21 +1036,19 @@ used by the WebAuthn API to interact with the passkey backend.</p>
 </div>
 </div></blockquote>
 </section>
-<section id="implement-re-verification-workflows">
-<h2>6. Implement Re-verification workflows<a class="headerlink" href="#implement-re-verification-workflows" title="Link to this heading"></a></h2>
-<p>To demonstrate a user attempting to make a high-risk transaction is in possession and control of the mDL linked to their account:</p>
+<section id="implementing-re-verification-workflows">
+<h2>6. Implementing Re-verification workflows<a class="headerlink" href="#implementing-re-verification-workflows" title="Link to this heading"></a></h2>
+<p>To gain additional confidence in the user identity during a high-risk transaction, FIs may:</p>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text"><strong>Use mDL-based verification as the primary authentication step</strong> in re-verification flows, ensuring the presented credential corresponds to the same user identity established in prior phases.</p>
+<p class="sd-card-text"><strong>Ask customers to step-up to mDL re-verification</strong> ensuring the presented credential matches to user identity established in during identity verification.</p>
 </div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <blockquote>
-<div><p>By storing the previously mentioned one-way document number and issuing authority hash, B2C is automatically able to verify
-that the presented credential matches the credential that was used for initial registration by calculating the hash of the
-credential presented for re-verification and verifying it against the hash stored alongside the user in B2C. The B2C policy snippet below shows this user journey in which two steps are executed—we validate the mDL and locate the existing customer using a ClaimsExchange technical profile then issue OIDC tokens to the banking system.</p>
+<div><p>As previously mentioned, our build stored a hash of driver’s license number and issuing authority as a claim in our IDMS. Because of this, B2C is automatically able to verify that the mDL presented during a high-risk transaction matches the credential that was used for initial registration by calculating the hash of the credential presented for re-verification and verifying it against the hash stored alongside the user in B2C. The B2C policy snippet below shows this user journey in which two steps are executed—we validate the mDL and locate the existing customer using a ClaimsExchange technical profile then issue OIDC tokens to the banking system.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The verifier component plays an active role in re-presenting and validating the credential during high-risk or step-up scenarios. The credential is re-presented and verified through the verifier component (MATTR VII), and the hash comparison in Azure AD B2C is used as a binding mechanism to link the newly verified credential to the previously established identity. Refer to <a class="reference internal" href="#integrate-verification-capabilities-into-an-identity-management-system">2. Integrate verification capabilities into an identity management system</a> section for a detailed description of the verifier interactions that are also implemented in this section’s flow.</p>
@@ -1266,15 +1235,14 @@ source code.</p>
 </div></blockquote>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text"><strong>Ensure wallets can render local authentication prompts</strong> (e.g., biometrics) to complete credential presentations securely.</p>
+<p class="sd-card-text"><strong>Ensure wallets can render native, local authentication prompts</strong> to complete credential presentations securely.</p>
 </div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <blockquote>
-<div><p>By integrating with platform-level biometric APIs, wallets can force user biometric re-authentication prior to presenting
-the credential.</p>
+<div><p>We recommend selecting wallets that integrate with platform-level biometric APIs to force user biometric re-authentication prior to presenting the credential. Ideally, the credential holder is authenticated through a biometric match to either a biometric encoded in the credential or a unique template created at the time of issuance. However, this approach was not implemented in our demonstration due to technology limitations.</p>
 </div></blockquote>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
 <div class="sd-card-body docutils">

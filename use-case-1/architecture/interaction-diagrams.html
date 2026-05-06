@@ -15,7 +15,7 @@
     </script>
     
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interaction Diagrams &mdash; NCCoE Mobile Driver&#39;s License Project Supporting Resources</title>
+  <title>Interaction Diagrams &mdash; NCCoE Mobile Driver&#39;s License Project Resource Hub</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=3b68fefb" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -23,7 +23,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-2.3.0/datatables.min.css" />
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.min.css" />
-      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e41c2d03" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=4fea1e58" />
 
   <link rel="stylesheet" href="../../_static/css/datatables.min.css">
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -53,7 +53,7 @@
     <link rel="stylesheet" href="../../_static/css/leaveNotice.css">
     <script src="../../_static/js/jquery.leaveNotice-nist.js"></script>
     <script src="../../_static/js/applyLeaveNotice.js"
-            data-site-name="NCCoE Mobile Driver's License Project Supporting Resources"></script>
+            data-site-name="NCCoE Mobile Driver's License Project Resource Hub"></script>
 
     
     <script>
@@ -73,8 +73,8 @@
         var c = document.createElement('script');
         c.src = base + 'js/comment-capture.js';
         c.setAttribute('data-email', "feedback@example.com");
-        c.setAttribute('data-site-name', "NCCoE Mobile Driver's License Project Supporting Resources");
-        c.setAttribute('data-subject', "[Doc review] NCCoE Mobile Driver's License Project Supporting Resources — {N} comments");
+        c.setAttribute('data-site-name', "NCCoE Mobile Driver's License Project Resource Hub");
+        c.setAttribute('data-subject', "[Doc review] NCCoE Mobile Driver's License Project Resource Hub — {N} comments");
         c.setAttribute('data-static-base', base);
         document.body.appendChild(c);
       };
@@ -282,7 +282,7 @@
             </svg>
           </a>
           <a class="project-title" href="../../index.html">
-          NCCoE Mobile Driver's License Project Supporting Resources
+          NCCoE Mobile Driver's License Project Resource Hub
           </a>
 
           <a class="project-page-link" href="https://www.nccoe.nist.gov/projects/digital-identities-mdl">
@@ -316,7 +316,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../demonstration-videos.html">Demonstration Videos</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vol-c.html">The NCCoE mDL Configuration Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vol-c.html">Use Case 1 Configuration Guide</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../use-case-2/index.html">Government Services Use Case</a><ul>
@@ -338,7 +338,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">NCCoE Mobile Driver's License Project Supporting Resources</a>
+          <a href="../../index.html">NCCoE Mobile Driver's License Project Resource Hub</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -362,15 +362,22 @@
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
 <p>The following interaction diagrams visualize the flow of data between components in our <a class="reference external" href="/../kyc_cip_onboarding.html">architecture</a> as the user interacts with the NCCoE Bank.
-The flows below are cross-device flows where the user presents their mDL from the digital wallet on their phone to the NCCoE bank through a browser on a secondary device.
-These flows correspond to three of our <a class="reference external" href="/../wireframes.html">wireframes</a> videos - Applying for a Financial Account using an mDL, Setting up Online Access after Application Approval,
+The flows below depict:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="#cross-device-financial-account-application-flow">Cross-device</a> flows where the user presents their mDL from the digital wallet on their phone to the NCCoE bank through a browser on a secondary device.</p></li>
+<li><p><a class="reference external" href="#same-device-app-to-app-re-verification-flow">Same device</a> flows where all interactions occur on the mobile device.</p></li>
+</ol>
+<p>These flows correspond to three of our <a class="reference external" href="/../demonstration-videos.html">demonstration</a> videos - Applying for a Financial Account using an mDL, Setting up Online Access after Application Approval,
 and Identity Re-verification. The diagrams generally depict user journey “happy paths”, that is, free from error conditions or edge cases. System architects and those in similar
 roles may find these diagrams useful as a reference when implementing their own solutions for an individual use case.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>There are interactions which take place prior to the user journeys which not demonstrated in these flows where:</p>
 <ul class="simple">
 <li><p>mDL issuance is out of scope for this project and thus it is assumed the bank applicant has been issued a mobile driver’s license by their state issuer to a digital wallet that supports online presentation.</p></li>
 <li><p>The Verifier system component has been configured to align with the policies of the banking system to include interaction with a Trust Service to download trusted issuers and configuration of approved wallets.</p></li>
 </ul>
+</div>
 </section>
 <section id="viewing-the-diagrams">
 <h2>Viewing the Diagrams<a class="headerlink" href="#viewing-the-diagrams" title="Link to this heading"></a></h2>
@@ -396,7 +403,7 @@ complete. The session identifier is then used to retrieve the verification resul
 <section id="part-1-user-initiates-application-process">
 <h4>Part 1 - User Initiates Application Process<a class="headerlink" href="#part-1-user-initiates-application-process" title="Link to this heading"></a></h4>
 <a class=""
-               data-lightbox="group-37e523f9-d412-4754-89a1-209870b2e7a4"
+               data-lightbox="group-4b716d95-da19-4135-ae21-1d32f1138002"
                href="../../_images/Application11.PNG"
                title=""
                data-title=""
@@ -410,7 +417,7 @@ complete. The session identifier is then used to retrieve the verification resul
 <section id="part-2-mdl-verification-using-the-dc-api">
 <h4>Part 2 - mDL Verification Using the DC API<a class="headerlink" href="#part-2-mdl-verification-using-the-dc-api" title="Link to this heading"></a></h4>
 <a class=""
-               data-lightbox="group-51e8bab8-4445-490e-a2a1-2fc65add6012"
+               data-lightbox="group-992ace01-aaf4-4a08-b9e5-96be63818b94"
                href="../../_images/Application21.PNG"
                title=""
                data-title=""
@@ -424,7 +431,7 @@ complete. The session identifier is then used to retrieve the verification resul
 <section id="part-3-collection-of-additional-user-identity-information-and-application-completion">
 <h4>Part 3 - Collection of Additional User Identity Information and Application Completion<a class="headerlink" href="#part-3-collection-of-additional-user-identity-information-and-application-completion" title="Link to this heading"></a></h4>
 <a class=""
-               data-lightbox="group-2e76104c-1745-41a1-9fbe-1d00e260d94c"
+               data-lightbox="group-1210359d-b570-4947-9274-ba042eb26c03"
                href="../../_images/Application31.PNG"
                title=""
                data-title=""
@@ -451,7 +458,7 @@ The Digital Enrollment interactions are divided into two sections:</p>
 <section id="part-1-initiating-the-digital-enrollment-process-triggered-by-a-notification-from-the-banking-system">
 <h4>Part 1 - Initiating the Digital Enrollment Process Triggered by a Notification from the Banking System<a class="headerlink" href="#part-1-initiating-the-digital-enrollment-process-triggered-by-a-notification-from-the-banking-system" title="Link to this heading"></a></h4>
 <a class=""
-               data-lightbox="group-b0fbe76d-893e-4503-b860-58121ac28c39"
+               data-lightbox="group-d5a7dfa8-119a-45fb-820d-ec5f68706e3c"
                href="../../_images/Enrollment11.PNG"
                title=""
                data-title=""
@@ -465,7 +472,7 @@ The Digital Enrollment interactions are divided into two sections:</p>
 <section id="part-2-passkey-registration-and-linkage-to-the-applicant">
 <h4>Part 2 - Passkey Registration and Linkage to the Applicant<a class="headerlink" href="#part-2-passkey-registration-and-linkage-to-the-applicant" title="Link to this heading"></a></h4>
 <a class=""
-               data-lightbox="group-a6e43a31-d281-4f36-87eb-9db56c4f1adf"
+               data-lightbox="group-25ca6ca7-72b6-46c8-9aab-151466cb41f6"
                href="../../_images/Enrollment21.PNG"
                title=""
                data-title=""
@@ -483,10 +490,10 @@ The Digital Enrollment interactions are divided into two sections:</p>
 <p>The step-up verification interactions below depicts a transaction that is initially denied due to exceeding a pre-determined threshold and requests reverification
 of the mDL. For a visualization of this process, please view our <a class="reference external" href="https://www.nist.gov/video/mdl-wireframe-4-account-re-verification">wireframe video</a>.</p>
 <p>This re-verification flow that occurs at Flow 3, Step 10 and is the same as Flow 1 - <a class="reference external" href="#part-2-mdl-verification-using-the-dci-api">Part 2</a>.</p>
-<section id="re-verification-for-step-up-flow">
-<h3>Re-verification for Step-Up Flow<a class="headerlink" href="#re-verification-for-step-up-flow" title="Link to this heading"></a></h3>
+<section id="cross-device-re-verification-flow">
+<h3>Cross-device Re-verification Flow<a class="headerlink" href="#cross-device-re-verification-flow" title="Link to this heading"></a></h3>
 <a class=""
-               data-lightbox="group-66bc15d7-89c8-4b09-82a1-3ac99ed9d77e"
+               data-lightbox="group-05126acd-a9bc-48c4-8846-dbc0b7d56a5c"
                href="../../_images/Re-verification11.PNG"
                title=""
                data-title=""
@@ -497,6 +504,38 @@ of the mDL. For a visualization of this process, please view our <a class="refer
                      height="auto"
                      alt=""/>
                 </a></section>
+<section id="same-device-app-to-app-re-verification-flow">
+<h3>Same Device App to App Re-verification Flow<a class="headerlink" href="#same-device-app-to-app-re-verification-flow" title="Link to this heading"></a></h3>
+<p>The flows below depict a same device app to app flow in which a native banking application invokes platform Android credential management APIs. Consult <a class="reference external" href="https://developer.android.com/identity/digital-credentials/credential-verifier">Android developer documentation</a> for additional context and detailed flow depictions.</p>
+<section id="part-1-user-initiates-bank-transaction-and-presents-credential">
+<h4>Part 1 - User Initiates Bank Transaction and Presents Credential<a class="headerlink" href="#part-1-user-initiates-bank-transaction-and-presents-credential" title="Link to this heading"></a></h4>
+<a class=""
+               data-lightbox="group-a83bc327-e67d-473c-8e61-3ea3ef8a2e57"
+               href="../../_images/SameDevice11.png"
+               title=""
+               data-title=""
+               
+               ><img src="../../_images/SameDevice11.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></section>
+<section id="part-2-user-completes-transaction-after-verification">
+<h4>Part 2 - User Completes Transaction after Verification<a class="headerlink" href="#part-2-user-completes-transaction-after-verification" title="Link to this heading"></a></h4>
+<a class=""
+               data-lightbox="group-52909471-edd5-432c-a790-b84129e60966"
+               href="../../_images/SameDevice21.png"
+               title=""
+               data-title=""
+               
+               ><img src="../../_images/SameDevice21.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></section>
+</section>
 </section>
 </section>
 
