@@ -1,15 +1,15 @@
 Digital Identities - Mobile Driver's License (mDL)
 ==================================================
 
-.. admonition:: Accepting Comments on Newly Released Publication!
+.. admonition:: Comment Period Closed
 
-   The NIST NCCoE has published the `draft NIST Special Publication (SP) 1800-42A`_, Digital Identities - Mobile Driver’s License (mDL): Accelerating Development and Adoption of Digital Identity for Financial Institutions. This practice guide provides financial institutions and other organizations with practical guidelines on implementing mDLs for customer identity verification using existing technology and standards and best practices. 
+   The NIST NCCoE has published `NIST Special Publication (SP) 1800-42A Initial Public Draft`_, Digital Identities - Mobile Driver’s License (mDL): Accelerating Development and Adoption of Digital Identity for Financial Institutions. This practice guide provides financial institutions and other organizations with practical guidelines on implementing mDLs for customer identity verification using existing technology and standards and best practices. 
 
-   The public comment period for this publication is open through May 8th, 2026. You can download the practice guide and use this `comment form`_ to submit your feedback. 
+   The public comment period for this publication has closed.  
 
-   ..  _draft NIST Special Publication (SP) 1800-42A: https://www.nccoe.nist.gov/projects/digital-identities-mdl 
+   ..  _NIST Special Publication (SP) 1800-42A Initial Public Draft: https://www.nccoe.nist.gov/sites/default/files/2026-03/nist-sp-1800-42a-ipd_0.pdf
 
-   .. _comment form: https://www.nccoe.nist.gov/form/mdl-1800-42a-comment-form
+  
 
 To realize the full value of mDLs, collaboration is needed to mature standards, best practices, and protocols that safeguard user data while promoting adoption of mDLs. That’s why the NCCoE has brought together stakeholders from across the mDL ecosystem to build out reference implementations to promote standards and best practices for mDL deployments and to address adoption challenges. Over the course of this project, we will address several use cases. Our financial services use case kicked off in September 2024, and the release of our final guidelines for that effort is imminent. Our second use case working with federal and state governments to accept mDLs kicked off in January 2026. Click the links below to see the resources we have published under these efforts.
 
