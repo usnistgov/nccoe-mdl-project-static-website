@@ -84,7 +84,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Government Services Use Case" href="../use-case-2/index.html" />
-    <link rel="prev" title="Demonstration Videos" href="demonstration-videos.html" /> 
+    <link rel="prev" title="Demonstration Videos Updated" href="demonstration-videos.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -315,7 +315,9 @@
 <li class="toctree-l2"><a class="reference internal" href="usability-results.html">Usability Assessment Findings</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="demonstration-videos.html">Demonstration Videos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cip-mapping.html">mDL to CIP Regulatory Mapping  <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">New</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparisons.html">Comparative analysis of mDL to current CIP techologies <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">New</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="demonstration-videos.html">Demonstration Videos <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Updated</span></a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Use Case 1 Configuration Guide</a></li>
 </ul>
 </li>
@@ -751,7 +753,314 @@ authentication:</p>
 <blockquote>
 <div><p>We recommend implementers review the documentation from your IDMS provider to learn how to translate your business proceseses to web based user
 journeys. Our configuration for the account application registration journey is reproduced below as configured in Azure AD B2C <a class="reference external" href="https://learn.microsoft.com/en-us/azure/active-directory-b2c/userjourneys#orchestrationsteps">orchestration documentation</a>. The journey implements a comprehensive identity verification flow to support a bank account application process that combines traditional methods (email, phone, SSN) with modern mDL verification technology, ultimately creating a verified digital identity stored in Azure AD B2C.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 howtodrop">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Orchestration Steps</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<blockquote>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;OrchestrationSteps&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;OrchestrationStep</span><span class="w"> </span><span class="na">Order=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;ClaimsExchange&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ClaimsExchanges&gt;</span>
+<span class="w">        </span><span class="nt">&lt;ClaimsExchange</span><span class="w"> </span><span class="na">Id=</span><span class="s">&quot;SelfAsserted-CollectEmail&quot;</span><span class="w"> </span><span class="na">TechnicalProfileReferenceId=</span><span class="s">&quot;SelfAsserted-CollectEmail&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/ClaimsExchanges&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/OrchestrationStep&gt;</span>
+<span class="w">    </span><span class="nt">&lt;OrchestrationStep</span><span class="w"> </span><span class="na">Order=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;ClaimsExchange&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ClaimsExchanges&gt;</span>
+<span class="w">        </span><span class="nt">&lt;ClaimsExchange</span><span class="w"> </span><span class="na">Id=</span><span class="s">&quot;SelfAsserted-VerifyEmail&quot;</span><span class="w"> </span><span class="na">TechnicalProfileReferenceId=</span><span class="s">&quot;VerifyEmail&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/ClaimsExchanges&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/OrchestrationStep&gt;</span>
+<span class="w">    </span><span class="nt">&lt;OrchestrationStep</span><span class="w"> </span><span class="na">Order=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;ClaimsExchange&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ClaimsExchanges&gt;</span>
+<span class="w">        </span><span class="nt">&lt;ClaimsExchange</span><span class="w"> </span><span class="na">Id=</span><span class="s">&quot;SelfAsserted-CollectPhone&quot;</span><span class="w"> </span><span class="na">TechnicalProfileReferenceId=</span><span class="s">&quot;SelfAsserted-CollectPhone&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/ClaimsExchanges&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/OrchestrationStep&gt;</span>
+<span class="w">    </span><span class="nt">&lt;OrchestrationStep</span><span class="w"> </span><span class="na">Order=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;ClaimsExchange&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ClaimsExchanges&gt;</span>
+<span class="w">        </span><span class="nt">&lt;ClaimsExchange</span><span class="w"> </span><span class="na">Id=</span><span class="s">&quot;SelfAsserted-VerifyPhone&quot;</span><span class="w"> </span><span class="na">TechnicalProfileReferenceId=</span><span class="s">&quot;VerifyPhone&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/ClaimsExchanges&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/OrchestrationStep&gt;</span>
+<span class="w">    </span><span class="nt">&lt;OrchestrationStep</span><span class="w"> </span><span class="na">Order=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;ClaimsExchange&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ClaimsExchanges&gt;</span>
+<span class="w">        </span><span class="nt">&lt;ClaimsExchange</span><span class="w"> </span><span class="na">Id=</span><span class="s">&quot;SelfAsserted-CollectSSN&quot;</span><span class="w"> </span><span class="na">TechnicalProfileReferenceId=</span><span class="s">&quot;SelfAsserted-CollectSSN&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/ClaimsExchanges&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/OrchestrationStep&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;OrchestrationStep</span><span class="w"> </span><span class="na">Order=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;ClaimsExchange&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ClaimsExchanges&gt;</span>
+<span class="w">        </span><span class="nt">&lt;ClaimsExchange</span><span class="w"> </span><span class="na">Id=</span><span class="s">&quot;SelfAsserted-verificationSelection&quot;</span><span class="w"> </span><span class="na">TechnicalProfileReferenceId=</span><span class="s">&quot;SelfAsserted-verificationSelection&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/ClaimsExchanges&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/OrchestrationStep&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;OrchestrationStep</span><span class="w"> </span><span class="na">Order=</span><span class="s">&quot;7&quot;</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;ClaimsExchange&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ClaimsExchanges&gt;</span>
+<span class="w">        </span><span class="nt">&lt;ClaimsExchange</span><span class="w"> </span><span class="na">Id=</span><span class="s">&quot;SelfAsserted-mDLVerificationAnnexD&quot;</span><span class="w"> </span><span class="na">TechnicalProfileReferenceId=</span><span class="s">&quot;SelfAsserted-mDLVerificationAnnexD&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/ClaimsExchanges&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/OrchestrationStep&gt;</span>
+<span class="w">        </span><span class="nt">&lt;OrchestrationStep</span><span class="w"> </span><span class="na">Order=</span><span class="s">&quot;8&quot;</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;ClaimsExchange&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ClaimsExchanges&gt;</span>
+<span class="w">        </span><span class="nt">&lt;ClaimsExchange</span><span class="w"> </span><span class="na">Id=</span><span class="s">&quot;SelfAsserted-ReviewMdlClaims&quot;</span><span class="w"> </span><span class="na">TechnicalProfileReferenceId=</span><span class="s">&quot;SelfAsserted-ReviewMdlClaims&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/ClaimsExchanges&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/OrchestrationStep&gt;</span>
+
+<span class="w">        </span><span class="nt">&lt;OrchestrationStep</span><span class="w"> </span><span class="na">Order=</span><span class="s">&quot;9&quot;</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;ClaimsExchange&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ClaimsExchanges&gt;</span>
+<span class="w">        </span><span class="nt">&lt;ClaimsExchange</span><span class="w"> </span><span class="na">Id=</span><span class="s">&quot;SelfAsserted-ApprovalStatus&quot;</span><span class="w"> </span><span class="na">TechnicalProfileReferenceId=</span><span class="s">&quot;SelfAsserted-ApprovalStatus&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/ClaimsExchanges&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/OrchestrationStep&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;OrchestrationStep</span><span class="w"> </span><span class="na">Order=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;SendClaims&quot;</span><span class="w"> </span><span class="na">CpimIssuerTechnicalProfileReferenceId=</span><span class="s">&quot;JwtIssuer&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/OrchestrationSteps&gt;</span>
+</pre></div>
+</div>
 </div></blockquote>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 howtodrop">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Orchestration Steps Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<blockquote>
+<div><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head" colspan="2"><p class="sd-card-text">Step 1: Email Collection</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text">Purpose</p></td>
+<td><p class="sd-card-text">Collects the applicant’s email address as the primary
+identifier.</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">User Interface</p></td>
+<td><p class="sd-card-text">Renders email collection template in the web browser.</p>
+<p class="sd-card-text"><a class="reference internal" href="../_images/reg1.png"><img alt="Graphical user interface, text, application, email AI-generated content may be incorrect." src="../_images/reg1.png" style="width: 4.25956in; height: 2.13388in;" /></a></p>
+</td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">Technical Details</p></td>
+<td><p class="sd-card-text">Uses a built-in Azure B2C web template that collects the
+applicant’s email address and displays a message explaining
+collection purpose. The submitted email address is saved as
+a claim for the next step in the flow.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head" colspan="2"><p class="sd-card-text">Step 2: Email Verification</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text">Purpose</p></td>
+<td><p class="sd-card-text">Verifies the collected email address through One Time
+Password/Code verification.</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">User Interface</p></td>
+<td><p class="sd-card-text">Renders self-asserted-verifyEmail.cshtml template</p>
+<p class="sd-card-text"><a class="reference internal" href="../_images/reg2.png"><img alt="Graphical user interface, application AI-generated content may be incorrect." src="../_images/reg2.png" style="width: 5.53403in; height: 2.97708in;" /></a></p>
+</td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">Technical Details</p></td>
+<td><p class="sd-card-text">Uses a built-in Azure B2C OTP verification logic to ensure
+the applicant has access to a valid email account. Note that
+this is not related to identity vetting of the individual.
+On successful validation, Azure B2C saves the state in the
+current session.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head" colspan="2"><p class="sd-card-text">Step 3: Phone Collection</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text">Purpose</p></td>
+<td><p class="sd-card-text">Collects the user’s phone number for additional verification</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">User Interface</p></td>
+<td><ul class="simple">
+<li><p class="sd-card-text">Renders self-asserted-collectPhone.cshtml template</p></li>
+</ul>
+<p class="sd-card-text"><a class="reference internal" href="../_images/reg3.png"><img alt="image1" src="../_images/reg3.png" style="width: 5.53403in; height: 2.57014in;" /></a></p>
+</td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">Technical Details</p></td>
+<td><p class="sd-card-text">Uses a built-in Azure B2C web template that collects the
+applicant’s phone number and displays a message explaining
+collection purpose. The submitted phone number is saved as a
+claim for the next step in the flow.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head" colspan="2"><p class="sd-card-text">Step 4: Phone Verification</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text">Purpose</p></td>
+<td><p class="sd-card-text">Verifies the phone number through Short Messaging Service
+OTP</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">User Interface</p></td>
+<td><p class="sd-card-text">Renders self-asserted-verifyPhone.cshtml template</p>
+<p class="sd-card-text"><a class="reference internal" href="../_images/reg4.png"><img alt="image2" src="../_images/reg4.png" style="width: 5.53403in; height: 3.01944in;" /></a></p>
+</td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">Technical Details</p></td>
+<td><p class="sd-card-text">Uses a built-in Azure B2C OTP verification logic to ensure
+the applicant has access to a valid phone number. Note that
+this is not related to identity vetting of the individual.
+On successful validation, Azure B2C saves the state in the
+current session.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head" colspan="2"><p class="sd-card-text">Step 5: SSN Collection</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text">Purpose</p></td>
+<td><p class="sd-card-text">Collects Social Security Number for identity verification</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">User Interface</p></td>
+<td><p class="sd-card-text">Renders self-asserted-collectSsn.cshtml template</p>
+<p class="sd-card-text"><a class="reference internal" href="../_images/reg5.png"><img alt="Graphical user interface AI-generated content may be incorrect." src="../_images/reg5.png" style="width: 5.53403in; height: 2.63403in;" /></a></p>
+</td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">Technical Details</p></td>
+<td><p class="sd-card-text">Uses a generic input template to collect SSN and display an
+instructional message. The SSN is stored as a claim and
+persisted to the Azure B2C directory for later validation by
+the banking system.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head" colspan="2"><p class="sd-card-text">Step 6: Verification Method Selection</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text">Purpose</p></td>
+<td><p class="sd-card-text">Allows user to choose their preferred identity verification
+method</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">User Interface</p></td>
+<td><p class="sd-card-text">Renders self-asserted-verificationMethod.cshtml template</p>
+<p class="sd-card-text"><a class="reference internal" href="../_images/reg6.png"><img alt="image3" src="../_images/reg6.png" style="width: 5.53403in; height: 3.99097in;" /></a></p>
+</td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">Technical Details</p></td>
+<td><p class="sd-card-text">Provides an interface for the applicant to choose a
+preferred verification method. Only mDL verification option
+is supported within this demonstration. The applicant’s
+selection is stored as a claim for subsequent steps in the
+flow.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head" colspan="2"><p class="sd-card-text">Step 7: mDL Verification</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text">Purpose</p></td>
+<td><p class="sd-card-text">Performs mobile Driver’s License (mDL) verification using
+MATTR SDK</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">User Interface</p></td>
+<td><p class="sd-card-text">Renders self-asserted-mdlUri.cshtml template</p>
+<p class="sd-card-text"><a class="reference internal" href="../_images/reg7.png"><img alt="Graphical user interface, text, application AI-generated content may be incorrect." src="../_images/reg7.png" style="width: 5.53403in; height: 2.16389in;" /></a></p>
+<p class="sd-card-text"><a class="reference internal" href="../_images/reg8.png"><img alt="Qr code AI-generated content may be incorrect." src="../_images/reg8.png" style="width: 2.4737in; height: 2.12666in;" /></a></p>
+</td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">Technical Details</p></td>
+<td><p class="sd-card-text">Provides the logic that implements the mDL verification via
+the MATTR SDK. First, B2C invokes two bank system endpoints
+which receive a MATTR OAuth token and retrieves a session
+identifier using the MATTR Verifier API. Next, the MATTR SDK
+is initiated with the retrieved session identifier which
+invokes the Digital Credential API. After the applicant
+completes the Digital Credential API flow, control is
+returned to the MATTR SDK where the presented attributes are
+queried by B2C. The extracted attributes are stored as
+claims for further processing.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head" colspan="2"><p class="sd-card-text">Step 8: Review mDL Claims</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text">Purpose</p></td>
+<td><p class="sd-card-text">Displays extracted mDL data for user review and confirmation</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">User Interface</p></td>
+<td><p class="sd-card-text">Renders self-asserted-reviewMdlClaims.cshtml template</p>
+<p class="sd-card-text"><a class="reference internal" href="../_images/reg9.png"><img alt="Graphical user interface, application, Teams AI-generated content may be incorrect." src="../_images/reg9.png" style="width: 5.53403in; height: 4.37639in;" /></a></p>
+</td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">Technical Details</p></td>
+<td><p class="sd-card-text">Provides display interface for the attributes presented by
+the applicant and updates the user account in the Azure AD
+B2C directory with a preferred address (if provided). The
+applicant’s mDL license number and issuing authority are
+concatenated along with salt to produce a unreversible
+unique identifier. The unique identifier is persisted in the
+B2C directory for the second phase (digital enrollment).</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head" colspan="2"><p class="sd-card-text">Step 9: Approval Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text">Purpose</p></td>
+<td><p class="sd-card-text">Shows final registration status and approval message</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">User Interface</p></td>
+<td><p class="sd-card-text">Renders approval status template</p>
+<p class="sd-card-text"><a class="reference internal" href="../_images/reg10.png"><img alt="image4" src="../_images/reg10.png" style="width: 5.53403in; height: 2.04097in;" /></a></p>
+</td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">Technical Details</p></td>
+<td><p class="sd-card-text">Displays interface that provides “Exit” button and informs
+the applicant that this phase of the application process has
+been completed. The exit button invokes the final step in
+the account application process.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head" colspan="2"><p class="sd-card-text">Step 10: Token Issuance</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text">Purpose</p></td>
+<td><p class="sd-card-text">Issues the final JWT token containing all verified claims</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">User Interface</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">Technical Details</p></td>
+<td><p class="sd-card-text">Completes the frontend OpenID Connect interactions with an
+Authorization Response that redirects the applicant back to
+the banking system website. The calculated mDL unique
+identifier and B2C identifier are returned in the access
+token as a claim for processing by the banking system.</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+</details></div></blockquote>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
 <div class="sd-card-body docutils">
 <p class="sd-card-text"><strong>Store collected attributes as claims</strong> at each step to ensure continuity across the journey and to support downstream validation
@@ -763,7 +1072,62 @@ steps.</p>
 </div>
 <blockquote>
 <div><p>Storing collected attributes allows them to be stored alongside user information in the <a class="reference external" href="https://learn.microsoft.com/en-us/azure/active-directory-b2c/custom-policy-reference-sso">B2C directory</a>. User attributes collected during identity verification such as email, phone number, SSN, and mDL information should be stored as claims alongside the user in the identity management system. This allows the claims to support future use cases. For example, in our build, we stored a hash of the driver’s license number and the issuing entity as a claim that is later used to link an mDL to the user when presented as a step-up during high-risk transactions.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 howtodrop">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Create User With Persisted Claims</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<blockquote>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;TechnicalProfile</span><span class="w"> </span><span class="na">Id=</span><span class="s">&quot;Custom-UserWriteUsingLogonEmail&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;Metadata&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;Operation&quot;</span><span class="nt">&gt;</span>Write<span class="nt">&lt;/Item&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- Allows creating account with same email again --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;RaiseErrorIfClaimsPrincipalAlreadyExists&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/Item&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Item</span><span class="w"> </span><span class="na">Key=</span><span class="s">&quot;api-version&quot;</span><span class="nt">&gt;</span>1.6<span class="nt">&lt;/Item&gt;</span>
+<span class="nt">&lt;/Metadata&gt;</span>
+<span class="nt">&lt;IncludeInSso&gt;</span>false<span class="nt">&lt;/IncludeInSso&gt;</span>
+<span class="nt">&lt;InputClaims&gt;</span>
+<span class="w">    </span><span class="nt">&lt;InputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;email&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;signInNames.emailAddress&quot;</span><span class="w"> </span><span class="na">Required=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/InputClaims&gt;</span>
+<span class="nt">&lt;PersistedClaims&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- Required claims --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PersistedClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;email&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;signInNames.emailAddress&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PersistedClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;hashedDocumentNumberAndIssuingAuthority&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;signInNames.hashedDocNumIssAuth&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- require a password, should be generated randomly --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PersistedClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;newPassword&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;password&quot;</span><span class="w"> </span><span class="na">DefaultValue=</span><span class="s">&quot;fnpDD!casc2242&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PersistedClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;given_name&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;displayName&quot;</span><span class="w"> </span><span class="na">DefaultValue=</span><span class="s">&quot;unknown&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PersistedClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;passwordPolicies&quot;</span><span class="w"> </span><span class="na">DefaultValue=</span><span class="s">&quot;DisablePasswordExpiration&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PersistedClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;extension_socialSecurityNumber&quot;</span><span class="w"> </span><span class="na">DefaultValue=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PersistedClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;resident_address&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;streetAddress&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PersistedClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;resident_postal_code&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;postalCode&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PersistedClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;given_name&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;givenName&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PersistedClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;resident_city&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;city&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PersistedClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;resident_state&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;state&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PersistedClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;family_name&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;surname&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PersistedClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;phoneNumber&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;telephoneNumber&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PersistedClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;extension_first_name_preferred&quot;</span><span class="w"> </span><span class="na">DefaultValue=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PersistedClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;extension_middle_name_preferred&quot;</span><span class="w"> </span><span class="na">DefaultValue=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PersistedClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;extension_last_name_preferred&quot;</span><span class="w"> </span><span class="na">DefaultValue=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PersistedClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;extension_address_line_1_preferred&quot;</span><span class="w"> </span><span class="na">DefaultValue=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PersistedClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;extension_address_line_2_preferred&quot;</span><span class="w"> </span><span class="na">DefaultValue=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PersistedClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;extension_city_preferred&quot;</span><span class="w"> </span><span class="na">DefaultValue=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PersistedClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;extension_state_preferred&quot;</span><span class="w"> </span><span class="na">DefaultValue=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PersistedClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;extension_zip_code_preferred&quot;</span><span class="w"> </span><span class="na">DefaultValue=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/PersistedClaims&gt;</span>
+<span class="nt">&lt;OutputClaims&gt;</span>
+<span class="w">    </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;objectId&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;hashedDocumentNumberAndIssuingAuthority&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;signInNames.hashedDocNumIssAuth&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;newUser&quot;</span><span class="w"> </span><span class="na">PartnerClaimType=</span><span class="s">&quot;newClaimsPrincipalCreated&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;authenticationSource&quot;</span><span class="w"> </span><span class="na">DefaultValue=</span><span class="s">&quot;localAccountAuthentication&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;userPrincipalName&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;OutputClaim</span><span class="w"> </span><span class="na">ClaimTypeReferenceId=</span><span class="s">&quot;signInNames.emailAddress&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/OutputClaims&gt;</span>
+<span class="nt">&lt;IncludeTechnicalProfile</span><span class="w"> </span><span class="na">ReferenceId=</span><span class="s">&quot;AAD-Common&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;UseTechnicalProfileForSessionManagement</span><span class="w"> </span><span class="na">ReferenceId=</span><span class="s">&quot;SM-AAD&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/TechnicalProfile&gt;</span>
+</pre></div>
+</div>
 </div></blockquote>
+</div>
+</details></div></blockquote>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm welcome howtostep docutils">
 <div class="sd-card-body docutils">
 <p class="sd-card-text"><strong>Support multiple verification methods</strong> where appropriate, while still allowing organizations to enforce the preferred choice (e.g.,
