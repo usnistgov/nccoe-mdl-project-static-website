@@ -11,7 +11,7 @@ Ecosystem. Follow the links below to view the published entries.
 
 #. `From DMV to Wallet: Understanding Verifiable Digital Credential Issuance <https://www.nist.gov/blogs/cybersecurity-insights/dmv-wallet-understanding-verifiable-digital-credential-issuance>`__
 
-#. mDL Presentment (Future Blog Entry)
+#. `Verifiable Digital Credential Presentment <https://www.nist.gov/blogs/cybersecurity-insights/verifiable-digital-credential-presentment>`__
 
 #. mDL Roadmap (Future Blog Entry)
 
