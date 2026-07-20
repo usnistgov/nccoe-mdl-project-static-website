@@ -5,12 +5,12 @@
 
 .line-block {
     margin-bottom: 0em !important;
-    
+
 }
 
 .sd-card.welcome {
     /* --card-bg: rgba(255, 255, 255, 0.1); */
-  
+
     /* background-color: rgba(255, 255, 255, 0.1) !important; Semi-transparent white */
     background-color: var(--card-bg) !important;
     backdrop-filter: blur(10px); /* The "frosted glass" look */
@@ -36,7 +36,7 @@
 
 /* Adjust text color if background is dark */
 .sd-card-body.welcome {
-    color: inherit; 
+    color: inherit;
 }
 
 .transparent {
@@ -197,7 +197,7 @@ table.fi-requested-item tr:nth-of-type(1) td:nth-of-type(3) p:nth-of-type(6) {
 .mermaid rect.rect+text {
   transform: translateY(4px);
 }
- 
+
 .pram-nav .accordion-button {
   text-decoration: none;
   width: 100%;
@@ -236,6 +236,12 @@ table.fi-requested-item tr:nth-of-type(1) td:nth-of-type(3) p:nth-of-type(6) {
 
 .pram-nav .accordion-item:nth-child(even) .accordion-button {
   background-color: #4fb8ee;
+}
+
+.demo-video-player {
+  width: 100%;
+  height: clamp(18rem, 56vw, 35rem);
+  margin: 1rem 0 2rem;
 }
 
 .pram-nav .accordion-button:hover {
