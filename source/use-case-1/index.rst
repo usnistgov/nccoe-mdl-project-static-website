@@ -43,5 +43,7 @@ In the future we will update this section of the website with videos of the buil
    building-mdl-assurance/index.rst
    Privacy Risk Assessment Methodology <pram.rst>
    usability-results.rst
+   cip-mapping.rst
+   comparisons.rst
    demonstration-videos.rst
    Use Case 1 Configuration Guide <vol-c.rst>
