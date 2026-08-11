@@ -15,7 +15,7 @@
     </script>
     
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Architecture &mdash; NCCoE Mobile Driver&#39;s License Project Resource Hub</title>
+  <title>Login.gov mDL Verifier Integration Architecture New &mdash; NCCoE Mobile Driver&#39;s License Project Resource Hub</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=3b68fefb" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -83,8 +83,8 @@
     </script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Interaction Diagrams" href="../interaction-diagrams/index.html" />
-    <link rel="prev" title="Use Case Criteria" href="../criteria.html" /> 
+    <link rel="next" title="Submit Comments" href="../../comments.html" />
+    <link rel="prev" title="Government Services Use Case" href="../index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -322,13 +322,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Government Services Use Case</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../criteria.html">Use Case Criteria</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Architecture</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../interaction-diagrams/index.html">Interaction Diagrams</a><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Login.gov mDL Verifier Integration Architecture <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">New</span></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../comments.html">Submit Comments</a></li>
@@ -349,7 +343,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Government Services Use Case</a></li>
-      <li class="breadcrumb-item active">Architecture</li>
+      <li class="breadcrumb-item active">Login.gov mDL Verifier Integration Architecture <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">New</span></li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -358,11 +352,117 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="architecture">
-<h1>Architecture<a class="headerlink" href="#architecture" title="Link to this heading"></a></h1>
-<p>This page will be updated in the future with architecture diagrams related to using mDL identity verification to access government services.</p>
-<div class="toctree-wrapper compound">
+  <section id="login-gov-mdl-verifier-integration-architecture-new">
+<h1>Login.gov mDL Verifier Integration Architecture <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">New</span><a class="headerlink" href="#login-gov-mdl-verifier-integration-architecture-new" title="Link to this heading"></a></h1>
+<p>The NCCoE has partnered with the Login.gov Delivery team to demonstrate how mobile driver’s licenses (mDL) can be presented as a piece of identity evidence during identity verification when a user applies for a Login.gov account. mDLs provide cryptographically backed identity attributes signed by the authoritative issuer, making them superior identity evidence in the framework of NIST SP 800-63A-4. When implemented, mDL verification can provide reduced user friction and improved proofing rates by eliminating the need to photograph certain identity documents and reducing the amount of information a user needs to type in while also aligning with the NIST Digital Identity Guidelines.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This effort was done under Collaborative Research and Development Agreement (CRADA) with industry stakeholders to enable exploration and experimentation with the technology, standards and user experience associated with VDC implementations. <strong>This demonstration may differ from future Login.gov mDL deployments.</strong></p>
 </div>
+<p>The content below provides both a demonstration video and detailed architecture for the mDL verification capability implemented as part of NCCoE mDL use case #2.</p>
+<section id="sms-initiated-cross-device-flow">
+<h2>SMS Initiated Cross-Device Flow<a class="headerlink" href="#sms-initiated-cross-device-flow" title="Link to this heading"></a></h2>
+<p>To evaluate mDL verification capabilities, the Login.gov test environment integrated with two mDL verifier platforms. To maximize user experience, the Login.gov team implemented a cross-device flow that leverages SMS, rather than using a QR code. The demonstration video below provides an example of the user experience for someone going through this flow.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down" id="login-demonstration-video">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Login.gov</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div id="login-demo-video" class="demo-video-player"></div></div>
+</details><p>The flow follows a four-step process:</p>
+<ol class="arabic simple">
+<li><p><strong>Desktop initiation:</strong> The identity proofing process begins on a desktop browser at the Login.gov site.</p></li>
+<li><p><strong>SMS hand-off:</strong> As part of the identity proofing flow, the mDL holder’s mobile device receives a unique URL through Short Message Service (SMS), which links their mobile browser to the active desktop session.</p></li>
+<li><p><strong>mDL presentation:</strong>  The webpage invokes the Digital Credential API and OpenID for Verifiable Presentations, executing a same device presentation of the user’s mDL.</p></li>
+<li><p><strong>Desktop completion:</strong> After successful mDL presentation and verification, the user is prompted to finish the flow on their desktop computer browser in the previously established session.</p></li>
+</ol>
+<p>The use of SMS in this flow allows the architecture to transition the user from a cross-device flow to a same-device flow. As such, the Digital Credentials API is not invoked via the QR code in the user’s desktop browser but rather in their mobile browser. This flow aligns with the current Login.gov identity verification process, wherein a user’s session on a desktop is temporarily transferred to their mobile device to facilitate capturing live photo images of their identity evidence (e.g., a physical driver’s license, state ID, or U.S. passport). The implications of this design decision will be documented in a future 1800-series publication, such as SMS delivery service dependencies.</p>
+<p>When the presented attributes pass through the Login.gov system boundary, they are encrypted and securely stored across multiple components throughout the lifecycle, and upon completion, the attributes are persisted to a database in two encrypted fields. Stored attributes are encrypted with safeguards to ensure personally identifiable information cannot be decrypted without specific user information.</p>
+<p>To help conceptualize the Login.gov flow described above, we have created a high-level architectural view of the integrated components that support mDL identity verification:</p>
+<a class=""
+               data-lightbox="group-ddb59be3-57df-476b-b20e-d434f8dbb5c4"
+               href="../../_images/login_gov_hybrid1.png"
+               title=""
+               data-title=""
+               
+               ><img src="../../_images/login_gov_hybrid1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></section>
+<section id="attribute-collection">
+<h2>Attribute Collection<a class="headerlink" href="#attribute-collection" title="Link to this heading"></a></h2>
+<p>As noted in NIST SP 1800-42, taking a picture of a driver’s license or other identity document often leads to the collection of user information beyond what is needed for identity verification. This demonstration reduces this risk by limiting the attributes requested from the user to only those necessary for identity validation: name, address, license number, issuing authority, and license issue/expiration date. To request only those attributes necessary, this demonstration used the following Digital Credentials Query Language (DCQL) query compliant with ISO 18013-5:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;dcql&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nx">credentials</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mdl&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mso_mdoc&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">meta</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nx">doctype_value</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;org.iso.18013.5.1.mDL&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">claims</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">         </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;given_name&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">         </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;family_name&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">         </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;birth_date&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">         </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;issue_date&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">         </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;expiry_date&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">         </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;issuing_authority&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">         </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;document_number&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">         </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;resident_address&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">         </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;resident_city&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">         </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;resident_state&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">         </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;org.iso.18013.5.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;resident_postal_code&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">      </span><span class="p">}]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Note that the query does not support the retrieval of the citizen’s social security number (SSN), which is not contained in mDLs. Instead, the SSN is collected out of band to comply with agency requirements and is validated via third-party authoritative services. As a result, this query supports building towards full alignment with the new 800-63-4 IAL capabilities that allow identity evidence to be physical or digital.</p>
+</section>
+<section id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading"></a></h2>
+<p>In the collaborative work between the NCCoE and Login.gov, we have achieved a significant milestone in Login.gov’s published roadmap to offer an mDL verification capability. We look forward to publishing lessons learned and best practices from work done in this effort and with our Collaboration team.</p>
+<p>Comments on this and all our mDL work can be submitted to <a class="reference external" href="mailto:mdl-nccoe&#37;&#52;&#48;nist&#46;gov">mdl-nccoe<span>&#64;</span>nist<span>&#46;</span>gov</a>.</p>
+<script src="https://cdnapisec.kaltura.com/p/684682/embedPlaykitJs/uiconf_id/55674542"></script>
+<script>
+  (function () {
+    var videos = [
+      { targetId: 'login-demo-video', entryId: '1_vlc97ho4' }
+
+    ];
+
+    function initDemonstrationVideos() {
+      if (typeof KalturaPlayer === 'undefined') {
+        return;
+      }
+
+      videos.forEach(function (video) {
+        if (!document.getElementById(video.targetId)) {
+          return;
+        }
+
+        var player = KalturaPlayer.setup({
+          targetId: video.targetId,
+          provider: {
+            partnerId: 684682,
+            uiConfId: 55674542
+          },
+          playback: {
+            autoplay: false
+          }
+        });
+
+        player.loadMedia({ entryId: video.entryId });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initDemonstrationVideos);
+    } else {
+      initDemonstrationVideos();
+    }
+  }());
+</script></section>
 </section>
 
 
