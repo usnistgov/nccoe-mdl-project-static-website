@@ -15,13 +15,9 @@ SMS Initiated Cross-Device Flow
 
 To evaluate mDL verification capabilities, the Login.gov test environment integrated with two mDL verifier platforms. To maximize user experience, the Login.gov team implemented a cross-device flow that leverages SMS, rather than using a QR code. The demonstration video below provides an example of the user experience for someone going through this flow.
 
-.. dropdown:: Login.gov
-   :name: login-demonstration-video
-   :animate: fade-in-slide-down
+.. raw:: html
 
-   .. raw:: html
-
-      <div id="login-demo-video" class="demo-video-player"></div>
+  <div id="login-demo-video" class="demo-video-player"></div>
 
 The flow follows a four-step process:
 
