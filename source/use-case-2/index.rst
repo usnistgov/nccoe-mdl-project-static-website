@@ -29,6 +29,5 @@ As part of the use case we plan to:
    :glob:
    :hidden:
 
-   criteria.rst
    architecture/index.rst
-   interaction-diagrams/index.rst
+   
