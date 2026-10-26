@@ -86,3 +86,5 @@ watchfiles==1.1.1
 webencodings==0.5.1
 websockets==15.0.1
 wheel==0.45.1
+sphinx_simplepdf
+sphinx-tags
