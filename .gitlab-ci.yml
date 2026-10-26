@@ -4,7 +4,7 @@ stages:
   - deploy
 
 build_sphinx_app:
-  image: python:latest
+  image: python:3.12
   stage: build-sphinx
   script:
     - pip install -r requirements.txt
