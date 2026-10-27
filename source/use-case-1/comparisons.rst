@@ -1,5 +1,5 @@
-Comparative analysis of mDL to current CIP techologies :bdg-success:`New`
-=========================================================================
+Comparative analysis of mDL to current CIP techologies
+======================================================
 
 .. note::
 

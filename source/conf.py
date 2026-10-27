@@ -44,9 +44,12 @@ extensions = [
     "sphinxcontrib.googleanalytics",
     'sphinx_reredirects',
     'sphinxcontrib.images',
+    'sphinx_tags'
   #  'sphinx_simplepdf',
 ]
 
+tags_create_tags = True
+tags_create_badges = True
 
 mermaid_output_format = 'raw'
 d3_use_local = '_static/d3.min.js'
@@ -115,5 +118,6 @@ redirects = {
      "architecture/kyc_cip_onboarding": "/nccoe-mdl-project-static-website/use-case-1/architecture/kyc-cip-onboarding.html",
      "building_mdl_assurance/building_mdl_assurance": "/nccoe-mdl-project-static-website/use-case-1/building-mdl-assurance/index.html",
      "building_mdl_assurance/nist_800-63a": "/nccoe-mdl-project-static-website/use-case-1/building-mdl-assurance/nist_800-63a.html",
+     "use-case-1/demonstration-videos": "/nccoe-mdl-project-static-website/use-case-1/architecture/kyc-cip-onboarding.html"
 
 }

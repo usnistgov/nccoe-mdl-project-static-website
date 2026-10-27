@@ -1,5 +1,5 @@
-mDL to CIP Regulatory Mapping  :bdg-success:`New`
-=================================================
+mDL to CIP Regulatory Mapping  
+=============================
 
 .. note::
 
