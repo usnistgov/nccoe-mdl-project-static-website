@@ -1,65 +1,137 @@
-Financial Use Case Reference Architecture
-==========================================
+Reference Architecuture and Demonstration Videos :bdg-success:`New`
+===================================================================
 
-The figures below are a graphical representation of the representative architecture we are implementing as part of the NCCoE Lab demonstration. This
-architecture is based on criteria that resulted from discussions with our industry collaborators and is a more detailed view than what we previously published
-with our `notional architecture <https://www.nist.gov/image/vdc-map>`__. These figures show the general interactions between key components while also
-highlighting some of the important protocols implemented as part of the architecture. It also captures the commercially available technology, internally
-developed systems, and open-source platforms we used to implement the architecture. We encourage the reader to read our `Digital Identities: Getting to Know the
-Verifiable Digital Credential
-Ecosystem <https://www.nist.gov/blogs/cybersecurity-insights/digital-identities-getting-know-verifiable-digital-credential-ecosystem>`__ blog post to learn more
-about the components referenced in the architecture.
-
-The figures below depict two scenarios for the demonstration - *same device* and *cross device* flows. These flows are defined in the `Open ID for
+The sections below depict two demonstrated scenarios - *same device* and *cross device* flows. These flows are defined in the `Open ID for
 Verifiable Presentations <https://openid.net/specs/openid-4-verifiable-presentations-1_0.html>`__ (OpenID4VP) specification as:
 
-**Cross device** - *A flow where the End-User presents a Credential to a Verifier interacting with the End-User on a different device as the device the Wallet
+**Cross-device** - *A flow where the End-User presents a Credential to a Verifier interacting with the End-User on a different device as the device the Wallet
 resides on.*
 
-**Same device** - *A flow where the End-User presents a Credential to a Verifier interacting with the End-User on the same device that the device the Wallet
+**Same-device** - *A flow where the End-User presents a Credential to a Verifier interacting with the End-User on the same device that the device the Wallet
 resides on.*
 
-Note that the **same device** architecture depicted below is in Draft form. The **cross device** architecture has been demonstrated and completed. To see a video example of what the cross-device flow looks like from the customer's perspective, please review our `demonstration
-videos. <../demonstration-videos.html>`__
+In each section, we present a graphical representation of the representative architecture and demonstration videos we have implemented as part of this project. Each architecture is based on criteria that resulted from discussions with our industry collaborators and is a more detailed view than what we previously published with our `notional architecture <https://www.nist.gov/image/vdc-map>`__. These figures show the general interactions between key components while also highlighting some of the important protocols implemented as part of the architecture. It also captures the commercially available technology, internally developed systems, and open-source platforms we used to implement the architecture. We encourage the reader to read our `Digital Identities: Getting to Know the Verifiable Digital Credential Ecosystem <https://www.nist.gov/blogs/cybersecurity-insights/digital-identities-getting-know-verifiable-digital-credential-ecosystem>`__ blog post to learn more about the components referenced in the architecture.
 
-Architecture Diagrams
------------------------
+In future demonstrations the project will demonstrate how additional credentials, such as an digital Social Security Number card, can be presented alongside an mDL to further streamline know your customer (KYC) scenarios using cross and same-device architectures. While this multicredential flow is directly applicable to financial institutions, it will be applicable to any sector that has a KYC requirement. 
 
-Each flow makes the following assumptions:
+Cross-device Architecture
++++++++++++++++++++++++++
 
-1. A banking customer navigates to a banking service and engages in an action that requires them to present their mDL. For the NCCoE project, the customer will
-   be required to present their mDL for identity proofing when opening a new financial account and for step-up verification when a user conducts a high-risk
-   transaction.
+The cross-device flow interaction this demonstration is initiated from a laptop/desktop computer and completed by a wallet installed on the mobile device. 
 
-2. The customer has an mDL provisioned to the digital wallet on their mobile device and chooses to present it to the bank.
+.. tip::
+  Click Next to see the architecture in action 
 
-3. The bank has verifier capabilities to request and cryptographically verify the mDL.
+.. card-carousel:: 5
+  :class: demo-carousel
 
-4. The bank can create and manage the customer's account via an identity management system.
+  .. card::   
+    :class-card: welcome transparent
+    :width: 100%
+      
+     
 
-
-Figure 1 Cross Device Flow
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. thumbnail:: ../../media/cross-device-architecture.png
-   :alt: Cross Device Flow diagram. See figure 1 caption below image.
-
-   **Figure 1 Cross Device Flow** A flow where the holder presents an mDL stored in the digital wallet on their mobile device to a service the user is
-   interacting with through a web browser on a desktop or laptop. The web browser will present the user with a QR code to invoke the wallet on the mobile
-   device.
+    .. thumbnail:: ../../media/cross-device-architecture.png
+      :align: center
+      :alt: "Cross Device Flow diagram."
 
 
-Figure 2 Same Device Flow
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. thumbnail:: ../../media/highressamedevice.png
-   :alt: Same device flow diagram. See figure 2 caption below image.
+  .. card::   
+    :class-card: welcome 
+    :width: 100%
 
-   **Figure 2 Same device flow** A flow where the mDL holder presents an mDL stored in the digital wallet on their mobile device to another application on the
-   same device. This application could be a native application or could be a website the user has navigated to through a mobile browser.
+
+    Applying to open a new account, using an mDL as evidence to verify the identity of a new customer.
+      
+    .. raw:: html
+
+      <div id="demo-video-1" class="demo-video-player"></div>
+
+  .. card::   
+    :class-card: welcome 
+    :width: 100%
+
+    Setting up online access for a newly opened account, using an mDL to confirm that the user accessing the account is the same user who applied for the account.
+      
+    .. raw:: html
+      
+      <div id="demo-video-2" class="demo-video-player"></div>
+
+  .. card::   
+    :class-card: welcome 
+    :width: 100%
+
+    Offering an instant approval user journey where the application is approved and the account is set up in the same session, without requiring the customer to come back in a subsequent session to set up online access.
+      
+    .. raw:: html
+      
+      <div id="demo-video-3" class="demo-video-player"></div>
+
+  .. card::   
+    :class-card: welcome 
+    :width: 100%
+
+    Using an mDL as a step-up verification when the user initiates a high-value transaction or the financial institution's fraud system flags the transaction as high risk.
+      
+    .. raw:: html
+      
+      <div id="demo-video-4" class="demo-video-player"></div>
+
+
+
+
+
+
+Same-device Architecture
+++++++++++++++++++++++++
+
+The same-device flow interactions are demonstrated in two ways: 
+
+* Initiated by a banking app installed on the mobile app and completed by a wallet app on the same device. The banking app was created by the NCCoE project team using Android's `Credential Manager - Verifier API <https://developer.android.com/identity/digital-credentials/credential-verifier>`__. 
+* Initiated by a banking website installed on the mobile app and completed by a wallet app on the same device. 
+
+
+.. tip::
+  Click Next to see the architecture in action 
+
+.. card-carousel:: 3
+  :class: demo-carousel
+
+  .. card::   
+    :class-card: welcome transparent
+    :width: 100%
+      
+     
+
+    .. thumbnail:: ../../media/highressamedevice.png
+      :align: center
+      :alt: "Same Device Flow diagram."
+
+
+
+  .. card::   
+    :class-card: welcome 
+    :width: 100%
+      
+    Using an mDL as a step-up verification when the user initiates a high-value transaction or the financial institution’s fraud system flags the transaction as high risk using a mobile device.
+
+    .. raw:: html
+
+      <div id="demo-video-5" class="demo-video-player"></div>
+
+  .. card::   
+    :class-card: welcome 
+    :width: 100%
+
+    Offering an instant approval user journey on a mobile device where the application is approved and the account is set up in the same session, without requiring the customer to come back in a subsequent session to set up online access.
+      
+    .. raw:: html
+      
+      <div id="demo-video-6" class="demo-video-player"></div>
 
 Architecture Components
-------------------------
++++++++++++++++++++++++
 
 For an overview of the general architecture components, please review our `Digital Identities: Getting to Know the Verifiable Digital Credential
 Ecosystem <https://www.nist.gov/blogs/cybersecurity-insights/digital-identities-getting-know-verifiable-digital-credential-ecosystem>`__ blog post.
@@ -77,16 +149,13 @@ updating accounts. [4]_.
 **Verifier Mediation Service** - A system that implements interfaces that interact with the IDMS to facilitate account opening and
 digital enrollment phases.
 
-**API Proxy** - A reverse proxy routing requests from clients to
-services [5]_.
-
 **SSN Validation Service** - A system that emulates the functionality of the Electronic Consent Based SSN Verification (eCBSV)
 Service [6]_ designed to validate social security numbers.
 
 **Data Storage** - The core banking repository for data retention criteria and associated transactional data.
 
 Standards Included in this Architecture
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++++++++++++++++++++
 
 This architecture makes use of several standards in the mDL ecosystem. To learn more about the standards that encompass the VDC ecosystem, we encourage the
 reader to visit our upcoming deep dive in our blog series [8]_.
@@ -119,10 +188,7 @@ is built upon the Internet Engineering Task Force OAuth2 Authorization
 Framework [10]_ which enables application and website developers to launch
 sign-in flows and receive verifiable assertions about users across Web-based, mobile, and JavaScript clients.
 
-We're currently working with our technology partners to create a customized OIDC profile that will describe how a financial institution can leverage OIDC with
-an identity management system to support the demonstration scenarios. In this future profile, we will use OIDC to invoke an authentication event from a Passkey
-or an identity verification event via a mobile driver's license. Further, in the same-device flow, the authentication events will adhere to IETF's Best Current
-Practice [11]_ when using a native banking applications.
+
 
 .. [1]
    https://www.nist.gov/image/vdc-map
@@ -156,6 +222,53 @@ Practice [11]_ when using a native banking applications.
 
 .. [11]
    https://datatracker.ietf.org/doc/html/rfc8252
+
+.. raw:: html
+
+   <script src="https://cdnapisec.kaltura.com/p/684682/embedPlaykitJs/uiconf_id/55674542"></script>
+   <script>
+     (function () {
+       var videos = [
+         { targetId: 'demo-video-1', entryId: '1_f7yg7xip' },
+         { targetId: 'demo-video-2', entryId: '1_jmhso0d0' },
+         { targetId: 'demo-video-3', entryId: '1_07kamqe0' },
+         { targetId: 'demo-video-4', entryId: '1_4c2ihze7' },
+         { targetId: 'demo-video-5', entryId: '1_y4vrkvdv' },
+         { targetId: 'demo-video-6', entryId: '1_id4227cg' }
+       ];
+
+       function initDemonstrationVideos() {
+         if (typeof KalturaPlayer === 'undefined') {
+           return;
+         }
+
+         videos.forEach(function (video) {
+           if (!document.getElementById(video.targetId)) {
+             return;
+           }
+
+           var player = KalturaPlayer.setup({
+             targetId: video.targetId,
+             provider: {
+               partnerId: 684682,
+               uiConfId: 55674542
+             },
+             playback: {
+               autoplay: false
+             }
+           });
+
+           player.loadMedia({ entryId: video.entryId });
+         });
+       }
+
+       if (document.readyState === 'loading') {
+         document.addEventListener('DOMContentLoaded', initDemonstrationVideos);
+       } else {
+         initDemonstrationVideos();
+       }
+     }());
+   </script>
 
 .. toctree::
    :maxdepth: 1

@@ -4,54 +4,51 @@
 }
 
 .line-block {
-    margin-bottom: 0em !important;
-
+  margin-bottom: 0em !important;
 }
 
 .sd-card.welcome {
-    /* --card-bg: rgba(255, 255, 255, 0.1); */
-
-    /* background-color: rgba(255, 255, 255, 0.1) !important; Semi-transparent white */
-    background-color: var(--card-bg) !important;
-    backdrop-filter: blur(10px); /* The "frosted glass" look */
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    border-radius: 12px !important;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
-
+  /* --card-bg: rgba(255, 255, 255, 0.1); */
+  /* background-color: rgba(255, 255, 255, 0.1) !important; Semi-transparent white */
+  background-color: var(--card-bg) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
 }
 
-/* Ensure the header and footer are also transparent */
-.sd-card-header.welcome, .sd-card-footer.welcome {
-    background-color: transparent !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+/* Ensure the header and footer are also transparent. */
+.sd-card-header.welcome,
+.sd-card-footer.welcome {
+  background-color: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
-/* Hover effect for interactivity */
+/* Hover effect for interactivity. */
 .sd-card.welcome:hover {
-    transform: translateY(-5px);
-    background-color: rgba(255, 255, 255, 0.15) !important;
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.15) !important;
 }
 
-/* Adjust text color if background is dark */
+/* Adjust text color if background is dark. */
 .sd-card-body.welcome {
-    color: inherit;
+  color: inherit;
 }
 
 .transparent {
-    --card-bg: rgba(255, 255, 255, 0.1);
+  --card-bg: rgba(255, 255, 255, 0.1);
 }
 
 .howtostep {
-    --card-bg: rgba(164, 217, 214);
-
+  --card-bg: rgba(164, 217, 214);
 }
 
-/* Hover effect for interactivity */
+/* Hover effect for interactivity. */
 .sd-card.howtostep:hover {
-    transform: translateY(-5px);
-    background-color: rgba(164, 217, 214, 0.85) !important;
+  transform: translateY(-5px);
+  background-color: rgba(164, 217, 214, 0.85) !important;
 }
 
 .table tbody tr:nth-child(odd):hover {
@@ -85,7 +82,7 @@ a:hover {
 }
 
 #faq h1,
-#wireframes h1{
+#wireframes h1 {
   display: none;
 }
 
@@ -94,7 +91,7 @@ a:hover {
 }
 
 .red-text {
-    color:  #8b0a03;
+  color: #8b0a03;
 }
 
 table.fi-requested-item tr:nth-of-type(8) td:nth-of-type(3) p,
@@ -111,7 +108,7 @@ table.fi-requested-item tr:nth-of-type(1) td:nth-of-type(3) p:nth-of-type(3),
 table.fi-requested-item tr:nth-of-type(1) td:nth-of-type(3) p:nth-of-type(4),
 table.fi-requested-item tr:nth-of-type(1) td:nth-of-type(3) p:nth-of-type(5),
 table.fi-requested-item tr:nth-of-type(1) td:nth-of-type(3) p:nth-of-type(6) {
-    color: #8b0a03;
+  color: #8b0a03;
 }
 
 .oidc::before {
@@ -119,10 +116,9 @@ table.fi-requested-item tr:nth-of-type(1) td:nth-of-type(3) p:nth-of-type(6) {
   display: inline-block;
   width: 25px;
   height: 25px;
-  background-color: #79EEE4;
+  background-color: #79eee4;
   margin-right: 5px;
 }
-
 
 .oidvp::before {
   content: "";
@@ -194,74 +190,14 @@ table.fi-requested-item tr:nth-of-type(1) td:nth-of-type(3) p:nth-of-type(6) {
   display: block;
 }
 
-.mermaid rect.rect+text {
+.mermaid rect.rect + text {
   transform: translateY(4px);
-}
-
-.pram-nav .accordion-button {
-  text-decoration: none;
-  width: 100%;
-  padding: 0;
-  border: none;
-  background: none;
-}
-
-.pram-nav .accordion-button {
-  display: block;
-  padding: 0.5em;
-  margin: 1em 0;
-  position: relative;
-  color: black;
-  text-align: center;
-}
-
-.pram-nav .accordion-button::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 10px 10px 0;
-  border-style: solid;
-  border-color: transparent;
-}
-
-.pram-nav .accordion-item:last-child .accordion-button::after {
-  content: none;
-}
-
-.pram-nav .accordion-item:nth-child(odd) .accordion-button {
-  background-color: #62ddd6;
-}
-
-.pram-nav .accordion-item:nth-child(even) .accordion-button {
-  background-color: #4fb8ee;
 }
 
 .demo-video-player {
   width: 100%;
   height: clamp(18rem, 56vw, 35rem);
   margin: 1rem 0 2rem;
-}
-
-.pram-nav .accordion-button:hover {
-  filter: brightness(85%);
-  transition: filter 0.3s ease;
-}
-
-.pram-nav .accordion-item:nth-child(odd) .accordion-button::after {
-  border-top-color: #62ddd6;
-}
-
-.pram-nav .accordion-item:nth-child(even) .accordion-button::after {
-  border-top-color: #4fb8ee;
-}
-
-.pram-nav .accordion-panel {
-  padding: 1em;
-  border-left: 1px solid rgb(243, 244, 245);
-  border-right: 1px solid rgb(243, 244, 245);
-  border-bottom: 1px solid rgb(243, 244, 245);
 }
 
 #how-do-we-mitigate-these-risks table tr td:nth-of-type(2) {
@@ -273,6 +209,365 @@ table.fi-requested-item tr:nth-of-type(1) td:nth-of-type(3) p:nth-of-type(6) {
 }
 
 .rst-content .admonition.attention .admonition-title {
-  background-color: #FFCF1E;
+  background-color: #ffcf1e;
   color: black;
+}
+
+/* PRAM dropdowns */
+
+/* Expand / Collapse controls */
+.pram-dropdown-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  margin: 1rem 0 1.25rem;
+}
+
+#pram-dropdown-hint {
+  color: #595959;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+#expand-collapse-all {
+  padding: 0.5rem 0.9rem;
+  border: 1px solid #376d9a;
+  border-radius: 3px;
+  background-color: #ffffff;
+  color: #376d9a;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#expand-collapse-all:hover {
+  background-color: #f2f7fa;
+}
+
+#expand-collapse-all:focus-visible {
+  outline: 3px solid #1a5a96;
+  outline-offset: 3px;
+}
+
+/* Dropdown container */
+details.pram-dropdown {
+  margin: 0 0 1rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+}
+
+/* Preserve the existing PRAM alternating colors */
+details.pram-dropdown-teal {
+  --pram-dropdown-color: #62ddd6;
+}
+
+details.pram-dropdown-blue {
+  --pram-dropdown-color: #4fb8ee;
+}
+
+/* Dropdown header / trigger */
+details.pram-dropdown > summary.pram-dropdown-title {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 5rem;
+  padding: 0.85rem 1rem;
+  border: 0;
+  border-radius: 0;
+  color: #000000;
+  background-color: var(--pram-dropdown-color);
+  cursor: pointer;
+  transition:
+    filter 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Remove the native disclosure marker because Sphinx Design supplies its own. */
+details.pram-dropdown > summary.pram-dropdown-title::-webkit-details-marker {
+  display: none;
+}
+
+details.pram-dropdown > summary.pram-dropdown-title::marker {
+  content: "";
+}
+
+/* Header hover / focus state */
+details.pram-dropdown > summary.pram-dropdown-title:hover {
+  filter: brightness(92%);
+}
+
+details.pram-dropdown > summary.pram-dropdown-title:focus-visible {
+  outline: 3px solid #1a5a96;
+  outline-offset: 3px;
+  filter: brightness(95%);
+}
+
+/* Header text */
+details.pram-dropdown
+  > summary.pram-dropdown-title
+  > .sd-summary-text {
+  flex: 1;
+  padding-left: 2.5rem;
+  text-align: center;
+  line-height: 1.35;
+}
+
+/* Main question */
+details.pram-dropdown
+  > summary.pram-dropdown-title
+  > .sd-summary-text
+  strong {
+  display: block;
+  margin: 0;
+  color: #000000;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+/* Subtitle below the question */
+details.pram-dropdown
+  > summary.pram-dropdown-title
+  > .sd-summary-text
+  em {
+  display: block;
+  margin-top: 0.2rem;
+  color: #000000;
+  font-size: 0.95rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+/* Plus / minus dropdown indicator */
+details.pram-dropdown
+  > summary.pram-dropdown-title
+  > .sd-summary-state-marker {
+    flex: 0 0 auto;
+    margin-left: 1rem;
+    width: 1.6rem;
+    color:#000000;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+    transform: none !important;
+    transition: none !important;
+  }
+
+/* Prevent Sphinx Design from rotating the marker when the dropdown is open */
+details.pram-dropdown[open]
+  > summary.pram-dropdown-title
+  > .sd-summary-state-marker {
+    transform: none !important;
+  }
+
+/* Hide the built in sphinx design chevron */
+details.pram-dropdown
+  > summary.pram-dropdown-title
+  > .sd-summary-state-marker
+  svg {
+    display: none;
+  }
+
+/* Show a plus when the dropdown is close */
+details.pram-dropdown
+  > summary.pram-dropdown-title
+  > .sd-summary-state-marker::before {
+    content: "+";
+  }
+
+/* show a minus when the dropdown is open */
+details.pram-dropdown[open]
+  > summary.pram-dropdown-title
+  > .sd-summary-state-marker::before {
+    content: "-";
+}
+
+/* Decorative downward triangle */
+details.pram-dropdown > summary.pram-dropdown-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  width: 0;
+  height: 0;
+  transform: translateX(-50%);
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid var(--pram-dropdown-color);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Expanded dropdown body */
+details.pram-dropdown > .pram-dropdown-body {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: 1.25rem;
+  border-right: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  border-left: 1px solid #d9d9d9;
+  background-color: #ffffff;
+  will-change: height;
+}
+
+/* Remove unnecessary margin from the first and last body elements. */
+details.pram-dropdown > .pram-dropdown-body > :first-child {
+  margin-top: 0;
+}
+
+details.pram-dropdown > .pram-dropdown-body > :last-child {
+  margin-bottom: 0;
+}
+
+/* PRAM tables inside dropdowns */
+details.pram-dropdown .wy-table-responsive {
+  margin-top: 1rem;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  details.pram-dropdown > .pram-dropdown-body {
+    scroll-behavior: auto;
+  }
+}
+
+/*Carousel Controls*/
+
+/* Only affect carousels explicitly marked with :class: demo-carousel. */
+.sd-cards-carousel.demo-carousel {
+  overflow-x: auto;
+  padding: 0 0 0.75rem;
+  scrollbar-width: auto;
+  scrollbar-color: #376d9a #edf2f5;
+}
+
+.sd-cards-carousel.demo-carousel > .sd-card {
+  flex: 0 0 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.sd-cards-carousel.demo-carousel > .sd-card.welcome:hover {
+  transform: none;
+}
+
+.demo-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.demo-carousel-controls button {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #376d9a;
+  border-radius: 4px;
+  background: #fff;
+  color: #234e70;
+  font: inherit;
+  cursor: pointer;
+}
+
+.demo-carousel-controls button:hover {
+  background: #edf2f5;
+}
+
+.demo-carousel-controls button[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.demo-carousel-controls button:focus-visible,
+.sd-cards-carousel.demo-carousel:focus-visible {
+  outline: 3px solid #1a5a96;
+  outline-offset: 3px;
+}
+
+.demo-carousel-dots {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.demo-carousel-dots button {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.demo-carousel-dots button::before {
+  content: '';
+  width: 0.65rem;
+  height: 0.65rem;
+  border: 1px solid #376d9a;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.demo-carousel-dots button[aria-current="true"]::before {
+  background: #376d9a;
+}
+
+.demo-carousel-count {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .pram-dropdown-controls {
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+
+  details.pram-dropdown > summary.pram-dropdown-title {
+    min-height: 4.5rem;
+    padding: 0.75rem;
+  }
+
+  details.pram-dropdown
+    > summary.pram-dropdown-title
+    > .sd-summary-text {
+    padding-left: 1.75rem;
+  }
+
+  details.pram-dropdown
+    > summary.pram-dropdown-title
+    > .sd-summary-text
+    strong {
+    font-size: 0.95rem;
+  }
+
+  details.pram-dropdown
+    > summary.pram-dropdown-title
+    > .sd-summary-text
+    em {
+    font-size: 0.875rem;
+  }
+
+  details.pram-dropdown > .pram-dropdown-body {
+    padding: 1rem;
+  }
 }

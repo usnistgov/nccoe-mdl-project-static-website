@@ -23,7 +23,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-2.3.0/datatables.min.css" />
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.min.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=ae7c9797" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=a207fa64" />
 
   <link rel="stylesheet" href="../_static/css/datatables.min.css">
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -38,7 +38,7 @@
       <script src="https://cdn.datatables.net/v/dt/dt-2.3.0/datatables.min.js"></script>
       <script src="../_static/activate_datatables.js"></script>
       <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.min.js"></script>
-      <script src="../_static/main.js?v=355b5256"></script>
+      <script src="../_static/main.js?v=9c1cef00"></script>
 
     <script src="../_static/js/theme.js"></script>
     <script src="../_static/js/d3.min.js"></script>
@@ -84,7 +84,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Government Services Use Case" href="../use-case-2/index.html" />
-    <link rel="prev" title="Demonstration Videos Updated" href="demonstration-videos.html" /> 
+    <link rel="prev" title="Comparative analysis of mDL to current CIP techologies" href="comparisons.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -304,7 +304,7 @@
 <li class="toctree-l2"><a class="reference internal" href="criteria.html">Draft CIP/KYC Use Case Criteria</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nccoe-bank-faq.html">Sample Bank mDL Information Page</a></li>
 <li class="toctree-l2"><a class="reference internal" href="wireframes.html">Wireframes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture/kyc-cip-onboarding.html">Financial Use Case Reference Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture/kyc-cip-onboarding.html">Reference Architecuture and Demonstration Videos <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">New</span></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="architecture/interaction-diagrams.html">Interaction Diagrams</a></li>
 </ul>
 </li>
@@ -316,14 +316,13 @@
 <li class="toctree-l2"><a class="reference internal" href="usability-results.html">Usability Assessment Findings</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="cip-mapping.html">mDL to CIP Regulatory Mapping  <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">New</span></a></li>
-<li class="toctree-l2"><a class="reference internal" href="comparisons.html">Comparative analysis of mDL to current CIP techologies <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">New</span></a></li>
-<li class="toctree-l2"><a class="reference internal" href="demonstration-videos.html">Demonstration Videos <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Updated</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="cip-mapping.html">mDL to CIP Regulatory Mapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparisons.html">Comparative analysis of mDL to current CIP techologies</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Use Case 1 Configuration Guide</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../use-case-2/index.html">Government Services Use Case</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../use-case-2/architecture/index.html">Login.gov mDL Verifier Integration Architecture <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">New</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../use-case-2/architecture/index.html">Login.gov mDL Verifier Integration Architecture</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../comments.html">Submit Comments</a></li>
@@ -363,7 +362,7 @@ h1, h2, h3, h4, h5 {
 <p class="admonition-title">DISCLAIMER</p>
 <p>Certain commercial entities, equipment, products, or materials may be identified by name or company logo or other insignia in order to acknowledge their participation in this collaboration or to describe an experimental procedure or concept adequately. Such identification is not intended to imply special status or relationship with NIST or recommendation or endorsement by NIST or NCCoE; neither is it intended to imply that the entities, equipment, products, or materials are necessarily the best available for the purpose.</p>
 </div>
-<p>This page is a guide that demonstrates how we configured the products in our NCCoE mDL lab . Security architects, product managers, and other technical staff within your organization may find this information helpful. We cover the essential products deployed in our <a class="reference internal" href="architecture/kyc-cip-onboarding.html"><span class="doc">reference architecture</span></a> — the IDMS, Verifier, and Relying Party components. We do not re-create the product manufacturers’ documentation, which is presumed to be widely available. Rather, this webpage shows how we configured and integrated the products in our lab environment. A video demonstration of this architecture in action can be viewed on <a class="reference internal" href="demonstration-videos.html"><span class="doc">this page</span></a>. Within each section, we describe the steps we executed to satisfy each guideline. We include configuration file snippets, code examples, and links to technology contributor documentation where applicable.</p>
+<p>This page is a guide that demonstrates how we configured the products in our NCCoE mDL lab . Security architects, product managers, and other technical staff within your organization may find this information helpful. We cover the essential products deployed in our <a class="reference internal" href="architecture/kyc-cip-onboarding.html"><span class="doc">reference architecture</span></a> — the IDMS, Verifier, and Relying Party components. We do not re-create the product manufacturers’ documentation, which is presumed to be widely available. Rather, this webpage shows how we configured and integrated the products in our lab environment. A video demonstration of this architecture in action can be viewed on <span class="xref std std-doc">this page</span>. Within each section, we describe the steps we executed to satisfy each guideline. We include configuration file snippets, code examples, and links to technology contributor documentation where applicable.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This is not a comprehensive tutorial. There are many possible service and security configurations for these products that are out of scope for this reference design. Further, credential issuance was out of scope for this demonstration. We recommend contacting state issuing authorities directly to determine the best path for test credential issuance.</p>

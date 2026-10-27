@@ -1,6 +1,6 @@
 
-Login.gov mDL Verifier Integration Architecture :bdg-success:`New`
-==================================================================
+Login.gov mDL Verifier Integration Architecture
+===============================================
 
 The NCCoE has partnered with the Login.gov Delivery team to demonstrate how mobile driver’s licenses (mDL) can be presented as a piece of identity evidence during identity verification when a user applies for a Login.gov account. mDLs provide cryptographically backed identity attributes signed by the authoritative issuer, making them superior identity evidence in the framework of NIST SP 800-63A-4. When implemented, mDL verification can provide reduced user friction and improved proofing rates by eliminating the need to photograph certain identity documents and reducing the amount of information a user needs to type in while also aligning with the NIST Digital Identity Guidelines.
 
