@@ -2,13 +2,15 @@ Financial Institution Use Case
 ===============================
 
 
-.. admonition:: Comment Period Closed
+.. attention:: 
 
-   The NIST NCCoE has published `NIST Special Publication (SP) 1800-42A Initial Public Draft`_, Digital Identities - Mobile Driver’s License (mDL): Accelerating Development and Adoption of Digital Identity for Financial Institutions. This practice guide provides financial institutions and other organizations with practical guidelines on implementing mDLs for customer identity verification using existing technology and standards and best practices. 
+   The National Cybersecurity Center of Excellence (NCCoE) released updated guidelines for the use of Mobile Driver’s Licenses (mDLs). Previously published as a single volume, NIST Special Publication (SP) 1800-42 has been split into two volumes. 
 
-   The public comment period for this publication has closed.  
+   `NIST SP 1800-42: Digital Identities Mobile Driver’s License (mDL) – Enabling Secure and Interoperable Online Use (Second Public Draft) <https://www.nccoe.nist.gov/sites/default/files/2026-11/nist-sp-1800-42-2pd.pdf>`_
 
-   ..  _NIST Special Publication (SP) 1800-42A Initial Public Draft: https://www.nccoe.nist.gov/sites/default/files/2026-03/nist-sp-1800-42a-ipd_0.pdf
+   `NIST SP 1800-42A: Digital Identities Mobile Driver’s License (mDL) – Accelerating Development and Adoption of Digital Identity for Financial Institutions (Second Public Draft) Document Version <https://www.nccoe.nist.gov/sites/default/files/2026-03/nist-sp-1800-42a-ipd_0.pdf>`_
+
+   Submit your feedback before December 20th at 11:59 P.M. EST. To submit comments, please email the team at mdl-nccoe@nist.gov.
 
 As part of this project, the NCCoE has developed the “NCCoE Bank”, a fictitious bank that will demonstrate how mDLs might be implemented as
 an identity verification solution at a real financial institution. To supplement our technical demonstration, we have published `Draft
@@ -24,9 +26,6 @@ financial institutions and highlights the benefits that mDLs might provide custo
 Methodology <pram.html>`__ exercise, and a white paper describing proposals that
 will enhance `trust assurance in the mDL
 ecosystem <building-mdl-assurance/index.html>`__.
-
-In the future we will update this section of the website with videos of the built demonstration and artifacts related to the same device
-(app to app) scenario.
 
 
 
