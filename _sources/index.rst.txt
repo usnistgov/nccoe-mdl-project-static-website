@@ -1,7 +1,19 @@
 Digital Identities - Mobile Driver's License (mDL)
 ==================================================
 
+.. attention:: 
+
+   The National Cybersecurity Center of Excellence (NCCoE) released updated guidelines for the use of Mobile Driver’s Licenses (mDLs). Previously published as a single volume, NIST Special Publication (SP) 1800-42 has been split into two volumes. 
+
+   `NIST SP 1800-42: Digital Identities Mobile Driver’s License (mDL) – Enabling Secure and Interoperable Online Use (Second Public Draft) <https://www.nccoe.nist.gov/sites/default/files/2026-11/nist-sp-1800-42-2pd.pdf>`_
+
+   `NIST SP 1800-42A: Digital Identities Mobile Driver’s License (mDL) – Accelerating Development and Adoption of Digital Identity for Financial Institutions (Second Public Draft) Document Version <https://www.nccoe.nist.gov/sites/default/files/2026-03/nist-sp-1800-42a-ipd_0.pdf>`_
+
+   Submit your feedback before December 20th at 11:59 P.M. EST. To submit comments, please email the team at mdl-nccoe@nist.gov.
+
 To realize the full value of mDLs, collaboration is needed to mature standards, best practices, and protocols that safeguard user data while promoting adoption of mDLs. That’s why the NCCoE has brought together stakeholders from across the mDL ecosystem to build out reference implementations to promote standards and best practices for mDL deployments and to address adoption challenges. Over the course of this project, we will address several use cases. Our financial services use case kicked off in September 2024, and the release of our final guidelines for that effort is imminent. Our second use case working with federal and state governments to accept mDLs kicked off in January 2026. Click the links below to see the resources we have published under these efforts.
+
+
 
 
 
